@@ -1,0 +1,27 @@
+{
+	"$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
+	"type": "connection",
+	"id": "sonifex-avn-m8r",
+	"name": "Sonifex AVN-M8R",
+	"shortname": "AVN-M8R",
+	"description": "Control and monitor the Sonifex AVN-M8R 8 mic/line input Dante interface",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-module-sonifex-avn-m8r.git",
+	"bugs": "https://github.com/bitfocus/companion-module-sonifex-avn-m8r/issues",
+	"maintainers": [
+		{
+			"name": "Elliott Swinburne"
+		}
+	],
+	"runtime": {
+		"type": "node22",
+		"api": "nodejs-ipc",
+		"apiVersion": "2.1.3",
+		"entrypoint": "../src/main.js"
+	},
+	"legacyIds": [],
+	"manufacturer": "Sonifex",
+	"products": ["AVN-M8R"],
+	"keywords": ["Sonifex", "Audio", "Dante", "AES67", "AoIP", "Microphone", "Metering"]
+}
