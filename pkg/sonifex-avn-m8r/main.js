@@ -1,26 +1,11273 @@
-import { createRequire as __esbuild_createRequire } from 'module';
-import { fileURLToPath as __esbuild_fileURLToPath } from 'url';
-import { dirname as __esbuild_dirname } from 'path';
-const require = __esbuild_createRequire(import.meta.url);
-const __filename = __esbuild_fileURLToPath(import.meta.url);
-const __dirname = __esbuild_dirname(__filename);
-var wi=Object.defineProperty;var uh=Object.getOwnPropertyDescriptor;var lh=Object.getOwnPropertyNames;var fh=Object.prototype.hasOwnProperty;var B=(t=>typeof require<"u"?require:typeof Proxy<"u"?new Proxy(t,{get:(e,n)=>(typeof require<"u"?require:e)[n]}):t)(function(t){if(typeof require<"u")return require.apply(this,arguments);throw Error('Dynamic require of "'+t+'" is not supported')});var q=(t,e,n)=>()=>{if(n)throw n[0];try{return t&&(e=t(t=0)),e}catch(r){throw n=[r],r}};var p=(t,e)=>()=>{try{return e||t((e={exports:{}}).exports,e),e.exports}catch(n){throw e=0,n}},wc=(t,e)=>{for(var n in e)wi(t,n,{get:e[n],enumerable:!0})},dh=(t,e,n,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let s of lh(e))!fh.call(t,s)&&s!==n&&wi(t,s,{get:()=>e[s],enumerable:!(r=uh(e,s))||r.enumerable});return t};var x=t=>dh(wi({},"__esModule",{value:!0}),t);function mr(t,e,n){(typeof global.COMPANION_LOGGER=="function"?global.COMPANION_LOGGER:hh)(t,e,n)}function Ni(t){return{debug:e=>mr(t,"debug",e),info:e=>mr(t,"info",e),warn:e=>mr(t,"warn",e),error:e=>mr(t,"error",e)}}var hh,Ci=q(()=>{hh=(t,e,n)=>{console.log(`[${e.toUpperCase()}]${t?` [${t}]`:""} ${n}`)}});var Nc=q(()=>{});function Cc(t){let e=t;return!!e&&typeof e=="object"&&typeof e.id=="string"&&e._isInstanceContext===!0}var Oc=q(()=>{});var Fc,Je,pe,Oe,qi,br,ki,Er,Lc,Dt,Dn,Bi,qn,_r,Mc,Uc,Rc,kc,Bc,Ht,ph,mh,_h,Eh,qc,Dc,bh,Oi,Ri,Pc,Ac,xe,jc=q(()=>{for(Fc={grad:.9,turn:360,rad:360/(2*Math.PI)},Je=function(t){return typeof t=="string"?t.length>0:typeof t=="number"},pe=function(t,e,n){return e===void 0&&(e=0),n===void 0&&(n=Math.pow(10,e)),Math.round(n*t)/n+0},Oe=function(t,e,n){return e===void 0&&(e=0),n===void 0&&(n=1),t>n?n:t>e?t:e},qi=function(t){return(t=isFinite(t)?t%360:0)<0?t+360:t},br=function(t,e){return e===void 0&&(e=0),pe(t,e)%360},ki=function(t){return{r:Oe(t.r,0,255),g:Oe(t.g,0,255),b:Oe(t.b,0,255),a:Oe(t.a)}},Er=function(t){return{r:pe(t.r),g:pe(t.g),b:pe(t.b),a:pe(t.a,3)}},Lc=/^#([0-9a-f]{3,8})$/i,Dt=function(t,e){var n=t.charCodeAt(e);return(15&n)+9*(n>>6)},Dn=function(t,e){return Dt(t,e)<<4|Dt(t,e+1)},Bi=[],qn=0;qn<256;qn++)Bi.push((qn<16?"0":"")+qn.toString(16));_r=function(t){return Bi[Oe(t,0,255)]},Mc=function(t){var e=t.r,n=t.g,r=t.b,s=t.a,i=Math.max(e,n,r),o=i-Math.min(e,n,r),a=o?i===e?(n-r)/o:i===n?2+(r-e)/o:4+(e-n)/o:0;return{h:60*(a<0?a+6:a),s:i?o/i*100:0,v:i/255*100,a:s}},Uc=function(t){var e=t.h,n=t.s,r=t.v,s=t.a;e=e/360*6,n/=100,r/=100;var i=Math.floor(e),o=r*(1-n),a=r*(1-(e-i)*n),c=r*(1-(1-e+i)*n),u=i%6;return{r:255*[r,a,o,o,c,r][u],g:255*[c,r,r,a,o,o][u],b:255*[o,o,c,r,r,a][u],a:s}},Rc=function(t){return{h:qi(t.h),s:Oe(t.s,0,100),l:Oe(t.l,0,100),a:Oe(t.a)}},kc=function(t){return{h:br(t.h),s:pe(t.s),l:pe(t.l),a:pe(t.a,3)}},Bc=function(t){return Uc((n=(e=t).s,{h:e.h,s:(n*=((r=e.l)<50?r:100-r)/100)>0?2*n/(r+n)*100:0,v:r+n,a:e.a}));var e,n,r},Ht=function(t){return{h:(e=Mc(t)).h,s:(s=(200-(n=e.s))*(r=e.v)/100)>0&&s<200?n*r/100/(s<=100?s:200-s)*100:0,l:s/2,a:e.a};var e,n,r,s},ph=/^hsla?\(\s*([+-]?(?:\d*\.\d+|\d+))(deg|rad|grad|turn)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))%\s*,\s*([+-]?(?:\d*\.\d+|\d+))%\s*(?:,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i,mh=/^hsla?\(\s*([+-]?(?:\d*\.\d+|\d+))(deg|rad|grad|turn)?\s+([+-]?(?:\d*\.\d+|\d+))%\s+([+-]?(?:\d*\.\d+|\d+))%\s*(?:\/\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i,_h=/^rgba?\(\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*(?:,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i,Eh=/^rgba?\(\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s+([+-]?(?:\d*\.\d+|\d+))(%)?\s+([+-]?(?:\d*\.\d+|\d+))(%)?\s*(?:\/\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i,qc={string:[[function(t){if(!Lc.test(t))return null;var e=t.length;return e<=5?{r:17*Dt(t,1),g:17*Dt(t,2),b:17*Dt(t,3),a:e===5?pe(17*Dt(t,4)/255,2):1}:e===7||e===9?{r:Dn(t,1),g:Dn(t,3),b:Dn(t,5),a:e===9?pe(Dn(t,7)/255,2):1}:null},"hex"],[function(t){var e=_h.exec(t)||Eh.exec(t);return e?e[2]!==e[4]||e[4]!==e[6]?null:ki({r:Number(e[1])/(e[2]?100/255:1),g:Number(e[3])/(e[4]?100/255:1),b:Number(e[5])/(e[6]?100/255:1),a:e[7]===void 0?1:Number(e[7])/(e[8]?100:1)}):null},"rgb"],[function(t){var e=ph.exec(t)||mh.exec(t);if(!e)return null;var n,r,s=Rc({h:(n=e[1],r=e[2],r===void 0&&(r="deg"),Number(n)*(Fc[r]||1)),s:Number(e[3]),l:Number(e[4]),a:e[5]===void 0?1:Number(e[5])/(e[6]?100:1)});return Bc(s)},"hsl"]],object:[[function(t){var e=t.r,n=t.g,r=t.b,s=t.a,i=s===void 0?1:s;return Je(e)&&Je(n)&&Je(r)?ki({r:Number(e),g:Number(n),b:Number(r),a:Number(i)}):null},"rgb"],[function(t){var e=t.h,n=t.s,r=t.l,s=t.a,i=s===void 0?1:s;if(!Je(e)||!Je(n)||!Je(r))return null;var o=Rc({h:Number(e),s:Number(n),l:Number(r),a:Number(i)});return Bc(o)},"hsl"],[function(t){var e=t.h,n=t.s,r=t.v,s=t.a,i=s===void 0?1:s;if(!Je(e)||!Je(n)||!Je(r))return null;var o=(function(a){return{h:qi(a.h),s:Oe(a.s,0,100),v:Oe(a.v,0,100),a:Oe(a.a)}})({h:Number(e),s:Number(n),v:Number(r),a:Number(i)});return Uc(o)},"hsv"]]},Dc=function(t,e){for(var n=0;n<e.length;n++){var r=e[n][0](t);if(r)return[r,e[n][1]]}return[null,void 0]},bh=function(t){return typeof t=="string"?Dc(t.trim(),qc.string):typeof t=="object"&&t!==null?Dc(t,qc.object):[null,void 0]},Oi=function(t,e){var n=Ht(t);return{h:n.h,s:Oe(n.s+100*e,0,100),l:n.l,a:n.a}},Ri=function(t){return(299*t.r+587*t.g+114*t.b)/1e3/255},Pc=function(t,e){var n=Ht(t);return{h:n.h,s:n.s,l:Oe(n.l+100*e,0,100),a:n.a}},Ac=(function(){function t(e){this.parsed=bh(e)[0],this.rgba=this.parsed||{r:0,g:0,b:0,a:1}}return t.prototype.isValid=function(){return this.parsed!==null},t.prototype.brightness=function(){return pe(Ri(this.rgba),2)},t.prototype.isDark=function(){return Ri(this.rgba)<.5},t.prototype.isLight=function(){return Ri(this.rgba)>=.5},t.prototype.toHex=function(){return e=Er(this.rgba),n=e.r,r=e.g,s=e.b,o=(i=e.a)<1?_r(pe(255*i)):"","#"+_r(n)+_r(r)+_r(s)+o;var e,n,r,s,i,o},t.prototype.toRgb=function(){return Er(this.rgba)},t.prototype.toRgbString=function(){return e=Er(this.rgba),n=e.r,r=e.g,s=e.b,(i=e.a)<1?"rgba("+n+", "+r+", "+s+", "+i+")":"rgb("+n+", "+r+", "+s+")";var e,n,r,s,i},t.prototype.toHsl=function(){return kc(Ht(this.rgba))},t.prototype.toHslString=function(){return e=kc(Ht(this.rgba)),n=e.h,r=e.s,s=e.l,(i=e.a)<1?"hsla("+n+", "+r+"%, "+s+"%, "+i+")":"hsl("+n+", "+r+"%, "+s+"%)";var e,n,r,s,i},t.prototype.toHsv=function(){return e=Mc(this.rgba),{h:br(e.h),s:pe(e.s),v:pe(e.v),a:pe(e.a,3)};var e},t.prototype.invert=function(){return xe({r:255-(e=this.rgba).r,g:255-e.g,b:255-e.b,a:e.a});var e},t.prototype.saturate=function(e){return e===void 0&&(e=.1),xe(Oi(this.rgba,e))},t.prototype.desaturate=function(e){return e===void 0&&(e=.1),xe(Oi(this.rgba,-e))},t.prototype.grayscale=function(){return xe(Oi(this.rgba,-1))},t.prototype.lighten=function(e){return e===void 0&&(e=.1),xe(Pc(this.rgba,e))},t.prototype.darken=function(e){return e===void 0&&(e=.1),xe(Pc(this.rgba,-e))},t.prototype.rotate=function(e){return e===void 0&&(e=15),this.hue(Ht(this.rgba).h+e)},t.prototype.alpha=function(e){return typeof e=="number"?xe({r:(n=this.rgba).r,g:n.g,b:n.b,a:e}):pe(this.rgba.a,3);var n},t.prototype.hue=function(e){var n=Ht(this.rgba);return typeof e=="number"?xe({h:e,s:n.s,l:n.l,a:n.a}):br(n.h)},t.prototype.isEqual=function(e){return this.toHex()===xe(e).toHex()},t})(),xe=function(t){return t instanceof Ac?t:new Ac(t)}});function gh(t){return t}function yh(t){}function Th(t,e,n,r){let s=(t&255)<<16|(e&255)<<8|n&255;return r!==void 0&&r>=0&&r<1&&(s+=16777216*Math.round(255*(1-r))),s}function gr(t){if(typeof t=="number")return t>16777215?{r:t>>16&255,g:t>>8&255,b:t&255,a:(255-(t>>24&255))/255}:{r:t>>16&255,g:t>>8&255,b:t&255,a:1};if(typeof t=="string"&&xe(t).isValid()){let e=xe(t).toRgb();return{r:e.r,g:e.g,b:e.b,a:e.a}}else return{r:0,g:0,b:0,a:1}}function Sh(t){let e=gr(t);return xe(`rgba(${e.r}, ${e.g}, ${e.b}, ${e.a})`).toHsl()}function xh(t){let e=gr(t);return xe(`rgba(${e.r}, ${e.g}, ${e.b}, ${e.a})`).toHsv()}function Ih(t){let e=gr(t);return xe(`rgba(${e.r}, ${e.g}, ${e.b}, ${e.a})`).toHex()}function vh(t){return t.replaceAll("\\n",`
-`).replaceAll("\\r","\r").replaceAll("\\t","	").replaceAll("\\f","\f").replaceAll("\\v","\v").replaceAll("\\b","\b").replaceAll("\\\\","\\").replaceAll("\\x00","\0").replaceAll("\\x01","").replaceAll("\\x02","").replaceAll("\\x03","")}function wh(t){return t.replaceAll(`
-`,"\\n").replaceAll("\r","\\r").replaceAll("	","\\t").replaceAll("\f","\\f").replaceAll("\v","\\v").replaceAll("\b","\\b").replaceAll("\\","\\\\").replaceAll("\0","\\x00").replaceAll("","\\x01").replaceAll("","\\x02").replaceAll("","\\x03")}var $c=q(()=>{jc()});import{EventEmitter as Nh}from"events";var yr,Vc=q(()=>{yr=class extends Nh{#t;#n;get handleId(){return this.boundState?.handleId}get portNumber(){return this.boundState?.portNumber}get boundState(){if(this.#e&&typeof this.#e=="object")return this.#e}#e="pending";constructor(e,n){super(),this.#t=e,this.#n={...n}}bind(e,n,r){if(this.#e&&typeof this.#e=="object")throw new Error("Socket is already bound");switch(this.#e){case"fatalError":throw new Error("Socket has encountered fatal error");case"binding":throw new Error("Socket is already bound");case"closed":throw new Error("Socket is closing");case"pending":break;default:throw this.#e,new Error("Invalid socket state")}this.#e="binding",r&&this.on("listening",r),this.#t.sharedUdpSocketJoin({family:this.#n.type,portNumber:e}).then(s=>{this.#e={portNumber:e,handleId:s},this.#t.sharedUdpSocketHandlers.set(s,this),this.emit("listening")},s=>{this.#e="closed",this.emit("error",s instanceof Error?s:new Error(s))}).catch(()=>null)}close(e){if(!(this.#e&&typeof this.#e=="object"))switch(this.#e){case"fatalError":throw new Error("Socket has encountered fatal error");case"pending":case"closed":case"binding":throw new Error("Socket is not open");default:throw this.#e,new Error("Invalid socket state")}let n=this.#e.handleId;this.#e="closed",e&&this.on("close",e),this.#t.sharedUdpSocketLeave({handleId:n}).then(()=>{this.#t.sharedUdpSocketHandlers.delete(n),this.emit("close")},r=>{this.#t.sharedUdpSocketHandlers.delete(n),this.emit("error",r instanceof Error?r:new Error(r))}).catch(()=>null)}send(e,n,r,s,i,o){if(typeof n!="number")throw new Error("Invalid arguments");if(typeof r=="number"){if(typeof s!="number"||typeof i!="string")throw new Error("Invalid arguments");if(o!==void 0&&typeof o!="function")throw new Error("Invalid arguments");let a=this.#r(e,n,r);this.#s(a,s,i,o)}else if(typeof r=="string"){if(s!==void 0&&typeof s!="function")throw new Error("Invalid arguments");let a=this.#r(e,0,void 0);this.#s(a,n,r,s)}else throw new Error("Invalid arguments")}#r(e,n,r){let s;if(typeof e=="string")s=Buffer.from(e,"utf-8");else if(Buffer.isBuffer(e))s=e;else{if(Array.isArray(e))return Buffer.from(e);s=Buffer.from(e.buffer,e.byteOffset,e.byteLength)}return s.subarray(n,r!==void 0?r+n:void 0)}#s(e,n,r,s){if(!this.#e||typeof this.#e!="object")throw new Error("Socket is not open");this.#t.sharedUdpSocketSend({handleId:this.#e.handleId,message:e,address:r,port:n}).then(()=>{s?.()},i=>{this.emit("error",i instanceof Error?i:new Error(i))}).catch(()=>null)}receiveSocketMessage(e){try{this.emit("message",e.message,e.source)}catch{}}receiveSocketError(e){this.#e="fatalError";let n=this.boundState;n&&this.#t.sharedUdpSocketHandlers.delete(n.handleId);try{this.emit("error",e)}catch{}}}});var Di,Gc=q(()=>{Oc();Ci();Vc();Di=class{#t;#n;#e;get id(){return this.#t.id}get instanceOptions(){return this.#e}get label(){return this.#t.label}constructor(e){if(!Cc(e)||!e._isInstanceContext)throw new Error("Module instance is being constructed incorrectly. Make sure you aren't trying to do this manually");this.#t=e,this.#n=Ni(),this.createSharedUdpSocket=this.createSharedUdpSocket.bind(this),this.#e={disableVariableValidation:!1,disableNewConfigLayout:!1},this.log("debug","Initializing")}saveConfig(e,n){this.#t.saveConfig(e,n)}setActionDefinitions(e){this.#t.setActionDefinitions(e)}setFeedbackDefinitions(e){this.#t.setFeedbackDefinitions(e)}setPresetDefinitions(e,n){this.#t.setPresetDefinitions(e,n)}setCompositeElementDefinitions(e){this.#t.setCompositeElementDefinitions(e)}setVariableDefinitions(e){if(Array.isArray(e))throw new Error("Variable definitions should be an object, not an array");this.#t.setVariableDefinitions(e)}setVariableValues(e){this.#t.setVariableValues(e)}getVariableValue(e){return this.#t.getVariableValue(e)}checkAllFeedbacks(){this.#t.checkAllFeedbacks()}checkFeedbacks(e,...n){this.#t.checkFeedbacks([e,...n])}checkFeedbacksById(...e){this.#t.checkFeedbacksById(e)}subscribeActions(...e){this.#t.subscribeActions(e)}unsubscribeActions(...e){this.#t.unsubscribeActions(e)}unsubscribeFeedbacks(...e){this.#t.unsubscribeFeedbacks(e)}recordAction(e,n){this.#t.recordAction(e,n)}oscSend(e,n,r,s){this.#t.oscSend(e,n,r,s)}updateStatus(e,n){this.#t.updateStatus(e,n??null)}log(e,n){switch(e){case"debug":this.#n.debug(n);break;case"info":this.#n.info(n);break;case"warn":this.#n.warn(n);break;case"error":this.#n.error(n);break;default:this.#n.info(n);break}}createSharedUdpSocket(e,n){let r=typeof e=="string"?{type:e}:e,s=new yr(this.#t,r);return n&&s.on("message",n),s}}});var Xc=q(()=>{});var Wc=q(()=>{});var Pe,Pi,Tr=q(()=>{(function(t){t.Ok="ok",t.Connecting="connecting",t.Disconnected="disconnected",t.ConnectionFailure="connection_failure",t.BadConfig="bad_config",t.UnknownError="unknown_error",t.UnknownWarning="unknown_warning",t.AuthenticationFailure="authentication_failure",t.InsufficientPermissions="insufficient_permissions"})(Pe||(Pe={}));(function(t){t.IP="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/",t.HOSTNAME="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9])$/",t.BOOLEAN="/^(true|false|0|1)$/i",t.PORT="/^([1-9]|[1-8][0-9]|9[0-9]|[1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|[1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-4])$/",t.MAC_ADDRESS="/^(?:[a-fA-F0-9]{2}:){5}([a-fA-F0-9]{2})$/",t.PERCENT="/^(100|[0-9]|[0-9][0-9])$/",t.FLOAT="/^([0-9]*\\.)?[0-9]+$/",t.SIGNED_FLOAT="/^[+-]?([0-9]*\\.)?[0-9]+$/",t.FLOAT_OR_INT="/^([0-9]+)(\\.[0-9]+)?$/",t.NUMBER="/^\\d+$/",t.SIGNED_NUMBER="/^[+-]?\\d+$/",t.SOMETHING="/^.+$/",t.TIMECODE="/^(0*[0-9]|1[0-9]|2[0-4]):(0*[0-9]|[1-5][0-9]|60):(0*[0-9]|[1-5][0-9]|60):(0*[0-9]|[12][0-9]|30)$/"})(Pi||(Pi={}))});var zc=q(()=>{});var Qc=q(()=>{});var Ai,Fi,Hc=q(()=>{(function(t){t.FollowDefault="default",t.TopBar="topbar",t.Border="border",t.None="none"})(Ai||(Ai={}));(function(t){t.FollowDefault="default",t.ShowAll="all",t.None="none"})(Fi||(Fi={}))});var Zc=q(()=>{});var Kc=q(()=>{});var Yc=q(()=>{});var Jc=q(()=>{});var Ch,eu=q(()=>{Ch={"internal:wait":"2.1.0-0","internal:customLog":"2.1.0-0","internal:abortButton":"2.1.0-0","internal:localVariableSet":"2.1.0-0","internal:checkExpression":"2.1.0-0","internal:buttonPushed":"2.1.0-0","internal:buttonCurrentStep":"2.1.0-0","internal:actionGroup":"2.1.0-0","internal:logicIf":"2.1.0-0","internal:logicWhile":"2.1.0-0","internal:logicOperator":"2.1.0-0"}});var tu=q(()=>{});var nu=q(()=>{Yc();Jc();eu();tu()});var ru=q(()=>{});function Rh(t){return(e,n)=>{let r=[];for(let s of n.feedbacks){let i=t[s.feedbackId];if(i===!0&&(i={bg:"bgcolor",bgcolor:"bgcolor",fg:"color",color:"color",png64:"png64",png:"png64"}),i){s.style||(s.style={});for(let[o,a]of Object.entries(i)){let c=s.options[o];c!==void 0&&(s.style[a]=c,delete s.options[o],r.push(s))}}}return{updatedConfig:null,updatedSecrets:null,updatedActions:[],updatedFeedbacks:r}}}function kh(t){return(e,n)=>{let r=[];for(let s of n.feedbacks){let i=t[s.feedbackId];if(typeof i!="string")continue;let o=s.options[i];o!==void 0&&(delete s.options[i],o.isExpression?s.isInverted=o:s.isInverted={isExpression:!1,value:o.value==="true"||!!o.value||Number(o.value)>0},r.push(s))}return{updatedConfig:null,updatedSecrets:null,updatedActions:[],updatedFeedbacks:r}}}function Bh(t){return(e,n)=>{let r=[];for(let s of n.actions){let i=t[s.actionId];if(typeof i!="string")continue;let o=s.options[i];o!==void 0&&(delete s.options[i],s.storeResult={type:"custom-variable",variableName:o.isExpression?{isExpression:!0,value:o.value}:{isExpression:!1,value:String(o.value??"")}},r.push(s))}return{updatedConfig:null,updatedSecrets:null,updatedActions:r,updatedFeedbacks:[]}}}function qh(t){if(!t||t.isExpression)return t;let e=Number(t.value),n=t.value;if(typeof t.value=="number"||typeof t.value=="string"&&t.value.trim()!==""&&!isNaN(e))return{isExpression:!1,value:e};if(typeof n=="string"){let r=n.trim();return r.startsWith("$(")&&r.endsWith(")")&&!r.slice(2).includes("$(")?{isExpression:!0,value:n}:{isExpression:!0,value:`parseVariables("${n.replace(/\\/g,"\\\\").replace(/"/g,'\\"')}")`}}else return t}function Dh(t){if(!t||t.isExpression)return t;let e=t.value;if(typeof e=="boolean")return t;if(typeof e=="number")return{isExpression:!1,value:e!==0};if(typeof e=="string"){let n=e.trim(),r=n.toLowerCase();return r==="true"||r==="false"?{isExpression:!1,value:r==="true"}:!isNaN(Number(n))&&n!==""?{isExpression:!1,value:Number(n)!==0}:n.startsWith("$(")&&n.endsWith(")")&&!n.slice(2).includes("$(")?{isExpression:!0,value:e}:{isExpression:!0,value:`bool(parseVariables("${e.replace(/\\/g,"\\\\").replace(/"/g,'\\"')}"))`}}else return t}var Oh,su=q(()=>{Oh=()=>({updatedConfig:null,updatedSecrets:null,updatedActions:[],updatedFeedbacks:[]})});var iu=q(()=>{});var ou=q(()=>{Nc();Gc();Xc();Wc();Tr();zc();Qc();Hc();Zc();Kc();nu();ru();su();iu()});var au=q(()=>{});var cu=q(()=>{});import{EventEmitter as Ph}from"events";import Ah from"net";var Pn,Li=q(()=>{Tr();Pn=class extends Ph{#t;#n;_socket;#e;#r=!1;#s=!1;#i=!1;#a;#o;#u;get isConnected(){return this.#r}get isConnecting(){return this.#s}get isDestroyed(){return this.#i}constructor(e,n,r){super(),this.#t=e,this.#n=n,this.#e={reconnect_interval:2e3,reconnect:!0,...r},this._socket=new Ah.Socket,this._socket.setKeepAlive(!0),this._socket.setNoDelay(!0),this._socket.on("error",s=>{this.#s=!1,this.#r=!1,this.#e.reconnect&&this.#l(),this.#c(Pe.UnknownError,s.message),this.emit("error",s)}),this._socket.on("ready",()=>{this.#r=!0,this.#s=!1,this.#c(Pe.Ok),this.emit("connect")}),this._socket.on("end",()=>{this.#r=!1,this.#c(Pe.Disconnected),!this.#s&&this.#e.reconnect&&this.#l(),this.emit("end")}),this._socket.on("data",s=>this.emit("data",s)),this._socket.on("drain",()=>this.emit("drain")),this._socket.on("close",()=>{this.#i||this.#o===void 0&&this.#e.reconnect&&(this.#s=!1,this.#l())}),setImmediate(()=>{this.#i||this.connect()}),this.#u=setTimeout(()=>{this.#u=void 0,!this.#i&&!this.listenerCount("error")&&console.error(`Danger: TCP client for ${this.#t}:${this.#n} is missing an error handler!`)},5e3)}connect(){if(this.#i)throw new Error("Cannot connect destroyed socket");return this.#s?!1:(this.#s=!0,this._socket.connect(this.#n,this.#t),!0)}send(e){if(this.#i||this._socket.destroyed)throw new Error("Cannot write to destroyed socket");if(!e||!e.length)throw new Error("No message to send");return this.#r?(this._socket.write(e,n=>{n&&(this.#r=!1,this.#c(Pe.UnknownError,n.message),this.emit("error",n))}),!0):!1}async sendAsync(e){if(this.#i||this._socket.destroyed)throw new Error("Cannot write to destroyed socket");if(!e||!e.length)throw new Error("No message to send");return this.#r?(await new Promise((n,r)=>{this._socket.write(e,s=>{if(s){this.#r=!1,this.#c(Pe.UnknownError,s.message),r(s);return}n()})}),!0):!1}destroy(){this.#r=!1,this.#s=!1,this.#i=!0,this.#o!==void 0&&(clearTimeout(this.#o),this.#o=void 0),this.#u!==void 0&&(clearTimeout(this.#u),this.#u=void 0),this._socket.removeAllListeners(),this.removeAllListeners(),this._socket.destroy()}#l(){this.#o!==void 0&&clearTimeout(this.#o),this.#o=setTimeout(()=>{this.#o=void 0,this.#c(Pe.Connecting),this.connect()},this.#e.reconnect_interval)}#c(e,n){this.#a!=e&&(this.#a=e,this.emit("status_change",e,n))}}});import{EventEmitter as Fh}from"events";import{Transform as Lh}from"stream";var An,Mh,uu,Mi,lu,fu,Ui,ji,$i,Vi,du=q(()=>{Li();An=0,Mh=240,uu=250,Mi=251,lu=252,fu=253,Ui=254,ji=255,$i=class extends Fh{#t;#n;#e;get isConnected(){return this.#t.isConnected}get isConnecting(){return this.#t.isConnecting}get isDestroyed(){return this.#t.isDestroyed}constructor(e,n,r){super(),this.#t=new Pn(e,n,r),this.#n=new Vi,this.#t._socket.pipe(this.#n),this.#t.on("connect",()=>this.emit("connect")),this.#t.on("end",()=>this.emit("end")),this.#t.on("error",s=>this.emit("error",s)),this.#t.on("status_change",(s,i)=>this.emit("status_change",s,i)),this.#n.on("iac",(s,i)=>this.emit("iac",s,i)),this.#n.on("sb",s=>this.emit("sb",s)),this.#n.on("data",s=>this.emit("data",s)),this.#n.on("drain",()=>this.emit("drain")),this.#e=setTimeout(()=>{this.#e=void 0,!this.isDestroyed&&!this.listenerCount("error")&&console.error(`Danger: Telnet client for ${e}:${n} is missing an error handler!`)},5e3)}connect(){return this.#t.connect()}send(e){return this.#t.send(e)}async sendAsync(e){return this.#t.sendAsync(e)}destroy(){this.#t.destroy(),this.#e!==void 0&&(clearTimeout(this.#e),this.#e=void 0),this.#n.removeAllListeners(),this.removeAllListeners(),this.#n.destroy()}},Vi=class extends Lh{#t;#n;#e;constructor(e){super(e),this.#t=Buffer.alloc(0),this.#n=Buffer.alloc(0),this.#e=An}_transform(e,n,r){for(let i=0;i<e.length;++i)this.#r(e[i]);let s=this.#s();s.length&&this.push(s),r()}#r(e){if(this.#e===An){if(e===ji){this.#e=ji;return}this.#t=Buffer.concat([this.#t,Buffer.from([e])])}else if(this.#e===ji)switch(e){case uu:case Mi:case lu:case fu:case Ui:this.#e=e;break;default:this.#e=An;break}else if(this.#e>=Mi&&this.#e<=Ui){let n;switch(this.#e){case Mi:n="WILL";break;case lu:n="WONT";break;case fu:n="DO";break;case Ui:n="DONT";break;default:return}this.emit("iac",n,e),this.#e=An;return}else if(this.#e===uu){if(e===Mh){this.emit("sb",this.#n),this.#e=An,this.#n=Buffer.alloc(0);return}this.#n=Buffer.concat([this.#n,Buffer.from([e])])}}#s(){let e=this.#t;return this.#t=Buffer.alloc(0),e}}});import Uh from"dgram";import{EventEmitter as jh}from"events";var Gi,hu=q(()=>{Tr();Gi=class extends jh{#t;#n;#e;#r;#s=!1;#i;#a;get isDestroyed(){return this.#s}constructor(e,n,r){super(),this.#t=e,this.#n=n,this.#r={...r},this.#e=Uh.createSocket("udp4");try{this.#e.bind(this.#r.bind_port||0,this.#r.bind_ip)}catch(s){throw new Error(`Unable to bind to ip/port: ${this.#r.bind_ip||"0.0.0.0"}:${this.#r.bind_port||0}`,{cause:s})}this.#r.ttl!==void 0&&this.#e.setTTL(this.#r.ttl),this.#r.multicast_ttl!==void 0&&this.#e.setMulticastTTL(this.#r.multicast_ttl),this.#e.on("error",s=>{this.#o(Pe.UnknownError,s.message),this.emit("error",s)}),this.#e.on("listening",()=>{this.#r.broadcast&&this.#e.setBroadcast(!0),this.#r.multicast_interface&&this.#e.setMulticastInterface(this.#r.multicast_interface),this.#o(Pe.Ok),this.emit("listening")}),this.#e.on("message",(s,i)=>this.emit("data",s,i)),this.#a=setTimeout(()=>{!this.#s&&!this.listenerCount("error")&&console.error(`Danger: UDP socket for ${this.#t}:${this.#n} is missing an error handler!`)},5e3)}send(e){if(this.#s)throw new Error("Cannot write to destroyed socket");if(!e||!e.length)throw new Error("No message to send");this.#e.send(e,this.#n,this.#t,n=>{n&&this.emit("error",n)})}async sendAsync(e){if(this.#s)throw new Error("Cannot write to destroyed socket");if(!e||!e.length)throw new Error("No message to send");return new Promise((n,r)=>{this.#e.send(e,this.#n,this.#t,s=>{if(s){r(s);return}n()})})}destroy(){this.#s=!0,this.#a!==void 0&&(clearTimeout(this.#a),this.#a=void 0),this.#e.removeAllListeners(),this.#e.close(),this.removeAllListeners()}#o(e,n){this.#i!=e&&(this.#i=e,this.emit("status_change",e,n))}}});var pu=q(()=>{Li();du();hu()});var Xi={};wc(Xi,{ButtonGraphicsDecorationType:()=>Ai,ButtonGraphicsShowStatusIcons:()=>Fi,CreateConvertToBooleanFeedbackUpgradeScript:()=>Rh,CreateUseActionResultStoreUpgradeScript:()=>Bh,CreateUseBuiltinInvertForFeedbacksUpgradeScript:()=>kh,EmptyUpgradeScript:()=>Oh,FixupBooleanOrVariablesValueToExpressions:()=>Dh,FixupNumericOrVariablesValueToExpressions:()=>qh,INTERNAL_PRESET_MIN_API_VERSION:()=>Ch,InstanceBase:()=>Di,InstanceStatus:()=>Pe,Regex:()=>Pi,TCPHelper:()=>Pn,TelnetHelper:()=>$i,UDPHelper:()=>Gi,assertNever:()=>yh,combineRgb:()=>Th,createModuleLogger:()=>Ni,literal:()=>gh,parseEscapeCharacters:()=>vh,splitHex:()=>Ih,splitHsl:()=>Sh,splitHsv:()=>xh,splitRgb:()=>gr,substituteEscapeCharacters:()=>wh});var Wi=q(()=>{Ci();ou();au();cu();$c();pu()});var dt=p((AT,Eu)=>{"use strict";var mu=["nodebuffer","arraybuffer","fragments"],_u=typeof Blob<"u";_u&&mu.push("blob");Eu.exports={BINARY_TYPES:mu,CLOSE_TIMEOUT:3e4,EMPTY_BUFFER:Buffer.alloc(0),GUID:"258EAFA5-E914-47DA-95CA-C5AB0DC85B11",hasBlob:_u,kForOnEventAttribute:Symbol("kIsForOnEventAttribute"),kListener:Symbol("kListener"),kStatusCode:Symbol("status-code"),kWebSocket:Symbol("websocket"),NOOP:()=>{}}});var Fn=p((FT,Sr)=>{"use strict";var{EMPTY_BUFFER:$h}=dt(),zi=Buffer[Symbol.species];function Vh(t,e){if(t.length===0)return $h;if(t.length===1)return t[0];let n=Buffer.allocUnsafe(e),r=0;for(let s=0;s<t.length;s++){let i=t[s];n.set(i,r),r+=i.length}return r<e?new zi(n.buffer,n.byteOffset,r):n}function bu(t,e,n,r,s){for(let i=0;i<s;i++)n[r+i]=t[i]^e[i&3]}function gu(t,e){for(let n=0;n<t.length;n++)t[n]^=e[n&3]}function Gh(t){return t.length===t.buffer.byteLength?t.buffer:t.buffer.slice(t.byteOffset,t.byteOffset+t.length)}function Qi(t){if(Qi.readOnly=!0,Buffer.isBuffer(t))return t;let e;return t instanceof ArrayBuffer?e=new zi(t):ArrayBuffer.isView(t)?e=new zi(t.buffer,t.byteOffset,t.byteLength):(e=Buffer.from(t),Qi.readOnly=!1),e}Sr.exports={concat:Vh,mask:bu,toArrayBuffer:Gh,toBuffer:Qi,unmask:gu};if(!process.env.WS_NO_BUFFER_UTIL)try{let t=B("bufferutil");Sr.exports.mask=function(e,n,r,s,i){i<48?bu(e,n,r,s,i):t.mask(e,n,r,s,i)},Sr.exports.unmask=function(e,n){e.length<32?gu(e,n):t.unmask(e,n)}}catch{}});var Su=p((LT,Tu)=>{"use strict";var yu=Symbol("kDone"),Hi=Symbol("kRun"),Zi=class{constructor(e){this[yu]=()=>{this.pending--,this[Hi]()},this.concurrency=e||1/0,this.jobs=[],this.pending=0}add(e){this.jobs.push(e),this[Hi]()}[Hi](){if(this.pending!==this.concurrency&&this.jobs.length){let e=this.jobs.shift();this.pending++,e(this[yu])}}};Tu.exports=Zi});var Yt=p((MT,wu)=>{"use strict";var Ln=B("zlib"),xu=Fn(),Xh=Su(),{kStatusCode:Iu}=dt(),Wh=Buffer[Symbol.species],zh=Buffer.from([0,0,255,255]),Ir=Symbol("permessage-deflate"),ht=Symbol("total-length"),Zt=Symbol("callback"),xt=Symbol("buffers"),Kt=Symbol("error"),xr,Ki=class{constructor(e){if(this._options=e||{},this._threshold=this._options.threshold!==void 0?this._options.threshold:1024,this._maxPayload=this._options.maxPayload|0,this._isServer=!!this._options.isServer,this._deflate=null,this._inflate=null,this.params=null,!xr){let n=this._options.concurrencyLimit!==void 0?this._options.concurrencyLimit:10;xr=new Xh(n)}}static get extensionName(){return"permessage-deflate"}offer(){let e={};return this._options.serverNoContextTakeover&&(e.server_no_context_takeover=!0),this._options.clientNoContextTakeover&&(e.client_no_context_takeover=!0),this._options.serverMaxWindowBits&&(e.server_max_window_bits=this._options.serverMaxWindowBits),this._options.clientMaxWindowBits?e.client_max_window_bits=this._options.clientMaxWindowBits:this._options.clientMaxWindowBits==null&&(e.client_max_window_bits=!0),e}accept(e){return e=this.normalizeParams(e),this.params=this._isServer?this.acceptAsServer(e):this.acceptAsClient(e),this.params}cleanup(){if(this._inflate&&(this._inflate.close(),this._inflate=null),this._deflate){let e=this._deflate[Zt];this._deflate.close(),this._deflate=null,e&&e(new Error("The deflate stream was closed while data was being processed"))}}acceptAsServer(e){let n=this._options,r=e.find(s=>!(n.serverNoContextTakeover===!1&&s.server_no_context_takeover||s.server_max_window_bits&&(n.serverMaxWindowBits===!1||typeof n.serverMaxWindowBits=="number"&&n.serverMaxWindowBits>s.server_max_window_bits)||typeof n.clientMaxWindowBits=="number"&&(typeof s.client_max_window_bits=="number"?n.clientMaxWindowBits>s.client_max_window_bits:!s.client_max_window_bits)));if(!r)throw new Error("None of the extension offers can be accepted");return n.serverNoContextTakeover&&(r.server_no_context_takeover=!0),n.clientNoContextTakeover&&(r.client_no_context_takeover=!0),typeof n.serverMaxWindowBits=="number"&&(r.server_max_window_bits=n.serverMaxWindowBits),typeof n.clientMaxWindowBits=="number"?r.client_max_window_bits=n.clientMaxWindowBits:(r.client_max_window_bits===!0||n.clientMaxWindowBits===!1)&&delete r.client_max_window_bits,r}acceptAsClient(e){let n=e[0];if(this._options.clientNoContextTakeover===!1&&n.client_no_context_takeover)throw new Error('Unexpected parameter "client_no_context_takeover"');if(!n.client_max_window_bits)typeof this._options.clientMaxWindowBits=="number"&&(n.client_max_window_bits=this._options.clientMaxWindowBits);else if(this._options.clientMaxWindowBits===!1||typeof this._options.clientMaxWindowBits=="number"&&n.client_max_window_bits>this._options.clientMaxWindowBits)throw new Error('Unexpected or invalid parameter "client_max_window_bits"');return n}normalizeParams(e){return e.forEach(n=>{Object.keys(n).forEach(r=>{let s=n[r];if(s.length>1)throw new Error(`Parameter "${r}" must have only a single value`);if(s=s[0],r==="client_max_window_bits"){if(s!==!0){let i=+s;if(!Number.isInteger(i)||i<8||i>15)throw new TypeError(`Invalid value for parameter "${r}": ${s}`);s=i}else if(!this._isServer)throw new TypeError(`Invalid value for parameter "${r}": ${s}`)}else if(r==="server_max_window_bits"){let i=+s;if(!Number.isInteger(i)||i<8||i>15)throw new TypeError(`Invalid value for parameter "${r}": ${s}`);s=i}else if(r==="client_no_context_takeover"||r==="server_no_context_takeover"){if(s!==!0)throw new TypeError(`Invalid value for parameter "${r}": ${s}`)}else throw new Error(`Unknown parameter "${r}"`);n[r]=s})}),e}decompress(e,n,r){xr.add(s=>{this._decompress(e,n,(i,o)=>{s(),r(i,o)})})}compress(e,n,r){xr.add(s=>{this._compress(e,n,(i,o)=>{s(),r(i,o)})})}_decompress(e,n,r){let s=this._isServer?"client":"server";if(!this._inflate){let i=`${s}_max_window_bits`,o=typeof this.params[i]!="number"?Ln.Z_DEFAULT_WINDOWBITS:this.params[i];this._inflate=Ln.createInflateRaw({...this._options.zlibInflateOptions,windowBits:o}),this._inflate[Ir]=this,this._inflate[ht]=0,this._inflate[xt]=[],this._inflate.on("error",Hh),this._inflate.on("data",vu)}this._inflate[Zt]=r,this._inflate.write(e),n&&this._inflate.write(zh),this._inflate.flush(()=>{let i=this._inflate[Kt];if(i){this._inflate.close(),this._inflate=null,r(i);return}let o=xu.concat(this._inflate[xt],this._inflate[ht]);this._inflate._readableState.endEmitted?(this._inflate.close(),this._inflate=null):(this._inflate[ht]=0,this._inflate[xt]=[],n&&this.params[`${s}_no_context_takeover`]&&this._inflate.reset()),r(null,o)})}_compress(e,n,r){let s=this._isServer?"server":"client";if(!this._deflate){let i=`${s}_max_window_bits`,o=typeof this.params[i]!="number"?Ln.Z_DEFAULT_WINDOWBITS:this.params[i];this._deflate=Ln.createDeflateRaw({...this._options.zlibDeflateOptions,windowBits:o}),this._deflate[ht]=0,this._deflate[xt]=[],this._deflate.on("data",Qh)}this._deflate[Zt]=r,this._deflate.write(e),this._deflate.flush(Ln.Z_SYNC_FLUSH,()=>{if(!this._deflate)return;let i=xu.concat(this._deflate[xt],this._deflate[ht]);n&&(i=new Wh(i.buffer,i.byteOffset,i.length-4)),this._deflate[Zt]=null,this._deflate[ht]=0,this._deflate[xt]=[],n&&this.params[`${s}_no_context_takeover`]&&this._deflate.reset(),r(null,i)})}};wu.exports=Ki;function Qh(t){this[xt].push(t),this[ht]+=t.length}function vu(t){if(this[ht]+=t.length,this[Ir]._maxPayload<1||this[ht]<=this[Ir]._maxPayload){this[xt].push(t);return}this[Kt]=new RangeError("Max payload size exceeded"),this[Kt].code="WS_ERR_UNSUPPORTED_MESSAGE_LENGTH",this[Kt][Iu]=1009,this.removeListener("data",vu),this.reset()}function Hh(t){if(this[Ir]._inflate=null,this[Kt]){this[Zt](this[Kt]);return}t[Iu]=1007,this[Zt](t)}});var Jt=p((UT,vr)=>{"use strict";var{isUtf8:Nu}=B("buffer"),{hasBlob:Zh}=dt(),Kh=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,0,0,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0];function Yh(t){return t>=1e3&&t<=1014&&t!==1004&&t!==1005&&t!==1006||t>=3e3&&t<=4999}function Yi(t){let e=t.length,n=0;for(;n<e;)if((t[n]&128)===0)n++;else if((t[n]&224)===192){if(n+1===e||(t[n+1]&192)!==128||(t[n]&254)===192)return!1;n+=2}else if((t[n]&240)===224){if(n+2>=e||(t[n+1]&192)!==128||(t[n+2]&192)!==128||t[n]===224&&(t[n+1]&224)===128||t[n]===237&&(t[n+1]&224)===160)return!1;n+=3}else if((t[n]&248)===240){if(n+3>=e||(t[n+1]&192)!==128||(t[n+2]&192)!==128||(t[n+3]&192)!==128||t[n]===240&&(t[n+1]&240)===128||t[n]===244&&t[n+1]>143||t[n]>244)return!1;n+=4}else return!1;return!0}function Jh(t){return Zh&&typeof t=="object"&&typeof t.arrayBuffer=="function"&&typeof t.type=="string"&&typeof t.stream=="function"&&(t[Symbol.toStringTag]==="Blob"||t[Symbol.toStringTag]==="File")}vr.exports={isBlob:Jh,isValidStatusCode:Yh,isValidUTF8:Yi,tokenChars:Kh};if(Nu)vr.exports.isValidUTF8=function(t){return t.length<24?Yi(t):Nu(t)};else if(!process.env.WS_NO_UTF_8_VALIDATE)try{let t=B("utf-8-validate");vr.exports.isValidUTF8=function(e){return e.length<32?Yi(e):t(e)}}catch{}});var ro=p((jT,Du)=>{"use strict";var{Writable:ep}=B("stream"),Cu=Yt(),{BINARY_TYPES:tp,EMPTY_BUFFER:Ou,kStatusCode:np,kWebSocket:rp}=dt(),{concat:Ji,toArrayBuffer:sp,unmask:ip}=Fn(),{isValidStatusCode:op,isValidUTF8:Ru}=Jt(),wr=Buffer[Symbol.species],je=0,ku=1,Bu=2,qu=3,eo=4,to=5,Nr=6,no=class extends ep{constructor(e={}){super(),this._allowSynchronousEvents=e.allowSynchronousEvents!==void 0?e.allowSynchronousEvents:!0,this._binaryType=e.binaryType||tp[0],this._extensions=e.extensions||{},this._isServer=!!e.isServer,this._maxBufferedChunks=e.maxBufferedChunks|0,this._maxFragments=e.maxFragments|0,this._maxPayload=e.maxPayload|0,this._skipUTF8Validation=!!e.skipUTF8Validation,this[rp]=void 0,this._bufferedBytes=0,this._buffers=[],this._compressed=!1,this._payloadLength=0,this._mask=void 0,this._fragmented=0,this._masked=!1,this._fin=!1,this._opcode=0,this._totalPayloadLength=0,this._messageLength=0,this._numFragments=0,this._fragments=[],this._errored=!1,this._loop=!1,this._state=je}_write(e,n,r){if(this._opcode===8&&this._state==je)return r();if(this._maxBufferedChunks>0&&this._buffers.length>=this._maxBufferedChunks){r(this.createError(RangeError,"Too many buffered chunks",!1,1008,"WS_ERR_TOO_MANY_BUFFERED_PARTS"));return}this._bufferedBytes+=e.length,this._buffers.push(e),this.startLoop(r)}consume(e){if(this._bufferedBytes-=e,e===this._buffers[0].length)return this._buffers.shift();if(e<this._buffers[0].length){let r=this._buffers[0];return this._buffers[0]=new wr(r.buffer,r.byteOffset+e,r.length-e),new wr(r.buffer,r.byteOffset,e)}let n=Buffer.allocUnsafe(e);do{let r=this._buffers[0],s=n.length-e;e>=r.length?n.set(this._buffers.shift(),s):(n.set(new Uint8Array(r.buffer,r.byteOffset,e),s),this._buffers[0]=new wr(r.buffer,r.byteOffset+e,r.length-e)),e-=r.length}while(e>0);return n}startLoop(e){this._loop=!0;do switch(this._state){case je:this.getInfo(e);break;case ku:this.getPayloadLength16(e);break;case Bu:this.getPayloadLength64(e);break;case qu:this.getMask();break;case eo:this.getData(e);break;case to:case Nr:this._loop=!1;return}while(this._loop);this._errored||e()}getInfo(e){if(this._bufferedBytes<2){this._loop=!1;return}let n=this.consume(2);if((n[0]&48)!==0){let s=this.createError(RangeError,"RSV2 and RSV3 must be clear",!0,1002,"WS_ERR_UNEXPECTED_RSV_2_3");e(s);return}let r=(n[0]&64)===64;if(r&&!this._extensions[Cu.extensionName]){let s=this.createError(RangeError,"RSV1 must be clear",!0,1002,"WS_ERR_UNEXPECTED_RSV_1");e(s);return}if(this._fin=(n[0]&128)===128,this._opcode=n[0]&15,this._payloadLength=n[1]&127,this._opcode===0){if(r){let s=this.createError(RangeError,"RSV1 must be clear",!0,1002,"WS_ERR_UNEXPECTED_RSV_1");e(s);return}if(!this._fragmented){let s=this.createError(RangeError,"invalid opcode 0",!0,1002,"WS_ERR_INVALID_OPCODE");e(s);return}this._opcode=this._fragmented}else if(this._opcode===1||this._opcode===2){if(this._fragmented){let s=this.createError(RangeError,`invalid opcode ${this._opcode}`,!0,1002,"WS_ERR_INVALID_OPCODE");e(s);return}this._compressed=r}else if(this._opcode>7&&this._opcode<11){if(!this._fin){let s=this.createError(RangeError,"FIN must be set",!0,1002,"WS_ERR_EXPECTED_FIN");e(s);return}if(r){let s=this.createError(RangeError,"RSV1 must be clear",!0,1002,"WS_ERR_UNEXPECTED_RSV_1");e(s);return}if(this._payloadLength>125||this._opcode===8&&this._payloadLength===1){let s=this.createError(RangeError,`invalid payload length ${this._payloadLength}`,!0,1002,"WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH");e(s);return}}else{let s=this.createError(RangeError,`invalid opcode ${this._opcode}`,!0,1002,"WS_ERR_INVALID_OPCODE");e(s);return}if(!this._fin&&!this._fragmented&&(this._fragmented=this._opcode),this._masked=(n[1]&128)===128,this._isServer){if(!this._masked){let s=this.createError(RangeError,"MASK must be set",!0,1002,"WS_ERR_EXPECTED_MASK");e(s);return}}else if(this._masked){let s=this.createError(RangeError,"MASK must be clear",!0,1002,"WS_ERR_UNEXPECTED_MASK");e(s);return}this._payloadLength===126?this._state=ku:this._payloadLength===127?this._state=Bu:this.haveLength(e)}getPayloadLength16(e){if(this._bufferedBytes<2){this._loop=!1;return}this._payloadLength=this.consume(2).readUInt16BE(0),this.haveLength(e)}getPayloadLength64(e){if(this._bufferedBytes<8){this._loop=!1;return}let n=this.consume(8),r=n.readUInt32BE(0);if(r>Math.pow(2,21)-1){let s=this.createError(RangeError,"Unsupported WebSocket frame: payload length > 2^53 - 1",!1,1009,"WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH");e(s);return}this._payloadLength=r*Math.pow(2,32)+n.readUInt32BE(4),this.haveLength(e)}haveLength(e){if(this._payloadLength&&this._opcode<8&&(this._totalPayloadLength+=this._payloadLength,this._totalPayloadLength>this._maxPayload&&this._maxPayload>0)){let n=this.createError(RangeError,"Max payload size exceeded",!1,1009,"WS_ERR_UNSUPPORTED_MESSAGE_LENGTH");e(n);return}this._masked?this._state=qu:this._state=eo}getMask(){if(this._bufferedBytes<4){this._loop=!1;return}this._mask=this.consume(4),this._state=eo}getData(e){let n=Ou;if(this._payloadLength){if(this._bufferedBytes<this._payloadLength){this._loop=!1;return}n=this.consume(this._payloadLength),this._masked&&(this._mask[0]|this._mask[1]|this._mask[2]|this._mask[3])!==0&&ip(n,this._mask)}if(this._opcode>7){this.controlMessage(n,e);return}if(this._maxFragments>0&&++this._numFragments>this._maxFragments){let r=this.createError(RangeError,"Too many message fragments",!1,1008,"WS_ERR_TOO_MANY_BUFFERED_PARTS");e(r);return}if(this._compressed){this._state=to,this.decompress(n,e);return}n.length&&(this._messageLength=this._totalPayloadLength,this._fragments.push(n)),this.dataMessage(e)}decompress(e,n){this._extensions[Cu.extensionName].decompress(e,this._fin,(s,i)=>{if(s)return n(s);if(i.length){if(this._messageLength+=i.length,this._messageLength>this._maxPayload&&this._maxPayload>0){let o=this.createError(RangeError,"Max payload size exceeded",!1,1009,"WS_ERR_UNSUPPORTED_MESSAGE_LENGTH");n(o);return}this._fragments.push(i)}this.dataMessage(n),this._state===je&&this.startLoop(n)})}dataMessage(e){if(!this._fin){this._state=je;return}let n=this._messageLength,r=this._fragments;if(this._totalPayloadLength=0,this._messageLength=0,this._fragmented=0,this._numFragments=0,this._fragments=[],this._opcode===2){let s;this._binaryType==="nodebuffer"?s=Ji(r,n):this._binaryType==="arraybuffer"?s=sp(Ji(r,n)):this._binaryType==="blob"?s=new Blob(r):s=r,this._allowSynchronousEvents?(this.emit("message",s,!0),this._state=je):(this._state=Nr,setImmediate(()=>{this.emit("message",s,!0),this._state=je,this.startLoop(e)}))}else{let s=Ji(r,n);if(!this._skipUTF8Validation&&!Ru(s)){let i=this.createError(Error,"invalid UTF-8 sequence",!0,1007,"WS_ERR_INVALID_UTF8");e(i);return}this._state===to||this._allowSynchronousEvents?(this.emit("message",s,!1),this._state=je):(this._state=Nr,setImmediate(()=>{this.emit("message",s,!1),this._state=je,this.startLoop(e)}))}}controlMessage(e,n){if(this._opcode===8){if(e.length===0)this._loop=!1,this.emit("conclude",1005,Ou),this.end();else{let r=e.readUInt16BE(0);if(!op(r)){let i=this.createError(RangeError,`invalid status code ${r}`,!0,1002,"WS_ERR_INVALID_CLOSE_CODE");n(i);return}let s=new wr(e.buffer,e.byteOffset+2,e.length-2);if(!this._skipUTF8Validation&&!Ru(s)){let i=this.createError(Error,"invalid UTF-8 sequence",!0,1007,"WS_ERR_INVALID_UTF8");n(i);return}this._loop=!1,this.emit("conclude",r,s),this.end()}this._state=je;return}this._allowSynchronousEvents?(this.emit(this._opcode===9?"ping":"pong",e),this._state=je):(this._state=Nr,setImmediate(()=>{this.emit(this._opcode===9?"ping":"pong",e),this._state=je,this.startLoop(n)}))}createError(e,n,r,s,i){this._loop=!1,this._errored=!0;let o=new e(r?`Invalid WebSocket frame: ${n}`:n);return Error.captureStackTrace(o,this.createError),o.code=i,o[np]=s,o}};Du.exports=no});var oo=p((VT,Fu)=>{"use strict";var{Duplex:$T}=B("stream"),{randomFillSync:ap}=B("crypto"),{types:{isUint8Array:cp}}=B("util"),Pu=Yt(),{EMPTY_BUFFER:up,kWebSocket:lp,NOOP:fp}=dt(),{isBlob:en,isValidStatusCode:dp}=Jt(),{mask:Au,toBuffer:Pt}=Fn(),$e=Symbol("kByteLength"),hp=Buffer.alloc(4),Cr=8*1024,At,tn=Cr,ze=0,pp=1,mp=2,so=class t{constructor(e,n,r){this._extensions=n||{},r&&(this._generateMask=r,this._maskBuffer=Buffer.alloc(4)),this._socket=e,this._firstFragment=!0,this._compress=!1,this._bufferedBytes=0,this._queue=[],this._state=ze,this.onerror=fp,this[lp]=void 0}static frame(e,n){let r,s=!1,i=2,o=!1;n.mask&&(r=n.maskBuffer||hp,n.generateMask?n.generateMask(r):(tn===Cr&&(At===void 0&&(At=Buffer.alloc(Cr)),ap(At,0,Cr),tn=0),r[0]=At[tn++],r[1]=At[tn++],r[2]=At[tn++],r[3]=At[tn++]),o=(r[0]|r[1]|r[2]|r[3])===0,i=6);let a;typeof e=="string"?(!n.mask||o)&&n[$e]!==void 0?a=n[$e]:(e=Buffer.from(e),a=e.length):(a=e.length,s=n.mask&&n.readOnly&&!o);let c=a;a>=65536?(i+=8,c=127):a>125&&(i+=2,c=126);let u=Buffer.allocUnsafe(s?a+i:i);return u[0]=n.fin?n.opcode|128:n.opcode,n.rsv1&&(u[0]|=64),u[1]=c,c===126?u.writeUInt16BE(a,2):c===127&&(u[2]=u[3]=0,u.writeUIntBE(a,4,6)),n.mask?(u[1]|=128,u[i-4]=r[0],u[i-3]=r[1],u[i-2]=r[2],u[i-1]=r[3],o?[u,e]:s?(Au(e,r,u,i,a),[u]):(Au(e,r,e,0,a),[u,e])):[u,e]}close(e,n,r,s){let i;if(e===void 0)i=up;else{if(typeof e!="number"||!dp(e))throw new TypeError("First argument must be a valid error code number");if(n===void 0||!n.length)i=Buffer.allocUnsafe(2),i.writeUInt16BE(e,0);else{let a=Buffer.byteLength(n);if(a>123)throw new RangeError("The message must not be greater than 123 bytes");if(i=Buffer.allocUnsafe(2+a),i.writeUInt16BE(e,0),typeof n=="string")i.write(n,2);else if(cp(n))i.set(n,2);else throw new TypeError("Second argument must be a string or a Uint8Array")}}let o={[$e]:i.length,fin:!0,generateMask:this._generateMask,mask:r,maskBuffer:this._maskBuffer,opcode:8,readOnly:!1,rsv1:!1};this._state!==ze?this.enqueue([this.dispatch,i,!1,o,s]):this.sendFrame(t.frame(i,o),s)}ping(e,n,r){let s,i;if(typeof e=="string"?(s=Buffer.byteLength(e),i=!1):en(e)?(s=e.size,i=!1):(e=Pt(e),s=e.length,i=Pt.readOnly),s>125)throw new RangeError("The data size must not be greater than 125 bytes");let o={[$e]:s,fin:!0,generateMask:this._generateMask,mask:n,maskBuffer:this._maskBuffer,opcode:9,readOnly:i,rsv1:!1};en(e)?this._state!==ze?this.enqueue([this.getBlobData,e,!1,o,r]):this.getBlobData(e,!1,o,r):this._state!==ze?this.enqueue([this.dispatch,e,!1,o,r]):this.sendFrame(t.frame(e,o),r)}pong(e,n,r){let s,i;if(typeof e=="string"?(s=Buffer.byteLength(e),i=!1):en(e)?(s=e.size,i=!1):(e=Pt(e),s=e.length,i=Pt.readOnly),s>125)throw new RangeError("The data size must not be greater than 125 bytes");let o={[$e]:s,fin:!0,generateMask:this._generateMask,mask:n,maskBuffer:this._maskBuffer,opcode:10,readOnly:i,rsv1:!1};en(e)?this._state!==ze?this.enqueue([this.getBlobData,e,!1,o,r]):this.getBlobData(e,!1,o,r):this._state!==ze?this.enqueue([this.dispatch,e,!1,o,r]):this.sendFrame(t.frame(e,o),r)}send(e,n,r){let s=this._extensions[Pu.extensionName],i=n.binary?2:1,o=n.compress,a,c;typeof e=="string"?(a=Buffer.byteLength(e),c=!1):en(e)?(a=e.size,c=!1):(e=Pt(e),a=e.length,c=Pt.readOnly),this._firstFragment?(this._firstFragment=!1,o&&s&&s.params[s._isServer?"server_no_context_takeover":"client_no_context_takeover"]&&(o=a>=s._threshold),this._compress=o):(o=!1,i=0),n.fin&&(this._firstFragment=!0);let u={[$e]:a,fin:n.fin,generateMask:this._generateMask,mask:n.mask,maskBuffer:this._maskBuffer,opcode:i,readOnly:c,rsv1:o};en(e)?this._state!==ze?this.enqueue([this.getBlobData,e,this._compress,u,r]):this.getBlobData(e,this._compress,u,r):this._state!==ze?this.enqueue([this.dispatch,e,this._compress,u,r]):this.dispatch(e,this._compress,u,r)}getBlobData(e,n,r,s){this._bufferedBytes+=r[$e],this._state=mp,e.arrayBuffer().then(i=>{if(this._socket.destroyed){let a=new Error("The socket was closed while the blob was being read");process.nextTick(io,this,a,s);return}this._bufferedBytes-=r[$e];let o=Pt(i);n?this.dispatch(o,n,r,s):(this._state=ze,this.sendFrame(t.frame(o,r),s),this.dequeue())}).catch(i=>{process.nextTick(_p,this,i,s)})}dispatch(e,n,r,s){if(!n){this.sendFrame(t.frame(e,r),s);return}let i=this._extensions[Pu.extensionName];this._bufferedBytes+=r[$e],this._state=pp,i.compress(e,r.fin,(o,a)=>{if(this._socket.destroyed){let c=new Error("The socket was closed while data was being compressed");io(this,c,s);return}this._bufferedBytes-=r[$e],this._state=ze,r.readOnly=!1,this.sendFrame(t.frame(a,r),s),this.dequeue()})}dequeue(){for(;this._state===ze&&this._queue.length;){let e=this._queue.shift();this._bufferedBytes-=e[3][$e],Reflect.apply(e[0],this,e.slice(1))}}enqueue(e){this._bufferedBytes+=e[3][$e],this._queue.push(e)}sendFrame(e,n){e.length===2?(this._socket.cork(),this._socket.write(e[0]),this._socket.write(e[1],n),this._socket.uncork()):this._socket.write(e[0],n)}};Fu.exports=so;function io(t,e,n){typeof n=="function"&&n(e);for(let r=0;r<t._queue.length;r++){let s=t._queue[r],i=s[s.length-1];typeof i=="function"&&i(e)}}function _p(t,e,n){io(t,e,n),t.onerror(e)}});var Wu=p((GT,Xu)=>{"use strict";var{kForOnEventAttribute:Mn,kListener:ao}=dt(),Lu=Symbol("kCode"),Mu=Symbol("kData"),Uu=Symbol("kError"),ju=Symbol("kMessage"),$u=Symbol("kReason"),nn=Symbol("kTarget"),Vu=Symbol("kType"),Gu=Symbol("kWasClean"),pt=class{constructor(e){this[nn]=null,this[Vu]=e}get target(){return this[nn]}get type(){return this[Vu]}};Object.defineProperty(pt.prototype,"target",{enumerable:!0});Object.defineProperty(pt.prototype,"type",{enumerable:!0});var Ft=class extends pt{constructor(e,n={}){super(e),this[Lu]=n.code===void 0?0:n.code,this[$u]=n.reason===void 0?"":n.reason,this[Gu]=n.wasClean===void 0?!1:n.wasClean}get code(){return this[Lu]}get reason(){return this[$u]}get wasClean(){return this[Gu]}};Object.defineProperty(Ft.prototype,"code",{enumerable:!0});Object.defineProperty(Ft.prototype,"reason",{enumerable:!0});Object.defineProperty(Ft.prototype,"wasClean",{enumerable:!0});var rn=class extends pt{constructor(e,n={}){super(e),this[Uu]=n.error===void 0?null:n.error,this[ju]=n.message===void 0?"":n.message}get error(){return this[Uu]}get message(){return this[ju]}};Object.defineProperty(rn.prototype,"error",{enumerable:!0});Object.defineProperty(rn.prototype,"message",{enumerable:!0});var Un=class extends pt{constructor(e,n={}){super(e),this[Mu]=n.data===void 0?null:n.data}get data(){return this[Mu]}};Object.defineProperty(Un.prototype,"data",{enumerable:!0});var Ep={addEventListener(t,e,n={}){for(let s of this.listeners(t))if(!n[Mn]&&s[ao]===e&&!s[Mn])return;let r;if(t==="message")r=function(i,o){let a=new Un("message",{data:o?i:i.toString()});a[nn]=this,Or(e,this,a)};else if(t==="close")r=function(i,o){let a=new Ft("close",{code:i,reason:o.toString(),wasClean:this._closeFrameReceived&&this._closeFrameSent});a[nn]=this,Or(e,this,a)};else if(t==="error")r=function(i){let o=new rn("error",{error:i,message:i.message});o[nn]=this,Or(e,this,o)};else if(t==="open")r=function(){let i=new pt("open");i[nn]=this,Or(e,this,i)};else return;r[Mn]=!!n[Mn],r[ao]=e,n.once?this.once(t,r):this.on(t,r)},removeEventListener(t,e){for(let n of this.listeners(t))if(n[ao]===e&&!n[Mn]){this.removeListener(t,n);break}}};Xu.exports={CloseEvent:Ft,ErrorEvent:rn,Event:pt,EventTarget:Ep,MessageEvent:Un};function Or(t,e,n){typeof t=="object"&&t.handleEvent?t.handleEvent.call(t,n):t.call(e,n)}});var Rr=p((XT,zu)=>{"use strict";var{tokenChars:jn}=Jt();function et(t,e,n){t[e]===void 0?t[e]=[n]:t[e].push(n)}function bp(t){let e=Object.create(null),n=Object.create(null),r=!1,s=!1,i=!1,o,a,c=-1,u=-1,f=-1,d=0;for(;d<t.length;d++)if(u=t.charCodeAt(d),o===void 0)if(f===-1&&jn[u]===1)c===-1&&(c=d);else if(d!==0&&(u===32||u===9))f===-1&&c!==-1&&(f=d);else if(u===59||u===44){if(c===-1)throw new SyntaxError(`Unexpected character at index ${d}`);f===-1&&(f=d);let _=t.slice(c,f);u===44?(et(e,_,n),n=Object.create(null)):o=_,c=f=-1}else throw new SyntaxError(`Unexpected character at index ${d}`);else if(a===void 0)if(f===-1&&jn[u]===1)c===-1&&(c=d);else if(u===32||u===9)f===-1&&c!==-1&&(f=d);else if(u===59||u===44){if(c===-1)throw new SyntaxError(`Unexpected character at index ${d}`);f===-1&&(f=d),et(n,t.slice(c,f),!0),u===44&&(et(e,o,n),n=Object.create(null),o=void 0),c=f=-1}else if(u===61&&c!==-1&&f===-1)a=t.slice(c,d),c=f=-1;else throw new SyntaxError(`Unexpected character at index ${d}`);else if(s){if(jn[u]!==1)throw new SyntaxError(`Unexpected character at index ${d}`);c===-1?c=d:r||(r=!0),s=!1}else if(i)if(jn[u]===1)c===-1&&(c=d);else if(u===34&&c!==-1)i=!1,f=d;else if(u===92)s=!0;else throw new SyntaxError(`Unexpected character at index ${d}`);else if(u===34&&t.charCodeAt(d-1)===61)i=!0;else if(f===-1&&jn[u]===1)c===-1&&(c=d);else if(c!==-1&&(u===32||u===9))f===-1&&(f=d);else if(u===59||u===44){if(c===-1)throw new SyntaxError(`Unexpected character at index ${d}`);f===-1&&(f=d);let _=t.slice(c,f);r&&(_=_.replace(/\\/g,""),r=!1),et(n,a,_),u===44&&(et(e,o,n),n=Object.create(null),o=void 0),a=void 0,c=f=-1}else throw new SyntaxError(`Unexpected character at index ${d}`);if(c===-1||i||u===32||u===9)throw new SyntaxError("Unexpected end of input");f===-1&&(f=d);let m=t.slice(c,f);return o===void 0?et(e,m,n):(a===void 0?et(n,m,!0):r?et(n,a,m.replace(/\\/g,"")):et(n,a,m),et(e,o,n)),e}function gp(t){return Object.keys(t).map(e=>{let n=t[e];return Array.isArray(n)||(n=[n]),n.map(r=>[e].concat(Object.keys(r).map(s=>{let i=r[s];return Array.isArray(i)||(i=[i]),i.map(o=>o===!0?s:`${s}=${o}`).join("; ")})).join("; ")).join(", ")}).join(", ")}zu.exports={format:gp,parse:bp}});var Dr=p((QT,il)=>{"use strict";var yp=B("events"),Tp=B("https"),Sp=B("http"),Zu=B("net"),xp=B("tls"),{randomBytes:Ip,createHash:vp}=B("crypto"),{Duplex:WT,Readable:zT}=B("stream"),{URL:co}=B("url"),It=Yt(),wp=ro(),Np=oo(),{isBlob:Cp}=Jt(),{BINARY_TYPES:Qu,CLOSE_TIMEOUT:Op,EMPTY_BUFFER:kr,GUID:Rp,kForOnEventAttribute:uo,kListener:kp,kStatusCode:Bp,kWebSocket:ie,NOOP:Ku}=dt(),{EventTarget:{addEventListener:qp,removeEventListener:Dp}}=Wu(),{format:Pp,parse:Ap}=Rr(),{toBuffer:Fp}=Fn(),Yu=Symbol("kAborted"),lo=[8,13],mt=["CONNECTING","OPEN","CLOSING","CLOSED"],Lp=/^[!#$%&'*+\-.0-9A-Z^_`|a-z~]+$/,V=class t extends yp{constructor(e,n,r){super(),this._binaryType=Qu[0],this._closeCode=1006,this._closeFrameReceived=!1,this._closeFrameSent=!1,this._closeMessage=kr,this._closeTimer=null,this._errorEmitted=!1,this._extensions={},this._paused=!1,this._protocol="",this._readyState=t.CONNECTING,this._receiver=null,this._sender=null,this._socket=null,e!==null?(this._bufferedAmount=0,this._isServer=!1,this._redirects=0,n===void 0?n=[]:Array.isArray(n)||(typeof n=="object"&&n!==null?(r=n,n=[]):n=[n]),Ju(this,e,n,r)):(this._autoPong=r.autoPong,this._closeTimeout=r.closeTimeout,this._isServer=!0)}get binaryType(){return this._binaryType}set binaryType(e){Qu.includes(e)&&(this._binaryType=e,this._receiver&&(this._receiver._binaryType=e))}get bufferedAmount(){return this._socket?this._socket._writableState.length+this._sender._bufferedBytes:this._bufferedAmount}get extensions(){return Object.keys(this._extensions).join()}get isPaused(){return this._paused}get onclose(){return null}get onerror(){return null}get onopen(){return null}get onmessage(){return null}get protocol(){return this._protocol}get readyState(){return this._readyState}get url(){return this._url}setSocket(e,n,r){let s=new wp({allowSynchronousEvents:r.allowSynchronousEvents,binaryType:this.binaryType,extensions:this._extensions,isServer:this._isServer,maxBufferedChunks:r.maxBufferedChunks,maxFragments:r.maxFragments,maxPayload:r.maxPayload,skipUTF8Validation:r.skipUTF8Validation}),i=new Np(e,this._extensions,r.generateMask);this._receiver=s,this._sender=i,this._socket=e,s[ie]=this,i[ie]=this,e[ie]=this,s.on("conclude",jp),s.on("drain",$p),s.on("error",Vp),s.on("message",Gp),s.on("ping",Xp),s.on("pong",Wp),i.onerror=zp,e.setTimeout&&e.setTimeout(0),e.setNoDelay&&e.setNoDelay(),n.length>0&&e.unshift(n),e.on("close",nl),e.on("data",qr),e.on("end",rl),e.on("error",sl),this._readyState=t.OPEN,this.emit("open")}emitClose(){if(!this._socket){this._readyState=t.CLOSED,this.emit("close",this._closeCode,this._closeMessage);return}this._extensions[It.extensionName]&&this._extensions[It.extensionName].cleanup(),this._receiver.removeAllListeners(),this._readyState=t.CLOSED,this.emit("close",this._closeCode,this._closeMessage)}close(e,n){if(this.readyState!==t.CLOSED){if(this.readyState===t.CONNECTING){Ae(this,this._req,"WebSocket was closed before the connection was established");return}if(this.readyState===t.CLOSING){this._closeFrameSent&&(this._closeFrameReceived||this._receiver._writableState.errorEmitted)&&this._socket.end();return}this._readyState=t.CLOSING,this._sender.close(e,n,!this._isServer,r=>{r||(this._closeFrameSent=!0,(this._closeFrameReceived||this._receiver._writableState.errorEmitted)&&this._socket.end())}),tl(this)}}pause(){this.readyState===t.CONNECTING||this.readyState===t.CLOSED||(this._paused=!0,this._socket.pause())}ping(e,n,r){if(this.readyState===t.CONNECTING)throw new Error("WebSocket is not open: readyState 0 (CONNECTING)");if(typeof e=="function"?(r=e,e=n=void 0):typeof n=="function"&&(r=n,n=void 0),typeof e=="number"&&(e=e.toString()),this.readyState!==t.OPEN){fo(this,e,r);return}n===void 0&&(n=!this._isServer),this._sender.ping(e||kr,n,r)}pong(e,n,r){if(this.readyState===t.CONNECTING)throw new Error("WebSocket is not open: readyState 0 (CONNECTING)");if(typeof e=="function"?(r=e,e=n=void 0):typeof n=="function"&&(r=n,n=void 0),typeof e=="number"&&(e=e.toString()),this.readyState!==t.OPEN){fo(this,e,r);return}n===void 0&&(n=!this._isServer),this._sender.pong(e||kr,n,r)}resume(){this.readyState===t.CONNECTING||this.readyState===t.CLOSED||(this._paused=!1,this._receiver._writableState.needDrain||this._socket.resume())}send(e,n,r){if(this.readyState===t.CONNECTING)throw new Error("WebSocket is not open: readyState 0 (CONNECTING)");if(typeof n=="function"&&(r=n,n={}),typeof e=="number"&&(e=e.toString()),this.readyState!==t.OPEN){fo(this,e,r);return}let s={binary:typeof e!="string",mask:!this._isServer,compress:!0,fin:!0,...n};this._extensions[It.extensionName]||(s.compress=!1),this._sender.send(e||kr,s,r)}terminate(){if(this.readyState!==t.CLOSED){if(this.readyState===t.CONNECTING){Ae(this,this._req,"WebSocket was closed before the connection was established");return}this._socket&&(this._readyState=t.CLOSING,this._socket.destroy())}}};Object.defineProperty(V,"CONNECTING",{enumerable:!0,value:mt.indexOf("CONNECTING")});Object.defineProperty(V.prototype,"CONNECTING",{enumerable:!0,value:mt.indexOf("CONNECTING")});Object.defineProperty(V,"OPEN",{enumerable:!0,value:mt.indexOf("OPEN")});Object.defineProperty(V.prototype,"OPEN",{enumerable:!0,value:mt.indexOf("OPEN")});Object.defineProperty(V,"CLOSING",{enumerable:!0,value:mt.indexOf("CLOSING")});Object.defineProperty(V.prototype,"CLOSING",{enumerable:!0,value:mt.indexOf("CLOSING")});Object.defineProperty(V,"CLOSED",{enumerable:!0,value:mt.indexOf("CLOSED")});Object.defineProperty(V.prototype,"CLOSED",{enumerable:!0,value:mt.indexOf("CLOSED")});["binaryType","bufferedAmount","extensions","isPaused","protocol","readyState","url"].forEach(t=>{Object.defineProperty(V.prototype,t,{enumerable:!0})});["open","error","close","message"].forEach(t=>{Object.defineProperty(V.prototype,`on${t}`,{enumerable:!0,get(){for(let e of this.listeners(t))if(e[uo])return e[kp];return null},set(e){for(let n of this.listeners(t))if(n[uo]){this.removeListener(t,n);break}typeof e=="function"&&this.addEventListener(t,e,{[uo]:!0})}})});V.prototype.addEventListener=qp;V.prototype.removeEventListener=Dp;il.exports=V;function Ju(t,e,n,r){let s={allowSynchronousEvents:!0,autoPong:!0,closeTimeout:Op,protocolVersion:lo[1],maxBufferedChunks:262144,maxFragments:16384,maxPayload:104857600,skipUTF8Validation:!1,perMessageDeflate:!0,followRedirects:!1,maxRedirects:10,...r,socketPath:void 0,hostname:void 0,protocol:void 0,timeout:void 0,method:"GET",host:void 0,path:void 0,port:void 0};if(t._autoPong=s.autoPong,t._closeTimeout=s.closeTimeout,!lo.includes(s.protocolVersion))throw new RangeError(`Unsupported protocol version: ${s.protocolVersion} (supported versions: ${lo.join(", ")})`);let i;if(e instanceof co)i=e;else try{i=new co(e)}catch{throw new SyntaxError(`Invalid URL: ${e}`)}i.protocol==="http:"?i.protocol="ws:":i.protocol==="https:"&&(i.protocol="wss:"),t._url=i.href;let o=i.protocol==="wss:",a=i.protocol==="ws+unix:",c;if(i.protocol!=="ws:"&&!o&&!a?c=`The URL's protocol must be one of "ws:", "wss:", "http:", "https:", or "ws+unix:"`:a&&!i.pathname?c="The URL's pathname is empty":i.hash&&(c="The URL contains a fragment identifier"),c){let b=new SyntaxError(c);if(t._redirects===0)throw b;Br(t,b);return}let u=o?443:80,f=Ip(16).toString("base64"),d=o?Tp.request:Sp.request,m=new Set,_;if(s.createConnection=s.createConnection||(o?Up:Mp),s.defaultPort=s.defaultPort||u,s.port=i.port||u,s.host=i.hostname.startsWith("[")?i.hostname.slice(1,-1):i.hostname,s.headers={...s.headers,"Sec-WebSocket-Version":s.protocolVersion,"Sec-WebSocket-Key":f,Connection:"Upgrade",Upgrade:"websocket"},s.path=i.pathname+i.search,s.timeout=s.handshakeTimeout,s.perMessageDeflate&&(_=new It({...s.perMessageDeflate,isServer:!1,maxPayload:s.maxPayload}),s.headers["Sec-WebSocket-Extensions"]=Pp({[It.extensionName]:_.offer()})),n.length){for(let b of n){if(typeof b!="string"||!Lp.test(b)||m.has(b))throw new SyntaxError("An invalid or duplicated subprotocol was specified");m.add(b)}s.headers["Sec-WebSocket-Protocol"]=n.join(",")}if(s.origin&&(s.protocolVersion<13?s.headers["Sec-WebSocket-Origin"]=s.origin:s.headers.Origin=s.origin),(i.username||i.password)&&(s.auth=`${i.username}:${i.password}`),a){let b=s.path.split(":");s.socketPath=b[0],s.path=b[1]}let y;if(s.followRedirects){if(t._redirects===0){t._originalIpc=a,t._originalSecure=o,t._originalHostOrSocketPath=a?s.socketPath:i.host;let b=r&&r.headers;if(r={...r,headers:{}},b)for(let[g,w]of Object.entries(b))r.headers[g.toLowerCase()]=w}else if(t.listenerCount("redirect")===0){let b=a?t._originalIpc?s.socketPath===t._originalHostOrSocketPath:!1:t._originalIpc?!1:i.host===t._originalHostOrSocketPath;(!b||t._originalSecure&&!o)&&(delete s.headers.authorization,delete s.headers.cookie,b||delete s.headers.host,s.auth=void 0)}s.auth&&!r.headers.authorization&&(r.headers.authorization="Basic "+Buffer.from(s.auth).toString("base64")),y=t._req=d(s),t._redirects&&t.emit("redirect",t.url,y)}else y=t._req=d(s);s.timeout&&y.on("timeout",()=>{Ae(t,y,"Opening handshake has timed out")}),y.on("error",b=>{y===null||y[Yu]||(y=t._req=null,Br(t,b))}),y.on("response",b=>{let g=b.headers.location,w=b.statusCode;if(g&&s.followRedirects&&w>=300&&w<400){if(++t._redirects>s.maxRedirects){Ae(t,y,"Maximum redirects exceeded");return}y.abort();let $;try{$=new co(g,e)}catch{let Y=new SyntaxError(`Invalid URL: ${g}`);Br(t,Y);return}Ju(t,$,n,r)}else t.emit("unexpected-response",y,b)||Ae(t,y,`Unexpected server response: ${b.statusCode}`)}),y.on("upgrade",(b,g,w)=>{if(t.emit("upgrade",b),t.readyState!==V.CONNECTING)return;y=t._req=null;let $=b.headers.upgrade;if($===void 0||$.toLowerCase()!=="websocket"){Ae(t,g,"Invalid Upgrade header");return}let Te=vp("sha1").update(f+Rp).digest("base64");if(b.headers["sec-websocket-accept"]!==Te){Ae(t,g,"Invalid Sec-WebSocket-Accept header");return}let Y=b.headers["sec-websocket-protocol"],Ue;if(Y!==void 0?m.size?m.has(Y)||(Ue="Server sent an invalid subprotocol"):Ue="Server sent a subprotocol but none was requested":m.size&&(Ue="Server sent no subprotocol"),Ue){Ae(t,g,Ue);return}Y&&(t._protocol=Y);let fe=b.headers["sec-websocket-extensions"];if(fe!==void 0){if(!_){Ae(t,g,"Server sent a Sec-WebSocket-Extensions header but no extension was requested");return}let W;try{W=Ap(fe)}catch{Ae(t,g,"Invalid Sec-WebSocket-Extensions header");return}let E=Object.keys(W);if(E.length!==1||E[0]!==It.extensionName){Ae(t,g,"Server indicated an extension that was not requested");return}try{_.accept(W[It.extensionName])}catch{Ae(t,g,"Invalid Sec-WebSocket-Extensions header");return}t._extensions[It.extensionName]=_}t.setSocket(g,w,{allowSynchronousEvents:s.allowSynchronousEvents,generateMask:s.generateMask,maxBufferedChunks:s.maxBufferedChunks,maxFragments:s.maxFragments,maxPayload:s.maxPayload,skipUTF8Validation:s.skipUTF8Validation})}),s.finishRequest?s.finishRequest(y,t):y.end()}function Br(t,e){t._readyState=V.CLOSING,t._errorEmitted=!0,t.emit("error",e),t.emitClose()}function Mp(t){return t.path=t.socketPath,Zu.connect(t)}function Up(t){return t.path=void 0,!t.servername&&t.servername!==""&&(t.servername=Zu.isIP(t.host)?"":t.host),xp.connect(t)}function Ae(t,e,n){t._readyState=V.CLOSING;let r=new Error(n);Error.captureStackTrace(r,Ae),e.setHeader?(e[Yu]=!0,e.abort(),e.socket&&!e.socket.destroyed&&e.socket.destroy(),process.nextTick(Br,t,r)):(e.destroy(r),e.once("error",t.emit.bind(t,"error")),e.once("close",t.emitClose.bind(t)))}function fo(t,e,n){if(e){let r=Cp(e)?e.size:Fp(e).length;t._socket?t._sender._bufferedBytes+=r:t._bufferedAmount+=r}if(n){let r=new Error(`WebSocket is not open: readyState ${t.readyState} (${mt[t.readyState]})`);process.nextTick(n,r)}}function jp(t,e){let n=this[ie];n._closeFrameReceived=!0,n._closeMessage=e,n._closeCode=t,n._socket[ie]!==void 0&&(n._socket.removeListener("data",qr),process.nextTick(el,n._socket),t===1005?n.close():n.close(t,e))}function $p(){let t=this[ie];t.isPaused||t._socket.resume()}function Vp(t){let e=this[ie];e._socket[ie]!==void 0&&(e._socket.removeListener("data",qr),process.nextTick(el,e._socket),e.close(t[Bp])),e._errorEmitted||(e._errorEmitted=!0,e.emit("error",t))}function Hu(){this[ie].emitClose()}function Gp(t,e){this[ie].emit("message",t,e)}function Xp(t){let e=this[ie];e._autoPong&&e.pong(t,!this._isServer,Ku),e.emit("ping",t)}function Wp(t){this[ie].emit("pong",t)}function el(t){t.resume()}function zp(t){let e=this[ie];e.readyState!==V.CLOSED&&(e.readyState===V.OPEN&&(e._readyState=V.CLOSING,tl(e)),this._socket.end(),e._errorEmitted||(e._errorEmitted=!0,e.emit("error",t)))}function tl(t){t._closeTimer=setTimeout(t._socket.destroy.bind(t._socket),t._closeTimeout)}function nl(){let t=this[ie];if(this.removeListener("close",nl),this.removeListener("data",qr),this.removeListener("end",rl),t._readyState=V.CLOSING,!this._readableState.endEmitted&&!t._closeFrameReceived&&!t._receiver._writableState.errorEmitted&&this._readableState.length!==0){let e=this.read(this._readableState.length);t._receiver.write(e)}t._receiver.end(),this[ie]=void 0,clearTimeout(t._closeTimer),t._receiver._writableState.finished||t._receiver._writableState.errorEmitted?t.emitClose():(t._receiver.on("error",Hu),t._receiver.on("finish",Hu))}function qr(t){this[ie]._receiver.write(t)||this.pause()}function rl(){let t=this[ie];t._readyState=V.CLOSING,t._receiver.end(),this.end()}function sl(){let t=this[ie];this.removeListener("error",sl),this.on("error",Ku),t&&(t._readyState=V.CLOSING,this.destroy())}});var ul=p((ZT,cl)=>{"use strict";var HT=Dr(),{Duplex:Qp}=B("stream");function ol(t){t.emit("close")}function Hp(){!this.destroyed&&this._writableState.finished&&this.destroy()}function al(t){this.removeListener("error",al),this.destroy(),this.listenerCount("error")===0&&this.emit("error",t)}function Zp(t,e){let n=!0,r=new Qp({...e,autoDestroy:!1,emitClose:!1,objectMode:!1,writableObjectMode:!1});return t.on("message",function(i,o){let a=!o&&r._readableState.objectMode?i.toString():i;r.push(a)||t.pause()}),t.once("error",function(i){r.destroyed||(n=!1,r.destroy(i))}),t.once("close",function(){r.destroyed||r.push(null)}),r._destroy=function(s,i){if(t.readyState===t.CLOSED){i(s),process.nextTick(ol,r);return}let o=!1;t.once("error",function(c){o=!0,i(c)}),t.once("close",function(){o||i(s),process.nextTick(ol,r)}),n&&t.terminate()},r._final=function(s){if(t.readyState===t.CONNECTING){t.once("open",function(){r._final(s)});return}t._socket!==null&&(t._socket._writableState.finished?(s(),r._readableState.endEmitted&&r.destroy()):(t._socket.once("finish",function(){s()}),t.close()))},r._read=function(){t.isPaused&&t.resume()},r._write=function(s,i,o){if(t.readyState===t.CONNECTING){t.once("open",function(){r._write(s,i,o)});return}t.send(s,o)},r.on("end",Hp),r.on("error",al),r}cl.exports=Zp});var ho=p((KT,ll)=>{"use strict";var{tokenChars:Kp}=Jt();function Yp(t){let e=new Set,n=-1,r=-1,s=0;for(s;s<t.length;s++){let o=t.charCodeAt(s);if(r===-1&&Kp[o]===1)n===-1&&(n=s);else if(s!==0&&(o===32||o===9))r===-1&&n!==-1&&(r=s);else if(o===44){if(n===-1)throw new SyntaxError(`Unexpected character at index ${s}`);r===-1&&(r=s);let a=t.slice(n,r);if(e.has(a))throw new SyntaxError(`The "${a}" subprotocol is duplicated`);e.add(a),n=r=-1}else throw new SyntaxError(`Unexpected character at index ${s}`)}if(n===-1||r!==-1)throw new SyntaxError("Unexpected end of input");let i=t.slice(n,s);if(e.has(i))throw new SyntaxError(`The "${i}" subprotocol is duplicated`);return e.add(i),e}ll.exports={parse:Yp}});var El=p((JT,_l)=>{"use strict";var Jp=B("events"),Pr=B("http"),{Duplex:YT}=B("stream"),{createHash:em}=B("crypto"),fl=Rr(),Lt=Yt(),tm=ho(),nm=Dr(),{CLOSE_TIMEOUT:rm,GUID:sm,kWebSocket:im}=dt(),om=/^[+/0-9A-Za-z]{22}==$/,dl=0,hl=1,ml=2,po=class extends Jp{constructor(e,n){if(super(),e={allowSynchronousEvents:!0,autoPong:!0,maxBufferedChunks:256*1024,maxFragments:16*1024,maxPayload:100*1024*1024,skipUTF8Validation:!1,perMessageDeflate:!1,handleProtocols:null,clientTracking:!0,closeTimeout:rm,verifyClient:null,noServer:!1,backlog:null,server:null,host:null,path:null,port:null,WebSocket:nm,...e},e.port==null&&!e.server&&!e.noServer||e.port!=null&&(e.server||e.noServer)||e.server&&e.noServer)throw new TypeError('One and only one of the "port", "server", or "noServer" options must be specified');if(e.port!=null?(this._server=Pr.createServer((r,s)=>{let i=Pr.STATUS_CODES[426];s.writeHead(426,{"Content-Length":i.length,"Content-Type":"text/plain"}),s.end(i)}),this._server.listen(e.port,e.host,e.backlog,n)):e.server&&(this._server=e.server),this._server){let r=this.emit.bind(this,"connection");this._removeListeners=am(this._server,{listening:this.emit.bind(this,"listening"),error:this.emit.bind(this,"error"),upgrade:(s,i,o)=>{this.handleUpgrade(s,i,o,r)}})}e.perMessageDeflate===!0&&(e.perMessageDeflate={}),e.clientTracking&&(this.clients=new Set,this._shouldEmitClose=!1),this.options=e,this._state=dl}address(){if(this.options.noServer)throw new Error('The server is operating in "noServer" mode');return this._server?this._server.address():null}close(e){if(this._state===ml){e&&this.once("close",()=>{e(new Error("The server is not running"))}),process.nextTick($n,this);return}if(e&&this.once("close",e),this._state!==hl)if(this._state=hl,this.options.noServer||this.options.server)this._server&&(this._removeListeners(),this._removeListeners=this._server=null),this.clients?this.clients.size?this._shouldEmitClose=!0:process.nextTick($n,this):process.nextTick($n,this);else{let n=this._server;this._removeListeners(),this._removeListeners=this._server=null,n.close(()=>{$n(this)})}}shouldHandle(e){if(this.options.path){let n=e.url.indexOf("?");if((n!==-1?e.url.slice(0,n):e.url)!==this.options.path)return!1}return!0}handleUpgrade(e,n,r,s){n.on("error",pl);let i=e.headers["sec-websocket-key"],o=e.headers.upgrade,a=+e.headers["sec-websocket-version"];if(e.method!=="GET"){Mt(this,e,n,405,"Invalid HTTP method");return}if(o===void 0||o.toLowerCase()!=="websocket"){Mt(this,e,n,400,"Invalid Upgrade header");return}if(i===void 0||!om.test(i)){Mt(this,e,n,400,"Missing or invalid Sec-WebSocket-Key header");return}if(a!==13&&a!==8){Mt(this,e,n,400,"Missing or invalid Sec-WebSocket-Version header",{"Sec-WebSocket-Version":"13, 8"});return}if(!this.shouldHandle(e)){Vn(n,400);return}let c=e.headers["sec-websocket-protocol"],u=new Set;if(c!==void 0)try{u=tm.parse(c)}catch{Mt(this,e,n,400,"Invalid Sec-WebSocket-Protocol header");return}let f=e.headers["sec-websocket-extensions"],d={};if(this.options.perMessageDeflate&&f!==void 0){let m=new Lt({...this.options.perMessageDeflate,isServer:!0,maxPayload:this.options.maxPayload});try{let _=fl.parse(f);_[Lt.extensionName]&&(m.accept(_[Lt.extensionName]),d[Lt.extensionName]=m)}catch{Mt(this,e,n,400,"Invalid or unacceptable Sec-WebSocket-Extensions header");return}}if(this.options.verifyClient){let m={origin:e.headers[`${a===8?"sec-websocket-origin":"origin"}`],secure:!!(e.socket.authorized||e.socket.encrypted),req:e};if(this.options.verifyClient.length===2){this.options.verifyClient(m,(_,y,b,g)=>{if(!_)return Vn(n,y||401,b,g);this.completeUpgrade(d,i,u,e,n,r,s)});return}if(!this.options.verifyClient(m))return Vn(n,401)}this.completeUpgrade(d,i,u,e,n,r,s)}completeUpgrade(e,n,r,s,i,o,a){if(!i.readable||!i.writable)return i.destroy();if(i[im])throw new Error("server.handleUpgrade() was called more than once with the same socket, possibly due to a misconfiguration");if(this._state>dl)return Vn(i,503);let u=["HTTP/1.1 101 Switching Protocols","Upgrade: websocket","Connection: Upgrade",`Sec-WebSocket-Accept: ${em("sha1").update(n+sm).digest("base64")}`],f=new this.options.WebSocket(null,void 0,this.options);if(r.size){let d=this.options.handleProtocols?this.options.handleProtocols(r,s):r.values().next().value;d&&(u.push(`Sec-WebSocket-Protocol: ${d}`),f._protocol=d)}if(e[Lt.extensionName]){let d=e[Lt.extensionName].params,m=fl.format({[Lt.extensionName]:[d]});u.push(`Sec-WebSocket-Extensions: ${m}`),f._extensions=e}this.emit("headers",u,s),i.write(u.concat(`\r
+import { createRequire as __esbuild_createRequire } from 'module'
+import { fileURLToPath as __esbuild_fileURLToPath } from 'url'
+import { dirname as __esbuild_dirname } from 'path'
+const require = __esbuild_createRequire(import.meta.url)
+const __filename = __esbuild_fileURLToPath(import.meta.url)
+const __dirname = __esbuild_dirname(__filename)
+var wi = Object.defineProperty
+var uh = Object.getOwnPropertyDescriptor
+var lh = Object.getOwnPropertyNames
+var fh = Object.prototype.hasOwnProperty
+var B = ((t) =>
+	typeof require < 'u'
+		? require
+		: typeof Proxy < 'u'
+			? new Proxy(t, { get: (e, n) => (typeof require < 'u' ? require : e)[n] })
+			: t)(function (t) {
+	if (typeof require < 'u') return require.apply(this, arguments)
+	throw Error('Dynamic require of "' + t + '" is not supported')
+})
+var q = (t, e, n) => () => {
+	if (n) throw n[0]
+	try {
+		return (t && (e = t((t = 0))), e)
+	} catch (r) {
+		throw ((n = [r]), r)
+	}
+}
+var p = (t, e) => () => {
+		try {
+			return (e || t((e = { exports: {} }).exports, e), e.exports)
+		} catch (n) {
+			throw ((e = 0), n)
+		}
+	},
+	wc = (t, e) => {
+		for (var n in e) wi(t, n, { get: e[n], enumerable: !0 })
+	},
+	dh = (t, e, n, r) => {
+		if ((e && typeof e == 'object') || typeof e == 'function')
+			for (let s of lh(e))
+				!fh.call(t, s) && s !== n && wi(t, s, { get: () => e[s], enumerable: !(r = uh(e, s)) || r.enumerable })
+		return t
+	}
+var x = (t) => dh(wi({}, '__esModule', { value: !0 }), t)
+function mr(t, e, n) {
+	;(typeof global.COMPANION_LOGGER == 'function' ? global.COMPANION_LOGGER : hh)(t, e, n)
+}
+function Ni(t) {
+	return {
+		debug: (e) => mr(t, 'debug', e),
+		info: (e) => mr(t, 'info', e),
+		warn: (e) => mr(t, 'warn', e),
+		error: (e) => mr(t, 'error', e),
+	}
+}
+var hh,
+	Ci = q(() => {
+		hh = (t, e, n) => {
+			console.log(`[${e.toUpperCase()}]${t ? ` [${t}]` : ''} ${n}`)
+		}
+	})
+var Nc = q(() => {})
+function Cc(t) {
+	let e = t
+	return !!e && typeof e == 'object' && typeof e.id == 'string' && e._isInstanceContext === !0
+}
+var Oc = q(() => {})
+var Fc,
+	Je,
+	pe,
+	Oe,
+	qi,
+	br,
+	ki,
+	Er,
+	Lc,
+	Dt,
+	Dn,
+	Bi,
+	qn,
+	_r,
+	Mc,
+	Uc,
+	Rc,
+	kc,
+	Bc,
+	Ht,
+	ph,
+	mh,
+	_h,
+	Eh,
+	qc,
+	Dc,
+	bh,
+	Oi,
+	Ri,
+	Pc,
+	Ac,
+	xe,
+	jc = q(() => {
+		for (
+			Fc = { grad: 0.9, turn: 360, rad: 360 / (2 * Math.PI) },
+				Je = function (t) {
+					return typeof t == 'string' ? t.length > 0 : typeof t == 'number'
+				},
+				pe = function (t, e, n) {
+					return (e === void 0 && (e = 0), n === void 0 && (n = Math.pow(10, e)), Math.round(n * t) / n + 0)
+				},
+				Oe = function (t, e, n) {
+					return (e === void 0 && (e = 0), n === void 0 && (n = 1), t > n ? n : t > e ? t : e)
+				},
+				qi = function (t) {
+					return (t = isFinite(t) ? t % 360 : 0) < 0 ? t + 360 : t
+				},
+				br = function (t, e) {
+					return (e === void 0 && (e = 0), pe(t, e) % 360)
+				},
+				ki = function (t) {
+					return { r: Oe(t.r, 0, 255), g: Oe(t.g, 0, 255), b: Oe(t.b, 0, 255), a: Oe(t.a) }
+				},
+				Er = function (t) {
+					return { r: pe(t.r), g: pe(t.g), b: pe(t.b), a: pe(t.a, 3) }
+				},
+				Lc = /^#([0-9a-f]{3,8})$/i,
+				Dt = function (t, e) {
+					var n = t.charCodeAt(e)
+					return (15 & n) + 9 * (n >> 6)
+				},
+				Dn = function (t, e) {
+					return (Dt(t, e) << 4) | Dt(t, e + 1)
+				},
+				Bi = [],
+				qn = 0;
+			qn < 256;
+			qn++
+		)
+			Bi.push((qn < 16 ? '0' : '') + qn.toString(16))
+		;((_r = function (t) {
+			return Bi[Oe(t, 0, 255)]
+		}),
+			(Mc = function (t) {
+				var e = t.r,
+					n = t.g,
+					r = t.b,
+					s = t.a,
+					i = Math.max(e, n, r),
+					o = i - Math.min(e, n, r),
+					a = o ? (i === e ? (n - r) / o : i === n ? 2 + (r - e) / o : 4 + (e - n) / o) : 0
+				return { h: 60 * (a < 0 ? a + 6 : a), s: i ? (o / i) * 100 : 0, v: (i / 255) * 100, a: s }
+			}),
+			(Uc = function (t) {
+				var e = t.h,
+					n = t.s,
+					r = t.v,
+					s = t.a
+				;((e = (e / 360) * 6), (n /= 100), (r /= 100))
+				var i = Math.floor(e),
+					o = r * (1 - n),
+					a = r * (1 - (e - i) * n),
+					c = r * (1 - (1 - e + i) * n),
+					u = i % 6
+				return { r: 255 * [r, a, o, o, c, r][u], g: 255 * [c, r, r, a, o, o][u], b: 255 * [o, o, c, r, r, a][u], a: s }
+			}),
+			(Rc = function (t) {
+				return { h: qi(t.h), s: Oe(t.s, 0, 100), l: Oe(t.l, 0, 100), a: Oe(t.a) }
+			}),
+			(kc = function (t) {
+				return { h: br(t.h), s: pe(t.s), l: pe(t.l), a: pe(t.a, 3) }
+			}),
+			(Bc = function (t) {
+				return Uc(
+					((n = (e = t).s),
+					{
+						h: e.h,
+						s: (n *= ((r = e.l) < 50 ? r : 100 - r) / 100) > 0 ? ((2 * n) / (r + n)) * 100 : 0,
+						v: r + n,
+						a: e.a,
+					}),
+				)
+				var e, n, r
+			}),
+			(Ht = function (t) {
+				return {
+					h: (e = Mc(t)).h,
+					s:
+						(s = ((200 - (n = e.s)) * (r = e.v)) / 100) > 0 && s < 200
+							? ((n * r) / 100 / (s <= 100 ? s : 200 - s)) * 100
+							: 0,
+					l: s / 2,
+					a: e.a,
+				}
+				var e, n, r, s
+			}),
+			(ph =
+				/^hsla?\(\s*([+-]?(?:\d*\.\d+|\d+))(deg|rad|grad|turn)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))%\s*,\s*([+-]?(?:\d*\.\d+|\d+))%\s*(?:,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i),
+			(mh =
+				/^hsla?\(\s*([+-]?(?:\d*\.\d+|\d+))(deg|rad|grad|turn)?\s+([+-]?(?:\d*\.\d+|\d+))%\s+([+-]?(?:\d*\.\d+|\d+))%\s*(?:\/\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i),
+			(_h =
+				/^rgba?\(\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*(?:,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i),
+			(Eh =
+				/^rgba?\(\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s+([+-]?(?:\d*\.\d+|\d+))(%)?\s+([+-]?(?:\d*\.\d+|\d+))(%)?\s*(?:\/\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i),
+			(qc = {
+				string: [
+					[
+						function (t) {
+							if (!Lc.test(t)) return null
+							var e = t.length
+							return e <= 5
+								? {
+										r: 17 * Dt(t, 1),
+										g: 17 * Dt(t, 2),
+										b: 17 * Dt(t, 3),
+										a: e === 5 ? pe((17 * Dt(t, 4)) / 255, 2) : 1,
+									}
+								: e === 7 || e === 9
+									? { r: Dn(t, 1), g: Dn(t, 3), b: Dn(t, 5), a: e === 9 ? pe(Dn(t, 7) / 255, 2) : 1 }
+									: null
+						},
+						'hex',
+					],
+					[
+						function (t) {
+							var e = _h.exec(t) || Eh.exec(t)
+							return e
+								? e[2] !== e[4] || e[4] !== e[6]
+									? null
+									: ki({
+											r: Number(e[1]) / (e[2] ? 100 / 255 : 1),
+											g: Number(e[3]) / (e[4] ? 100 / 255 : 1),
+											b: Number(e[5]) / (e[6] ? 100 / 255 : 1),
+											a: e[7] === void 0 ? 1 : Number(e[7]) / (e[8] ? 100 : 1),
+										})
+								: null
+						},
+						'rgb',
+					],
+					[
+						function (t) {
+							var e = ph.exec(t) || mh.exec(t)
+							if (!e) return null
+							var n,
+								r,
+								s = Rc({
+									h: ((n = e[1]), (r = e[2]), r === void 0 && (r = 'deg'), Number(n) * (Fc[r] || 1)),
+									s: Number(e[3]),
+									l: Number(e[4]),
+									a: e[5] === void 0 ? 1 : Number(e[5]) / (e[6] ? 100 : 1),
+								})
+							return Bc(s)
+						},
+						'hsl',
+					],
+				],
+				object: [
+					[
+						function (t) {
+							var e = t.r,
+								n = t.g,
+								r = t.b,
+								s = t.a,
+								i = s === void 0 ? 1 : s
+							return Je(e) && Je(n) && Je(r) ? ki({ r: Number(e), g: Number(n), b: Number(r), a: Number(i) }) : null
+						},
+						'rgb',
+					],
+					[
+						function (t) {
+							var e = t.h,
+								n = t.s,
+								r = t.l,
+								s = t.a,
+								i = s === void 0 ? 1 : s
+							if (!Je(e) || !Je(n) || !Je(r)) return null
+							var o = Rc({ h: Number(e), s: Number(n), l: Number(r), a: Number(i) })
+							return Bc(o)
+						},
+						'hsl',
+					],
+					[
+						function (t) {
+							var e = t.h,
+								n = t.s,
+								r = t.v,
+								s = t.a,
+								i = s === void 0 ? 1 : s
+							if (!Je(e) || !Je(n) || !Je(r)) return null
+							var o = (function (a) {
+								return { h: qi(a.h), s: Oe(a.s, 0, 100), v: Oe(a.v, 0, 100), a: Oe(a.a) }
+							})({ h: Number(e), s: Number(n), v: Number(r), a: Number(i) })
+							return Uc(o)
+						},
+						'hsv',
+					],
+				],
+			}),
+			(Dc = function (t, e) {
+				for (var n = 0; n < e.length; n++) {
+					var r = e[n][0](t)
+					if (r) return [r, e[n][1]]
+				}
+				return [null, void 0]
+			}),
+			(bh = function (t) {
+				return typeof t == 'string'
+					? Dc(t.trim(), qc.string)
+					: typeof t == 'object' && t !== null
+						? Dc(t, qc.object)
+						: [null, void 0]
+			}),
+			(Oi = function (t, e) {
+				var n = Ht(t)
+				return { h: n.h, s: Oe(n.s + 100 * e, 0, 100), l: n.l, a: n.a }
+			}),
+			(Ri = function (t) {
+				return (299 * t.r + 587 * t.g + 114 * t.b) / 1e3 / 255
+			}),
+			(Pc = function (t, e) {
+				var n = Ht(t)
+				return { h: n.h, s: n.s, l: Oe(n.l + 100 * e, 0, 100), a: n.a }
+			}),
+			(Ac = (function () {
+				function t(e) {
+					;((this.parsed = bh(e)[0]), (this.rgba = this.parsed || { r: 0, g: 0, b: 0, a: 1 }))
+				}
+				return (
+					(t.prototype.isValid = function () {
+						return this.parsed !== null
+					}),
+					(t.prototype.brightness = function () {
+						return pe(Ri(this.rgba), 2)
+					}),
+					(t.prototype.isDark = function () {
+						return Ri(this.rgba) < 0.5
+					}),
+					(t.prototype.isLight = function () {
+						return Ri(this.rgba) >= 0.5
+					}),
+					(t.prototype.toHex = function () {
+						return (
+							(e = Er(this.rgba)),
+							(n = e.r),
+							(r = e.g),
+							(s = e.b),
+							(o = (i = e.a) < 1 ? _r(pe(255 * i)) : ''),
+							'#' + _r(n) + _r(r) + _r(s) + o
+						)
+						var e, n, r, s, i, o
+					}),
+					(t.prototype.toRgb = function () {
+						return Er(this.rgba)
+					}),
+					(t.prototype.toRgbString = function () {
+						return (
+							(e = Er(this.rgba)),
+							(n = e.r),
+							(r = e.g),
+							(s = e.b),
+							(i = e.a) < 1
+								? 'rgba(' + n + ', ' + r + ', ' + s + ', ' + i + ')'
+								: 'rgb(' + n + ', ' + r + ', ' + s + ')'
+						)
+						var e, n, r, s, i
+					}),
+					(t.prototype.toHsl = function () {
+						return kc(Ht(this.rgba))
+					}),
+					(t.prototype.toHslString = function () {
+						return (
+							(e = kc(Ht(this.rgba))),
+							(n = e.h),
+							(r = e.s),
+							(s = e.l),
+							(i = e.a) < 1
+								? 'hsla(' + n + ', ' + r + '%, ' + s + '%, ' + i + ')'
+								: 'hsl(' + n + ', ' + r + '%, ' + s + '%)'
+						)
+						var e, n, r, s, i
+					}),
+					(t.prototype.toHsv = function () {
+						return ((e = Mc(this.rgba)), { h: br(e.h), s: pe(e.s), v: pe(e.v), a: pe(e.a, 3) })
+						var e
+					}),
+					(t.prototype.invert = function () {
+						return xe({ r: 255 - (e = this.rgba).r, g: 255 - e.g, b: 255 - e.b, a: e.a })
+						var e
+					}),
+					(t.prototype.saturate = function (e) {
+						return (e === void 0 && (e = 0.1), xe(Oi(this.rgba, e)))
+					}),
+					(t.prototype.desaturate = function (e) {
+						return (e === void 0 && (e = 0.1), xe(Oi(this.rgba, -e)))
+					}),
+					(t.prototype.grayscale = function () {
+						return xe(Oi(this.rgba, -1))
+					}),
+					(t.prototype.lighten = function (e) {
+						return (e === void 0 && (e = 0.1), xe(Pc(this.rgba, e)))
+					}),
+					(t.prototype.darken = function (e) {
+						return (e === void 0 && (e = 0.1), xe(Pc(this.rgba, -e)))
+					}),
+					(t.prototype.rotate = function (e) {
+						return (e === void 0 && (e = 15), this.hue(Ht(this.rgba).h + e))
+					}),
+					(t.prototype.alpha = function (e) {
+						return typeof e == 'number' ? xe({ r: (n = this.rgba).r, g: n.g, b: n.b, a: e }) : pe(this.rgba.a, 3)
+						var n
+					}),
+					(t.prototype.hue = function (e) {
+						var n = Ht(this.rgba)
+						return typeof e == 'number' ? xe({ h: e, s: n.s, l: n.l, a: n.a }) : br(n.h)
+					}),
+					(t.prototype.isEqual = function (e) {
+						return this.toHex() === xe(e).toHex()
+					}),
+					t
+				)
+			})()),
+			(xe = function (t) {
+				return t instanceof Ac ? t : new Ac(t)
+			}))
+	})
+function gh(t) {
+	return t
+}
+function yh(t) {}
+function Th(t, e, n, r) {
+	let s = ((t & 255) << 16) | ((e & 255) << 8) | (n & 255)
+	return (r !== void 0 && r >= 0 && r < 1 && (s += 16777216 * Math.round(255 * (1 - r))), s)
+}
+function gr(t) {
+	if (typeof t == 'number')
+		return t > 16777215
+			? { r: (t >> 16) & 255, g: (t >> 8) & 255, b: t & 255, a: (255 - ((t >> 24) & 255)) / 255 }
+			: { r: (t >> 16) & 255, g: (t >> 8) & 255, b: t & 255, a: 1 }
+	if (typeof t == 'string' && xe(t).isValid()) {
+		let e = xe(t).toRgb()
+		return { r: e.r, g: e.g, b: e.b, a: e.a }
+	} else return { r: 0, g: 0, b: 0, a: 1 }
+}
+function Sh(t) {
+	let e = gr(t)
+	return xe(`rgba(${e.r}, ${e.g}, ${e.b}, ${e.a})`).toHsl()
+}
+function xh(t) {
+	let e = gr(t)
+	return xe(`rgba(${e.r}, ${e.g}, ${e.b}, ${e.a})`).toHsv()
+}
+function Ih(t) {
+	let e = gr(t)
+	return xe(`rgba(${e.r}, ${e.g}, ${e.b}, ${e.a})`).toHex()
+}
+function vh(t) {
+	return t
+		.replaceAll(
+			'\\n',
+			`
+`,
+		)
+		.replaceAll('\\r', '\r')
+		.replaceAll('\\t', '	')
+		.replaceAll('\\f', '\f')
+		.replaceAll('\\v', '\v')
+		.replaceAll('\\b', '\b')
+		.replaceAll('\\\\', '\\')
+		.replaceAll('\\x00', '\0')
+		.replaceAll('\\x01', '')
+		.replaceAll('\\x02', '')
+		.replaceAll('\\x03', '')
+}
+function wh(t) {
+	return t
+		.replaceAll(
+			`
+`,
+			'\\n',
+		)
+		.replaceAll('\r', '\\r')
+		.replaceAll('	', '\\t')
+		.replaceAll('\f', '\\f')
+		.replaceAll('\v', '\\v')
+		.replaceAll('\b', '\\b')
+		.replaceAll('\\', '\\\\')
+		.replaceAll('\0', '\\x00')
+		.replaceAll('', '\\x01')
+		.replaceAll('', '\\x02')
+		.replaceAll('', '\\x03')
+}
+var $c = q(() => {
+	jc()
+})
+import { EventEmitter as Nh } from 'events'
+var yr,
+	Vc = q(() => {
+		yr = class extends Nh {
+			#t
+			#n
+			get handleId() {
+				return this.boundState?.handleId
+			}
+			get portNumber() {
+				return this.boundState?.portNumber
+			}
+			get boundState() {
+				if (this.#e && typeof this.#e == 'object') return this.#e
+			}
+			#e = 'pending'
+			constructor(e, n) {
+				;(super(), (this.#t = e), (this.#n = { ...n }))
+			}
+			bind(e, n, r) {
+				if (this.#e && typeof this.#e == 'object') throw new Error('Socket is already bound')
+				switch (this.#e) {
+					case 'fatalError':
+						throw new Error('Socket has encountered fatal error')
+					case 'binding':
+						throw new Error('Socket is already bound')
+					case 'closed':
+						throw new Error('Socket is closing')
+					case 'pending':
+						break
+					default:
+						throw (this.#e, new Error('Invalid socket state'))
+				}
+				;((this.#e = 'binding'),
+					r && this.on('listening', r),
+					this.#t
+						.sharedUdpSocketJoin({ family: this.#n.type, portNumber: e })
+						.then(
+							(s) => {
+								;((this.#e = { portNumber: e, handleId: s }),
+									this.#t.sharedUdpSocketHandlers.set(s, this),
+									this.emit('listening'))
+							},
+							(s) => {
+								;((this.#e = 'closed'), this.emit('error', s instanceof Error ? s : new Error(s)))
+							},
+						)
+						.catch(() => null))
+			}
+			close(e) {
+				if (!(this.#e && typeof this.#e == 'object'))
+					switch (this.#e) {
+						case 'fatalError':
+							throw new Error('Socket has encountered fatal error')
+						case 'pending':
+						case 'closed':
+						case 'binding':
+							throw new Error('Socket is not open')
+						default:
+							throw (this.#e, new Error('Invalid socket state'))
+					}
+				let n = this.#e.handleId
+				;((this.#e = 'closed'),
+					e && this.on('close', e),
+					this.#t
+						.sharedUdpSocketLeave({ handleId: n })
+						.then(
+							() => {
+								;(this.#t.sharedUdpSocketHandlers.delete(n), this.emit('close'))
+							},
+							(r) => {
+								;(this.#t.sharedUdpSocketHandlers.delete(n), this.emit('error', r instanceof Error ? r : new Error(r)))
+							},
+						)
+						.catch(() => null))
+			}
+			send(e, n, r, s, i, o) {
+				if (typeof n != 'number') throw new Error('Invalid arguments')
+				if (typeof r == 'number') {
+					if (typeof s != 'number' || typeof i != 'string') throw new Error('Invalid arguments')
+					if (o !== void 0 && typeof o != 'function') throw new Error('Invalid arguments')
+					let a = this.#r(e, n, r)
+					this.#s(a, s, i, o)
+				} else if (typeof r == 'string') {
+					if (s !== void 0 && typeof s != 'function') throw new Error('Invalid arguments')
+					let a = this.#r(e, 0, void 0)
+					this.#s(a, n, r, s)
+				} else throw new Error('Invalid arguments')
+			}
+			#r(e, n, r) {
+				let s
+				if (typeof e == 'string') s = Buffer.from(e, 'utf-8')
+				else if (Buffer.isBuffer(e)) s = e
+				else {
+					if (Array.isArray(e)) return Buffer.from(e)
+					s = Buffer.from(e.buffer, e.byteOffset, e.byteLength)
+				}
+				return s.subarray(n, r !== void 0 ? r + n : void 0)
+			}
+			#s(e, n, r, s) {
+				if (!this.#e || typeof this.#e != 'object') throw new Error('Socket is not open')
+				this.#t
+					.sharedUdpSocketSend({ handleId: this.#e.handleId, message: e, address: r, port: n })
+					.then(
+						() => {
+							s?.()
+						},
+						(i) => {
+							this.emit('error', i instanceof Error ? i : new Error(i))
+						},
+					)
+					.catch(() => null)
+			}
+			receiveSocketMessage(e) {
+				try {
+					this.emit('message', e.message, e.source)
+				} catch {}
+			}
+			receiveSocketError(e) {
+				this.#e = 'fatalError'
+				let n = this.boundState
+				n && this.#t.sharedUdpSocketHandlers.delete(n.handleId)
+				try {
+					this.emit('error', e)
+				} catch {}
+			}
+		}
+	})
+var Di,
+	Gc = q(() => {
+		Oc()
+		Ci()
+		Vc()
+		Di = class {
+			#t
+			#n
+			#e
+			get id() {
+				return this.#t.id
+			}
+			get instanceOptions() {
+				return this.#e
+			}
+			get label() {
+				return this.#t.label
+			}
+			constructor(e) {
+				if (!Cc(e) || !e._isInstanceContext)
+					throw new Error(
+						"Module instance is being constructed incorrectly. Make sure you aren't trying to do this manually",
+					)
+				;((this.#t = e),
+					(this.#n = Ni()),
+					(this.createSharedUdpSocket = this.createSharedUdpSocket.bind(this)),
+					(this.#e = { disableVariableValidation: !1, disableNewConfigLayout: !1 }),
+					this.log('debug', 'Initializing'))
+			}
+			saveConfig(e, n) {
+				this.#t.saveConfig(e, n)
+			}
+			setActionDefinitions(e) {
+				this.#t.setActionDefinitions(e)
+			}
+			setFeedbackDefinitions(e) {
+				this.#t.setFeedbackDefinitions(e)
+			}
+			setPresetDefinitions(e, n) {
+				this.#t.setPresetDefinitions(e, n)
+			}
+			setCompositeElementDefinitions(e) {
+				this.#t.setCompositeElementDefinitions(e)
+			}
+			setVariableDefinitions(e) {
+				if (Array.isArray(e)) throw new Error('Variable definitions should be an object, not an array')
+				this.#t.setVariableDefinitions(e)
+			}
+			setVariableValues(e) {
+				this.#t.setVariableValues(e)
+			}
+			getVariableValue(e) {
+				return this.#t.getVariableValue(e)
+			}
+			checkAllFeedbacks() {
+				this.#t.checkAllFeedbacks()
+			}
+			checkFeedbacks(e, ...n) {
+				this.#t.checkFeedbacks([e, ...n])
+			}
+			checkFeedbacksById(...e) {
+				this.#t.checkFeedbacksById(e)
+			}
+			subscribeActions(...e) {
+				this.#t.subscribeActions(e)
+			}
+			unsubscribeActions(...e) {
+				this.#t.unsubscribeActions(e)
+			}
+			unsubscribeFeedbacks(...e) {
+				this.#t.unsubscribeFeedbacks(e)
+			}
+			recordAction(e, n) {
+				this.#t.recordAction(e, n)
+			}
+			oscSend(e, n, r, s) {
+				this.#t.oscSend(e, n, r, s)
+			}
+			updateStatus(e, n) {
+				this.#t.updateStatus(e, n ?? null)
+			}
+			log(e, n) {
+				switch (e) {
+					case 'debug':
+						this.#n.debug(n)
+						break
+					case 'info':
+						this.#n.info(n)
+						break
+					case 'warn':
+						this.#n.warn(n)
+						break
+					case 'error':
+						this.#n.error(n)
+						break
+					default:
+						this.#n.info(n)
+						break
+				}
+			}
+			createSharedUdpSocket(e, n) {
+				let r = typeof e == 'string' ? { type: e } : e,
+					s = new yr(this.#t, r)
+				return (n && s.on('message', n), s)
+			}
+		}
+	})
+var Xc = q(() => {})
+var Wc = q(() => {})
+var Pe,
+	Pi,
+	Tr = q(() => {
+		;(function (t) {
+			;((t.Ok = 'ok'),
+				(t.Connecting = 'connecting'),
+				(t.Disconnected = 'disconnected'),
+				(t.ConnectionFailure = 'connection_failure'),
+				(t.BadConfig = 'bad_config'),
+				(t.UnknownError = 'unknown_error'),
+				(t.UnknownWarning = 'unknown_warning'),
+				(t.AuthenticationFailure = 'authentication_failure'),
+				(t.InsufficientPermissions = 'insufficient_permissions'))
+		})(Pe || (Pe = {}))
+		;(function (t) {
+			;((t.IP = '/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/'),
+				(t.HOSTNAME =
+					'/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9])$/'),
+				(t.BOOLEAN = '/^(true|false|0|1)$/i'),
+				(t.PORT =
+					'/^([1-9]|[1-8][0-9]|9[0-9]|[1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|[1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-4])$/'),
+				(t.MAC_ADDRESS = '/^(?:[a-fA-F0-9]{2}:){5}([a-fA-F0-9]{2})$/'),
+				(t.PERCENT = '/^(100|[0-9]|[0-9][0-9])$/'),
+				(t.FLOAT = '/^([0-9]*\\.)?[0-9]+$/'),
+				(t.SIGNED_FLOAT = '/^[+-]?([0-9]*\\.)?[0-9]+$/'),
+				(t.FLOAT_OR_INT = '/^([0-9]+)(\\.[0-9]+)?$/'),
+				(t.NUMBER = '/^\\d+$/'),
+				(t.SIGNED_NUMBER = '/^[+-]?\\d+$/'),
+				(t.SOMETHING = '/^.+$/'),
+				(t.TIMECODE =
+					'/^(0*[0-9]|1[0-9]|2[0-4]):(0*[0-9]|[1-5][0-9]|60):(0*[0-9]|[1-5][0-9]|60):(0*[0-9]|[12][0-9]|30)$/'))
+		})(Pi || (Pi = {}))
+	})
+var zc = q(() => {})
+var Qc = q(() => {})
+var Ai,
+	Fi,
+	Hc = q(() => {
+		;(function (t) {
+			;((t.FollowDefault = 'default'), (t.TopBar = 'topbar'), (t.Border = 'border'), (t.None = 'none'))
+		})(Ai || (Ai = {}))
+		;(function (t) {
+			;((t.FollowDefault = 'default'), (t.ShowAll = 'all'), (t.None = 'none'))
+		})(Fi || (Fi = {}))
+	})
+var Zc = q(() => {})
+var Kc = q(() => {})
+var Yc = q(() => {})
+var Jc = q(() => {})
+var Ch,
+	eu = q(() => {
+		Ch = {
+			'internal:wait': '2.1.0-0',
+			'internal:customLog': '2.1.0-0',
+			'internal:abortButton': '2.1.0-0',
+			'internal:localVariableSet': '2.1.0-0',
+			'internal:checkExpression': '2.1.0-0',
+			'internal:buttonPushed': '2.1.0-0',
+			'internal:buttonCurrentStep': '2.1.0-0',
+			'internal:actionGroup': '2.1.0-0',
+			'internal:logicIf': '2.1.0-0',
+			'internal:logicWhile': '2.1.0-0',
+			'internal:logicOperator': '2.1.0-0',
+		}
+	})
+var tu = q(() => {})
+var nu = q(() => {
+	Yc()
+	Jc()
+	eu()
+	tu()
+})
+var ru = q(() => {})
+function Rh(t) {
+	return (e, n) => {
+		let r = []
+		for (let s of n.feedbacks) {
+			let i = t[s.feedbackId]
+			if (
+				(i === !0 &&
+					(i = { bg: 'bgcolor', bgcolor: 'bgcolor', fg: 'color', color: 'color', png64: 'png64', png: 'png64' }),
+				i)
+			) {
+				s.style || (s.style = {})
+				for (let [o, a] of Object.entries(i)) {
+					let c = s.options[o]
+					c !== void 0 && ((s.style[a] = c), delete s.options[o], r.push(s))
+				}
+			}
+		}
+		return { updatedConfig: null, updatedSecrets: null, updatedActions: [], updatedFeedbacks: r }
+	}
+}
+function kh(t) {
+	return (e, n) => {
+		let r = []
+		for (let s of n.feedbacks) {
+			let i = t[s.feedbackId]
+			if (typeof i != 'string') continue
+			let o = s.options[i]
+			o !== void 0 &&
+				(delete s.options[i],
+				o.isExpression
+					? (s.isInverted = o)
+					: (s.isInverted = { isExpression: !1, value: o.value === 'true' || !!o.value || Number(o.value) > 0 }),
+				r.push(s))
+		}
+		return { updatedConfig: null, updatedSecrets: null, updatedActions: [], updatedFeedbacks: r }
+	}
+}
+function Bh(t) {
+	return (e, n) => {
+		let r = []
+		for (let s of n.actions) {
+			let i = t[s.actionId]
+			if (typeof i != 'string') continue
+			let o = s.options[i]
+			o !== void 0 &&
+				(delete s.options[i],
+				(s.storeResult = {
+					type: 'custom-variable',
+					variableName: o.isExpression
+						? { isExpression: !0, value: o.value }
+						: { isExpression: !1, value: String(o.value ?? '') },
+				}),
+				r.push(s))
+		}
+		return { updatedConfig: null, updatedSecrets: null, updatedActions: r, updatedFeedbacks: [] }
+	}
+}
+function qh(t) {
+	if (!t || t.isExpression) return t
+	let e = Number(t.value),
+		n = t.value
+	if (typeof t.value == 'number' || (typeof t.value == 'string' && t.value.trim() !== '' && !isNaN(e)))
+		return { isExpression: !1, value: e }
+	if (typeof n == 'string') {
+		let r = n.trim()
+		return r.startsWith('$(') && r.endsWith(')') && !r.slice(2).includes('$(')
+			? { isExpression: !0, value: n }
+			: { isExpression: !0, value: `parseVariables("${n.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}")` }
+	} else return t
+}
+function Dh(t) {
+	if (!t || t.isExpression) return t
+	let e = t.value
+	if (typeof e == 'boolean') return t
+	if (typeof e == 'number') return { isExpression: !1, value: e !== 0 }
+	if (typeof e == 'string') {
+		let n = e.trim(),
+			r = n.toLowerCase()
+		return r === 'true' || r === 'false'
+			? { isExpression: !1, value: r === 'true' }
+			: !isNaN(Number(n)) && n !== ''
+				? { isExpression: !1, value: Number(n) !== 0 }
+				: n.startsWith('$(') && n.endsWith(')') && !n.slice(2).includes('$(')
+					? { isExpression: !0, value: e }
+					: { isExpression: !0, value: `bool(parseVariables("${e.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"))` }
+	} else return t
+}
+var Oh,
+	su = q(() => {
+		Oh = () => ({ updatedConfig: null, updatedSecrets: null, updatedActions: [], updatedFeedbacks: [] })
+	})
+var iu = q(() => {})
+var ou = q(() => {
+	Nc()
+	Gc()
+	Xc()
+	Wc()
+	Tr()
+	zc()
+	Qc()
+	Hc()
+	Zc()
+	Kc()
+	nu()
+	ru()
+	su()
+	iu()
+})
+var au = q(() => {})
+var cu = q(() => {})
+import { EventEmitter as Ph } from 'events'
+import Ah from 'net'
+var Pn,
+	Li = q(() => {
+		Tr()
+		Pn = class extends Ph {
+			#t
+			#n
+			_socket
+			#e
+			#r = !1
+			#s = !1
+			#i = !1
+			#a
+			#o
+			#u
+			get isConnected() {
+				return this.#r
+			}
+			get isConnecting() {
+				return this.#s
+			}
+			get isDestroyed() {
+				return this.#i
+			}
+			constructor(e, n, r) {
+				;(super(),
+					(this.#t = e),
+					(this.#n = n),
+					(this.#e = { reconnect_interval: 2e3, reconnect: !0, ...r }),
+					(this._socket = new Ah.Socket()),
+					this._socket.setKeepAlive(!0),
+					this._socket.setNoDelay(!0),
+					this._socket.on('error', (s) => {
+						;((this.#s = !1),
+							(this.#r = !1),
+							this.#e.reconnect && this.#l(),
+							this.#c(Pe.UnknownError, s.message),
+							this.emit('error', s))
+					}),
+					this._socket.on('ready', () => {
+						;((this.#r = !0), (this.#s = !1), this.#c(Pe.Ok), this.emit('connect'))
+					}),
+					this._socket.on('end', () => {
+						;((this.#r = !1), this.#c(Pe.Disconnected), !this.#s && this.#e.reconnect && this.#l(), this.emit('end'))
+					}),
+					this._socket.on('data', (s) => this.emit('data', s)),
+					this._socket.on('drain', () => this.emit('drain')),
+					this._socket.on('close', () => {
+						this.#i || (this.#o === void 0 && this.#e.reconnect && ((this.#s = !1), this.#l()))
+					}),
+					setImmediate(() => {
+						this.#i || this.connect()
+					}),
+					(this.#u = setTimeout(() => {
+						;((this.#u = void 0),
+							!this.#i &&
+								!this.listenerCount('error') &&
+								console.error(`Danger: TCP client for ${this.#t}:${this.#n} is missing an error handler!`))
+					}, 5e3)))
+			}
+			connect() {
+				if (this.#i) throw new Error('Cannot connect destroyed socket')
+				return this.#s ? !1 : ((this.#s = !0), this._socket.connect(this.#n, this.#t), !0)
+			}
+			send(e) {
+				if (this.#i || this._socket.destroyed) throw new Error('Cannot write to destroyed socket')
+				if (!e || !e.length) throw new Error('No message to send')
+				return this.#r
+					? (this._socket.write(e, (n) => {
+							n && ((this.#r = !1), this.#c(Pe.UnknownError, n.message), this.emit('error', n))
+						}),
+						!0)
+					: !1
+			}
+			async sendAsync(e) {
+				if (this.#i || this._socket.destroyed) throw new Error('Cannot write to destroyed socket')
+				if (!e || !e.length) throw new Error('No message to send')
+				return this.#r
+					? (await new Promise((n, r) => {
+							this._socket.write(e, (s) => {
+								if (s) {
+									;((this.#r = !1), this.#c(Pe.UnknownError, s.message), r(s))
+									return
+								}
+								n()
+							})
+						}),
+						!0)
+					: !1
+			}
+			destroy() {
+				;((this.#r = !1),
+					(this.#s = !1),
+					(this.#i = !0),
+					this.#o !== void 0 && (clearTimeout(this.#o), (this.#o = void 0)),
+					this.#u !== void 0 && (clearTimeout(this.#u), (this.#u = void 0)),
+					this._socket.removeAllListeners(),
+					this.removeAllListeners(),
+					this._socket.destroy())
+			}
+			#l() {
+				;(this.#o !== void 0 && clearTimeout(this.#o),
+					(this.#o = setTimeout(() => {
+						;((this.#o = void 0), this.#c(Pe.Connecting), this.connect())
+					}, this.#e.reconnect_interval)))
+			}
+			#c(e, n) {
+				this.#a != e && ((this.#a = e), this.emit('status_change', e, n))
+			}
+		}
+	})
+import { EventEmitter as Fh } from 'events'
+import { Transform as Lh } from 'stream'
+var An,
+	Mh,
+	uu,
+	Mi,
+	lu,
+	fu,
+	Ui,
+	ji,
+	$i,
+	Vi,
+	du = q(() => {
+		Li()
+		;((An = 0),
+			(Mh = 240),
+			(uu = 250),
+			(Mi = 251),
+			(lu = 252),
+			(fu = 253),
+			(Ui = 254),
+			(ji = 255),
+			($i = class extends Fh {
+				#t
+				#n
+				#e
+				get isConnected() {
+					return this.#t.isConnected
+				}
+				get isConnecting() {
+					return this.#t.isConnecting
+				}
+				get isDestroyed() {
+					return this.#t.isDestroyed
+				}
+				constructor(e, n, r) {
+					;(super(),
+						(this.#t = new Pn(e, n, r)),
+						(this.#n = new Vi()),
+						this.#t._socket.pipe(this.#n),
+						this.#t.on('connect', () => this.emit('connect')),
+						this.#t.on('end', () => this.emit('end')),
+						this.#t.on('error', (s) => this.emit('error', s)),
+						this.#t.on('status_change', (s, i) => this.emit('status_change', s, i)),
+						this.#n.on('iac', (s, i) => this.emit('iac', s, i)),
+						this.#n.on('sb', (s) => this.emit('sb', s)),
+						this.#n.on('data', (s) => this.emit('data', s)),
+						this.#n.on('drain', () => this.emit('drain')),
+						(this.#e = setTimeout(() => {
+							;((this.#e = void 0),
+								!this.isDestroyed &&
+									!this.listenerCount('error') &&
+									console.error(`Danger: Telnet client for ${e}:${n} is missing an error handler!`))
+						}, 5e3)))
+				}
+				connect() {
+					return this.#t.connect()
+				}
+				send(e) {
+					return this.#t.send(e)
+				}
+				async sendAsync(e) {
+					return this.#t.sendAsync(e)
+				}
+				destroy() {
+					;(this.#t.destroy(),
+						this.#e !== void 0 && (clearTimeout(this.#e), (this.#e = void 0)),
+						this.#n.removeAllListeners(),
+						this.removeAllListeners(),
+						this.#n.destroy())
+				}
+			}),
+			(Vi = class extends Lh {
+				#t
+				#n
+				#e
+				constructor(e) {
+					;(super(e), (this.#t = Buffer.alloc(0)), (this.#n = Buffer.alloc(0)), (this.#e = An))
+				}
+				_transform(e, n, r) {
+					for (let i = 0; i < e.length; ++i) this.#r(e[i])
+					let s = this.#s()
+					;(s.length && this.push(s), r())
+				}
+				#r(e) {
+					if (this.#e === An) {
+						if (e === ji) {
+							this.#e = ji
+							return
+						}
+						this.#t = Buffer.concat([this.#t, Buffer.from([e])])
+					} else if (this.#e === ji)
+						switch (e) {
+							case uu:
+							case Mi:
+							case lu:
+							case fu:
+							case Ui:
+								this.#e = e
+								break
+							default:
+								this.#e = An
+								break
+						}
+					else if (this.#e >= Mi && this.#e <= Ui) {
+						let n
+						switch (this.#e) {
+							case Mi:
+								n = 'WILL'
+								break
+							case lu:
+								n = 'WONT'
+								break
+							case fu:
+								n = 'DO'
+								break
+							case Ui:
+								n = 'DONT'
+								break
+							default:
+								return
+						}
+						;(this.emit('iac', n, e), (this.#e = An))
+						return
+					} else if (this.#e === uu) {
+						if (e === Mh) {
+							;(this.emit('sb', this.#n), (this.#e = An), (this.#n = Buffer.alloc(0)))
+							return
+						}
+						this.#n = Buffer.concat([this.#n, Buffer.from([e])])
+					}
+				}
+				#s() {
+					let e = this.#t
+					return ((this.#t = Buffer.alloc(0)), e)
+				}
+			}))
+	})
+import Uh from 'dgram'
+import { EventEmitter as jh } from 'events'
+var Gi,
+	hu = q(() => {
+		Tr()
+		Gi = class extends jh {
+			#t
+			#n
+			#e
+			#r
+			#s = !1
+			#i
+			#a
+			get isDestroyed() {
+				return this.#s
+			}
+			constructor(e, n, r) {
+				;(super(), (this.#t = e), (this.#n = n), (this.#r = { ...r }), (this.#e = Uh.createSocket('udp4')))
+				try {
+					this.#e.bind(this.#r.bind_port || 0, this.#r.bind_ip)
+				} catch (s) {
+					throw new Error(`Unable to bind to ip/port: ${this.#r.bind_ip || '0.0.0.0'}:${this.#r.bind_port || 0}`, {
+						cause: s,
+					})
+				}
+				;(this.#r.ttl !== void 0 && this.#e.setTTL(this.#r.ttl),
+					this.#r.multicast_ttl !== void 0 && this.#e.setMulticastTTL(this.#r.multicast_ttl),
+					this.#e.on('error', (s) => {
+						;(this.#o(Pe.UnknownError, s.message), this.emit('error', s))
+					}),
+					this.#e.on('listening', () => {
+						;(this.#r.broadcast && this.#e.setBroadcast(!0),
+							this.#r.multicast_interface && this.#e.setMulticastInterface(this.#r.multicast_interface),
+							this.#o(Pe.Ok),
+							this.emit('listening'))
+					}),
+					this.#e.on('message', (s, i) => this.emit('data', s, i)),
+					(this.#a = setTimeout(() => {
+						!this.#s &&
+							!this.listenerCount('error') &&
+							console.error(`Danger: UDP socket for ${this.#t}:${this.#n} is missing an error handler!`)
+					}, 5e3)))
+			}
+			send(e) {
+				if (this.#s) throw new Error('Cannot write to destroyed socket')
+				if (!e || !e.length) throw new Error('No message to send')
+				this.#e.send(e, this.#n, this.#t, (n) => {
+					n && this.emit('error', n)
+				})
+			}
+			async sendAsync(e) {
+				if (this.#s) throw new Error('Cannot write to destroyed socket')
+				if (!e || !e.length) throw new Error('No message to send')
+				return new Promise((n, r) => {
+					this.#e.send(e, this.#n, this.#t, (s) => {
+						if (s) {
+							r(s)
+							return
+						}
+						n()
+					})
+				})
+			}
+			destroy() {
+				;((this.#s = !0),
+					this.#a !== void 0 && (clearTimeout(this.#a), (this.#a = void 0)),
+					this.#e.removeAllListeners(),
+					this.#e.close(),
+					this.removeAllListeners())
+			}
+			#o(e, n) {
+				this.#i != e && ((this.#i = e), this.emit('status_change', e, n))
+			}
+		}
+	})
+var pu = q(() => {
+	Li()
+	du()
+	hu()
+})
+var Xi = {}
+wc(Xi, {
+	ButtonGraphicsDecorationType: () => Ai,
+	ButtonGraphicsShowStatusIcons: () => Fi,
+	CreateConvertToBooleanFeedbackUpgradeScript: () => Rh,
+	CreateUseActionResultStoreUpgradeScript: () => Bh,
+	CreateUseBuiltinInvertForFeedbacksUpgradeScript: () => kh,
+	EmptyUpgradeScript: () => Oh,
+	FixupBooleanOrVariablesValueToExpressions: () => Dh,
+	FixupNumericOrVariablesValueToExpressions: () => qh,
+	INTERNAL_PRESET_MIN_API_VERSION: () => Ch,
+	InstanceBase: () => Di,
+	InstanceStatus: () => Pe,
+	Regex: () => Pi,
+	TCPHelper: () => Pn,
+	TelnetHelper: () => $i,
+	UDPHelper: () => Gi,
+	assertNever: () => yh,
+	combineRgb: () => Th,
+	createModuleLogger: () => Ni,
+	literal: () => gh,
+	parseEscapeCharacters: () => vh,
+	splitHex: () => Ih,
+	splitHsl: () => Sh,
+	splitHsv: () => xh,
+	splitRgb: () => gr,
+	substituteEscapeCharacters: () => wh,
+})
+var Wi = q(() => {
+	Ci()
+	ou()
+	au()
+	cu()
+	$c()
+	pu()
+})
+var dt = p((AT, Eu) => {
+	'use strict'
+	var mu = ['nodebuffer', 'arraybuffer', 'fragments'],
+		_u = typeof Blob < 'u'
+	_u && mu.push('blob')
+	Eu.exports = {
+		BINARY_TYPES: mu,
+		CLOSE_TIMEOUT: 3e4,
+		EMPTY_BUFFER: Buffer.alloc(0),
+		GUID: '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
+		hasBlob: _u,
+		kForOnEventAttribute: Symbol('kIsForOnEventAttribute'),
+		kListener: Symbol('kListener'),
+		kStatusCode: Symbol('status-code'),
+		kWebSocket: Symbol('websocket'),
+		NOOP: () => {},
+	}
+})
+var Fn = p((FT, Sr) => {
+	'use strict'
+	var { EMPTY_BUFFER: $h } = dt(),
+		zi = Buffer[Symbol.species]
+	function Vh(t, e) {
+		if (t.length === 0) return $h
+		if (t.length === 1) return t[0]
+		let n = Buffer.allocUnsafe(e),
+			r = 0
+		for (let s = 0; s < t.length; s++) {
+			let i = t[s]
+			;(n.set(i, r), (r += i.length))
+		}
+		return r < e ? new zi(n.buffer, n.byteOffset, r) : n
+	}
+	function bu(t, e, n, r, s) {
+		for (let i = 0; i < s; i++) n[r + i] = t[i] ^ e[i & 3]
+	}
+	function gu(t, e) {
+		for (let n = 0; n < t.length; n++) t[n] ^= e[n & 3]
+	}
+	function Gh(t) {
+		return t.length === t.buffer.byteLength ? t.buffer : t.buffer.slice(t.byteOffset, t.byteOffset + t.length)
+	}
+	function Qi(t) {
+		if (((Qi.readOnly = !0), Buffer.isBuffer(t))) return t
+		let e
+		return (
+			t instanceof ArrayBuffer
+				? (e = new zi(t))
+				: ArrayBuffer.isView(t)
+					? (e = new zi(t.buffer, t.byteOffset, t.byteLength))
+					: ((e = Buffer.from(t)), (Qi.readOnly = !1)),
+			e
+		)
+	}
+	Sr.exports = { concat: Vh, mask: bu, toArrayBuffer: Gh, toBuffer: Qi, unmask: gu }
+	if (!process.env.WS_NO_BUFFER_UTIL)
+		try {
+			let t = B('bufferutil')
+			;((Sr.exports.mask = function (e, n, r, s, i) {
+				i < 48 ? bu(e, n, r, s, i) : t.mask(e, n, r, s, i)
+			}),
+				(Sr.exports.unmask = function (e, n) {
+					e.length < 32 ? gu(e, n) : t.unmask(e, n)
+				}))
+		} catch {}
+})
+var Su = p((LT, Tu) => {
+	'use strict'
+	var yu = Symbol('kDone'),
+		Hi = Symbol('kRun'),
+		Zi = class {
+			constructor(e) {
+				;((this[yu] = () => {
+					;(this.pending--, this[Hi]())
+				}),
+					(this.concurrency = e || 1 / 0),
+					(this.jobs = []),
+					(this.pending = 0))
+			}
+			add(e) {
+				;(this.jobs.push(e), this[Hi]())
+			}
+			[Hi]() {
+				if (this.pending !== this.concurrency && this.jobs.length) {
+					let e = this.jobs.shift()
+					;(this.pending++, e(this[yu]))
+				}
+			}
+		}
+	Tu.exports = Zi
+})
+var Yt = p((MT, wu) => {
+	'use strict'
+	var Ln = B('zlib'),
+		xu = Fn(),
+		Xh = Su(),
+		{ kStatusCode: Iu } = dt(),
+		Wh = Buffer[Symbol.species],
+		zh = Buffer.from([0, 0, 255, 255]),
+		Ir = Symbol('permessage-deflate'),
+		ht = Symbol('total-length'),
+		Zt = Symbol('callback'),
+		xt = Symbol('buffers'),
+		Kt = Symbol('error'),
+		xr,
+		Ki = class {
+			constructor(e) {
+				if (
+					((this._options = e || {}),
+					(this._threshold = this._options.threshold !== void 0 ? this._options.threshold : 1024),
+					(this._maxPayload = this._options.maxPayload | 0),
+					(this._isServer = !!this._options.isServer),
+					(this._deflate = null),
+					(this._inflate = null),
+					(this.params = null),
+					!xr)
+				) {
+					let n = this._options.concurrencyLimit !== void 0 ? this._options.concurrencyLimit : 10
+					xr = new Xh(n)
+				}
+			}
+			static get extensionName() {
+				return 'permessage-deflate'
+			}
+			offer() {
+				let e = {}
+				return (
+					this._options.serverNoContextTakeover && (e.server_no_context_takeover = !0),
+					this._options.clientNoContextTakeover && (e.client_no_context_takeover = !0),
+					this._options.serverMaxWindowBits && (e.server_max_window_bits = this._options.serverMaxWindowBits),
+					this._options.clientMaxWindowBits
+						? (e.client_max_window_bits = this._options.clientMaxWindowBits)
+						: this._options.clientMaxWindowBits == null && (e.client_max_window_bits = !0),
+					e
+				)
+			}
+			accept(e) {
+				return (
+					(e = this.normalizeParams(e)),
+					(this.params = this._isServer ? this.acceptAsServer(e) : this.acceptAsClient(e)),
+					this.params
+				)
+			}
+			cleanup() {
+				if ((this._inflate && (this._inflate.close(), (this._inflate = null)), this._deflate)) {
+					let e = this._deflate[Zt]
+					;(this._deflate.close(),
+						(this._deflate = null),
+						e && e(new Error('The deflate stream was closed while data was being processed')))
+				}
+			}
+			acceptAsServer(e) {
+				let n = this._options,
+					r = e.find(
+						(s) =>
+							!(
+								(n.serverNoContextTakeover === !1 && s.server_no_context_takeover) ||
+								(s.server_max_window_bits &&
+									(n.serverMaxWindowBits === !1 ||
+										(typeof n.serverMaxWindowBits == 'number' && n.serverMaxWindowBits > s.server_max_window_bits))) ||
+								(typeof n.clientMaxWindowBits == 'number' &&
+									(typeof s.client_max_window_bits == 'number'
+										? n.clientMaxWindowBits > s.client_max_window_bits
+										: !s.client_max_window_bits))
+							),
+					)
+				if (!r) throw new Error('None of the extension offers can be accepted')
+				return (
+					n.serverNoContextTakeover && (r.server_no_context_takeover = !0),
+					n.clientNoContextTakeover && (r.client_no_context_takeover = !0),
+					typeof n.serverMaxWindowBits == 'number' && (r.server_max_window_bits = n.serverMaxWindowBits),
+					typeof n.clientMaxWindowBits == 'number'
+						? (r.client_max_window_bits = n.clientMaxWindowBits)
+						: (r.client_max_window_bits === !0 || n.clientMaxWindowBits === !1) && delete r.client_max_window_bits,
+					r
+				)
+			}
+			acceptAsClient(e) {
+				let n = e[0]
+				if (this._options.clientNoContextTakeover === !1 && n.client_no_context_takeover)
+					throw new Error('Unexpected parameter "client_no_context_takeover"')
+				if (!n.client_max_window_bits)
+					typeof this._options.clientMaxWindowBits == 'number' &&
+						(n.client_max_window_bits = this._options.clientMaxWindowBits)
+				else if (
+					this._options.clientMaxWindowBits === !1 ||
+					(typeof this._options.clientMaxWindowBits == 'number' &&
+						n.client_max_window_bits > this._options.clientMaxWindowBits)
+				)
+					throw new Error('Unexpected or invalid parameter "client_max_window_bits"')
+				return n
+			}
+			normalizeParams(e) {
+				return (
+					e.forEach((n) => {
+						Object.keys(n).forEach((r) => {
+							let s = n[r]
+							if (s.length > 1) throw new Error(`Parameter "${r}" must have only a single value`)
+							if (((s = s[0]), r === 'client_max_window_bits')) {
+								if (s !== !0) {
+									let i = +s
+									if (!Number.isInteger(i) || i < 8 || i > 15)
+										throw new TypeError(`Invalid value for parameter "${r}": ${s}`)
+									s = i
+								} else if (!this._isServer) throw new TypeError(`Invalid value for parameter "${r}": ${s}`)
+							} else if (r === 'server_max_window_bits') {
+								let i = +s
+								if (!Number.isInteger(i) || i < 8 || i > 15)
+									throw new TypeError(`Invalid value for parameter "${r}": ${s}`)
+								s = i
+							} else if (r === 'client_no_context_takeover' || r === 'server_no_context_takeover') {
+								if (s !== !0) throw new TypeError(`Invalid value for parameter "${r}": ${s}`)
+							} else throw new Error(`Unknown parameter "${r}"`)
+							n[r] = s
+						})
+					}),
+					e
+				)
+			}
+			decompress(e, n, r) {
+				xr.add((s) => {
+					this._decompress(e, n, (i, o) => {
+						;(s(), r(i, o))
+					})
+				})
+			}
+			compress(e, n, r) {
+				xr.add((s) => {
+					this._compress(e, n, (i, o) => {
+						;(s(), r(i, o))
+					})
+				})
+			}
+			_decompress(e, n, r) {
+				let s = this._isServer ? 'client' : 'server'
+				if (!this._inflate) {
+					let i = `${s}_max_window_bits`,
+						o = typeof this.params[i] != 'number' ? Ln.Z_DEFAULT_WINDOWBITS : this.params[i]
+					;((this._inflate = Ln.createInflateRaw({ ...this._options.zlibInflateOptions, windowBits: o })),
+						(this._inflate[Ir] = this),
+						(this._inflate[ht] = 0),
+						(this._inflate[xt] = []),
+						this._inflate.on('error', Hh),
+						this._inflate.on('data', vu))
+				}
+				;((this._inflate[Zt] = r),
+					this._inflate.write(e),
+					n && this._inflate.write(zh),
+					this._inflate.flush(() => {
+						let i = this._inflate[Kt]
+						if (i) {
+							;(this._inflate.close(), (this._inflate = null), r(i))
+							return
+						}
+						let o = xu.concat(this._inflate[xt], this._inflate[ht])
+						;(this._inflate._readableState.endEmitted
+							? (this._inflate.close(), (this._inflate = null))
+							: ((this._inflate[ht] = 0),
+								(this._inflate[xt] = []),
+								n && this.params[`${s}_no_context_takeover`] && this._inflate.reset()),
+							r(null, o))
+					}))
+			}
+			_compress(e, n, r) {
+				let s = this._isServer ? 'server' : 'client'
+				if (!this._deflate) {
+					let i = `${s}_max_window_bits`,
+						o = typeof this.params[i] != 'number' ? Ln.Z_DEFAULT_WINDOWBITS : this.params[i]
+					;((this._deflate = Ln.createDeflateRaw({ ...this._options.zlibDeflateOptions, windowBits: o })),
+						(this._deflate[ht] = 0),
+						(this._deflate[xt] = []),
+						this._deflate.on('data', Qh))
+				}
+				;((this._deflate[Zt] = r),
+					this._deflate.write(e),
+					this._deflate.flush(Ln.Z_SYNC_FLUSH, () => {
+						if (!this._deflate) return
+						let i = xu.concat(this._deflate[xt], this._deflate[ht])
+						;(n && (i = new Wh(i.buffer, i.byteOffset, i.length - 4)),
+							(this._deflate[Zt] = null),
+							(this._deflate[ht] = 0),
+							(this._deflate[xt] = []),
+							n && this.params[`${s}_no_context_takeover`] && this._deflate.reset(),
+							r(null, i))
+					}))
+			}
+		}
+	wu.exports = Ki
+	function Qh(t) {
+		;(this[xt].push(t), (this[ht] += t.length))
+	}
+	function vu(t) {
+		if (((this[ht] += t.length), this[Ir]._maxPayload < 1 || this[ht] <= this[Ir]._maxPayload)) {
+			this[xt].push(t)
+			return
+		}
+		;((this[Kt] = new RangeError('Max payload size exceeded')),
+			(this[Kt].code = 'WS_ERR_UNSUPPORTED_MESSAGE_LENGTH'),
+			(this[Kt][Iu] = 1009),
+			this.removeListener('data', vu),
+			this.reset())
+	}
+	function Hh(t) {
+		if (((this[Ir]._inflate = null), this[Kt])) {
+			this[Zt](this[Kt])
+			return
+		}
+		;((t[Iu] = 1007), this[Zt](t))
+	}
+})
+var Jt = p((UT, vr) => {
+	'use strict'
+	var { isUtf8: Nu } = B('buffer'),
+		{ hasBlob: Zh } = dt(),
+		Kh = [
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1,
+			1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+			1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+			1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0,
+		]
+	function Yh(t) {
+		return (t >= 1e3 && t <= 1014 && t !== 1004 && t !== 1005 && t !== 1006) || (t >= 3e3 && t <= 4999)
+	}
+	function Yi(t) {
+		let e = t.length,
+			n = 0
+		for (; n < e;)
+			if ((t[n] & 128) === 0) n++
+			else if ((t[n] & 224) === 192) {
+				if (n + 1 === e || (t[n + 1] & 192) !== 128 || (t[n] & 254) === 192) return !1
+				n += 2
+			} else if ((t[n] & 240) === 224) {
+				if (
+					n + 2 >= e ||
+					(t[n + 1] & 192) !== 128 ||
+					(t[n + 2] & 192) !== 128 ||
+					(t[n] === 224 && (t[n + 1] & 224) === 128) ||
+					(t[n] === 237 && (t[n + 1] & 224) === 160)
+				)
+					return !1
+				n += 3
+			} else if ((t[n] & 248) === 240) {
+				if (
+					n + 3 >= e ||
+					(t[n + 1] & 192) !== 128 ||
+					(t[n + 2] & 192) !== 128 ||
+					(t[n + 3] & 192) !== 128 ||
+					(t[n] === 240 && (t[n + 1] & 240) === 128) ||
+					(t[n] === 244 && t[n + 1] > 143) ||
+					t[n] > 244
+				)
+					return !1
+				n += 4
+			} else return !1
+		return !0
+	}
+	function Jh(t) {
+		return (
+			Zh &&
+			typeof t == 'object' &&
+			typeof t.arrayBuffer == 'function' &&
+			typeof t.type == 'string' &&
+			typeof t.stream == 'function' &&
+			(t[Symbol.toStringTag] === 'Blob' || t[Symbol.toStringTag] === 'File')
+		)
+	}
+	vr.exports = { isBlob: Jh, isValidStatusCode: Yh, isValidUTF8: Yi, tokenChars: Kh }
+	if (Nu)
+		vr.exports.isValidUTF8 = function (t) {
+			return t.length < 24 ? Yi(t) : Nu(t)
+		}
+	else if (!process.env.WS_NO_UTF_8_VALIDATE)
+		try {
+			let t = B('utf-8-validate')
+			vr.exports.isValidUTF8 = function (e) {
+				return e.length < 32 ? Yi(e) : t(e)
+			}
+		} catch {}
+})
+var ro = p((jT, Du) => {
+	'use strict'
+	var { Writable: ep } = B('stream'),
+		Cu = Yt(),
+		{ BINARY_TYPES: tp, EMPTY_BUFFER: Ou, kStatusCode: np, kWebSocket: rp } = dt(),
+		{ concat: Ji, toArrayBuffer: sp, unmask: ip } = Fn(),
+		{ isValidStatusCode: op, isValidUTF8: Ru } = Jt(),
+		wr = Buffer[Symbol.species],
+		je = 0,
+		ku = 1,
+		Bu = 2,
+		qu = 3,
+		eo = 4,
+		to = 5,
+		Nr = 6,
+		no = class extends ep {
+			constructor(e = {}) {
+				;(super(),
+					(this._allowSynchronousEvents = e.allowSynchronousEvents !== void 0 ? e.allowSynchronousEvents : !0),
+					(this._binaryType = e.binaryType || tp[0]),
+					(this._extensions = e.extensions || {}),
+					(this._isServer = !!e.isServer),
+					(this._maxBufferedChunks = e.maxBufferedChunks | 0),
+					(this._maxFragments = e.maxFragments | 0),
+					(this._maxPayload = e.maxPayload | 0),
+					(this._skipUTF8Validation = !!e.skipUTF8Validation),
+					(this[rp] = void 0),
+					(this._bufferedBytes = 0),
+					(this._buffers = []),
+					(this._compressed = !1),
+					(this._payloadLength = 0),
+					(this._mask = void 0),
+					(this._fragmented = 0),
+					(this._masked = !1),
+					(this._fin = !1),
+					(this._opcode = 0),
+					(this._totalPayloadLength = 0),
+					(this._messageLength = 0),
+					(this._numFragments = 0),
+					(this._fragments = []),
+					(this._errored = !1),
+					(this._loop = !1),
+					(this._state = je))
+			}
+			_write(e, n, r) {
+				if (this._opcode === 8 && this._state == je) return r()
+				if (this._maxBufferedChunks > 0 && this._buffers.length >= this._maxBufferedChunks) {
+					r(this.createError(RangeError, 'Too many buffered chunks', !1, 1008, 'WS_ERR_TOO_MANY_BUFFERED_PARTS'))
+					return
+				}
+				;((this._bufferedBytes += e.length), this._buffers.push(e), this.startLoop(r))
+			}
+			consume(e) {
+				if (((this._bufferedBytes -= e), e === this._buffers[0].length)) return this._buffers.shift()
+				if (e < this._buffers[0].length) {
+					let r = this._buffers[0]
+					return (
+						(this._buffers[0] = new wr(r.buffer, r.byteOffset + e, r.length - e)),
+						new wr(r.buffer, r.byteOffset, e)
+					)
+				}
+				let n = Buffer.allocUnsafe(e)
+				do {
+					let r = this._buffers[0],
+						s = n.length - e
+					;(e >= r.length
+						? n.set(this._buffers.shift(), s)
+						: (n.set(new Uint8Array(r.buffer, r.byteOffset, e), s),
+							(this._buffers[0] = new wr(r.buffer, r.byteOffset + e, r.length - e))),
+						(e -= r.length))
+				} while (e > 0)
+				return n
+			}
+			startLoop(e) {
+				this._loop = !0
+				do
+					switch (this._state) {
+						case je:
+							this.getInfo(e)
+							break
+						case ku:
+							this.getPayloadLength16(e)
+							break
+						case Bu:
+							this.getPayloadLength64(e)
+							break
+						case qu:
+							this.getMask()
+							break
+						case eo:
+							this.getData(e)
+							break
+						case to:
+						case Nr:
+							this._loop = !1
+							return
+					}
+				while (this._loop)
+				this._errored || e()
+			}
+			getInfo(e) {
+				if (this._bufferedBytes < 2) {
+					this._loop = !1
+					return
+				}
+				let n = this.consume(2)
+				if ((n[0] & 48) !== 0) {
+					let s = this.createError(RangeError, 'RSV2 and RSV3 must be clear', !0, 1002, 'WS_ERR_UNEXPECTED_RSV_2_3')
+					e(s)
+					return
+				}
+				let r = (n[0] & 64) === 64
+				if (r && !this._extensions[Cu.extensionName]) {
+					let s = this.createError(RangeError, 'RSV1 must be clear', !0, 1002, 'WS_ERR_UNEXPECTED_RSV_1')
+					e(s)
+					return
+				}
+				if (
+					((this._fin = (n[0] & 128) === 128),
+					(this._opcode = n[0] & 15),
+					(this._payloadLength = n[1] & 127),
+					this._opcode === 0)
+				) {
+					if (r) {
+						let s = this.createError(RangeError, 'RSV1 must be clear', !0, 1002, 'WS_ERR_UNEXPECTED_RSV_1')
+						e(s)
+						return
+					}
+					if (!this._fragmented) {
+						let s = this.createError(RangeError, 'invalid opcode 0', !0, 1002, 'WS_ERR_INVALID_OPCODE')
+						e(s)
+						return
+					}
+					this._opcode = this._fragmented
+				} else if (this._opcode === 1 || this._opcode === 2) {
+					if (this._fragmented) {
+						let s = this.createError(RangeError, `invalid opcode ${this._opcode}`, !0, 1002, 'WS_ERR_INVALID_OPCODE')
+						e(s)
+						return
+					}
+					this._compressed = r
+				} else if (this._opcode > 7 && this._opcode < 11) {
+					if (!this._fin) {
+						let s = this.createError(RangeError, 'FIN must be set', !0, 1002, 'WS_ERR_EXPECTED_FIN')
+						e(s)
+						return
+					}
+					if (r) {
+						let s = this.createError(RangeError, 'RSV1 must be clear', !0, 1002, 'WS_ERR_UNEXPECTED_RSV_1')
+						e(s)
+						return
+					}
+					if (this._payloadLength > 125 || (this._opcode === 8 && this._payloadLength === 1)) {
+						let s = this.createError(
+							RangeError,
+							`invalid payload length ${this._payloadLength}`,
+							!0,
+							1002,
+							'WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH',
+						)
+						e(s)
+						return
+					}
+				} else {
+					let s = this.createError(RangeError, `invalid opcode ${this._opcode}`, !0, 1002, 'WS_ERR_INVALID_OPCODE')
+					e(s)
+					return
+				}
+				if (
+					(!this._fin && !this._fragmented && (this._fragmented = this._opcode),
+					(this._masked = (n[1] & 128) === 128),
+					this._isServer)
+				) {
+					if (!this._masked) {
+						let s = this.createError(RangeError, 'MASK must be set', !0, 1002, 'WS_ERR_EXPECTED_MASK')
+						e(s)
+						return
+					}
+				} else if (this._masked) {
+					let s = this.createError(RangeError, 'MASK must be clear', !0, 1002, 'WS_ERR_UNEXPECTED_MASK')
+					e(s)
+					return
+				}
+				this._payloadLength === 126
+					? (this._state = ku)
+					: this._payloadLength === 127
+						? (this._state = Bu)
+						: this.haveLength(e)
+			}
+			getPayloadLength16(e) {
+				if (this._bufferedBytes < 2) {
+					this._loop = !1
+					return
+				}
+				;((this._payloadLength = this.consume(2).readUInt16BE(0)), this.haveLength(e))
+			}
+			getPayloadLength64(e) {
+				if (this._bufferedBytes < 8) {
+					this._loop = !1
+					return
+				}
+				let n = this.consume(8),
+					r = n.readUInt32BE(0)
+				if (r > Math.pow(2, 21) - 1) {
+					let s = this.createError(
+						RangeError,
+						'Unsupported WebSocket frame: payload length > 2^53 - 1',
+						!1,
+						1009,
+						'WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH',
+					)
+					e(s)
+					return
+				}
+				;((this._payloadLength = r * Math.pow(2, 32) + n.readUInt32BE(4)), this.haveLength(e))
+			}
+			haveLength(e) {
+				if (
+					this._payloadLength &&
+					this._opcode < 8 &&
+					((this._totalPayloadLength += this._payloadLength),
+					this._totalPayloadLength > this._maxPayload && this._maxPayload > 0)
+				) {
+					let n = this.createError(
+						RangeError,
+						'Max payload size exceeded',
+						!1,
+						1009,
+						'WS_ERR_UNSUPPORTED_MESSAGE_LENGTH',
+					)
+					e(n)
+					return
+				}
+				this._masked ? (this._state = qu) : (this._state = eo)
+			}
+			getMask() {
+				if (this._bufferedBytes < 4) {
+					this._loop = !1
+					return
+				}
+				;((this._mask = this.consume(4)), (this._state = eo))
+			}
+			getData(e) {
+				let n = Ou
+				if (this._payloadLength) {
+					if (this._bufferedBytes < this._payloadLength) {
+						this._loop = !1
+						return
+					}
+					;((n = this.consume(this._payloadLength)),
+						this._masked && (this._mask[0] | this._mask[1] | this._mask[2] | this._mask[3]) !== 0 && ip(n, this._mask))
+				}
+				if (this._opcode > 7) {
+					this.controlMessage(n, e)
+					return
+				}
+				if (this._maxFragments > 0 && ++this._numFragments > this._maxFragments) {
+					let r = this.createError(RangeError, 'Too many message fragments', !1, 1008, 'WS_ERR_TOO_MANY_BUFFERED_PARTS')
+					e(r)
+					return
+				}
+				if (this._compressed) {
+					;((this._state = to), this.decompress(n, e))
+					return
+				}
+				;(n.length && ((this._messageLength = this._totalPayloadLength), this._fragments.push(n)), this.dataMessage(e))
+			}
+			decompress(e, n) {
+				this._extensions[Cu.extensionName].decompress(e, this._fin, (s, i) => {
+					if (s) return n(s)
+					if (i.length) {
+						if (((this._messageLength += i.length), this._messageLength > this._maxPayload && this._maxPayload > 0)) {
+							let o = this.createError(
+								RangeError,
+								'Max payload size exceeded',
+								!1,
+								1009,
+								'WS_ERR_UNSUPPORTED_MESSAGE_LENGTH',
+							)
+							n(o)
+							return
+						}
+						this._fragments.push(i)
+					}
+					;(this.dataMessage(n), this._state === je && this.startLoop(n))
+				})
+			}
+			dataMessage(e) {
+				if (!this._fin) {
+					this._state = je
+					return
+				}
+				let n = this._messageLength,
+					r = this._fragments
+				if (
+					((this._totalPayloadLength = 0),
+					(this._messageLength = 0),
+					(this._fragmented = 0),
+					(this._numFragments = 0),
+					(this._fragments = []),
+					this._opcode === 2)
+				) {
+					let s
+					;(this._binaryType === 'nodebuffer'
+						? (s = Ji(r, n))
+						: this._binaryType === 'arraybuffer'
+							? (s = sp(Ji(r, n)))
+							: this._binaryType === 'blob'
+								? (s = new Blob(r))
+								: (s = r),
+						this._allowSynchronousEvents
+							? (this.emit('message', s, !0), (this._state = je))
+							: ((this._state = Nr),
+								setImmediate(() => {
+									;(this.emit('message', s, !0), (this._state = je), this.startLoop(e))
+								})))
+				} else {
+					let s = Ji(r, n)
+					if (!this._skipUTF8Validation && !Ru(s)) {
+						let i = this.createError(Error, 'invalid UTF-8 sequence', !0, 1007, 'WS_ERR_INVALID_UTF8')
+						e(i)
+						return
+					}
+					this._state === to || this._allowSynchronousEvents
+						? (this.emit('message', s, !1), (this._state = je))
+						: ((this._state = Nr),
+							setImmediate(() => {
+								;(this.emit('message', s, !1), (this._state = je), this.startLoop(e))
+							}))
+				}
+			}
+			controlMessage(e, n) {
+				if (this._opcode === 8) {
+					if (e.length === 0) ((this._loop = !1), this.emit('conclude', 1005, Ou), this.end())
+					else {
+						let r = e.readUInt16BE(0)
+						if (!op(r)) {
+							let i = this.createError(RangeError, `invalid status code ${r}`, !0, 1002, 'WS_ERR_INVALID_CLOSE_CODE')
+							n(i)
+							return
+						}
+						let s = new wr(e.buffer, e.byteOffset + 2, e.length - 2)
+						if (!this._skipUTF8Validation && !Ru(s)) {
+							let i = this.createError(Error, 'invalid UTF-8 sequence', !0, 1007, 'WS_ERR_INVALID_UTF8')
+							n(i)
+							return
+						}
+						;((this._loop = !1), this.emit('conclude', r, s), this.end())
+					}
+					this._state = je
+					return
+				}
+				this._allowSynchronousEvents
+					? (this.emit(this._opcode === 9 ? 'ping' : 'pong', e), (this._state = je))
+					: ((this._state = Nr),
+						setImmediate(() => {
+							;(this.emit(this._opcode === 9 ? 'ping' : 'pong', e), (this._state = je), this.startLoop(n))
+						}))
+			}
+			createError(e, n, r, s, i) {
+				;((this._loop = !1), (this._errored = !0))
+				let o = new e(r ? `Invalid WebSocket frame: ${n}` : n)
+				return (Error.captureStackTrace(o, this.createError), (o.code = i), (o[np] = s), o)
+			}
+		}
+	Du.exports = no
+})
+var oo = p((VT, Fu) => {
+	'use strict'
+	var { Duplex: $T } = B('stream'),
+		{ randomFillSync: ap } = B('crypto'),
+		{
+			types: { isUint8Array: cp },
+		} = B('util'),
+		Pu = Yt(),
+		{ EMPTY_BUFFER: up, kWebSocket: lp, NOOP: fp } = dt(),
+		{ isBlob: en, isValidStatusCode: dp } = Jt(),
+		{ mask: Au, toBuffer: Pt } = Fn(),
+		$e = Symbol('kByteLength'),
+		hp = Buffer.alloc(4),
+		Cr = 8 * 1024,
+		At,
+		tn = Cr,
+		ze = 0,
+		pp = 1,
+		mp = 2,
+		so = class t {
+			constructor(e, n, r) {
+				;((this._extensions = n || {}),
+					r && ((this._generateMask = r), (this._maskBuffer = Buffer.alloc(4))),
+					(this._socket = e),
+					(this._firstFragment = !0),
+					(this._compress = !1),
+					(this._bufferedBytes = 0),
+					(this._queue = []),
+					(this._state = ze),
+					(this.onerror = fp),
+					(this[lp] = void 0))
+			}
+			static frame(e, n) {
+				let r,
+					s = !1,
+					i = 2,
+					o = !1
+				n.mask &&
+					((r = n.maskBuffer || hp),
+					n.generateMask
+						? n.generateMask(r)
+						: (tn === Cr && (At === void 0 && (At = Buffer.alloc(Cr)), ap(At, 0, Cr), (tn = 0)),
+							(r[0] = At[tn++]),
+							(r[1] = At[tn++]),
+							(r[2] = At[tn++]),
+							(r[3] = At[tn++])),
+					(o = (r[0] | r[1] | r[2] | r[3]) === 0),
+					(i = 6))
+				let a
+				typeof e == 'string'
+					? (!n.mask || o) && n[$e] !== void 0
+						? (a = n[$e])
+						: ((e = Buffer.from(e)), (a = e.length))
+					: ((a = e.length), (s = n.mask && n.readOnly && !o))
+				let c = a
+				a >= 65536 ? ((i += 8), (c = 127)) : a > 125 && ((i += 2), (c = 126))
+				let u = Buffer.allocUnsafe(s ? a + i : i)
+				return (
+					(u[0] = n.fin ? n.opcode | 128 : n.opcode),
+					n.rsv1 && (u[0] |= 64),
+					(u[1] = c),
+					c === 126 ? u.writeUInt16BE(a, 2) : c === 127 && ((u[2] = u[3] = 0), u.writeUIntBE(a, 4, 6)),
+					n.mask
+						? ((u[1] |= 128),
+							(u[i - 4] = r[0]),
+							(u[i - 3] = r[1]),
+							(u[i - 2] = r[2]),
+							(u[i - 1] = r[3]),
+							o ? [u, e] : s ? (Au(e, r, u, i, a), [u]) : (Au(e, r, e, 0, a), [u, e]))
+						: [u, e]
+				)
+			}
+			close(e, n, r, s) {
+				let i
+				if (e === void 0) i = up
+				else {
+					if (typeof e != 'number' || !dp(e)) throw new TypeError('First argument must be a valid error code number')
+					if (n === void 0 || !n.length) ((i = Buffer.allocUnsafe(2)), i.writeUInt16BE(e, 0))
+					else {
+						let a = Buffer.byteLength(n)
+						if (a > 123) throw new RangeError('The message must not be greater than 123 bytes')
+						if (((i = Buffer.allocUnsafe(2 + a)), i.writeUInt16BE(e, 0), typeof n == 'string')) i.write(n, 2)
+						else if (cp(n)) i.set(n, 2)
+						else throw new TypeError('Second argument must be a string or a Uint8Array')
+					}
+				}
+				let o = {
+					[$e]: i.length,
+					fin: !0,
+					generateMask: this._generateMask,
+					mask: r,
+					maskBuffer: this._maskBuffer,
+					opcode: 8,
+					readOnly: !1,
+					rsv1: !1,
+				}
+				this._state !== ze ? this.enqueue([this.dispatch, i, !1, o, s]) : this.sendFrame(t.frame(i, o), s)
+			}
+			ping(e, n, r) {
+				let s, i
+				if (
+					(typeof e == 'string'
+						? ((s = Buffer.byteLength(e)), (i = !1))
+						: en(e)
+							? ((s = e.size), (i = !1))
+							: ((e = Pt(e)), (s = e.length), (i = Pt.readOnly)),
+					s > 125)
+				)
+					throw new RangeError('The data size must not be greater than 125 bytes')
+				let o = {
+					[$e]: s,
+					fin: !0,
+					generateMask: this._generateMask,
+					mask: n,
+					maskBuffer: this._maskBuffer,
+					opcode: 9,
+					readOnly: i,
+					rsv1: !1,
+				}
+				en(e)
+					? this._state !== ze
+						? this.enqueue([this.getBlobData, e, !1, o, r])
+						: this.getBlobData(e, !1, o, r)
+					: this._state !== ze
+						? this.enqueue([this.dispatch, e, !1, o, r])
+						: this.sendFrame(t.frame(e, o), r)
+			}
+			pong(e, n, r) {
+				let s, i
+				if (
+					(typeof e == 'string'
+						? ((s = Buffer.byteLength(e)), (i = !1))
+						: en(e)
+							? ((s = e.size), (i = !1))
+							: ((e = Pt(e)), (s = e.length), (i = Pt.readOnly)),
+					s > 125)
+				)
+					throw new RangeError('The data size must not be greater than 125 bytes')
+				let o = {
+					[$e]: s,
+					fin: !0,
+					generateMask: this._generateMask,
+					mask: n,
+					maskBuffer: this._maskBuffer,
+					opcode: 10,
+					readOnly: i,
+					rsv1: !1,
+				}
+				en(e)
+					? this._state !== ze
+						? this.enqueue([this.getBlobData, e, !1, o, r])
+						: this.getBlobData(e, !1, o, r)
+					: this._state !== ze
+						? this.enqueue([this.dispatch, e, !1, o, r])
+						: this.sendFrame(t.frame(e, o), r)
+			}
+			send(e, n, r) {
+				let s = this._extensions[Pu.extensionName],
+					i = n.binary ? 2 : 1,
+					o = n.compress,
+					a,
+					c
+				;(typeof e == 'string'
+					? ((a = Buffer.byteLength(e)), (c = !1))
+					: en(e)
+						? ((a = e.size), (c = !1))
+						: ((e = Pt(e)), (a = e.length), (c = Pt.readOnly)),
+					this._firstFragment
+						? ((this._firstFragment = !1),
+							o &&
+								s &&
+								s.params[s._isServer ? 'server_no_context_takeover' : 'client_no_context_takeover'] &&
+								(o = a >= s._threshold),
+							(this._compress = o))
+						: ((o = !1), (i = 0)),
+					n.fin && (this._firstFragment = !0))
+				let u = {
+					[$e]: a,
+					fin: n.fin,
+					generateMask: this._generateMask,
+					mask: n.mask,
+					maskBuffer: this._maskBuffer,
+					opcode: i,
+					readOnly: c,
+					rsv1: o,
+				}
+				en(e)
+					? this._state !== ze
+						? this.enqueue([this.getBlobData, e, this._compress, u, r])
+						: this.getBlobData(e, this._compress, u, r)
+					: this._state !== ze
+						? this.enqueue([this.dispatch, e, this._compress, u, r])
+						: this.dispatch(e, this._compress, u, r)
+			}
+			getBlobData(e, n, r, s) {
+				;((this._bufferedBytes += r[$e]),
+					(this._state = mp),
+					e
+						.arrayBuffer()
+						.then((i) => {
+							if (this._socket.destroyed) {
+								let a = new Error('The socket was closed while the blob was being read')
+								process.nextTick(io, this, a, s)
+								return
+							}
+							this._bufferedBytes -= r[$e]
+							let o = Pt(i)
+							n ? this.dispatch(o, n, r, s) : ((this._state = ze), this.sendFrame(t.frame(o, r), s), this.dequeue())
+						})
+						.catch((i) => {
+							process.nextTick(_p, this, i, s)
+						}))
+			}
+			dispatch(e, n, r, s) {
+				if (!n) {
+					this.sendFrame(t.frame(e, r), s)
+					return
+				}
+				let i = this._extensions[Pu.extensionName]
+				;((this._bufferedBytes += r[$e]),
+					(this._state = pp),
+					i.compress(e, r.fin, (o, a) => {
+						if (this._socket.destroyed) {
+							let c = new Error('The socket was closed while data was being compressed')
+							io(this, c, s)
+							return
+						}
+						;((this._bufferedBytes -= r[$e]),
+							(this._state = ze),
+							(r.readOnly = !1),
+							this.sendFrame(t.frame(a, r), s),
+							this.dequeue())
+					}))
+			}
+			dequeue() {
+				for (; this._state === ze && this._queue.length;) {
+					let e = this._queue.shift()
+					;((this._bufferedBytes -= e[3][$e]), Reflect.apply(e[0], this, e.slice(1)))
+				}
+			}
+			enqueue(e) {
+				;((this._bufferedBytes += e[3][$e]), this._queue.push(e))
+			}
+			sendFrame(e, n) {
+				e.length === 2
+					? (this._socket.cork(), this._socket.write(e[0]), this._socket.write(e[1], n), this._socket.uncork())
+					: this._socket.write(e[0], n)
+			}
+		}
+	Fu.exports = so
+	function io(t, e, n) {
+		typeof n == 'function' && n(e)
+		for (let r = 0; r < t._queue.length; r++) {
+			let s = t._queue[r],
+				i = s[s.length - 1]
+			typeof i == 'function' && i(e)
+		}
+	}
+	function _p(t, e, n) {
+		;(io(t, e, n), t.onerror(e))
+	}
+})
+var Wu = p((GT, Xu) => {
+	'use strict'
+	var { kForOnEventAttribute: Mn, kListener: ao } = dt(),
+		Lu = Symbol('kCode'),
+		Mu = Symbol('kData'),
+		Uu = Symbol('kError'),
+		ju = Symbol('kMessage'),
+		$u = Symbol('kReason'),
+		nn = Symbol('kTarget'),
+		Vu = Symbol('kType'),
+		Gu = Symbol('kWasClean'),
+		pt = class {
+			constructor(e) {
+				;((this[nn] = null), (this[Vu] = e))
+			}
+			get target() {
+				return this[nn]
+			}
+			get type() {
+				return this[Vu]
+			}
+		}
+	Object.defineProperty(pt.prototype, 'target', { enumerable: !0 })
+	Object.defineProperty(pt.prototype, 'type', { enumerable: !0 })
+	var Ft = class extends pt {
+		constructor(e, n = {}) {
+			;(super(e),
+				(this[Lu] = n.code === void 0 ? 0 : n.code),
+				(this[$u] = n.reason === void 0 ? '' : n.reason),
+				(this[Gu] = n.wasClean === void 0 ? !1 : n.wasClean))
+		}
+		get code() {
+			return this[Lu]
+		}
+		get reason() {
+			return this[$u]
+		}
+		get wasClean() {
+			return this[Gu]
+		}
+	}
+	Object.defineProperty(Ft.prototype, 'code', { enumerable: !0 })
+	Object.defineProperty(Ft.prototype, 'reason', { enumerable: !0 })
+	Object.defineProperty(Ft.prototype, 'wasClean', { enumerable: !0 })
+	var rn = class extends pt {
+		constructor(e, n = {}) {
+			;(super(e), (this[Uu] = n.error === void 0 ? null : n.error), (this[ju] = n.message === void 0 ? '' : n.message))
+		}
+		get error() {
+			return this[Uu]
+		}
+		get message() {
+			return this[ju]
+		}
+	}
+	Object.defineProperty(rn.prototype, 'error', { enumerable: !0 })
+	Object.defineProperty(rn.prototype, 'message', { enumerable: !0 })
+	var Un = class extends pt {
+		constructor(e, n = {}) {
+			;(super(e), (this[Mu] = n.data === void 0 ? null : n.data))
+		}
+		get data() {
+			return this[Mu]
+		}
+	}
+	Object.defineProperty(Un.prototype, 'data', { enumerable: !0 })
+	var Ep = {
+		addEventListener(t, e, n = {}) {
+			for (let s of this.listeners(t)) if (!n[Mn] && s[ao] === e && !s[Mn]) return
+			let r
+			if (t === 'message')
+				r = function (i, o) {
+					let a = new Un('message', { data: o ? i : i.toString() })
+					;((a[nn] = this), Or(e, this, a))
+				}
+			else if (t === 'close')
+				r = function (i, o) {
+					let a = new Ft('close', {
+						code: i,
+						reason: o.toString(),
+						wasClean: this._closeFrameReceived && this._closeFrameSent,
+					})
+					;((a[nn] = this), Or(e, this, a))
+				}
+			else if (t === 'error')
+				r = function (i) {
+					let o = new rn('error', { error: i, message: i.message })
+					;((o[nn] = this), Or(e, this, o))
+				}
+			else if (t === 'open')
+				r = function () {
+					let i = new pt('open')
+					;((i[nn] = this), Or(e, this, i))
+				}
+			else return
+			;((r[Mn] = !!n[Mn]), (r[ao] = e), n.once ? this.once(t, r) : this.on(t, r))
+		},
+		removeEventListener(t, e) {
+			for (let n of this.listeners(t))
+				if (n[ao] === e && !n[Mn]) {
+					this.removeListener(t, n)
+					break
+				}
+		},
+	}
+	Xu.exports = { CloseEvent: Ft, ErrorEvent: rn, Event: pt, EventTarget: Ep, MessageEvent: Un }
+	function Or(t, e, n) {
+		typeof t == 'object' && t.handleEvent ? t.handleEvent.call(t, n) : t.call(e, n)
+	}
+})
+var Rr = p((XT, zu) => {
+	'use strict'
+	var { tokenChars: jn } = Jt()
+	function et(t, e, n) {
+		t[e] === void 0 ? (t[e] = [n]) : t[e].push(n)
+	}
+	function bp(t) {
+		let e = Object.create(null),
+			n = Object.create(null),
+			r = !1,
+			s = !1,
+			i = !1,
+			o,
+			a,
+			c = -1,
+			u = -1,
+			f = -1,
+			d = 0
+		for (; d < t.length; d++)
+			if (((u = t.charCodeAt(d)), o === void 0))
+				if (f === -1 && jn[u] === 1) c === -1 && (c = d)
+				else if (d !== 0 && (u === 32 || u === 9)) f === -1 && c !== -1 && (f = d)
+				else if (u === 59 || u === 44) {
+					if (c === -1) throw new SyntaxError(`Unexpected character at index ${d}`)
+					f === -1 && (f = d)
+					let _ = t.slice(c, f)
+					;(u === 44 ? (et(e, _, n), (n = Object.create(null))) : (o = _), (c = f = -1))
+				} else throw new SyntaxError(`Unexpected character at index ${d}`)
+			else if (a === void 0)
+				if (f === -1 && jn[u] === 1) c === -1 && (c = d)
+				else if (u === 32 || u === 9) f === -1 && c !== -1 && (f = d)
+				else if (u === 59 || u === 44) {
+					if (c === -1) throw new SyntaxError(`Unexpected character at index ${d}`)
+					;(f === -1 && (f = d),
+						et(n, t.slice(c, f), !0),
+						u === 44 && (et(e, o, n), (n = Object.create(null)), (o = void 0)),
+						(c = f = -1))
+				} else if (u === 61 && c !== -1 && f === -1) ((a = t.slice(c, d)), (c = f = -1))
+				else throw new SyntaxError(`Unexpected character at index ${d}`)
+			else if (s) {
+				if (jn[u] !== 1) throw new SyntaxError(`Unexpected character at index ${d}`)
+				;(c === -1 ? (c = d) : r || (r = !0), (s = !1))
+			} else if (i)
+				if (jn[u] === 1) c === -1 && (c = d)
+				else if (u === 34 && c !== -1) ((i = !1), (f = d))
+				else if (u === 92) s = !0
+				else throw new SyntaxError(`Unexpected character at index ${d}`)
+			else if (u === 34 && t.charCodeAt(d - 1) === 61) i = !0
+			else if (f === -1 && jn[u] === 1) c === -1 && (c = d)
+			else if (c !== -1 && (u === 32 || u === 9)) f === -1 && (f = d)
+			else if (u === 59 || u === 44) {
+				if (c === -1) throw new SyntaxError(`Unexpected character at index ${d}`)
+				f === -1 && (f = d)
+				let _ = t.slice(c, f)
+				;(r && ((_ = _.replace(/\\/g, '')), (r = !1)),
+					et(n, a, _),
+					u === 44 && (et(e, o, n), (n = Object.create(null)), (o = void 0)),
+					(a = void 0),
+					(c = f = -1))
+			} else throw new SyntaxError(`Unexpected character at index ${d}`)
+		if (c === -1 || i || u === 32 || u === 9) throw new SyntaxError('Unexpected end of input')
+		f === -1 && (f = d)
+		let m = t.slice(c, f)
+		return (
+			o === void 0
+				? et(e, m, n)
+				: (a === void 0 ? et(n, m, !0) : r ? et(n, a, m.replace(/\\/g, '')) : et(n, a, m), et(e, o, n)),
+			e
+		)
+	}
+	function gp(t) {
+		return Object.keys(t)
+			.map((e) => {
+				let n = t[e]
+				return (
+					Array.isArray(n) || (n = [n]),
+					n
+						.map((r) =>
+							[e]
+								.concat(
+									Object.keys(r).map((s) => {
+										let i = r[s]
+										return (Array.isArray(i) || (i = [i]), i.map((o) => (o === !0 ? s : `${s}=${o}`)).join('; '))
+									}),
+								)
+								.join('; '),
+						)
+						.join(', ')
+				)
+			})
+			.join(', ')
+	}
+	zu.exports = { format: gp, parse: bp }
+})
+var Dr = p((QT, il) => {
+	'use strict'
+	var yp = B('events'),
+		Tp = B('https'),
+		Sp = B('http'),
+		Zu = B('net'),
+		xp = B('tls'),
+		{ randomBytes: Ip, createHash: vp } = B('crypto'),
+		{ Duplex: WT, Readable: zT } = B('stream'),
+		{ URL: co } = B('url'),
+		It = Yt(),
+		wp = ro(),
+		Np = oo(),
+		{ isBlob: Cp } = Jt(),
+		{
+			BINARY_TYPES: Qu,
+			CLOSE_TIMEOUT: Op,
+			EMPTY_BUFFER: kr,
+			GUID: Rp,
+			kForOnEventAttribute: uo,
+			kListener: kp,
+			kStatusCode: Bp,
+			kWebSocket: ie,
+			NOOP: Ku,
+		} = dt(),
+		{
+			EventTarget: { addEventListener: qp, removeEventListener: Dp },
+		} = Wu(),
+		{ format: Pp, parse: Ap } = Rr(),
+		{ toBuffer: Fp } = Fn(),
+		Yu = Symbol('kAborted'),
+		lo = [8, 13],
+		mt = ['CONNECTING', 'OPEN', 'CLOSING', 'CLOSED'],
+		Lp = /^[!#$%&'*+\-.0-9A-Z^_`|a-z~]+$/,
+		V = class t extends yp {
+			constructor(e, n, r) {
+				;(super(),
+					(this._binaryType = Qu[0]),
+					(this._closeCode = 1006),
+					(this._closeFrameReceived = !1),
+					(this._closeFrameSent = !1),
+					(this._closeMessage = kr),
+					(this._closeTimer = null),
+					(this._errorEmitted = !1),
+					(this._extensions = {}),
+					(this._paused = !1),
+					(this._protocol = ''),
+					(this._readyState = t.CONNECTING),
+					(this._receiver = null),
+					(this._sender = null),
+					(this._socket = null),
+					e !== null
+						? ((this._bufferedAmount = 0),
+							(this._isServer = !1),
+							(this._redirects = 0),
+							n === void 0
+								? (n = [])
+								: Array.isArray(n) || (typeof n == 'object' && n !== null ? ((r = n), (n = [])) : (n = [n])),
+							Ju(this, e, n, r))
+						: ((this._autoPong = r.autoPong), (this._closeTimeout = r.closeTimeout), (this._isServer = !0)))
+			}
+			get binaryType() {
+				return this._binaryType
+			}
+			set binaryType(e) {
+				Qu.includes(e) && ((this._binaryType = e), this._receiver && (this._receiver._binaryType = e))
+			}
+			get bufferedAmount() {
+				return this._socket ? this._socket._writableState.length + this._sender._bufferedBytes : this._bufferedAmount
+			}
+			get extensions() {
+				return Object.keys(this._extensions).join()
+			}
+			get isPaused() {
+				return this._paused
+			}
+			get onclose() {
+				return null
+			}
+			get onerror() {
+				return null
+			}
+			get onopen() {
+				return null
+			}
+			get onmessage() {
+				return null
+			}
+			get protocol() {
+				return this._protocol
+			}
+			get readyState() {
+				return this._readyState
+			}
+			get url() {
+				return this._url
+			}
+			setSocket(e, n, r) {
+				let s = new wp({
+						allowSynchronousEvents: r.allowSynchronousEvents,
+						binaryType: this.binaryType,
+						extensions: this._extensions,
+						isServer: this._isServer,
+						maxBufferedChunks: r.maxBufferedChunks,
+						maxFragments: r.maxFragments,
+						maxPayload: r.maxPayload,
+						skipUTF8Validation: r.skipUTF8Validation,
+					}),
+					i = new Np(e, this._extensions, r.generateMask)
+				;((this._receiver = s),
+					(this._sender = i),
+					(this._socket = e),
+					(s[ie] = this),
+					(i[ie] = this),
+					(e[ie] = this),
+					s.on('conclude', jp),
+					s.on('drain', $p),
+					s.on('error', Vp),
+					s.on('message', Gp),
+					s.on('ping', Xp),
+					s.on('pong', Wp),
+					(i.onerror = zp),
+					e.setTimeout && e.setTimeout(0),
+					e.setNoDelay && e.setNoDelay(),
+					n.length > 0 && e.unshift(n),
+					e.on('close', nl),
+					e.on('data', qr),
+					e.on('end', rl),
+					e.on('error', sl),
+					(this._readyState = t.OPEN),
+					this.emit('open'))
+			}
+			emitClose() {
+				if (!this._socket) {
+					;((this._readyState = t.CLOSED), this.emit('close', this._closeCode, this._closeMessage))
+					return
+				}
+				;(this._extensions[It.extensionName] && this._extensions[It.extensionName].cleanup(),
+					this._receiver.removeAllListeners(),
+					(this._readyState = t.CLOSED),
+					this.emit('close', this._closeCode, this._closeMessage))
+			}
+			close(e, n) {
+				if (this.readyState !== t.CLOSED) {
+					if (this.readyState === t.CONNECTING) {
+						Ae(this, this._req, 'WebSocket was closed before the connection was established')
+						return
+					}
+					if (this.readyState === t.CLOSING) {
+						this._closeFrameSent &&
+							(this._closeFrameReceived || this._receiver._writableState.errorEmitted) &&
+							this._socket.end()
+						return
+					}
+					;((this._readyState = t.CLOSING),
+						this._sender.close(e, n, !this._isServer, (r) => {
+							r ||
+								((this._closeFrameSent = !0),
+								(this._closeFrameReceived || this._receiver._writableState.errorEmitted) && this._socket.end())
+						}),
+						tl(this))
+				}
+			}
+			pause() {
+				this.readyState === t.CONNECTING || this.readyState === t.CLOSED || ((this._paused = !0), this._socket.pause())
+			}
+			ping(e, n, r) {
+				if (this.readyState === t.CONNECTING) throw new Error('WebSocket is not open: readyState 0 (CONNECTING)')
+				if (
+					(typeof e == 'function' ? ((r = e), (e = n = void 0)) : typeof n == 'function' && ((r = n), (n = void 0)),
+					typeof e == 'number' && (e = e.toString()),
+					this.readyState !== t.OPEN)
+				) {
+					fo(this, e, r)
+					return
+				}
+				;(n === void 0 && (n = !this._isServer), this._sender.ping(e || kr, n, r))
+			}
+			pong(e, n, r) {
+				if (this.readyState === t.CONNECTING) throw new Error('WebSocket is not open: readyState 0 (CONNECTING)')
+				if (
+					(typeof e == 'function' ? ((r = e), (e = n = void 0)) : typeof n == 'function' && ((r = n), (n = void 0)),
+					typeof e == 'number' && (e = e.toString()),
+					this.readyState !== t.OPEN)
+				) {
+					fo(this, e, r)
+					return
+				}
+				;(n === void 0 && (n = !this._isServer), this._sender.pong(e || kr, n, r))
+			}
+			resume() {
+				this.readyState === t.CONNECTING ||
+					this.readyState === t.CLOSED ||
+					((this._paused = !1), this._receiver._writableState.needDrain || this._socket.resume())
+			}
+			send(e, n, r) {
+				if (this.readyState === t.CONNECTING) throw new Error('WebSocket is not open: readyState 0 (CONNECTING)')
+				if (
+					(typeof n == 'function' && ((r = n), (n = {})),
+					typeof e == 'number' && (e = e.toString()),
+					this.readyState !== t.OPEN)
+				) {
+					fo(this, e, r)
+					return
+				}
+				let s = { binary: typeof e != 'string', mask: !this._isServer, compress: !0, fin: !0, ...n }
+				;(this._extensions[It.extensionName] || (s.compress = !1), this._sender.send(e || kr, s, r))
+			}
+			terminate() {
+				if (this.readyState !== t.CLOSED) {
+					if (this.readyState === t.CONNECTING) {
+						Ae(this, this._req, 'WebSocket was closed before the connection was established')
+						return
+					}
+					this._socket && ((this._readyState = t.CLOSING), this._socket.destroy())
+				}
+			}
+		}
+	Object.defineProperty(V, 'CONNECTING', { enumerable: !0, value: mt.indexOf('CONNECTING') })
+	Object.defineProperty(V.prototype, 'CONNECTING', { enumerable: !0, value: mt.indexOf('CONNECTING') })
+	Object.defineProperty(V, 'OPEN', { enumerable: !0, value: mt.indexOf('OPEN') })
+	Object.defineProperty(V.prototype, 'OPEN', { enumerable: !0, value: mt.indexOf('OPEN') })
+	Object.defineProperty(V, 'CLOSING', { enumerable: !0, value: mt.indexOf('CLOSING') })
+	Object.defineProperty(V.prototype, 'CLOSING', { enumerable: !0, value: mt.indexOf('CLOSING') })
+	Object.defineProperty(V, 'CLOSED', { enumerable: !0, value: mt.indexOf('CLOSED') })
+	Object.defineProperty(V.prototype, 'CLOSED', { enumerable: !0, value: mt.indexOf('CLOSED') })
+	;['binaryType', 'bufferedAmount', 'extensions', 'isPaused', 'protocol', 'readyState', 'url'].forEach((t) => {
+		Object.defineProperty(V.prototype, t, { enumerable: !0 })
+	})
+	;['open', 'error', 'close', 'message'].forEach((t) => {
+		Object.defineProperty(V.prototype, `on${t}`, {
+			enumerable: !0,
+			get() {
+				for (let e of this.listeners(t)) if (e[uo]) return e[kp]
+				return null
+			},
+			set(e) {
+				for (let n of this.listeners(t))
+					if (n[uo]) {
+						this.removeListener(t, n)
+						break
+					}
+				typeof e == 'function' && this.addEventListener(t, e, { [uo]: !0 })
+			},
+		})
+	})
+	V.prototype.addEventListener = qp
+	V.prototype.removeEventListener = Dp
+	il.exports = V
+	function Ju(t, e, n, r) {
+		let s = {
+			allowSynchronousEvents: !0,
+			autoPong: !0,
+			closeTimeout: Op,
+			protocolVersion: lo[1],
+			maxBufferedChunks: 262144,
+			maxFragments: 16384,
+			maxPayload: 104857600,
+			skipUTF8Validation: !1,
+			perMessageDeflate: !0,
+			followRedirects: !1,
+			maxRedirects: 10,
+			...r,
+			socketPath: void 0,
+			hostname: void 0,
+			protocol: void 0,
+			timeout: void 0,
+			method: 'GET',
+			host: void 0,
+			path: void 0,
+			port: void 0,
+		}
+		if (((t._autoPong = s.autoPong), (t._closeTimeout = s.closeTimeout), !lo.includes(s.protocolVersion)))
+			throw new RangeError(`Unsupported protocol version: ${s.protocolVersion} (supported versions: ${lo.join(', ')})`)
+		let i
+		if (e instanceof co) i = e
+		else
+			try {
+				i = new co(e)
+			} catch {
+				throw new SyntaxError(`Invalid URL: ${e}`)
+			}
+		;(i.protocol === 'http:' ? (i.protocol = 'ws:') : i.protocol === 'https:' && (i.protocol = 'wss:'),
+			(t._url = i.href))
+		let o = i.protocol === 'wss:',
+			a = i.protocol === 'ws+unix:',
+			c
+		if (
+			(i.protocol !== 'ws:' && !o && !a
+				? (c = `The URL's protocol must be one of "ws:", "wss:", "http:", "https:", or "ws+unix:"`)
+				: a && !i.pathname
+					? (c = "The URL's pathname is empty")
+					: i.hash && (c = 'The URL contains a fragment identifier'),
+			c)
+		) {
+			let b = new SyntaxError(c)
+			if (t._redirects === 0) throw b
+			Br(t, b)
+			return
+		}
+		let u = o ? 443 : 80,
+			f = Ip(16).toString('base64'),
+			d = o ? Tp.request : Sp.request,
+			m = new Set(),
+			_
+		if (
+			((s.createConnection = s.createConnection || (o ? Up : Mp)),
+			(s.defaultPort = s.defaultPort || u),
+			(s.port = i.port || u),
+			(s.host = i.hostname.startsWith('[') ? i.hostname.slice(1, -1) : i.hostname),
+			(s.headers = {
+				...s.headers,
+				'Sec-WebSocket-Version': s.protocolVersion,
+				'Sec-WebSocket-Key': f,
+				Connection: 'Upgrade',
+				Upgrade: 'websocket',
+			}),
+			(s.path = i.pathname + i.search),
+			(s.timeout = s.handshakeTimeout),
+			s.perMessageDeflate &&
+				((_ = new It({ ...s.perMessageDeflate, isServer: !1, maxPayload: s.maxPayload })),
+				(s.headers['Sec-WebSocket-Extensions'] = Pp({ [It.extensionName]: _.offer() }))),
+			n.length)
+		) {
+			for (let b of n) {
+				if (typeof b != 'string' || !Lp.test(b) || m.has(b))
+					throw new SyntaxError('An invalid or duplicated subprotocol was specified')
+				m.add(b)
+			}
+			s.headers['Sec-WebSocket-Protocol'] = n.join(',')
+		}
+		if (
+			(s.origin &&
+				(s.protocolVersion < 13 ? (s.headers['Sec-WebSocket-Origin'] = s.origin) : (s.headers.Origin = s.origin)),
+			(i.username || i.password) && (s.auth = `${i.username}:${i.password}`),
+			a)
+		) {
+			let b = s.path.split(':')
+			;((s.socketPath = b[0]), (s.path = b[1]))
+		}
+		let y
+		if (s.followRedirects) {
+			if (t._redirects === 0) {
+				;((t._originalIpc = a), (t._originalSecure = o), (t._originalHostOrSocketPath = a ? s.socketPath : i.host))
+				let b = r && r.headers
+				if (((r = { ...r, headers: {} }), b)) for (let [g, w] of Object.entries(b)) r.headers[g.toLowerCase()] = w
+			} else if (t.listenerCount('redirect') === 0) {
+				let b = a
+					? t._originalIpc
+						? s.socketPath === t._originalHostOrSocketPath
+						: !1
+					: t._originalIpc
+						? !1
+						: i.host === t._originalHostOrSocketPath
+				;(!b || (t._originalSecure && !o)) &&
+					(delete s.headers.authorization, delete s.headers.cookie, b || delete s.headers.host, (s.auth = void 0))
+			}
+			;(s.auth &&
+				!r.headers.authorization &&
+				(r.headers.authorization = 'Basic ' + Buffer.from(s.auth).toString('base64')),
+				(y = t._req = d(s)),
+				t._redirects && t.emit('redirect', t.url, y))
+		} else y = t._req = d(s)
+		;(s.timeout &&
+			y.on('timeout', () => {
+				Ae(t, y, 'Opening handshake has timed out')
+			}),
+			y.on('error', (b) => {
+				y === null || y[Yu] || ((y = t._req = null), Br(t, b))
+			}),
+			y.on('response', (b) => {
+				let g = b.headers.location,
+					w = b.statusCode
+				if (g && s.followRedirects && w >= 300 && w < 400) {
+					if (++t._redirects > s.maxRedirects) {
+						Ae(t, y, 'Maximum redirects exceeded')
+						return
+					}
+					y.abort()
+					let $
+					try {
+						$ = new co(g, e)
+					} catch {
+						let Y = new SyntaxError(`Invalid URL: ${g}`)
+						Br(t, Y)
+						return
+					}
+					Ju(t, $, n, r)
+				} else t.emit('unexpected-response', y, b) || Ae(t, y, `Unexpected server response: ${b.statusCode}`)
+			}),
+			y.on('upgrade', (b, g, w) => {
+				if ((t.emit('upgrade', b), t.readyState !== V.CONNECTING)) return
+				y = t._req = null
+				let $ = b.headers.upgrade
+				if ($ === void 0 || $.toLowerCase() !== 'websocket') {
+					Ae(t, g, 'Invalid Upgrade header')
+					return
+				}
+				let Te = vp('sha1')
+					.update(f + Rp)
+					.digest('base64')
+				if (b.headers['sec-websocket-accept'] !== Te) {
+					Ae(t, g, 'Invalid Sec-WebSocket-Accept header')
+					return
+				}
+				let Y = b.headers['sec-websocket-protocol'],
+					Ue
+				if (
+					(Y !== void 0
+						? m.size
+							? m.has(Y) || (Ue = 'Server sent an invalid subprotocol')
+							: (Ue = 'Server sent a subprotocol but none was requested')
+						: m.size && (Ue = 'Server sent no subprotocol'),
+					Ue)
+				) {
+					Ae(t, g, Ue)
+					return
+				}
+				Y && (t._protocol = Y)
+				let fe = b.headers['sec-websocket-extensions']
+				if (fe !== void 0) {
+					if (!_) {
+						Ae(t, g, 'Server sent a Sec-WebSocket-Extensions header but no extension was requested')
+						return
+					}
+					let W
+					try {
+						W = Ap(fe)
+					} catch {
+						Ae(t, g, 'Invalid Sec-WebSocket-Extensions header')
+						return
+					}
+					let E = Object.keys(W)
+					if (E.length !== 1 || E[0] !== It.extensionName) {
+						Ae(t, g, 'Server indicated an extension that was not requested')
+						return
+					}
+					try {
+						_.accept(W[It.extensionName])
+					} catch {
+						Ae(t, g, 'Invalid Sec-WebSocket-Extensions header')
+						return
+					}
+					t._extensions[It.extensionName] = _
+				}
+				t.setSocket(g, w, {
+					allowSynchronousEvents: s.allowSynchronousEvents,
+					generateMask: s.generateMask,
+					maxBufferedChunks: s.maxBufferedChunks,
+					maxFragments: s.maxFragments,
+					maxPayload: s.maxPayload,
+					skipUTF8Validation: s.skipUTF8Validation,
+				})
+			}),
+			s.finishRequest ? s.finishRequest(y, t) : y.end())
+	}
+	function Br(t, e) {
+		;((t._readyState = V.CLOSING), (t._errorEmitted = !0), t.emit('error', e), t.emitClose())
+	}
+	function Mp(t) {
+		return ((t.path = t.socketPath), Zu.connect(t))
+	}
+	function Up(t) {
+		return (
+			(t.path = void 0),
+			!t.servername && t.servername !== '' && (t.servername = Zu.isIP(t.host) ? '' : t.host),
+			xp.connect(t)
+		)
+	}
+	function Ae(t, e, n) {
+		t._readyState = V.CLOSING
+		let r = new Error(n)
+		;(Error.captureStackTrace(r, Ae),
+			e.setHeader
+				? ((e[Yu] = !0), e.abort(), e.socket && !e.socket.destroyed && e.socket.destroy(), process.nextTick(Br, t, r))
+				: (e.destroy(r), e.once('error', t.emit.bind(t, 'error')), e.once('close', t.emitClose.bind(t))))
+	}
+	function fo(t, e, n) {
+		if (e) {
+			let r = Cp(e) ? e.size : Fp(e).length
+			t._socket ? (t._sender._bufferedBytes += r) : (t._bufferedAmount += r)
+		}
+		if (n) {
+			let r = new Error(`WebSocket is not open: readyState ${t.readyState} (${mt[t.readyState]})`)
+			process.nextTick(n, r)
+		}
+	}
+	function jp(t, e) {
+		let n = this[ie]
+		;((n._closeFrameReceived = !0),
+			(n._closeMessage = e),
+			(n._closeCode = t),
+			n._socket[ie] !== void 0 &&
+				(n._socket.removeListener('data', qr), process.nextTick(el, n._socket), t === 1005 ? n.close() : n.close(t, e)))
+	}
+	function $p() {
+		let t = this[ie]
+		t.isPaused || t._socket.resume()
+	}
+	function Vp(t) {
+		let e = this[ie]
+		;(e._socket[ie] !== void 0 &&
+			(e._socket.removeListener('data', qr), process.nextTick(el, e._socket), e.close(t[Bp])),
+			e._errorEmitted || ((e._errorEmitted = !0), e.emit('error', t)))
+	}
+	function Hu() {
+		this[ie].emitClose()
+	}
+	function Gp(t, e) {
+		this[ie].emit('message', t, e)
+	}
+	function Xp(t) {
+		let e = this[ie]
+		;(e._autoPong && e.pong(t, !this._isServer, Ku), e.emit('ping', t))
+	}
+	function Wp(t) {
+		this[ie].emit('pong', t)
+	}
+	function el(t) {
+		t.resume()
+	}
+	function zp(t) {
+		let e = this[ie]
+		e.readyState !== V.CLOSED &&
+			(e.readyState === V.OPEN && ((e._readyState = V.CLOSING), tl(e)),
+			this._socket.end(),
+			e._errorEmitted || ((e._errorEmitted = !0), e.emit('error', t)))
+	}
+	function tl(t) {
+		t._closeTimer = setTimeout(t._socket.destroy.bind(t._socket), t._closeTimeout)
+	}
+	function nl() {
+		let t = this[ie]
+		if (
+			(this.removeListener('close', nl),
+			this.removeListener('data', qr),
+			this.removeListener('end', rl),
+			(t._readyState = V.CLOSING),
+			!this._readableState.endEmitted &&
+				!t._closeFrameReceived &&
+				!t._receiver._writableState.errorEmitted &&
+				this._readableState.length !== 0)
+		) {
+			let e = this.read(this._readableState.length)
+			t._receiver.write(e)
+		}
+		;(t._receiver.end(),
+			(this[ie] = void 0),
+			clearTimeout(t._closeTimer),
+			t._receiver._writableState.finished || t._receiver._writableState.errorEmitted
+				? t.emitClose()
+				: (t._receiver.on('error', Hu), t._receiver.on('finish', Hu)))
+	}
+	function qr(t) {
+		this[ie]._receiver.write(t) || this.pause()
+	}
+	function rl() {
+		let t = this[ie]
+		;((t._readyState = V.CLOSING), t._receiver.end(), this.end())
+	}
+	function sl() {
+		let t = this[ie]
+		;(this.removeListener('error', sl), this.on('error', Ku), t && ((t._readyState = V.CLOSING), this.destroy()))
+	}
+})
+var ul = p((ZT, cl) => {
+	'use strict'
+	var HT = Dr(),
+		{ Duplex: Qp } = B('stream')
+	function ol(t) {
+		t.emit('close')
+	}
+	function Hp() {
+		!this.destroyed && this._writableState.finished && this.destroy()
+	}
+	function al(t) {
+		;(this.removeListener('error', al), this.destroy(), this.listenerCount('error') === 0 && this.emit('error', t))
+	}
+	function Zp(t, e) {
+		let n = !0,
+			r = new Qp({ ...e, autoDestroy: !1, emitClose: !1, objectMode: !1, writableObjectMode: !1 })
+		return (
+			t.on('message', function (i, o) {
+				let a = !o && r._readableState.objectMode ? i.toString() : i
+				r.push(a) || t.pause()
+			}),
+			t.once('error', function (i) {
+				r.destroyed || ((n = !1), r.destroy(i))
+			}),
+			t.once('close', function () {
+				r.destroyed || r.push(null)
+			}),
+			(r._destroy = function (s, i) {
+				if (t.readyState === t.CLOSED) {
+					;(i(s), process.nextTick(ol, r))
+					return
+				}
+				let o = !1
+				;(t.once('error', function (c) {
+					;((o = !0), i(c))
+				}),
+					t.once('close', function () {
+						;(o || i(s), process.nextTick(ol, r))
+					}),
+					n && t.terminate())
+			}),
+			(r._final = function (s) {
+				if (t.readyState === t.CONNECTING) {
+					t.once('open', function () {
+						r._final(s)
+					})
+					return
+				}
+				t._socket !== null &&
+					(t._socket._writableState.finished
+						? (s(), r._readableState.endEmitted && r.destroy())
+						: (t._socket.once('finish', function () {
+								s()
+							}),
+							t.close()))
+			}),
+			(r._read = function () {
+				t.isPaused && t.resume()
+			}),
+			(r._write = function (s, i, o) {
+				if (t.readyState === t.CONNECTING) {
+					t.once('open', function () {
+						r._write(s, i, o)
+					})
+					return
+				}
+				t.send(s, o)
+			}),
+			r.on('end', Hp),
+			r.on('error', al),
+			r
+		)
+	}
+	cl.exports = Zp
+})
+var ho = p((KT, ll) => {
+	'use strict'
+	var { tokenChars: Kp } = Jt()
+	function Yp(t) {
+		let e = new Set(),
+			n = -1,
+			r = -1,
+			s = 0
+		for (s; s < t.length; s++) {
+			let o = t.charCodeAt(s)
+			if (r === -1 && Kp[o] === 1) n === -1 && (n = s)
+			else if (s !== 0 && (o === 32 || o === 9)) r === -1 && n !== -1 && (r = s)
+			else if (o === 44) {
+				if (n === -1) throw new SyntaxError(`Unexpected character at index ${s}`)
+				r === -1 && (r = s)
+				let a = t.slice(n, r)
+				if (e.has(a)) throw new SyntaxError(`The "${a}" subprotocol is duplicated`)
+				;(e.add(a), (n = r = -1))
+			} else throw new SyntaxError(`Unexpected character at index ${s}`)
+		}
+		if (n === -1 || r !== -1) throw new SyntaxError('Unexpected end of input')
+		let i = t.slice(n, s)
+		if (e.has(i)) throw new SyntaxError(`The "${i}" subprotocol is duplicated`)
+		return (e.add(i), e)
+	}
+	ll.exports = { parse: Yp }
+})
+var El = p((JT, _l) => {
+	'use strict'
+	var Jp = B('events'),
+		Pr = B('http'),
+		{ Duplex: YT } = B('stream'),
+		{ createHash: em } = B('crypto'),
+		fl = Rr(),
+		Lt = Yt(),
+		tm = ho(),
+		nm = Dr(),
+		{ CLOSE_TIMEOUT: rm, GUID: sm, kWebSocket: im } = dt(),
+		om = /^[+/0-9A-Za-z]{22}==$/,
+		dl = 0,
+		hl = 1,
+		ml = 2,
+		po = class extends Jp {
+			constructor(e, n) {
+				if (
+					(super(),
+					(e = {
+						allowSynchronousEvents: !0,
+						autoPong: !0,
+						maxBufferedChunks: 256 * 1024,
+						maxFragments: 16 * 1024,
+						maxPayload: 100 * 1024 * 1024,
+						skipUTF8Validation: !1,
+						perMessageDeflate: !1,
+						handleProtocols: null,
+						clientTracking: !0,
+						closeTimeout: rm,
+						verifyClient: null,
+						noServer: !1,
+						backlog: null,
+						server: null,
+						host: null,
+						path: null,
+						port: null,
+						WebSocket: nm,
+						...e,
+					}),
+					(e.port == null && !e.server && !e.noServer) ||
+						(e.port != null && (e.server || e.noServer)) ||
+						(e.server && e.noServer))
+				)
+					throw new TypeError('One and only one of the "port", "server", or "noServer" options must be specified')
+				if (
+					(e.port != null
+						? ((this._server = Pr.createServer((r, s) => {
+								let i = Pr.STATUS_CODES[426]
+								;(s.writeHead(426, { 'Content-Length': i.length, 'Content-Type': 'text/plain' }), s.end(i))
+							})),
+							this._server.listen(e.port, e.host, e.backlog, n))
+						: e.server && (this._server = e.server),
+					this._server)
+				) {
+					let r = this.emit.bind(this, 'connection')
+					this._removeListeners = am(this._server, {
+						listening: this.emit.bind(this, 'listening'),
+						error: this.emit.bind(this, 'error'),
+						upgrade: (s, i, o) => {
+							this.handleUpgrade(s, i, o, r)
+						},
+					})
+				}
+				;(e.perMessageDeflate === !0 && (e.perMessageDeflate = {}),
+					e.clientTracking && ((this.clients = new Set()), (this._shouldEmitClose = !1)),
+					(this.options = e),
+					(this._state = dl))
+			}
+			address() {
+				if (this.options.noServer) throw new Error('The server is operating in "noServer" mode')
+				return this._server ? this._server.address() : null
+			}
+			close(e) {
+				if (this._state === ml) {
+					;(e &&
+						this.once('close', () => {
+							e(new Error('The server is not running'))
+						}),
+						process.nextTick($n, this))
+					return
+				}
+				if ((e && this.once('close', e), this._state !== hl))
+					if (((this._state = hl), this.options.noServer || this.options.server))
+						(this._server && (this._removeListeners(), (this._removeListeners = this._server = null)),
+							this.clients
+								? this.clients.size
+									? (this._shouldEmitClose = !0)
+									: process.nextTick($n, this)
+								: process.nextTick($n, this))
+					else {
+						let n = this._server
+						;(this._removeListeners(),
+							(this._removeListeners = this._server = null),
+							n.close(() => {
+								$n(this)
+							}))
+					}
+			}
+			shouldHandle(e) {
+				if (this.options.path) {
+					let n = e.url.indexOf('?')
+					if ((n !== -1 ? e.url.slice(0, n) : e.url) !== this.options.path) return !1
+				}
+				return !0
+			}
+			handleUpgrade(e, n, r, s) {
+				n.on('error', pl)
+				let i = e.headers['sec-websocket-key'],
+					o = e.headers.upgrade,
+					a = +e.headers['sec-websocket-version']
+				if (e.method !== 'GET') {
+					Mt(this, e, n, 405, 'Invalid HTTP method')
+					return
+				}
+				if (o === void 0 || o.toLowerCase() !== 'websocket') {
+					Mt(this, e, n, 400, 'Invalid Upgrade header')
+					return
+				}
+				if (i === void 0 || !om.test(i)) {
+					Mt(this, e, n, 400, 'Missing or invalid Sec-WebSocket-Key header')
+					return
+				}
+				if (a !== 13 && a !== 8) {
+					Mt(this, e, n, 400, 'Missing or invalid Sec-WebSocket-Version header', { 'Sec-WebSocket-Version': '13, 8' })
+					return
+				}
+				if (!this.shouldHandle(e)) {
+					Vn(n, 400)
+					return
+				}
+				let c = e.headers['sec-websocket-protocol'],
+					u = new Set()
+				if (c !== void 0)
+					try {
+						u = tm.parse(c)
+					} catch {
+						Mt(this, e, n, 400, 'Invalid Sec-WebSocket-Protocol header')
+						return
+					}
+				let f = e.headers['sec-websocket-extensions'],
+					d = {}
+				if (this.options.perMessageDeflate && f !== void 0) {
+					let m = new Lt({ ...this.options.perMessageDeflate, isServer: !0, maxPayload: this.options.maxPayload })
+					try {
+						let _ = fl.parse(f)
+						_[Lt.extensionName] && (m.accept(_[Lt.extensionName]), (d[Lt.extensionName] = m))
+					} catch {
+						Mt(this, e, n, 400, 'Invalid or unacceptable Sec-WebSocket-Extensions header')
+						return
+					}
+				}
+				if (this.options.verifyClient) {
+					let m = {
+						origin: e.headers[`${a === 8 ? 'sec-websocket-origin' : 'origin'}`],
+						secure: !!(e.socket.authorized || e.socket.encrypted),
+						req: e,
+					}
+					if (this.options.verifyClient.length === 2) {
+						this.options.verifyClient(m, (_, y, b, g) => {
+							if (!_) return Vn(n, y || 401, b, g)
+							this.completeUpgrade(d, i, u, e, n, r, s)
+						})
+						return
+					}
+					if (!this.options.verifyClient(m)) return Vn(n, 401)
+				}
+				this.completeUpgrade(d, i, u, e, n, r, s)
+			}
+			completeUpgrade(e, n, r, s, i, o, a) {
+				if (!i.readable || !i.writable) return i.destroy()
+				if (i[im])
+					throw new Error(
+						'server.handleUpgrade() was called more than once with the same socket, possibly due to a misconfiguration',
+					)
+				if (this._state > dl) return Vn(i, 503)
+				let u = [
+						'HTTP/1.1 101 Switching Protocols',
+						'Upgrade: websocket',
+						'Connection: Upgrade',
+						`Sec-WebSocket-Accept: ${em('sha1')
+							.update(n + sm)
+							.digest('base64')}`,
+					],
+					f = new this.options.WebSocket(null, void 0, this.options)
+				if (r.size) {
+					let d = this.options.handleProtocols ? this.options.handleProtocols(r, s) : r.values().next().value
+					d && (u.push(`Sec-WebSocket-Protocol: ${d}`), (f._protocol = d))
+				}
+				if (e[Lt.extensionName]) {
+					let d = e[Lt.extensionName].params,
+						m = fl.format({ [Lt.extensionName]: [d] })
+					;(u.push(`Sec-WebSocket-Extensions: ${m}`), (f._extensions = e))
+				}
+				;(this.emit('headers', u, s),
+					i.write(
+						u.concat(`\r
 `).join(`\r
-`)),i.removeListener("error",pl),f.setSocket(i,o,{allowSynchronousEvents:this.options.allowSynchronousEvents,maxBufferedChunks:this.options.maxBufferedChunks,maxFragments:this.options.maxFragments,maxPayload:this.options.maxPayload,skipUTF8Validation:this.options.skipUTF8Validation}),this.clients&&(this.clients.add(f),f.on("close",()=>{this.clients.delete(f),this._shouldEmitClose&&!this.clients.size&&process.nextTick($n,this)})),a(f,s)}};_l.exports=po;function am(t,e){for(let n of Object.keys(e))t.on(n,e[n]);return function(){for(let r of Object.keys(e))t.removeListener(r,e[r])}}function $n(t){t._state=ml,t.emit("close")}function pl(){this.destroy()}function Vn(t,e,n,r){n=n||Pr.STATUS_CODES[e],r={Connection:"close","Content-Type":"text/html","Content-Length":Buffer.byteLength(n),...r},t.once("finish",t.destroy),t.end(`HTTP/1.1 ${e} ${Pr.STATUS_CODES[e]}\r
-`+Object.keys(r).map(s=>`${s}: ${r[s]}`).join(`\r
-`)+`\r
+`),
+					),
+					i.removeListener('error', pl),
+					f.setSocket(i, o, {
+						allowSynchronousEvents: this.options.allowSynchronousEvents,
+						maxBufferedChunks: this.options.maxBufferedChunks,
+						maxFragments: this.options.maxFragments,
+						maxPayload: this.options.maxPayload,
+						skipUTF8Validation: this.options.skipUTF8Validation,
+					}),
+					this.clients &&
+						(this.clients.add(f),
+						f.on('close', () => {
+							;(this.clients.delete(f), this._shouldEmitClose && !this.clients.size && process.nextTick($n, this))
+						})),
+					a(f, s))
+			}
+		}
+	_l.exports = po
+	function am(t, e) {
+		for (let n of Object.keys(e)) t.on(n, e[n])
+		return function () {
+			for (let r of Object.keys(e)) t.removeListener(r, e[r])
+		}
+	}
+	function $n(t) {
+		;((t._state = ml), t.emit('close'))
+	}
+	function pl() {
+		this.destroy()
+	}
+	function Vn(t, e, n, r) {
+		;((n = n || Pr.STATUS_CODES[e]),
+			(r = { Connection: 'close', 'Content-Type': 'text/html', 'Content-Length': Buffer.byteLength(n), ...r }),
+			t.once('finish', t.destroy),
+			t.end(
+				`HTTP/1.1 ${e} ${Pr.STATUS_CODES[e]}\r
+` +
+					Object.keys(r).map((s) => `${s}: ${r[s]}`).join(`\r
+`) +
+					`\r
 \r
-`+n)}function Mt(t,e,n,r,s,i){if(t.listenerCount("wsClientError")){let o=new Error(s);Error.captureStackTrace(o,Mt),t.emit("wsClientError",o,n,e)}else Vn(n,r,s,i)}});var mo=p((eS,gl)=>{"use strict";var cm=ul(),um=Rr(),lm=Yt(),fm=ro(),dm=oo(),hm=ho(),Qe=Dr(),bl=El();Qe.createWebSocketStream=cm;Qe.extension=um;Qe.PerMessageDeflate=lm;Qe.Receiver=fm;Qe.Sender=dm;Qe.Server=bl;Qe.subprotocol=hm;Qe.WebSocket=Qe;Qe.WebSocketServer=bl;gl.exports=Qe});var Tl=p((tS,yl)=>{yl.exports=[]});var wl=p((nS,vl)=>{var pm=mo(),mm=[{id:0,label:"Input 1"},{id:1,label:"Input 2"},{id:2,label:"Input 3"},{id:3,label:"Input 4"},{id:4,label:"Input 5"},{id:5,label:"Input 6"},{id:6,label:"Input 7"},{id:7,label:"Input 8"}],Sl=[{id:0,label:"Off"},{id:1,label:"On"},{id:2,label:"Toggle"}],_m=16,Em=76,xl=3,tt=()=>({id:"input",type:"dropdown",label:"Input",default:0,choices:mm}),nt=async(t,e,n,r)=>{try{await t.ember.setInputParameter(Number(e),n,r)}catch(s){t.log("error",`Action failed: ${s.message}`)}},bm=(t,e)=>{if(!t.ws||t.ws.readyState!==pm.OPEN){t.log("error","Action failed: WebSocket is not connected");return}t.ws.send(JSON.stringify({audio:{statusLeds:Number(e)}}),n=>{n&&t.log("error",`Action failed: ${n.message}`)})},Ar=(t,e,n,r)=>{let s=Number(e);return s!==2?s:n==null?(t.log("error",`Cannot toggle ${r}: current device state has not been received`),null):n===!0||Number(n)===1?0:1},Il=async(t,e,n)=>{let r=Number(t.inputState?.[e]?.preamp_gain);if(!Number.isFinite(r)){t.log("error","Cannot adjust preamp gain: current Ember+ value has not been received");return}let s=Math.min(Em,Math.max(_m,r+n));s!==r&&await nt(t,e,"preamp_gain",s)};vl.exports=function(t){t.setActionDefinitions({line_mic:{name:"Set Input Mode",options:[tt(),{id:"mode",type:"dropdown",label:"Mode",default:0,choices:[{id:0,label:"Mic"},{id:1,label:"Line"}]}],callback:async e=>{await nt(t,e.options.input,"line_mic",Number(e.options.mode))}},phantom_power:{name:"Set Phantom Power",options:[tt(),{id:"state",type:"dropdown",label:"Phantom Power",default:0,choices:Sl}],callback:async e=>{let n=Number(e.options.input),r=Ar(t,e.options.state,t.inputState?.[n]?.phantom_power,"phantom power");r!==null&&await nt(t,n,"phantom_power",r===1)}},set_preamp_gain:{name:"Set Preamp Gain",options:[tt(),{id:"gain",type:"dropdown",label:"Gain",default:16,choices:Array.from({length:21},(e,n)=>{let r=16+n*3;return{id:r,label:`${r} dB`}})}],callback:async e=>{let n=Number(e.options.input);await nt(t,n,"preamp_gain",Number(e.options.gain))}},adjust_preamp_gain:{name:"Adjust Preamp Gain",options:[tt(),{id:"operation",type:"dropdown",label:"Operation",default:"increase",choices:[{id:"increase",label:"Increase"},{id:"decrease",label:"Decrease"}]},{id:"step",type:"dropdown",label:"Gain Step",default:1,isVisibleExpression:"$(options:operation) === 'increase' || $(options:operation) === 'decrease'",choices:[1,2,4,5,10].map(e=>({id:e,label:`${e*3} dB`})),tooltip:"Select the gain change applied per adjustment."}],callback:async e=>{let n=Number(e.options.input),r=Math.max(1,Math.round(Number(e.options.step)||1));switch(e.options.operation||"set"){case"increase":await Il(t,n,r*xl);break;case"decrease":await Il(t,n,-r*xl);break}}},full_scale_level:{name:"Set Full Scale Level",options:[tt(),{id:"level",type:"dropdown",label:"Full Scale Level",default:0,choices:[{id:0,label:"+15 dBu"},{id:1,label:"+18 dBu"},{id:2,label:"+20 dBu"},{id:3,label:"+22 dBu"},{id:4,label:"+24 dBu"}]}],callback:async e=>{await nt(t,e.options.input,"full_scale_level",Number(e.options.level))}},hpf_enable:{name:"Set High-Pass Filter State",options:[tt(),{id:"state",type:"dropdown",label:"High-Pass Filter",default:0,choices:Sl}],callback:async e=>{let n=Number(e.options.input),r=Ar(t,e.options.state,t.inputState?.[n]?.hpf_enable,"high-pass filter");r!==null&&await nt(t,n,"hpf_enable",r===1)}},hpf_freq:{name:"Set High-Pass Filter Frequency",options:[tt(),{id:"frequency",type:"number",label:"Corner Frequency (Hz)",default:125,min:40,max:3e3,step:5}],callback:async e=>{await nt(t,e.options.input,"hpf_freq",Number(e.options.frequency))}},sig_pres_timeout:{name:"Set Signal-Presence Timeout",options:[tt(),{id:"timeout",type:"number",label:"Timeout (seconds)",default:5,min:0,max:300}],callback:async e=>{await nt(t,e.options.input,"sig_pres_timeout",Number(e.options.timeout))}},sig_pres_threshold:{name:"Set Signal-Presence Threshold",options:[tt(),{id:"threshold",type:"number",label:"Threshold (dBFS)",default:-40,min:-70,max:0}],callback:async e=>{await nt(t,e.options.input,"sig_pres_threshold",Number(e.options.threshold))}},mute:{name:"Set Input Mute",options:[tt(),{id:"state",type:"dropdown",label:"Mute",default:0,choices:[{id:0,label:"Unmuted"},{id:1,label:"Muted"},{id:2,label:"Toggle"}]}],callback:async e=>{let n=Number(e.options.input),r=Ar(t,e.options.state,t.inputState?.[n]?.mute,"input mute");r!==null&&await nt(t,n,"mute",r===1)}},status_leds:{name:"Set Status LEDs",options:[{id:"state",type:"dropdown",label:"Status LEDs",default:1,choices:[{id:0,label:"Disabled"},{id:1,label:"Enabled"},{id:2,label:"Toggle"}]}],callback:async e=>{let n=Ar(t,e.options.state,t.statusLeds,"status LEDs");n!==null&&bm(t,n)}}})}});var Eo=p((rS,Nl)=>{var _o=t=>t===!0||Number(t)===1,gm=t=>_o(t?.mute)||_o(t?.gpi_mute),ym=t=>String(t).trim().toLowerCase()==="present";Nl.exports={isAsserted:_o,isMuted:gm,isPresent:ym}});var Ol=p((sS,Cl)=>{var{isAsserted:Tm,isMuted:Sm}=Eo(),bo=[{id:0,label:"Input 1"},{id:1,label:"Input 2"},{id:2,label:"Input 3"},{id:3,label:"Input 4"},{id:4,label:"Input 5"},{id:5,label:"Input 6"},{id:6,label:"Input 7"},{id:7,label:"Input 8"}],xm=[{id:"line_mic",label:"Signal Level (0 = Mic, 1 = Line)"},{id:"phantom_power",label:"Phantom Power"},{id:"preamp_gain",label:"Preamp Gain"},{id:"full_scale_level",label:"Full Scale Level"},{id:"hpf_enable",label:"High-Pass Filter"},{id:"hpf_freq",label:"High-Pass Filter Frequency"},{id:"sig_pres_timeout",label:"Signal-Presence Timeout"},{id:"sig_pres_threshold",label:"Signal-Presence Threshold"},{id:"mute",label:"Mute"}],Gn=t=>String(typeof t=="boolean"?Number(t):t??""),Im=[null,-52,-47.33,-42.66,-38,-33.33,-28.66,-24,-22.5,-21,-19.5,-18,-16.5,-15,-13.5,-12,-10,-8,-6,-4,-2,-.1],vm=Im.map((t,e)=>({id:e,label:e===0?"Silence (below -52 dBFS)":`${t} dBFS`}));Cl.exports=function(t){t.setFeedbackDefinitions({ParameterState:{name:"Ember+ Parameter",description:"Active when the selected Ember+ input parameter matches the specified value.",type:"boolean",defaultStyle:{bgcolor:65280,color:0},options:[{id:"input",type:"dropdown",label:"Input",default:0,choices:bo},{id:"parameter",type:"dropdown",label:"Parameter",default:"line_mic",choices:xm},{id:"value",type:"textinput",label:"Value",default:"1"}],callback:e=>{let n=t.inputState?.[Number(e.options.input)]?.[e.options.parameter];return n!==void 0&&Gn(n)===Gn(e.options.value)},learn:e=>{let n=t.inputState?.[Number(e.options.input)]?.[e.options.parameter];return n===void 0?void 0:{value:Gn(n)}}},MuteState:{name:"Input Mute",description:"Active when the selected input matches the mute state.",type:"boolean",defaultStyle:{bgcolor:16711680,color:16777215},options:[{id:"input",type:"dropdown",label:"Input",default:0,choices:bo},{id:"source",type:"dropdown",label:"Source",default:"any",choices:[{id:"any",label:"Software or GPI"},{id:"software",label:"Software only"},{id:"gpi",label:"GPI only"}]},{id:"state",type:"dropdown",label:"State",default:1,choices:[{id:1,label:"Muted"},{id:0,label:"Unmuted"}]}],callback:e=>{let n=t.inputState?.[Number(e.options.input)],r=e.options.source,s=r==="software"?n?.mute:r==="gpi"?n?.gpi_mute:n?.mute??n?.gpi_mute;return s===void 0?!1:(r==="any"?Sm(n):Tm(s))===(Number(e.options.state)===1)}},MeterLevel:{name:"Input Meter Level",description:"Active when the selected input meter compares as chosen against the level.",type:"boolean",defaultStyle:{bgcolor:65280,color:0},options:[{id:"input",type:"dropdown",label:"Input",default:0,choices:bo},{id:"comparison",type:"dropdown",label:"Comparison",default:">",choices:[{id:"<",label:"<"},{id:"=",label:"="},{id:">",label:">"}]},{id:"threshold",type:"dropdown",label:"Level (dBFS)",default:0,choices:vm}],callback:e=>{let n=t.meters?.[Number(e.options.input)];if(n===void 0)return!1;let r=Number(e.options.threshold);return e.options.comparison==="<"?n<r:e.options.comparison==="="?n===r:n>r}},PowerInput:{name:"PoE Input",description:"Active when the selected PoE input matches the state.",type:"boolean",defaultStyle:{bgcolor:16711680,color:16777215},options:[{id:"input",type:"dropdown",label:"PoE Input",default:1,choices:[{id:1,label:"Primary"},{id:2,label:"Secondary"}]},{id:"state",type:"dropdown",label:"State",default:0,choices:[{id:0,label:"Not present"},{id:1,label:"Present"}]}],callback:e=>{let n=t.powerInputs?.[Number(e.options.input)];return n===void 0?!1:n===(Number(e.options.state)===1)}},StatusLeds:{name:"Status LEDs",description:"Active when the WebSocket-reported status LED setting matches the selected state.",type:"boolean",defaultStyle:{bgcolor:65280,color:0},options:[{id:"state",type:"dropdown",label:"State",default:1,choices:[{id:0,label:"Disabled"},{id:1,label:"Enabled"}]}],callback:e=>t.statusLeds!==void 0&&Gn(t.statusLeds)===Gn(e.options.state)}})}});var kl=p((iS,Rl)=>{Rl.exports=function(t){let e={status_leds_enabled:{name:"Status LEDs enabled"},device_uptime:{name:"Device uptime"},device_temperature:{name:"Device core temperature (\xB0C)"},primary_poe_present:{name:"Primary PoE present"},secondary_poe_present:{name:"Secondary PoE present"}};for(let n=1;n<=8;n++)e[`input${n}_dante_label`]={name:`Input ${n} Dante label`},e[`input${n}_friendly_name`]={name:`Input ${n} friendly name`},e[`input${n}_mode`]={name:`Input ${n} mode`},e[`input${n}_phantom_power`]={name:`Input ${n} phantom power enabled`},e[`input${n}_preamp_gain`]={name:`Input ${n} preamp gain (dB)`},e[`input${n}_full_scale_level`]={name:`Input ${n} full scale level`},e[`input${n}_hpf_enabled`]={name:`Input ${n} high-pass filter enabled`},e[`input${n}_hpf_frequency`]={name:`Input ${n} high-pass filter frequency (Hz)`},e[`input${n}_signal_presence_timeout`]={name:`Input ${n} signal-presence timeout (seconds)`},e[`input${n}_signal_presence_threshold`]={name:`Input ${n} signal-presence threshold (dBFS)`},e[`input${n}_mute`]={name:`Input ${n} software mute active`},e[`input${n}_gpi_mute`]={name:`Input ${n} GPI mute active`},e[`input${n}_mute_active`]={name:`Input ${n} overall mute active (software or GPI)`},e[`input${n}_meter`]={name:`Input ${n} meter segments`};t.setVariableDefinitions(e)}});var Pl=p((oS,Dl)=>{var{combineRgb:sn}=(Wi(),x(Xi)),To=sn(0,0,0),bt=sn(255,255,255),Xn=sn(200,0,0),go=sn(0,160,0),Bl=sn(200,130,0),wm=sn(0,80,160),Wn="sonifex-avn-m8r",ql=[1,2,3,4,5,6,7,8],_t=(...t)=>t.join(`
-`),Et=(t,e=To)=>({text:t,size:"auto",color:bt,bgcolor:e}),zn=(t,e,n,r)=>({type:"simple",name:t,keywords:r,style:e,steps:[{down:[],up:[]}],feedbacks:n}),yo=(t,e,n,r,s)=>({type:"simple",name:t,keywords:s,style:e,steps:[{down:n,up:[]}],feedbacks:r});Dl.exports=function(t){let e={};for(let i of ql){let o=i-1,a=`IN ${i}`;e[`mute_${i}`]=yo(`Input ${i} mute toggle`,Et(_t(a,`$(${Wn}:input${i}_mute_active)`)),[{actionId:"mute",options:{input:o,state:2}}],[{feedbackId:"MuteState",options:{input:o,source:"any",state:1},style:{bgcolor:Xn,color:bt},headline:"Red while muted by either source"},{feedbackId:"MuteState",options:{input:o,source:"gpi",state:1},style:{bgcolor:Bl,color:To},headline:"Amber when the GPI is holding the mute."}],["mute","gpi"]),e[`phantom_${i}`]=yo(`Input ${i} phantom power toggle`,Et(_t(a,"48V")),[{actionId:"phantom_power",options:{input:o,state:2}}],[{feedbackId:"ParameterState",options:{input:o,parameter:"phantom_power",value:"1"},style:{bgcolor:Xn,color:bt}}],["phantom","48v"]),e[`mode_${i}`]={type:"simple",name:`Input ${i} mic/line mode`,keywords:["mic","line"],style:Et(_t(a,`$(${Wn}:input${i}_mode)`)),steps:[{name:"Set Line",down:[{actionId:"line_mic",options:{input:o,mode:1}}],up:[]},{name:"Set Mic",down:[{actionId:"line_mic",options:{input:o,mode:0}}],up:[]}],feedbacks:[{feedbackId:"ParameterState",options:{input:o,parameter:"line_mic",value:"1"},style:{bgcolor:wm,color:bt},headline:"Blue in line mode"}]},e[`meter_${i}`]={type:"layered",name:`Input ${i} meter gauge`,keywords:["meter","gauge","level"],elements:[{type:"box",x:0,y:0,width:100,height:100,color:To},{type:"text",text:String(i),x:4,y:4,width:22,height:24,fontsize:80,color:bt,halign:"left",valign:"top"},{type:"gauge",x:30,y:0,width:40,height:100,value:{isExpression:!0,value:`$(${Wn}:input${i}_meter)`},min:0,max:21,origin:0,orientation:"vertical",fillEnabled:!0,multiColour:!0,fillWidth:100,trackStyle:"dimmed",trackAmount:20,trackWidth:100,stops:[{value:0,color:go,gradient:!0},{value:11,color:Bl,gradient:!0},{value:18,color:Xn,gradient:!0}]}],steps:[{down:[],up:[]}],feedbacks:[]},e[`signal_${i}`]=zn(`Input ${i} signal present`,Et(_t(a,"SIG")),[{feedbackId:"MeterLevel",options:{input:o,comparison:">",threshold:0},style:{bgcolor:go,color:bt}}],["signal","meter"]),e[`clip_${i}`]=zn(`Input ${i} clip`,Et(_t(a,"CLIP")),[{feedbackId:"MeterLevel",options:{input:o,comparison:"=",threshold:21},style:{bgcolor:Xn,color:bt}}],["clip","meter","peak"])}e.status_leds=yo("Status LEDs toggle",Et(_t("STATUS","LEDS")),[{actionId:"status_leds",options:{state:2}}],[{feedbackId:"StatusLeds",options:{state:1},style:{bgcolor:go,color:bt}}],["leds"]);for(let[i,o,a,c]of[["poe_primary",1,"Primary","PRI"],["poe_secondary",2,"Secondary","SEC"]])e[i]=zn(`${a} PoE fail`,Et(_t(c,"PoE")),[{feedbackId:"PowerInput",options:{input:o,state:0},style:{bgcolor:Xn,color:bt}}],["poe","power"]);e.temperature=zn("Device temperature",Et(_t("TEMP",`$(${Wn}:device_temperature) C`)),[],["temp"]),e.uptime=zn("Device uptime",Et(_t("UPTIME",`$(${Wn}:device_uptime)`)),[],["uptime"]);let n=(i,o,a,c)=>({id:i,type:"simple",name:o,description:c,presets:a}),r=i=>ql.map(o=>`${i}_${o}`),s=[{id:"inputs",name:"Inputs",description:"One button per mic/line input.",definitions:[n("mute","Mute",r("mute"),"Toggles the software mute; turns amber when a GPI is muting."),n("phantom","Phantom Power",r("phantom")),n("mode","Mic/Line Mode",r("mode"))]},{id:"metering",name:"Metering",definitions:[n("meter","Meter Gauges",r("meter")),n("signal","Signal Present",r("signal")),n("clip","Clip",r("clip"))]},{id:"device",name:"Device",definitions:["status_leds","poe_primary","poe_secondary","temperature","uptime"]}];t.setPresetDefinitions(s,e)}});var I={};wc(I,{__addDisposableResource:()=>af,__assign:()=>Fr,__asyncDelegator:()=>Yl,__asyncGenerator:()=>Kl,__asyncValues:()=>Jl,__await:()=>on,__awaiter:()=>Xl,__classPrivateFieldGet:()=>rf,__classPrivateFieldIn:()=>of,__classPrivateFieldSet:()=>sf,__createBinding:()=>Mr,__decorate:()=>Ll,__disposeResources:()=>cf,__esDecorate:()=>Ul,__exportStar:()=>zl,__extends:()=>Al,__generator:()=>Wl,__importDefault:()=>nf,__importStar:()=>tf,__makeTemplateObject:()=>ef,__metadata:()=>Gl,__param:()=>Ml,__propKey:()=>$l,__read:()=>Io,__rest:()=>Fl,__rewriteRelativeImportExtension:()=>uf,__runInitializers:()=>jl,__setFunctionName:()=>Vl,__spread:()=>Ql,__spreadArray:()=>Zl,__spreadArrays:()=>Hl,__values:()=>Lr,default:()=>Om});function Al(t,e){if(typeof e!="function"&&e!==null)throw new TypeError("Class extends value "+String(e)+" is not a constructor or null");So(t,e);function n(){this.constructor=t}t.prototype=e===null?Object.create(e):(n.prototype=e.prototype,new n)}function Fl(t,e){var n={};for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&e.indexOf(r)<0&&(n[r]=t[r]);if(t!=null&&typeof Object.getOwnPropertySymbols=="function")for(var s=0,r=Object.getOwnPropertySymbols(t);s<r.length;s++)e.indexOf(r[s])<0&&Object.prototype.propertyIsEnumerable.call(t,r[s])&&(n[r[s]]=t[r[s]]);return n}function Ll(t,e,n,r){var s=arguments.length,i=s<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,n):r,o;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")i=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(i=(s<3?o(i):s>3?o(e,n,i):o(e,n))||i);return s>3&&i&&Object.defineProperty(e,n,i),i}function Ml(t,e){return function(n,r){e(n,r,t)}}function Ul(t,e,n,r,s,i){function o(w){if(w!==void 0&&typeof w!="function")throw new TypeError("Function expected");return w}for(var a=r.kind,c=a==="getter"?"get":a==="setter"?"set":"value",u=!e&&t?r.static?t:t.prototype:null,f=e||(u?Object.getOwnPropertyDescriptor(u,r.name):{}),d,m=!1,_=n.length-1;_>=0;_--){var y={};for(var b in r)y[b]=b==="access"?{}:r[b];for(var b in r.access)y.access[b]=r.access[b];y.addInitializer=function(w){if(m)throw new TypeError("Cannot add initializers after decoration has completed");i.push(o(w||null))};var g=(0,n[_])(a==="accessor"?{get:f.get,set:f.set}:f[c],y);if(a==="accessor"){if(g===void 0)continue;if(g===null||typeof g!="object")throw new TypeError("Object expected");(d=o(g.get))&&(f.get=d),(d=o(g.set))&&(f.set=d),(d=o(g.init))&&s.unshift(d)}else(d=o(g))&&(a==="field"?s.unshift(d):f[c]=d)}u&&Object.defineProperty(u,r.name,f),m=!0}function jl(t,e,n){for(var r=arguments.length>2,s=0;s<e.length;s++)n=r?e[s].call(t,n):e[s].call(t);return r?n:void 0}function $l(t){return typeof t=="symbol"?t:"".concat(t)}function Vl(t,e,n){return typeof e=="symbol"&&(e=e.description?"[".concat(e.description,"]"):""),Object.defineProperty(t,"name",{configurable:!0,value:n?"".concat(n," ",e):e})}function Gl(t,e){if(typeof Reflect=="object"&&typeof Reflect.metadata=="function")return Reflect.metadata(t,e)}function Xl(t,e,n,r){function s(i){return i instanceof n?i:new n(function(o){o(i)})}return new(n||(n=Promise))(function(i,o){function a(f){try{u(r.next(f))}catch(d){o(d)}}function c(f){try{u(r.throw(f))}catch(d){o(d)}}function u(f){f.done?i(f.value):s(f.value).then(a,c)}u((r=r.apply(t,e||[])).next())})}function Wl(t,e){var n={label:0,sent:function(){if(i[0]&1)throw i[1];return i[1]},trys:[],ops:[]},r,s,i,o=Object.create((typeof Iterator=="function"?Iterator:Object).prototype);return o.next=a(0),o.throw=a(1),o.return=a(2),typeof Symbol=="function"&&(o[Symbol.iterator]=function(){return this}),o;function a(u){return function(f){return c([u,f])}}function c(u){if(r)throw new TypeError("Generator is already executing.");for(;o&&(o=0,u[0]&&(n=0)),n;)try{if(r=1,s&&(i=u[0]&2?s.return:u[0]?s.throw||((i=s.return)&&i.call(s),0):s.next)&&!(i=i.call(s,u[1])).done)return i;switch(s=0,i&&(u=[u[0]&2,i.value]),u[0]){case 0:case 1:i=u;break;case 4:return n.label++,{value:u[1],done:!1};case 5:n.label++,s=u[1],u=[0];continue;case 7:u=n.ops.pop(),n.trys.pop();continue;default:if(i=n.trys,!(i=i.length>0&&i[i.length-1])&&(u[0]===6||u[0]===2)){n=0;continue}if(u[0]===3&&(!i||u[1]>i[0]&&u[1]<i[3])){n.label=u[1];break}if(u[0]===6&&n.label<i[1]){n.label=i[1],i=u;break}if(i&&n.label<i[2]){n.label=i[2],n.ops.push(u);break}i[2]&&n.ops.pop(),n.trys.pop();continue}u=e.call(t,n)}catch(f){u=[6,f],s=0}finally{r=i=0}if(u[0]&5)throw u[1];return{value:u[0]?u[1]:void 0,done:!0}}}function zl(t,e){for(var n in t)n!=="default"&&!Object.prototype.hasOwnProperty.call(e,n)&&Mr(e,t,n)}function Lr(t){var e=typeof Symbol=="function"&&Symbol.iterator,n=e&&t[e],r=0;if(n)return n.call(t);if(t&&typeof t.length=="number")return{next:function(){return t&&r>=t.length&&(t=void 0),{value:t&&t[r++],done:!t}}};throw new TypeError(e?"Object is not iterable.":"Symbol.iterator is not defined.")}function Io(t,e){var n=typeof Symbol=="function"&&t[Symbol.iterator];if(!n)return t;var r=n.call(t),s,i=[],o;try{for(;(e===void 0||e-- >0)&&!(s=r.next()).done;)i.push(s.value)}catch(a){o={error:a}}finally{try{s&&!s.done&&(n=r.return)&&n.call(r)}finally{if(o)throw o.error}}return i}function Ql(){for(var t=[],e=0;e<arguments.length;e++)t=t.concat(Io(arguments[e]));return t}function Hl(){for(var t=0,e=0,n=arguments.length;e<n;e++)t+=arguments[e].length;for(var r=Array(t),s=0,e=0;e<n;e++)for(var i=arguments[e],o=0,a=i.length;o<a;o++,s++)r[s]=i[o];return r}function Zl(t,e,n){if(n||arguments.length===2)for(var r=0,s=e.length,i;r<s;r++)(i||!(r in e))&&(i||(i=Array.prototype.slice.call(e,0,r)),i[r]=e[r]);return t.concat(i||Array.prototype.slice.call(e))}function on(t){return this instanceof on?(this.v=t,this):new on(t)}function Kl(t,e,n){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var r=n.apply(t,e||[]),s,i=[];return s=Object.create((typeof AsyncIterator=="function"?AsyncIterator:Object).prototype),a("next"),a("throw"),a("return",o),s[Symbol.asyncIterator]=function(){return this},s;function o(_){return function(y){return Promise.resolve(y).then(_,d)}}function a(_,y){r[_]&&(s[_]=function(b){return new Promise(function(g,w){i.push([_,b,g,w])>1||c(_,b)})},y&&(s[_]=y(s[_])))}function c(_,y){try{u(r[_](y))}catch(b){m(i[0][3],b)}}function u(_){_.value instanceof on?Promise.resolve(_.value.v).then(f,d):m(i[0][2],_)}function f(_){c("next",_)}function d(_){c("throw",_)}function m(_,y){_(y),i.shift(),i.length&&c(i[0][0],i[0][1])}}function Yl(t){var e,n;return e={},r("next"),r("throw",function(s){throw s}),r("return"),e[Symbol.iterator]=function(){return this},e;function r(s,i){e[s]=t[s]?function(o){return(n=!n)?{value:on(t[s](o)),done:!1}:i?i(o):o}:i}}function Jl(t){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var e=t[Symbol.asyncIterator],n;return e?e.call(t):(t=typeof Lr=="function"?Lr(t):t[Symbol.iterator](),n={},r("next"),r("throw"),r("return"),n[Symbol.asyncIterator]=function(){return this},n);function r(i){n[i]=t[i]&&function(o){return new Promise(function(a,c){o=t[i](o),s(a,c,o.done,o.value)})}}function s(i,o,a,c){Promise.resolve(c).then(function(u){i({value:u,done:a})},o)}}function ef(t,e){return Object.defineProperty?Object.defineProperty(t,"raw",{value:e}):t.raw=e,t}function tf(t){if(t&&t.__esModule)return t;var e={};if(t!=null)for(var n=xo(t),r=0;r<n.length;r++)n[r]!=="default"&&Mr(e,t,n[r]);return Nm(e,t),e}function nf(t){return t&&t.__esModule?t:{default:t}}function rf(t,e,n,r){if(n==="a"&&!r)throw new TypeError("Private accessor was defined without a getter");if(typeof e=="function"?t!==e||!r:!e.has(t))throw new TypeError("Cannot read private member from an object whose class did not declare it");return n==="m"?r:n==="a"?r.call(t):r?r.value:e.get(t)}function sf(t,e,n,r,s){if(r==="m")throw new TypeError("Private method is not writable");if(r==="a"&&!s)throw new TypeError("Private accessor was defined without a setter");if(typeof e=="function"?t!==e||!s:!e.has(t))throw new TypeError("Cannot write private member to an object whose class did not declare it");return r==="a"?s.call(t,n):s?s.value=n:e.set(t,n),n}function of(t,e){if(e===null||typeof e!="object"&&typeof e!="function")throw new TypeError("Cannot use 'in' operator on non-object");return typeof t=="function"?e===t:t.has(e)}function af(t,e,n){if(e!=null){if(typeof e!="object"&&typeof e!="function")throw new TypeError("Object expected.");var r,s;if(n){if(!Symbol.asyncDispose)throw new TypeError("Symbol.asyncDispose is not defined.");r=e[Symbol.asyncDispose]}if(r===void 0){if(!Symbol.dispose)throw new TypeError("Symbol.dispose is not defined.");r=e[Symbol.dispose],n&&(s=r)}if(typeof r!="function")throw new TypeError("Object not disposable.");s&&(r=function(){try{s.call(this)}catch(i){return Promise.reject(i)}}),t.stack.push({value:e,dispose:r,async:n})}else n&&t.stack.push({async:!0});return e}function cf(t){function e(i){t.error=t.hasError?new Cm(i,t.error,"An error was suppressed during disposal."):i,t.hasError=!0}var n,r=0;function s(){for(;n=t.stack.pop();)try{if(!n.async&&r===1)return r=0,t.stack.push(n),Promise.resolve().then(s);if(n.dispose){var i=n.dispose.call(n.value);if(n.async)return r|=2,Promise.resolve(i).then(s,function(o){return e(o),s()})}else r|=1}catch(o){e(o)}if(r===1)return t.hasError?Promise.reject(t.error):Promise.resolve();if(t.hasError)throw t.error}return s()}function uf(t,e){return typeof t=="string"&&/^\.\.?\//.test(t)?t.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i,function(n,r,s,i,o){return r?e?".jsx":".js":s&&(!i||!o)?n:s+i+"."+o.toLowerCase()+"js"}):t}var So,Fr,Mr,Nm,xo,Cm,Om,v=q(()=>{So=function(t,e){return So=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,r){n.__proto__=r}||function(n,r){for(var s in r)Object.prototype.hasOwnProperty.call(r,s)&&(n[s]=r[s])},So(t,e)};Fr=function(){return Fr=Object.assign||function(e){for(var n,r=1,s=arguments.length;r<s;r++){n=arguments[r];for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(e[i]=n[i])}return e},Fr.apply(this,arguments)};Mr=Object.create?(function(t,e,n,r){r===void 0&&(r=n);var s=Object.getOwnPropertyDescriptor(e,n);(!s||("get"in s?!e.__esModule:s.writable||s.configurable))&&(s={enumerable:!0,get:function(){return e[n]}}),Object.defineProperty(t,r,s)}):(function(t,e,n,r){r===void 0&&(r=n),t[r]=e[n]});Nm=Object.create?(function(t,e){Object.defineProperty(t,"default",{enumerable:!0,value:e})}):function(t,e){t.default=e},xo=function(t){return xo=Object.getOwnPropertyNames||function(e){var n=[];for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(n[n.length]=r);return n},xo(t)};Cm=typeof SuppressedError=="function"?SuppressedError:function(t,e,n){var r=new Error(n);return r.name="SuppressedError",r.error=t,r.suppressed=e,r};Om={__extends:Al,__assign:Fr,__rest:Fl,__decorate:Ll,__param:Ml,__esDecorate:Ul,__runInitializers:jl,__propKey:$l,__setFunctionName:Vl,__metadata:Gl,__awaiter:Xl,__generator:Wl,__createBinding:Mr,__exportStar:zl,__values:Lr,__read:Io,__spread:Ql,__spreadArrays:Hl,__spreadArray:Zl,__await:on,__asyncGenerator:Kl,__asyncDelegator:Yl,__asyncValues:Jl,__makeTemplateObject:ef,__importStar:tf,__importDefault:nf,__classPrivateFieldGet:rf,__classPrivateFieldSet:sf,__classPrivateFieldIn:of,__addDisposableResource:af,__disposeResources:cf,__rewriteRelativeImportExtension:uf}});var Ut=p(an=>{"use strict";Object.defineProperty(an,"__esModule",{value:!0});an.literal=an.RootType=void 0;var vo;(function(t){t[t.Elements=0]="Elements",t[t.Streams=1]="Streams",t[t.InvocationResult=2]="InvocationResult"})(vo||(vo={}));an.RootType=vo;function Rm(t){return t}an.literal=Rm});var Ie=p(cn=>{"use strict";Object.defineProperty(cn,"__esModule",{value:!0});cn.isEmberElement=cn.ElementType=void 0;var Ur;(function(t){t.Parameter="PARAMETER",t.Node="NODE",t.Command="COMMAND",t.Matrix="MATRIX",t.Function="FUNCTION",t.Template="TEMPLATE"})(Ur||(Ur={}));cn.ElementType=Ur;function km(t){if(t==null||!(typeof t=="object"&&"type"in t))return!1;let{type:e}=t;return!(!e||!Object.values(Ur).includes(e))}cn.isEmberElement=km});var Qn=p(oe=>{"use strict";Object.defineProperty(oe,"__esModule",{value:!0});oe.isGetDirectory=oe.isInvoke=oe.InvokeImpl=oe.GetDirectoryImpl=oe.UnsubscribeImpl=oe.SubscribeImpl=oe.FieldFlags=oe.CommandType=void 0;var Bm=Ie(),gt;(function(t){t[t.Subscribe=30]="Subscribe",t[t.Unsubscribe=31]="Unsubscribe",t[t.GetDirectory=32]="GetDirectory",t[t.Invoke=33]="Invoke"})(gt||(gt={}));oe.CommandType=gt;var wo;(function(t){t.Sparse="SPARSE",t.All="ALL",t.Default="DEFAULT",t.Identifier="IDENTIFIER",t.Description="DESCRIPTION",t.Tree="TREE",t.Value="VALUE",t.Connections="CONNECTIONS"})(wo||(wo={}));oe.FieldFlags=wo;function qm(t){return t!==null&&t.number===gt.Invoke}oe.isInvoke=qm;function Dm(t){return t!==null&&t.number===gt.GetDirectory}oe.isGetDirectory=Dm;var un=class{constructor(){this.type=Bm.ElementType.Command}},No=class extends un{constructor(){super(),this.number=gt.Subscribe}};oe.SubscribeImpl=No;var Co=class extends un{constructor(){super(),this.number=gt.Unsubscribe}};oe.UnsubscribeImpl=Co;var Oo=class extends un{constructor(e){super(),this.dirFieldMask=e,this.number=gt.GetDirectory}};oe.GetDirectoryImpl=Oo;var Ro=class extends un{constructor(e){super(),this.invocation=e,this.number=gt.Invoke}};oe.InvokeImpl=Ro});var Hn=p(vt=>{"use strict";Object.defineProperty(vt,"__esModule",{value:!0});vt.ConnectionImpl=vt.ConnectionOperation=vt.ConnectionDisposition=void 0;var ko;(function(t){t.Absolute="ABSOLUTE",t.Connect="CONNECT",t.Disconnect="DISCONNECT"})(ko||(ko={}));vt.ConnectionOperation=ko;var Bo;(function(t){t.Tally="TALLY",t.Modified="MODIFIED",t.Pending="PENDING",t.Locked="LOCKED"})(Bo||(Bo={}));vt.ConnectionDisposition=Bo;var qo=class{constructor(e,n,r,s){this.target=e,this.sources=n,this.operation=r,this.disposition=s}};vt.ConnectionImpl=qo});var jt=p((fS,Do)=>{"use strict";var Pm=Object.prototype.hasOwnProperty,ve="~";function Zn(){}Object.create&&(Zn.prototype=Object.create(null),new Zn().__proto__||(ve=!1));function Am(t,e,n){this.fn=t,this.context=e,this.once=n||!1}function lf(t,e,n,r,s){if(typeof n!="function")throw new TypeError("The listener must be a function");var i=new Am(n,r||t,s),o=ve?ve+e:e;return t._events[o]?t._events[o].fn?t._events[o]=[t._events[o],i]:t._events[o].push(i):(t._events[o]=i,t._eventsCount++),t}function jr(t,e){--t._eventsCount===0?t._events=new Zn:delete t._events[e]}function be(){this._events=new Zn,this._eventsCount=0}be.prototype.eventNames=function(){var e=[],n,r;if(this._eventsCount===0)return e;for(r in n=this._events)Pm.call(n,r)&&e.push(ve?r.slice(1):r);return Object.getOwnPropertySymbols?e.concat(Object.getOwnPropertySymbols(n)):e};be.prototype.listeners=function(e){var n=ve?ve+e:e,r=this._events[n];if(!r)return[];if(r.fn)return[r.fn];for(var s=0,i=r.length,o=new Array(i);s<i;s++)o[s]=r[s].fn;return o};be.prototype.listenerCount=function(e){var n=ve?ve+e:e,r=this._events[n];return r?r.fn?1:r.length:0};be.prototype.emit=function(e,n,r,s,i,o){var a=ve?ve+e:e;if(!this._events[a])return!1;var c=this._events[a],u=arguments.length,f,d;if(c.fn){switch(c.once&&this.removeListener(e,c.fn,void 0,!0),u){case 1:return c.fn.call(c.context),!0;case 2:return c.fn.call(c.context,n),!0;case 3:return c.fn.call(c.context,n,r),!0;case 4:return c.fn.call(c.context,n,r,s),!0;case 5:return c.fn.call(c.context,n,r,s,i),!0;case 6:return c.fn.call(c.context,n,r,s,i,o),!0}for(d=1,f=new Array(u-1);d<u;d++)f[d-1]=arguments[d];c.fn.apply(c.context,f)}else{var m=c.length,_;for(d=0;d<m;d++)switch(c[d].once&&this.removeListener(e,c[d].fn,void 0,!0),u){case 1:c[d].fn.call(c[d].context);break;case 2:c[d].fn.call(c[d].context,n);break;case 3:c[d].fn.call(c[d].context,n,r);break;case 4:c[d].fn.call(c[d].context,n,r,s);break;default:if(!f)for(_=1,f=new Array(u-1);_<u;_++)f[_-1]=arguments[_];c[d].fn.apply(c[d].context,f)}}return!0};be.prototype.on=function(e,n,r){return lf(this,e,n,r,!1)};be.prototype.once=function(e,n,r){return lf(this,e,n,r,!0)};be.prototype.removeListener=function(e,n,r,s){var i=ve?ve+e:e;if(!this._events[i])return this;if(!n)return jr(this,i),this;var o=this._events[i];if(o.fn)o.fn===n&&(!s||o.once)&&(!r||o.context===r)&&jr(this,i);else{for(var a=0,c=[],u=o.length;a<u;a++)(o[a].fn!==n||s&&!o[a].once||r&&o[a].context!==r)&&c.push(o[a]);c.length?this._events[i]=c.length===1?c[0]:c:jr(this,i)}return this};be.prototype.removeAllListeners=function(e){var n;return e?(n=ve?ve+e:e,this._events[n]&&jr(this,n)):(this._events=new Zn,this._eventsCount=0),this};be.prototype.off=be.prototype.removeListener;be.prototype.addListener=be.prototype.on;be.prefixed=ve;be.EventEmitter=be;typeof Do<"u"&&(Do.exports=be)});var df=p(ff=>{"use strict";var Fm="utf8",Po=class t{constructor(e,n){if(this.length=0,this.encoding=Fm,this.writeOffset=0,this.readOffset=0,typeof e=="number")if(Number.isFinite(e)&&Number.isInteger(e)&&e>0)this.buff=Buffer.allocUnsafe(e);else throw new Error("Invalid size provided. Size must be a valid integer greater than zero.");else if(typeof e=="string")if(Buffer.isEncoding(e))this.buff=Buffer.allocUnsafe(4096),this.encoding=e;else throw new Error("Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.");else if(e instanceof Buffer)this.buff=e,this.length=e.length;else if(t.isSmartBufferOptions(e)){if(e.encoding)if(Buffer.isEncoding(e.encoding))this.encoding=e.encoding;else throw new Error("Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.");if(e.size)if(Number.isFinite(e.size)&&Number.isInteger(e.size)&&e.size>0)this.buff=Buffer.allocUnsafe(e.size);else throw new Error("Invalid size provided. Size must be a valid integer greater than zero.");else if(e.buff)if(e.buff instanceof Buffer)this.buff=e.buff,this.length=e.buff.length;else throw new Error("Invalid buffer provided in SmartBufferOptions.");else this.buff=Buffer.allocUnsafe(4096)}else{if(typeof e=="object")throw new Error("Invalid object supplied to SmartBuffer constructor.");this.buff=Buffer.allocUnsafe(4096)}if(typeof n=="string")if(Buffer.isEncoding(n))this.encoding=n;else throw new Error("Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.")}static fromSize(e,n){return new this({size:e,encoding:n})}static fromBuffer(e,n){return new this({buff:e,encoding:n})}static fromOptions(e){return new this(e)}static isSmartBufferOptions(e){let n=e;return n&&(n.encoding!==void 0||n.size!==void 0||n.buff!==void 0)}readInt8(){return this.readNumberValue(Buffer.prototype.readInt8,1)}readInt16BE(){return this.readNumberValue(Buffer.prototype.readInt16BE,2)}readInt16LE(){return this.readNumberValue(Buffer.prototype.readInt16LE,2)}readInt32BE(){return this.readNumberValue(Buffer.prototype.readInt32BE,4)}readInt32LE(){return this.readNumberValue(Buffer.prototype.readInt32LE,4)}writeInt8(e,n){return this.writeNumberValue(Buffer.prototype.writeInt8,1,e,n),this}writeInt16BE(e,n){return this.writeNumberValue(Buffer.prototype.writeInt16BE,2,e,n),this}writeInt16LE(e,n){return this.writeNumberValue(Buffer.prototype.writeInt16LE,2,e,n),this}writeInt32BE(e,n){return this.writeNumberValue(Buffer.prototype.writeInt32BE,4,e,n),this}writeInt32LE(e,n){return this.writeNumberValue(Buffer.prototype.writeInt32LE,4,e,n),this}readUInt8(){return this.readNumberValue(Buffer.prototype.readUInt8,1)}readUInt16BE(){return this.readNumberValue(Buffer.prototype.readUInt16BE,2)}readUInt16LE(){return this.readNumberValue(Buffer.prototype.readUInt16LE,2)}readUInt32BE(){return this.readNumberValue(Buffer.prototype.readUInt32BE,4)}readUInt32LE(){return this.readNumberValue(Buffer.prototype.readUInt32LE,4)}writeUInt8(e,n){return this.writeNumberValue(Buffer.prototype.writeUInt8,1,e,n),this}writeUInt16BE(e,n){return this.writeNumberValue(Buffer.prototype.writeUInt16BE,2,e,n),this}writeUInt16LE(e,n){return this.writeNumberValue(Buffer.prototype.writeUInt16LE,2,e,n),this}writeUInt32BE(e,n){return this.writeNumberValue(Buffer.prototype.writeUInt32BE,4,e,n),this}writeUInt32LE(e,n){return this.writeNumberValue(Buffer.prototype.writeUInt32LE,4,e,n),this}readFloatBE(){return this.readNumberValue(Buffer.prototype.readFloatBE,4)}readFloatLE(){return this.readNumberValue(Buffer.prototype.readFloatLE,4)}writeFloatBE(e,n){return this.writeNumberValue(Buffer.prototype.writeFloatBE,4,e,n),this}writeFloatLE(e,n){return this.writeNumberValue(Buffer.prototype.writeFloatLE,4,e,n),this}readDoubleBE(){return this.readNumberValue(Buffer.prototype.readDoubleBE,8)}readDoubleLE(){return this.readNumberValue(Buffer.prototype.readDoubleLE,8)}writeDoubleBE(e,n){return this.writeNumberValue(Buffer.prototype.writeDoubleBE,8,e,n),this}writeDoubleLE(e,n){return this.writeNumberValue(Buffer.prototype.writeDoubleLE,8,e,n),this}readString(e,n){let r=typeof e=="number"?Math.min(e,this.length-this.readOffset):this.length-this.readOffset,s=this.buff.slice(this.readOffset,this.readOffset+r).toString(n||this.encoding);return this.readOffset+=r,s}writeString(e,n,r){let s=this.writeOffset,i=this.encoding;if(typeof n=="number")s=n;else if(typeof n=="string")if(Buffer.isEncoding(n))i=n;else throw new Error("Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.");if(typeof r=="string")if(Buffer.isEncoding(r))i=r;else throw new Error("Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.");let o=Buffer.byteLength(e,i);return this.ensureWriteable(o,s),this.buff.write(e,s,o,i),this.writeOffset+=o,this}readStringNT(e){let n=this.length;for(let s=this.readOffset;s<this.length;s++)if(this.buff[s]===0){n=s;break}let r=this.buff.slice(this.readOffset,n);return this.readOffset=n+1,r.toString(e||this.encoding)}writeStringNT(e,n,r){this.writeString(e,n,r),this.writeUInt8(0,typeof n=="number"?n+e.length:this.writeOffset)}readBuffer(e){let n=typeof e=="number"?e:this.length,r=Math.min(this.length,this.readOffset+n),s=this.buff.slice(this.readOffset,r);return this.readOffset=r,s}writeBuffer(e,n){let r=typeof n=="number"?n:this.writeOffset;return this.ensureWriteable(e.length,r),e.copy(this.buff,r),this.writeOffset+=e.length,this}readBufferNT(){let e=this.length;for(let r=this.readOffset;r<this.length;r++)if(this.buff[r]===0){e=r;break}let n=this.buff.slice(this.readOffset,e);return this.readOffset=e+1,n}writeBufferNT(e,n){return this.writeBuffer(e,n),this.writeUInt8(0,typeof n=="number"?n+e.length:this.writeOffset),this}clear(){this.writeOffset=0,this.readOffset=0,this.length=0}remaining(){return this.length-this.readOffset}skip(e){if(this.readOffset+e>this.length)throw new Error("Target position is beyond the bounds of the SmartBuffer size.");this.readOffset+=e}rewind(e){if(this.readOffset-e<0)throw new Error("Target position is beyond the bounds of the SmartBuffer size.");this.readOffset-=e}skipTo(e){this.moveTo(e)}moveTo(e){if(e>this.length)throw new Error("Target position is beyond the bounds of the SmartBuffer size.");this.readOffset=e}toBuffer(){return this.buff.slice(0,this.length)}toString(e){let n=typeof e=="string"?e:this.encoding;if(Buffer.isEncoding(n))return this.buff.toString(n,0,this.length);throw new Error("Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.")}destroy(){this.clear()}ensureReadable(e){if(this.remaining()<e)throw new Error("Reading beyond the bounds of the data.")}ensureWriteable(e,n){let r=typeof n=="number"?n:0;this.ensureCapacity(this.length+e+r),typeof n=="number"&&this.buff.copy(this.buff,r+e,r,this.buff.length),this.length=Math.max(this.length+e,r+e)}ensureCapacity(e){let n=this.buff.length;if(e>n){let r=this.buff,s=n*3/2+1;s<e&&(s=e),this.buff=Buffer.allocUnsafe(s),r.copy(this.buff,0,0,n)}}readNumberValue(e,n){this.ensureReadable(n);let r=e.call(this.buff,this.readOffset);return this.readOffset+=n,r}writeNumberValue(e,n,r,s){let i=typeof s=="number"?s:this.writeOffset;this.ensureWriteable(n,s),e.call(this.buff,r,i),this.writeOffset+=n}};ff.SmartBuffer=Po});var pf=p((hS,hf)=>{var ln=1e3,fn=ln*60,dn=fn*60,$t=dn*24,Lm=$t*7,Mm=$t*365.25;hf.exports=function(t,e){e=e||{};var n=typeof t;if(n==="string"&&t.length>0)return Um(t);if(n==="number"&&isFinite(t))return e.long?$m(t):jm(t);throw new Error("val is not a non-empty string or a valid number. val="+JSON.stringify(t))};function Um(t){if(t=String(t),!(t.length>100)){var e=/^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(t);if(e){var n=parseFloat(e[1]),r=(e[2]||"ms").toLowerCase();switch(r){case"years":case"year":case"yrs":case"yr":case"y":return n*Mm;case"weeks":case"week":case"w":return n*Lm;case"days":case"day":case"d":return n*$t;case"hours":case"hour":case"hrs":case"hr":case"h":return n*dn;case"minutes":case"minute":case"mins":case"min":case"m":return n*fn;case"seconds":case"second":case"secs":case"sec":case"s":return n*ln;case"milliseconds":case"millisecond":case"msecs":case"msec":case"ms":return n;default:return}}}}function jm(t){var e=Math.abs(t);return e>=$t?Math.round(t/$t)+"d":e>=dn?Math.round(t/dn)+"h":e>=fn?Math.round(t/fn)+"m":e>=ln?Math.round(t/ln)+"s":t+"ms"}function $m(t){var e=Math.abs(t);return e>=$t?$r(t,e,$t,"day"):e>=dn?$r(t,e,dn,"hour"):e>=fn?$r(t,e,fn,"minute"):e>=ln?$r(t,e,ln,"second"):t+" ms"}function $r(t,e,n,r){var s=e>=n*1.5;return Math.round(t/n)+" "+r+(s?"s":"")}});var Ao=p((pS,mf)=>{function Vm(t){n.debug=n,n.default=n,n.coerce=c,n.disable=o,n.enable=s,n.enabled=a,n.humanize=pf(),n.destroy=u,Object.keys(t).forEach(f=>{n[f]=t[f]}),n.names=[],n.skips=[],n.formatters={};function e(f){let d=0;for(let m=0;m<f.length;m++)d=(d<<5)-d+f.charCodeAt(m),d|=0;return n.colors[Math.abs(d)%n.colors.length]}n.selectColor=e;function n(f){let d,m=null,_,y;function b(...g){if(!b.enabled)return;let w=b,$=Number(new Date),Te=$-(d||$);w.diff=Te,w.prev=d,w.curr=$,d=$,g[0]=n.coerce(g[0]),typeof g[0]!="string"&&g.unshift("%O");let Y=0;g[0]=g[0].replace(/%([a-zA-Z%])/g,(fe,W)=>{if(fe==="%%")return"%";Y++;let E=n.formatters[W];if(typeof E=="function"){let h=g[Y];fe=E.call(w,h),g.splice(Y,1),Y--}return fe}),n.formatArgs.call(w,g),(w.log||n.log).apply(w,g)}return b.namespace=f,b.useColors=n.useColors(),b.color=n.selectColor(f),b.extend=r,b.destroy=n.destroy,Object.defineProperty(b,"enabled",{enumerable:!0,configurable:!1,get:()=>m!==null?m:(_!==n.namespaces&&(_=n.namespaces,y=n.enabled(f)),y),set:g=>{m=g}}),typeof n.init=="function"&&n.init(b),b}function r(f,d){let m=n(this.namespace+(typeof d>"u"?":":d)+f);return m.log=this.log,m}function s(f){n.save(f),n.namespaces=f,n.names=[],n.skips=[];let d=(typeof f=="string"?f:"").trim().replace(/\s+/g,",").split(",").filter(Boolean);for(let m of d)m[0]==="-"?n.skips.push(m.slice(1)):n.names.push(m)}function i(f,d){let m=0,_=0,y=-1,b=0;for(;m<f.length;)if(_<d.length&&(d[_]===f[m]||d[_]==="*"))d[_]==="*"?(y=_,b=m,_++):(m++,_++);else if(y!==-1)_=y+1,b++,m=b;else return!1;for(;_<d.length&&d[_]==="*";)_++;return _===d.length}function o(){let f=[...n.names,...n.skips.map(d=>"-"+d)].join(",");return n.enable(""),f}function a(f){for(let d of n.skips)if(i(f,d))return!1;for(let d of n.names)if(i(f,d))return!0;return!1}function c(f){return f instanceof Error?f.stack||f.message:f}function u(){console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.")}return n.enable(n.load()),n}mf.exports=Vm});var _f=p((Re,Vr)=>{Re.formatArgs=Xm;Re.save=Wm;Re.load=zm;Re.useColors=Gm;Re.storage=Qm();Re.destroy=(()=>{let t=!1;return()=>{t||(t=!0,console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`."))}})();Re.colors=["#0000CC","#0000FF","#0033CC","#0033FF","#0066CC","#0066FF","#0099CC","#0099FF","#00CC00","#00CC33","#00CC66","#00CC99","#00CCCC","#00CCFF","#3300CC","#3300FF","#3333CC","#3333FF","#3366CC","#3366FF","#3399CC","#3399FF","#33CC00","#33CC33","#33CC66","#33CC99","#33CCCC","#33CCFF","#6600CC","#6600FF","#6633CC","#6633FF","#66CC00","#66CC33","#9900CC","#9900FF","#9933CC","#9933FF","#99CC00","#99CC33","#CC0000","#CC0033","#CC0066","#CC0099","#CC00CC","#CC00FF","#CC3300","#CC3333","#CC3366","#CC3399","#CC33CC","#CC33FF","#CC6600","#CC6633","#CC9900","#CC9933","#CCCC00","#CCCC33","#FF0000","#FF0033","#FF0066","#FF0099","#FF00CC","#FF00FF","#FF3300","#FF3333","#FF3366","#FF3399","#FF33CC","#FF33FF","#FF6600","#FF6633","#FF9900","#FF9933","#FFCC00","#FFCC33"];function Gm(){if(typeof window<"u"&&window.process&&(window.process.type==="renderer"||window.process.__nwjs))return!0;if(typeof navigator<"u"&&navigator.userAgent&&navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/))return!1;let t;return typeof document<"u"&&document.documentElement&&document.documentElement.style&&document.documentElement.style.WebkitAppearance||typeof window<"u"&&window.console&&(window.console.firebug||window.console.exception&&window.console.table)||typeof navigator<"u"&&navigator.userAgent&&(t=navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/))&&parseInt(t[1],10)>=31||typeof navigator<"u"&&navigator.userAgent&&navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/)}function Xm(t){if(t[0]=(this.useColors?"%c":"")+this.namespace+(this.useColors?" %c":" ")+t[0]+(this.useColors?"%c ":" ")+"+"+Vr.exports.humanize(this.diff),!this.useColors)return;let e="color: "+this.color;t.splice(1,0,e,"color: inherit");let n=0,r=0;t[0].replace(/%[a-zA-Z%]/g,s=>{s!=="%%"&&(n++,s==="%c"&&(r=n))}),t.splice(r,0,e)}Re.log=console.debug||console.log||(()=>{});function Wm(t){try{t?Re.storage.setItem("debug",t):Re.storage.removeItem("debug")}catch{}}function zm(){let t;try{t=Re.storage.getItem("debug")||Re.storage.getItem("DEBUG")}catch{}return!t&&typeof process<"u"&&"env"in process&&(t=process.env.DEBUG),t}function Qm(){try{return localStorage}catch{}}Vr.exports=Ao()(Re);var{formatters:Hm}=Vr.exports;Hm.j=function(t){try{return JSON.stringify(t)}catch(e){return"[UnexpectedJSONParseError]: "+e.message}}});var bf=p((ae,Xr)=>{var Zm=B("tty"),Gr=B("util");ae.init=r0;ae.log=e0;ae.formatArgs=Ym;ae.save=t0;ae.load=n0;ae.useColors=Km;ae.destroy=Gr.deprecate(()=>{},"Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.");ae.colors=[6,2,3,4,5,1];try{let t=B("supports-color");t&&(t.stderr||t).level>=2&&(ae.colors=[20,21,26,27,32,33,38,39,40,41,42,43,44,45,56,57,62,63,68,69,74,75,76,77,78,79,80,81,92,93,98,99,112,113,128,129,134,135,148,149,160,161,162,163,164,165,166,167,168,169,170,171,172,173,178,179,184,185,196,197,198,199,200,201,202,203,204,205,206,207,208,209,214,215,220,221])}catch{}ae.inspectOpts=Object.keys(process.env).filter(t=>/^debug_/i.test(t)).reduce((t,e)=>{let n=e.substring(6).toLowerCase().replace(/_([a-z])/g,(s,i)=>i.toUpperCase()),r=process.env[e];return/^(yes|on|true|enabled)$/i.test(r)?r=!0:/^(no|off|false|disabled)$/i.test(r)?r=!1:r==="null"?r=null:r=Number(r),t[n]=r,t},{});function Km(){return"colors"in ae.inspectOpts?!!ae.inspectOpts.colors:Zm.isatty(process.stderr.fd)}function Ym(t){let{namespace:e,useColors:n}=this;if(n){let r=this.color,s="\x1B[3"+(r<8?r:"8;5;"+r),i=`  ${s};1m${e} \x1B[0m`;t[0]=i+t[0].split(`
-`).join(`
-`+i),t.push(s+"m+"+Xr.exports.humanize(this.diff)+"\x1B[0m")}else t[0]=Jm()+e+" "+t[0]}function Jm(){return ae.inspectOpts.hideDate?"":new Date().toISOString()+" "}function e0(...t){return process.stderr.write(Gr.formatWithOptions(ae.inspectOpts,...t)+`
-`)}function t0(t){t?process.env.DEBUG=t:delete process.env.DEBUG}function n0(){return process.env.DEBUG}function r0(t){t.inspectOpts={};let e=Object.keys(ae.inspectOpts);for(let n=0;n<e.length;n++)t.inspectOpts[e[n]]=ae.inspectOpts[e[n]]}Xr.exports=Ao()(ae);var{formatters:Ef}=Xr.exports;Ef.o=function(t){return this.inspectOpts.colors=this.useColors,Gr.inspect(t,this.inspectOpts).split(`
-`).map(e=>e.trim()).join(" ")};Ef.O=function(t){return this.inspectOpts.colors=this.useColors,Gr.inspect(t,this.inspectOpts)}});var Wr=p((mS,Fo)=>{typeof process>"u"||process.type==="renderer"||process.browser===!0||process.__nwjs?Fo.exports=_f():Fo.exports=bf()});var zr=p((_S,gf)=>{gf.exports={newInvalidAsn1Error:function(t){var e=new Error;return e.name="InvalidAsn1Error",e.message=t||"",e}}});var Qr=p((ES,yf)=>{yf.exports={EOC:0,Boolean:1,Integer:2,BitString:3,OctetString:4,Null:5,OID:6,ObjectDescriptor:7,External:8,Real:9,Enumeration:10,PDV:11,Utf8String:12,RelativeOID:13,Sequence:16,Set:17,NumericString:18,PrintableString:19,T61String:20,VideotexString:21,IA5String:22,UTCTime:23,GeneralizedTime:24,GraphicString:25,VisibleString:26,GeneralString:28,UniversalString:29,CharacterString:30,BMPString:31,Constructor:32,Context:128}});var Lo=p((bS,Tf)=>{"use strict";var Hr=B("buffer"),hn=Hr.Buffer,Ve={},Ge;for(Ge in Hr)Hr.hasOwnProperty(Ge)&&(Ge==="SlowBuffer"||Ge==="Buffer"||(Ve[Ge]=Hr[Ge]));var pn=Ve.Buffer={};for(Ge in hn)hn.hasOwnProperty(Ge)&&(Ge==="allocUnsafe"||Ge==="allocUnsafeSlow"||(pn[Ge]=hn[Ge]));Ve.Buffer.prototype=hn.prototype;(!pn.from||pn.from===Uint8Array.from)&&(pn.from=function(t,e,n){if(typeof t=="number")throw new TypeError('The "value" argument must not be of type number. Received type '+typeof t);if(t&&typeof t.length>"u")throw new TypeError("The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type "+typeof t);return hn(t,e,n)});pn.alloc||(pn.alloc=function(t,e,n){if(typeof t!="number")throw new TypeError('The "size" argument must be of type number. Received type '+typeof t);if(t<0||t>=2*(1<<30))throw new RangeError('The value "'+t+'" is invalid for option "size"');var r=hn(t);return!e||e.length===0?r.fill(0):typeof n=="string"?r.fill(e,n):r.fill(e),r});if(!Ve.kStringMaxLength)try{Ve.kStringMaxLength=process.binding("buffer").kStringMaxLength}catch{}Ve.constants||(Ve.constants={MAX_LENGTH:Ve.kMaxLength},Ve.kStringMaxLength&&(Ve.constants.MAX_STRING_LENGTH=Ve.kStringMaxLength));Tf.exports=Ve});var If=p((gS,xf)=>{var s0=B("assert"),Sf=Lo().Buffer,mn=Qr(),i0=zr(),Kn=i0.newInvalidAsn1Error;function me(t){if(!t||!Sf.isBuffer(t))throw new TypeError("data must be a node Buffer");this._buf=t,this._size=t.length,this._blocklevel=0,this._blockInfo={},this._len=0,this._offset=0}Object.defineProperty(me.prototype,"length",{enumerable:!0,get:function(){return this._len}});Object.defineProperty(me.prototype,"offset",{enumerable:!0,get:function(){return this._offset}});Object.defineProperty(me.prototype,"remain",{get:function(){return this._size-this._offset}});Object.defineProperty(me.prototype,"buffer",{get:function(){return this._buf.slice(this._offset)}});me.prototype.readByte=function(t){if(this._size-this._offset<1)return null;var e=this._buf[this._offset]&255;return t||(this._offset+=1),e};me.prototype.readBlock=function(t){t===void 0&&(t=this._offset);var e=t,n,r;if(this._blockInfo[t]!==void 0)return this._blockInfo[t];for(;this.remain>0&&(n=this._buf[e++],r=this._buf[e++],!(n==0&&r==0));){var s=0;if((r&128)==128)if(r&=127,r==0)this._blocklevel++,r=this.readBlock(e),this._blocklevel--;else{if(r>4)throw InvalidAsn1Error("encoding too long");if(this._size-this.offset<r)return null;for(var i=0;i<r;i++)s=(s<<8)+(this._buf[e++]&255);r=s}if(e+=r,e>this._size)throw new Error("invalid block at offset "+t)}return r=e-t,this._blockInfo[t]=r,r};me.prototype.peek=function(){return this.readByte(!0)};me.prototype.readLength=function(t){if(t===void 0&&(t=this._offset),t>=this._size)return null;var e=this._buf[t++]&255;if(e===null)return null;if((e&128)===128)if(e&=127,e===0)this._len=this.readBlock(t);else{if(e>4)throw Kn("encoding too long");if(this._size-t<e)return null;this._len=0;for(var n=0;n<e;n++)this._len=(this._len<<8)+(this._buf[t++]&255)}else this._len=e;return t};me.prototype.readSequence=function(t){var e=this.peek();if(e===null)return null;if(t!==void 0&&t!==e)throw Kn("Expected 0x"+t.toString(16)+": got 0x"+e.toString(16));var n=this.readLength(this._offset+1);return n===null?null:(this._offset=n,e)};me.prototype.readInt=function(){return this._readTag(mn.Integer)};me.prototype.readBoolean=function(){return this._readTag(mn.Boolean)!==0};me.prototype.readEnumeration=function(){return this._readTag(mn.Enumeration)};me.prototype.readString=function(t,e){t||(t=mn.OctetString);var n=this.peek();if(n===null)return null;if(n!==t)throw Kn("Expected 0x"+t.toString(16)+": got 0x"+n.toString(16));var r=this.readLength(this._offset+1);if(r===null||this.length>this._size-r)return null;var s=this.length;if(this._blockInfo[this._offset+2]!==void 0&&(s=s-2),this._offset=r,s===0)return e?Sf.alloc(0):"";var i=this._buf.slice(this._offset,this._offset+s);return this._offset+=this.length,e?i:i.toString("utf8")};me.prototype.readRelativeOID=function(t){t||(t=mn.RelativeOID);var e=this.readString(t,!0);if(e===null)return null;for(var n=[],r=0,s=0;s<e.length;s++){var i=e[s]&255;if(r+=i&127,(i&128)==128){r<<=7;continue}n.push(r),r=0}return n.join(".")};me.prototype.readOID=function(t){t||(t=mn.OID);var e=this.readString(t,!0);if(e===null)return null;for(var n=[],r=0,s=0;s<e.length;s++){var i=e[s]&255;r<<=7,r+=i&127,(i&128)===0&&(n.push(r),r=0)}return r=n.shift(),n.unshift(r%40),n.unshift(r/40>>0),n.join(".")};me.prototype._readTag=function(t){s0.ok(t!==void 0);var e=this.peek();if(e===null)return null;if(e!==t)throw Kn("Expected 0x"+t.toString(16)+": got 0x"+e.toString(16));var n=this.readLength(this._offset+1);if(n===null)return null;if(this.length>8)throw Kn("Integer too long: "+this.length);if(this.length>this._size-n)return null;this._offset=n;for(var r=this._buf[this._offset],s=0,i=0;i<this.length;i++)s<<=8,s|=this._buf[this._offset++]&255;return(r&128)===128&&i!==4&&(s-=1<<i*8),s>>0};xf.exports=me});var wf=p((yS,vf)=>{var wt=B("assert"),Zr=Lo().Buffer,yt=Qr(),o0=zr(),Kr=o0.newInvalidAsn1Error,a0={size:1024,growthFactor:8};function c0(t,e){wt.ok(t),wt.equal(typeof t,"object"),wt.ok(e),wt.equal(typeof e,"object");var n=Object.getOwnPropertyNames(t);return n.forEach(function(r){if(!e[r]){var s=Object.getOwnPropertyDescriptor(t,r);Object.defineProperty(e,r,s)}}),e}function _e(t){t=c0(a0,t||{}),this._buf=Zr.alloc(t.size||1024),this._size=this._buf.length,this._offset=0,this._options=t,this._seq=[]}Object.defineProperty(_e.prototype,"buffer",{get:function(){if(this._seq.length)throw Kr(this._seq.length+" unended sequence(s)");return this._buf.slice(0,this._offset)}});_e.prototype.writeByte=function(t){if(typeof t!="number")throw new TypeError("argument must be a Number");this._ensure(1),this._buf[this._offset++]=t};_e.prototype.writeInt=function(t,e){if(typeof t!="number")throw new TypeError("argument must be a Number");typeof e!="number"&&(e=yt.Integer);for(var n=4;((t&4286578688)===0||(t&4286578688)===-8388608)&&n>1;)n--,t<<=8;if(n>4)throw Kr("BER ints cannot be > 0xffffffff");for(this._ensure(2+n),this._buf[this._offset++]=e,this._buf[this._offset++]=n;n-- >0;)this._buf[this._offset++]=(t&4278190080)>>>24,t<<=8};_e.prototype.writeNull=function(){this.writeByte(yt.Null),this.writeByte(0)};_e.prototype.writeEnumeration=function(t,e){if(typeof t!="number")throw new TypeError("argument must be a Number");return typeof e!="number"&&(e=yt.Enumeration),this.writeInt(t,e)};_e.prototype.writeBoolean=function(t,e){if(typeof t!="boolean")throw new TypeError("argument must be a Boolean");typeof e!="number"&&(e=yt.Boolean),this._ensure(3),this._buf[this._offset++]=e,this._buf[this._offset++]=1,this._buf[this._offset++]=t?255:0};_e.prototype.writeString=function(t,e){if(typeof t!="string")throw new TypeError("argument must be a string (was: "+typeof t+")");typeof e!="number"&&(e=yt.OctetString);var n=Zr.byteLength(t);this.writeByte(e),this.writeLength(n),n&&(this._ensure(n),this._buf.write(t,this._offset),this._offset+=n)};_e.prototype.writeBuffer=function(t,e){if(typeof e!="number")throw new TypeError("tag must be a number");if(!Zr.isBuffer(t))throw new TypeError("argument must be a buffer");this.writeByte(e),this.writeLength(t.length),this._ensure(t.length),t.copy(this._buf,this._offset,0,t.length),this._offset+=t.length};_e.prototype.writeStringArray=function(t){if(!t instanceof Array)throw new TypeError("argument must be an Array[String]");var e=this;t.forEach(function(n){e.writeString(n)})};_e.prototype.writeRelativeOID=function(t,e){if(typeof t!="string")throw new TypeError("argument must be a string");if(typeof e!="number"&&(e=yt.RelativeOID),!/^([0-9]+\.)*[0-9]*$/.test(t))throw new Error("argument is not a valid OID string");for(var n=t===""?[]:t.split("."),r=[],s=0;s<n.length;s++){for(var i=parseInt(n[s]),o=[];i>127;){var a=i&127;o.push(a),i=i>>7}o.push(i);for(var c=o.length-1;c>=0;)c>0?r.push(o[c]|128):r.push(o[c]),c--}var u=this;this._ensure(2+r.length),this.writeByte(e),this.writeLength(r.length),r.forEach(function(f){u.writeByte(f)})};_e.prototype.writeOID=function(t,e){if(typeof t!="string")throw new TypeError("argument must be a string");if(typeof e!="number"&&(e=yt.OID),!/^([0-9]+\.)*[0-9]+$/.test(t))throw new Error("argument is not a valid OID string");function n(o,a){a<128?o.push(a):a<16384?(o.push(a>>>7|128),o.push(a&127)):a<2097152?(o.push(a>>>14|128),o.push((a>>>7|128)&255),o.push(a&127)):a<268435456?(o.push(a>>>21|128),o.push((a>>>14|128)&255),o.push((a>>>7|128)&255),o.push(a&127)):(o.push((a>>>28|128)&255),o.push((a>>>21|128)&255),o.push((a>>>14|128)&255),o.push((a>>>7|128)&255),o.push(a&127))}var r=t.split("."),s=[];s.push(parseInt(r[0],10)*40+parseInt(r[1],10)),r.slice(2).forEach(function(o){n(s,parseInt(o,10))});var i=this;this._ensure(2+s.length),this.writeByte(e),this.writeLength(s.length),s.forEach(function(o){i.writeByte(o)})};_e.prototype.writeLength=function(t){if(typeof t!="number")throw new TypeError("argument must be a Number");if(this._ensure(4),t<=127)this._buf[this._offset++]=t;else if(t<=255)this._buf[this._offset++]=129,this._buf[this._offset++]=t;else if(t<=65535)this._buf[this._offset++]=130,this._buf[this._offset++]=t>>8,this._buf[this._offset++]=t;else if(t<=16777215)this._buf[this._offset++]=131,this._buf[this._offset++]=t>>16,this._buf[this._offset++]=t>>8,this._buf[this._offset++]=t;else throw Kr("Length too long (> 4 bytes)")};_e.prototype.startSequence=function(t){typeof t!="number"&&(t=yt.Sequence|yt.Constructor),this.writeByte(t),this._seq.push(this._offset),this._ensure(3),this._offset+=3};_e.prototype.endSequence=function(){var t=this._seq.pop(),e=t+3,n=this._offset-e;if(n<=127)this._shift(e,n,-2),this._buf[t]=n;else if(n<=255)this._shift(e,n,-1),this._buf[t]=129,this._buf[t+1]=n;else if(n<=65535)this._buf[t]=130,this._buf[t+1]=n>>8,this._buf[t+2]=n;else if(n<=16777215)this._shift(e,n,1),this._buf[t]=131,this._buf[t+1]=n>>16,this._buf[t+2]=n>>8,this._buf[t+3]=n;else throw Kr("Sequence too long")};_e.prototype._shift=function(t,e,n){wt.ok(t!==void 0),wt.ok(e!==void 0),wt.ok(n),this._buf.copy(this._buf,t+n,t,t+e),this._offset+=n};_e.prototype._ensure=function(t){if(wt.ok(t),this._size-this._offset<t){var e=this._size*this._options.growthFactor;e-this._offset<t&&(e+=t);var n=Zr.alloc(e);this._buf.copy(n,0,0,this._offset),this._buf=n,this._size=e}};vf.exports=_e});var Nf=p((TS,es)=>{var Mo=zr(),Uo=Qr(),u0=If(),l0=wf();es.exports={Reader:u0,Writer:l0};for(Yr in Uo)Uo.hasOwnProperty(Yr)&&(es.exports[Yr]=Uo[Yr]);var Yr;for(Jr in Mo)Mo.hasOwnProperty(Jr)&&(es.exports[Jr]=Mo[Jr]);var Jr});var $o=p((SS,Cf)=>{var jo=Nf();Cf.exports={Ber:jo,Reader:jo.Reader,Writer:jo.Writer}});var Vo=p((Of,Yn)=>{(function(t,e){typeof define=="function"&&define.amd?define([],e):typeof B=="function"&&typeof Yn=="object"&&Yn&&Yn.exports?Yn.exports=e():(t.dcodeIO=t.dcodeIO||{}).Long=e()})(Of,function(){"use strict";function t(h,l,S){this.low=h|0,this.high=l|0,this.unsigned=!!S}t.prototype.__isLong__,Object.defineProperty(t.prototype,"__isLong__",{value:!0,enumerable:!1,configurable:!1});function e(h){return(h&&h.__isLong__)===!0}t.isLong=e;var n={},r={};function s(h,l){var S,D,z;return l?(h>>>=0,(z=0<=h&&h<256)&&(D=r[h],D)?D:(S=o(h,(h|0)<0?-1:0,!0),z&&(r[h]=S),S)):(h|=0,(z=-128<=h&&h<128)&&(D=n[h],D)?D:(S=o(h,h<0?-1:0,!1),z&&(n[h]=S),S))}t.fromInt=s;function i(h,l){if(isNaN(h)||!isFinite(h))return l?w:g;if(l){if(h<0)return w;if(h>=_)return fe}else{if(h<=-y)return W;if(h+1>=y)return Ue}return h<0?i(-h,l).neg():o(h%m|0,h/m|0,l)}t.fromNumber=i;function o(h,l,S){return new t(h,l,S)}t.fromBits=o;var a=Math.pow;function c(h,l,S){if(h.length===0)throw Error("empty string");if(h==="NaN"||h==="Infinity"||h==="+Infinity"||h==="-Infinity")return g;if(typeof l=="number"?(S=l,l=!1):l=!!l,S=S||10,S<2||36<S)throw RangeError("radix");var D;if((D=h.indexOf("-"))>0)throw Error("interior hyphen");if(D===0)return c(h.substring(1),l,S).neg();for(var z=i(a(S,8)),J=g,de=0;de<h.length;de+=8){var Ne=Math.min(8,h.length-de),re=parseInt(h.substring(de,de+Ne),S);if(Ne<8){var Se=i(a(S,Ne));J=J.mul(Se).add(i(re))}else J=J.mul(z),J=J.add(i(re))}return J.unsigned=l,J}t.fromString=c;function u(h){return h instanceof t?h:typeof h=="number"?i(h):typeof h=="string"?c(h):o(h.low,h.high,h.unsigned)}t.fromValue=u;var f=65536,d=1<<24,m=f*f,_=m*m,y=_/2,b=s(d),g=s(0);t.ZERO=g;var w=s(0,!0);t.UZERO=w;var $=s(1);t.ONE=$;var Te=s(1,!0);t.UONE=Te;var Y=s(-1);t.NEG_ONE=Y;var Ue=o(-1,2147483647,!1);t.MAX_VALUE=Ue;var fe=o(-1,-1,!0);t.MAX_UNSIGNED_VALUE=fe;var W=o(0,-2147483648,!1);t.MIN_VALUE=W;var E=t.prototype;return E.toInt=function(){return this.unsigned?this.low>>>0:this.low},E.toNumber=function(){return this.unsigned?(this.high>>>0)*m+(this.low>>>0):this.high*m+(this.low>>>0)},E.toString=function(l){if(l=l||10,l<2||36<l)throw RangeError("radix");if(this.isZero())return"0";if(this.isNegative())if(this.eq(W)){var S=i(l),D=this.div(S),z=D.mul(S).sub(this);return D.toString(l)+z.toInt().toString(l)}else return"-"+this.neg().toString(l);for(var J=i(a(l,6),this.unsigned),de=this,Ne="";;){var re=de.div(J),Se=de.sub(re.mul(J)).toInt()>>>0,he=Se.toString(l);if(de=re,de.isZero())return he+Ne;for(;he.length<6;)he="0"+he;Ne=""+he+Ne}},E.getHighBits=function(){return this.high},E.getHighBitsUnsigned=function(){return this.high>>>0},E.getLowBits=function(){return this.low},E.getLowBitsUnsigned=function(){return this.low>>>0},E.getNumBitsAbs=function(){if(this.isNegative())return this.eq(W)?64:this.neg().getNumBitsAbs();for(var l=this.high!=0?this.high:this.low,S=31;S>0&&(l&1<<S)==0;S--);return this.high!=0?S+33:S+1},E.isZero=function(){return this.high===0&&this.low===0},E.isNegative=function(){return!this.unsigned&&this.high<0},E.isPositive=function(){return this.unsigned||this.high>=0},E.isOdd=function(){return(this.low&1)===1},E.isEven=function(){return(this.low&1)===0},E.equals=function(l){return e(l)||(l=u(l)),this.unsigned!==l.unsigned&&this.high>>>31===1&&l.high>>>31===1?!1:this.high===l.high&&this.low===l.low},E.eq=E.equals,E.notEquals=function(l){return!this.eq(l)},E.neq=E.notEquals,E.lessThan=function(l){return this.comp(l)<0},E.lt=E.lessThan,E.lessThanOrEqual=function(l){return this.comp(l)<=0},E.lte=E.lessThanOrEqual,E.greaterThan=function(l){return this.comp(l)>0},E.gt=E.greaterThan,E.greaterThanOrEqual=function(l){return this.comp(l)>=0},E.gte=E.greaterThanOrEqual,E.compare=function(l){if(e(l)||(l=u(l)),this.eq(l))return 0;var S=this.isNegative(),D=l.isNegative();return S&&!D?-1:!S&&D?1:this.unsigned?l.high>>>0>this.high>>>0||l.high===this.high&&l.low>>>0>this.low>>>0?-1:1:this.sub(l).isNegative()?-1:1},E.comp=E.compare,E.negate=function(){return!this.unsigned&&this.eq(W)?W:this.not().add($)},E.neg=E.negate,E.add=function(l){e(l)||(l=u(l));var S=this.high>>>16,D=this.high&65535,z=this.low>>>16,J=this.low&65535,de=l.high>>>16,Ne=l.high&65535,re=l.low>>>16,Se=l.low&65535,he=0,se=0,Ce=0,ft=0;return ft+=J+Se,Ce+=ft>>>16,ft&=65535,Ce+=z+re,se+=Ce>>>16,Ce&=65535,se+=D+Ne,he+=se>>>16,se&=65535,he+=S+de,he&=65535,o(Ce<<16|ft,he<<16|se,this.unsigned)},E.subtract=function(l){return e(l)||(l=u(l)),this.add(l.neg())},E.sub=E.subtract,E.multiply=function(l){if(this.isZero()||(e(l)||(l=u(l)),l.isZero()))return g;if(this.eq(W))return l.isOdd()?W:g;if(l.eq(W))return this.isOdd()?W:g;if(this.isNegative())return l.isNegative()?this.neg().mul(l.neg()):this.neg().mul(l).neg();if(l.isNegative())return this.mul(l.neg()).neg();if(this.lt(b)&&l.lt(b))return i(this.toNumber()*l.toNumber(),this.unsigned);var S=this.high>>>16,D=this.high&65535,z=this.low>>>16,J=this.low&65535,de=l.high>>>16,Ne=l.high&65535,re=l.low>>>16,Se=l.low&65535,he=0,se=0,Ce=0,ft=0;return ft+=J*Se,Ce+=ft>>>16,ft&=65535,Ce+=z*Se,se+=Ce>>>16,Ce&=65535,Ce+=J*re,se+=Ce>>>16,Ce&=65535,se+=D*Se,he+=se>>>16,se&=65535,se+=z*re,he+=se>>>16,se&=65535,se+=J*Ne,he+=se>>>16,se&=65535,he+=S*Se+D*re+z*Ne+J*de,he&=65535,o(Ce<<16|ft,he<<16|se,this.unsigned)},E.mul=E.multiply,E.divide=function(l){if(e(l)||(l=u(l)),l.isZero())throw Error("division by zero");if(this.isZero())return this.unsigned?w:g;var S,D,z;if(this.unsigned){if(l.unsigned||(l=l.toUnsigned()),l.gt(this))return w;if(l.gt(this.shru(1)))return Te;z=w}else{if(this.eq(W)){if(l.eq($)||l.eq(Y))return W;if(l.eq(W))return $;var J=this.shr(1);return S=J.div(l).shl(1),S.eq(g)?l.isNegative()?$:Y:(D=this.sub(l.mul(S)),z=S.add(D.div(l)),z)}else if(l.eq(W))return this.unsigned?w:g;if(this.isNegative())return l.isNegative()?this.neg().div(l.neg()):this.neg().div(l).neg();if(l.isNegative())return this.div(l.neg()).neg();z=g}for(D=this;D.gte(l);){S=Math.max(1,Math.floor(D.toNumber()/l.toNumber()));for(var de=Math.ceil(Math.log(S)/Math.LN2),Ne=de<=48?1:a(2,de-48),re=i(S),Se=re.mul(l);Se.isNegative()||Se.gt(D);)S-=Ne,re=i(S,this.unsigned),Se=re.mul(l);re.isZero()&&(re=$),z=z.add(re),D=D.sub(Se)}return z},E.div=E.divide,E.modulo=function(l){return e(l)||(l=u(l)),this.sub(this.div(l).mul(l))},E.mod=E.modulo,E.not=function(){return o(~this.low,~this.high,this.unsigned)},E.and=function(l){return e(l)||(l=u(l)),o(this.low&l.low,this.high&l.high,this.unsigned)},E.or=function(l){return e(l)||(l=u(l)),o(this.low|l.low,this.high|l.high,this.unsigned)},E.xor=function(l){return e(l)||(l=u(l)),o(this.low^l.low,this.high^l.high,this.unsigned)},E.shiftLeft=function(l){return e(l)&&(l=l.toInt()),(l&=63)===0?this:l<32?o(this.low<<l,this.high<<l|this.low>>>32-l,this.unsigned):o(0,this.low<<l-32,this.unsigned)},E.shl=E.shiftLeft,E.shiftRight=function(l){return e(l)&&(l=l.toInt()),(l&=63)===0?this:l<32?o(this.low>>>l|this.high<<32-l,this.high>>l,this.unsigned):o(this.high>>l-32,this.high>=0?0:-1,this.unsigned)},E.shr=E.shiftRight,E.shiftRightUnsigned=function(l){if(e(l)&&(l=l.toInt()),l&=63,l===0)return this;var S=this.high;if(l<32){var D=this.low;return o(D>>>l|S<<32-l,S>>>l,this.unsigned)}else return l===32?o(S,0,this.unsigned):o(S>>>l-32,0,this.unsigned)},E.shru=E.shiftRightUnsigned,E.toSigned=function(){return this.unsigned?o(this.low,this.high,!1):this},E.toUnsigned=function(){return this.unsigned?this:o(this.low,this.high,!0)},E.toBytes=function(h){return h?this.toBytesLE():this.toBytesBE()},E.toBytesLE=function(){var h=this.high,l=this.low;return[l&255,l>>>8&255,l>>>16&255,l>>>24&255,h&255,h>>>8&255,h>>>16&255,h>>>24&255]},E.toBytesBE=function(){var h=this.high,l=this.low;return[h>>>24&255,h>>>16&255,h>>>8&255,h&255,l>>>24&255,l>>>16&255,l>>>8&255,l&255]},t})});var ts=p(N=>{"use strict";Object.defineProperty(N,"__esModule",{value:!0});N.PathDiscoveryFailure=N.InvalidStringPair=N.InvalidRequesrFormat=N.InvalidMatrixSignal=N.InvalidResultFormat=N.InvalidBERFormat=N.S101SocketError=N.ASN1Error=N.EmberAccessError=N.EmberTimeoutError=N.InvalidCommand=N.MissingElementNumber=N.MissingElementContents=N.UnknownElement=N.InvalidSourcesFormat=N.InvalidRequest=N.InvalidEmberResponse=N.InvalidRequestFormat=N.InvalidEmberNode=N.UnimplementedEmberTypeError=void 0;var Go=class extends Error{constructor(e){super(),this.name=this.constructor.name;let n=(e&192)>>6,r=(e&31).toString(),s=e.toString();n==0?s="[UNIVERSAL "+r+"]":n==1?s="[APPLICATION "+r+"]":n==2?s="[CONTEXT "+r+"]":s="[PRIVATE "+r+"]",this.message="Unimplemented EmBER type "+s}};N.UnimplementedEmberTypeError=Go;var Xo=class extends Error{constructor(e){super(e)}};N.S101SocketError=Xo;var Wo=class extends Error{constructor(e){super(e)}};N.ASN1Error=Wo;var zo=class extends Error{constructor(e){super(e)}};N.EmberAccessError=zo;var Qo=class extends Error{constructor(e){super(e)}};N.EmberTimeoutError=Qo;var Ho=class extends Error{constructor(e){super(`Invalid command ${e}`)}};N.InvalidCommand=Ho;var Zo=class extends Error{constructor(){super("Missing element number")}};N.MissingElementNumber=Zo;var Ko=class extends Error{constructor(e){super(`Missing element contents at ${e}`)}};N.MissingElementContents=Ko;var Yo=class extends Error{constructor(e){super(`No element at path ${e}`)}};N.UnknownElement=Yo;var Jo=class extends Error{constructor(){super("Invalid Request")}};N.InvalidRequest=Jo;var ea=class extends Error{constructor(e){super(`Invalid Request Format with path ${e}`)}};N.InvalidRequestFormat=ea;var ta=class extends Error{constructor(e="unknown",n=""){super(`Invalid Ember Node at ${e}: ${n}`)}};N.InvalidEmberNode=ta;var na=class extends Error{constructor(e){super(`Invalid Ember Response to ${e}`)}};N.InvalidEmberResponse=na;var ra=class t extends Error{constructor(e){super(t.getMessage(e))}setPath(e){this.message=t.getMessage(e)}static getMessage(e){return`Failed path discovery at ${e}`}};N.PathDiscoveryFailure=ra;var sa=class extends Error{constructor(){super("Sources should be an array")}};N.InvalidSourcesFormat=sa;var ia=class extends Error{constructor(e=""){super(`Invalid BER format: ${e}`)}};N.InvalidBERFormat=ia;var oa=class extends Error{constructor(e=""){super(`Invalid Result format: ${e}`)}};N.InvalidResultFormat=oa;var aa=class extends Error{constructor(e,n){super(`Invalid Matrix Signal ${e}: ${n}`)}};N.InvalidMatrixSignal=aa;var ca=class extends Error{constructor(){super("Invalid StringPair Value")}};N.InvalidStringPair=ca;var ua=class extends Error{constructor(e){super(`Can't process request for node ${e}`)}};N.InvalidRequesrFormat=ua});var rs=p(ns=>{"use strict";Object.defineProperty(ns,"__esModule",{value:!0});ns.BERDataTypes=void 0;var la;(function(t){t[t.BOOLEAN=1]="BOOLEAN",t[t.INTEGER=2]="INTEGER",t[t.BITSTRING=3]="BITSTRING",t[t.OCTETSTRING=4]="OCTETSTRING",t[t.NULL=5]="NULL",t[t.OBJECTIDENTIFIER=6]="OBJECTIDENTIFIER",t[t.OBJECTDESCRIPTOR=7]="OBJECTDESCRIPTOR",t[t.EXTERNAL=8]="EXTERNAL",t[t.REAL=9]="REAL",t[t.ENUMERATED=10]="ENUMERATED",t[t.EMBEDDED=11]="EMBEDDED",t[t.STRING=12]="STRING",t[t.RELATIVE_OID=13]="RELATIVE_OID",t[t.SEQUENCE=48]="SEQUENCE",t[t.SET=49]="SET"})(la||(la={}));ns.BERDataTypes=la});var ss=p(Nt=>{"use strict";Object.defineProperty(Nt,"__esModule",{value:!0});Nt.UNIVERSAL=Nt.CONTEXT=Nt.APPLICATION=void 0;function f0(t){return t|96}Nt.APPLICATION=f0;function d0(t){return t|160}Nt.CONTEXT=d0;function h0(t){return t}Nt.UNIVERSAL=h0});var st=p(rt=>{"use strict";Object.defineProperty(rt,"__esModule",{value:!0});rt.ParameterImpl=rt.isParameter=rt.ParameterAccess=rt.ParameterType=void 0;var fa=Ie(),da;(function(t){t.Null="NULL",t.Integer="INTEGER",t.Real="REAL",t.String="STRING",t.Boolean="BOOLEAN",t.Trigger="TRIGGER",t.Enum="ENUM",t.Octets="OCTETS"})(da||(da={}));rt.ParameterType=da;var ha;(function(t){t.None="NONE",t.Read="READ",t.Write="WRITE",t.ReadWrite="READ_WRITE"})(ha||(ha={}));rt.ParameterAccess=ha;function p0(t){if(!(0,fa.isEmberElement)(t))return!1;let{type:e,parameterType:n,templateReference:r}=t;return!(e!==fa.ElementType.Parameter||!n||!r)}rt.isParameter=p0;var pa=class{constructor(e,n,r,s,i,o,a,c,u,f,d,m,_,y,b,g,w,$,Te){this.parameterType=e,this.identifier=n,this.description=r,this.value=s,this.maximum=i,this.minimum=o,this.access=a,this.format=c,this.enumeration=u,this.factor=f,this.isOnline=d,this.formula=m,this.step=_,this.defaultValue=y,this.streamIdentifier=b,this.enumMap=g,this.streamDescriptor=w,this.schemaIdentifiers=$,this.templateReference=Te,this.type=fa.ElementType.Parameter}};rt.ParameterImpl=pa});var Bf=p(is=>{"use strict";Object.defineProperty(is,"__esModule",{value:!0});is.Reader=void 0;var m0=(v(),x(I)),_0=$o(),_n=m0.__importDefault(Vo()),Rf=ts(),Tt=rs(),kf=ss(),Vt=st(),ma=class extends _0.Reader{constructor(e){super(e)}readValue(){let e=this.peek();if(!e)throw new Error("No tag available");switch(e){case Tt.BERDataTypes.STRING:return{type:Vt.ParameterType.String,value:this.readString(Tt.BERDataTypes.STRING)};case Tt.BERDataTypes.INTEGER:return{type:Vt.ParameterType.Integer,value:this.readInt()};case Tt.BERDataTypes.REAL:return{type:Vt.ParameterType.Real,value:this.readReal()};case Tt.BERDataTypes.BOOLEAN:return{type:Vt.ParameterType.Boolean,value:this.readBoolean()};case Tt.BERDataTypes.OCTETSTRING:return{type:Vt.ParameterType.Octets,value:this.readString((0,kf.UNIVERSAL)(4),!0)};case Tt.BERDataTypes.RELATIVE_OID:return{type:Vt.ParameterType.String,value:this.readOID(Tt.BERDataTypes.RELATIVE_OID)};case Tt.BERDataTypes.NULL:return this.readByte(!1),this.readByte(!1),{type:Vt.ParameterType.Null,value:null};default:throw new Rf.UnimplementedEmberTypeError(e)}}readReal(e){e!==null&&(e=(0,kf.UNIVERSAL)(9));let n=this.peek();if(n===null)return null;let r=this.readString(n,!0);if(r.length===0)return 0;let s=r.readUInt8(0),i=1;if(r.length===1)switch(s){case 64:return 1/0;case 65:return-1/0;case 66:return NaN}let o=s&64?-1:1,a=1+(s&3),c=s>>2&3,u=0;if(r.readUInt8(i)&128&&(u=-1),r.length-i<a)throw new Rf.ASN1Error("Invalid ASN.1; not enough length to contain exponent");for(let _=0;_<a;_++)u=u<<8|r.readUInt8(i++);let f=new _n.default(0,0,!0);for(;i<r.length;)f=f.shl(8).or(r.readUInt8(i++));for(f=f.shl(c);f.and(_n.default.fromBits(0,2147479552,!0)).eq(0);)f=f.shl(8);for(;f.and(_n.default.fromBits(0,2146435072,!0)).eq(0);)f=f.shl(1);f=f.and(_n.default.fromBits(4294967295,1048575,!0));let d=_n.default.fromNumber(u).add(1023).shl(52).or(f);o<0&&(d=d.or(_n.default.fromBits(0,2147483648,!0)));let m=Buffer.alloc(8);return m.writeUInt32LE(d.getLowBitsUnsigned(),0),m.writeUInt32LE(d.getHighBitsUnsigned(),4),m.readDoubleLE(0)}};is.Reader=ma});var Df=p(os=>{"use strict";Object.defineProperty(os,"__esModule",{value:!0});os.Writer=void 0;var E0=(v(),x(I)),En=E0.__importDefault(Vo()),b0=$o(),qf=ss(),ee=rs(),ke=st(),_a=class extends b0.Writer{constructor(e){super(e)}writeReal(e,n){switch(n===void 0&&(n=(0,qf.UNIVERSAL)(9)),this.writeByte(n),e){case 0:this.writeLength(0);return;case 1/0:this.writeLength(1),this.writeByte(64);return;case-1/0:this.writeLength(1),this.writeByte(65);return;default:if(isNaN(e)){this.writeLength(1),this.writeByte(66);return}}let r=Buffer.alloc(8);r.writeDoubleLE(e,0);let s=En.default.fromBits(r.readUInt32LE(0),r.readUInt32LE(4),!0),i=s.and(En.default.fromBits(4294967295,1048575,!0)).or(En.default.fromBits(0,1048576,!0)),o=s.and(En.default.fromBits(0,2146435072,!0)).shru(52).sub(1023).toSigned();for(;i.and(255).toNumber()===0;)i=i.shru(8);for(;i.and(1).toNumber()===0;)i=i.shru(1);o=o.toNumber();let a=g0(o),c=y0(i);this.writeLength(1+a.size+c.size);let u=e<0?192:128;this.writeByte(u);for(let d=0;d<a.size;d++)this.writeByte((a.value&4278190080)>>24),a.value<<=8;let f=En.default.fromBits(0,4278190080,!0);for(let d=0;d<c.size;d++)this.writeByte(c.value.and(f).shru(56).toNumber()),c.value=c.value.shl(8)}writeValue(e,n){let r;if(e&&typeof e=="object"&&"type"in e?(r=e.value,n=T0(e.type)):r=e,n===ee.BERDataTypes.NULL&&r==null){this.writeNull();return}if(r==null){this.writeNull();return}if(typeof r=="number"){if(n!==ee.BERDataTypes.REAL&&Number.isInteger(r)){n===void 0&&(n=ee.BERDataTypes.INTEGER),this.writeInt(r,n);return}n===void 0&&(n=ee.BERDataTypes.REAL),this.writeReal(r,n);return}if(typeof r=="boolean"){n===void 0&&(n=ee.BERDataTypes.BOOLEAN),this.writeBoolean(r,n);return}if(Buffer.isBuffer(r)&&n){r.length===0?(this.writeByte(n),this.writeLength(0)):this.writeBuffer(r,n);return}n===void 0&&(n=ee.BERDataTypes.STRING),this.writeString(r.toString(),n)}writeEmberParameter(e){if((0,ke.isParameter)(e))switch(e.parameterType){case ke.ParameterType.Real:this.writeReal(e.value,ee.BERDataTypes.REAL);break;case ke.ParameterType.Integer:this.writeInt(e.value,ee.BERDataTypes.INTEGER);break;case ke.ParameterType.Boolean:this.writeBoolean(e.value,ee.BERDataTypes.BOOLEAN);break;case ke.ParameterType.Octets:Buffer.isBuffer(e.value)||(e.value=Buffer.from(`${e.value}`)),e.value.length?(this.writeByte(ee.BERDataTypes.OCTETSTRING),this.writeLength(0)):this.writeBuffer(e.value,ee.BERDataTypes.OCTETSTRING);break;case ke.ParameterType.Null:this.writeNull();break;default:this.writeString(e.value,ee.BERDataTypes.STRING)}else this.writeValue(e.value,void 0)}writeIfDefined(e,n,r,s){e!=null&&(this.startSequence((0,qf.CONTEXT)(r)),n.call(this,e,s),this.endSequence())}};os.Writer=_a;function g0(t){let e=4;for(;((t&4286578688)===0||(t&4286578688)===-8388608)&&e>1;)e--,t<<=8;return{size:e,value:t}}function y0(t){let e=En.default.fromBits(0,4286578688,!0);t=t.toUnsigned();let n=8;for(;t.and(e).eq(0)||t.and(e).eq(e)&&n>1;)n--,t=t.shl(8);return{size:n,value:t}}function T0(t){switch(t){case ke.ParameterType.Integer:return ee.BERDataTypes.INTEGER;case ke.ParameterType.Real:return ee.BERDataTypes.REAL;case ke.ParameterType.String:return ee.BERDataTypes.STRING;case ke.ParameterType.Boolean:return ee.BERDataTypes.BOOLEAN;case ke.ParameterType.Trigger:return ee.BERDataTypes.STRING;case ke.ParameterType.Enum:return ee.BERDataTypes.ENUMERATED;case ke.ParameterType.Octets:return ee.BERDataTypes.OCTETSTRING;case ke.ParameterType.Null:return ee.BERDataTypes.NULL;default:throw new Error("")}}});var R=p(Be=>{"use strict";Object.defineProperty(Be,"__esModule",{value:!0});Be.UNIVERSAL=Be.CONTEXT=Be.APPLICATION=Be.BERDataTypes=Be.Writer=Be.Reader=void 0;var S0=Bf();Object.defineProperty(Be,"Reader",{enumerable:!0,get:function(){return S0.Reader}});var x0=Df();Object.defineProperty(Be,"Writer",{enumerable:!0,get:function(){return x0.Writer}});var I0=rs();Object.defineProperty(Be,"BERDataTypes",{enumerable:!0,get:function(){return I0.BERDataTypes}});var Ea=ss();Object.defineProperty(Be,"APPLICATION",{enumerable:!0,get:function(){return Ea.APPLICATION}});Object.defineProperty(Be,"CONTEXT",{enumerable:!0,get:function(){return Ea.CONTEXT}});Object.defineProperty(Be,"UNIVERSAL",{enumerable:!0,get:function(){return Ea.UNIVERSAL}})});var M=p(T=>{"use strict";Object.defineProperty(T,"__esModule",{value:!0});T.QualifiedTemplateBERID=T.TemplateBERID=T.InvocationResultBERID=T.InvocationBERID=T.FunctionArgumentBERID=T.QualifiedFunctionBERID=T.FunctionBERID=T.LabelBERID=T.QualifiedMatrixBERID=T.ConnectionBERID=T.SourceBERID=T.TargetBERID=T.MatrixBERID=T.StreamDescriptionBERID=T.RootElementsBERID=T.QualifiedNodeBERID=T.QualifiedParameterBERID=T.StringIntegerCollectionBERID=T.StringIntegerPairBERID=T.StreamEntriesBERID=T.StreamEntryBERID=T.ElementCollectionBERID=T.NodeBERID=T.CommandBERID=T.ParameterBERID=T.RootBERID=void 0;var v0=(v(),x(I)),L=v0.__importStar(R()),w0=L.APPLICATION(0);T.RootBERID=w0;var N0=L.APPLICATION(1);T.ParameterBERID=N0;var C0=L.APPLICATION(2);T.CommandBERID=C0;var O0=L.APPLICATION(3);T.NodeBERID=O0;var R0=L.APPLICATION(4);T.ElementCollectionBERID=R0;var k0=L.APPLICATION(5);T.StreamEntryBERID=k0;var B0=L.APPLICATION(6);T.StreamEntriesBERID=B0;var q0=L.APPLICATION(7);T.StringIntegerPairBERID=q0;var D0=L.APPLICATION(8);T.StringIntegerCollectionBERID=D0;var P0=L.APPLICATION(9);T.QualifiedParameterBERID=P0;var A0=L.APPLICATION(10);T.QualifiedNodeBERID=A0;var F0=L.APPLICATION(11);T.RootElementsBERID=F0;var L0=L.APPLICATION(12);T.StreamDescriptionBERID=L0;var M0=L.APPLICATION(13);T.MatrixBERID=M0;var U0=L.APPLICATION(14);T.TargetBERID=U0;var j0=L.APPLICATION(15);T.SourceBERID=j0;var $0=L.APPLICATION(16);T.ConnectionBERID=$0;var V0=L.APPLICATION(17);T.QualifiedMatrixBERID=V0;var G0=L.APPLICATION(18);T.LabelBERID=G0;var X0=L.APPLICATION(19);T.FunctionBERID=X0;var W0=L.APPLICATION(20);T.QualifiedFunctionBERID=W0;var z0=L.APPLICATION(21);T.FunctionArgumentBERID=z0;var Q0=L.APPLICATION(22);T.InvocationBERID=Q0;var H0=L.APPLICATION(23);T.InvocationResultBERID=H0;var Z0=L.APPLICATION(24);T.TemplateBERID=Z0;var K0=L.APPLICATION(25);T.QualifiedTemplateBERID=K0});var Pf=p(as=>{"use strict";Object.defineProperty(as,"__esModule",{value:!0});as.encodeInvocationResult=void 0;var Y0=(v(),x(I)),Jn=Y0.__importStar(R()),J0=M();function e_(t,e){if(e.startSequence(J0.InvocationResultBERID),t.id!=null&&(e.startSequence(Jn.CONTEXT(0)),e.writeInt(t.id),e.endSequence()),t.success!=null&&(e.startSequence(Jn.CONTEXT(1)),e.writeBoolean(t.success),e.endSequence()),t.result!=null&&t.result.length){e.startSequence(Jn.CONTEXT(2)),e.startSequence(Jn.BERDataTypes.SEQUENCE);for(let n=0;n<t.result.length;n++)e.startSequence(Jn.CONTEXT(0)),e.writeValue(t.result[n]),e.endSequence();e.endSequence(),e.endSequence()}e.endSequence()}as.encodeInvocationResult=e_});var Af=p(us=>{"use strict";Object.defineProperty(us,"__esModule",{value:!0});us.encodeInvocation=void 0;var t_=(v(),x(I)),cs=t_.__importStar(R()),n_=M();function r_(t,e){e.startSequence(n_.InvocationBERID),t.id!=null&&(e.startSequence(cs.CONTEXT(0)),e.writeInt(t.id),e.endSequence()),e.startSequence(cs.CONTEXT(1)),e.startSequence(cs.BERDataTypes.SEQUENCE);for(let n=0;n<t.args.length;n++)e.startSequence(cs.CONTEXT(0)),e.writeValue(t.args[n]),e.endSequence();e.endSequence(),e.endSequence(),e.endSequence()}us.encodeInvocation=r_});var ga=p(ls=>{"use strict";Object.defineProperty(ls,"__esModule",{value:!0});ls.encodeCommand=void 0;var s_=(v(),x(I)),ba=s_.__importStar(R()),it=Qn(),i_=Af(),o_=M();function a_(t,e){e.startSequence(o_.CommandBERID),e.startSequence(ba.CONTEXT(0)),e.writeInt(t.number),e.endSequence(),u_(t)&&t.dirFieldMask&&(e.startSequence(ba.CONTEXT(1)),l_(t.dirFieldMask,e),e.endSequence()),c_(t)&&t.invocation&&(e.startSequence(ba.CONTEXT(2)),(0,i_.encodeInvocation)(t.invocation,e),e.endSequence()),e.endSequence()}ls.encodeCommand=a_;function c_(t){return t.number===it.CommandType.Invoke}function u_(t){return t.number===it.CommandType.GetDirectory}function l_(t,e){let n={[it.FieldFlags.Sparse]:-2,[it.FieldFlags.All]:-1,[it.FieldFlags.Default]:0,[it.FieldFlags.Identifier]:1,[it.FieldFlags.Description]:2,[it.FieldFlags.Tree]:3,[it.FieldFlags.Value]:4,[it.FieldFlags.Connections]:5};e.writeInt(n[t])}});var Lf=p(ds=>{"use strict";Object.defineProperty(ds,"__esModule",{value:!0});ds.encodeStringIntegerCollection=void 0;var f_=(v(),x(I)),fs=f_.__importStar(R()),Ff=M();function d_(t,e){e.startSequence(Ff.StringIntegerCollectionBERID);for(let[n,r]of t)e.startSequence(fs.CONTEXT(0)),e.startSequence(Ff.StringIntegerPairBERID),e.startSequence(fs.CONTEXT(0)),e.writeString(n,fs.BERDataTypes.STRING),e.endSequence(),e.startSequence(fs.CONTEXT(1)),e.writeInt(r),e.endSequence(),e.endSequence(),e.endSequence();e.endSequence()}ds.encodeStringIntegerCollection=d_});var hs=p(bn=>{"use strict";Object.defineProperty(bn,"__esModule",{value:!0});bn.StreamDescriptionImpl=bn.StreamFormat=void 0;var ya;(function(t){t.UInt8="UInt8",t.UInt16BE="UInt16BE",t.UInt16LE="UInt16LE",t.UInt32BE="UInt32BE",t.UInt32LE="UInt32LE",t.UInt64BE="UInt64BE",t.UInt64LE="UInt64LE",t.Int8="Int8",t.Int16BE="Int16BE",t.Int16LE="Int16LE",t.Int32BE="Int32BE",t.Int32LE="Int32LE",t.Int64BE="Int64BE",t.Int64LE="Int64LE",t.Float32BE="Float32BE",t.Float32LE="Float32LE",t.Float64BE="Float64BE",t.Float64LE="Float64LE"})(ya||(ya={}));bn.StreamFormat=ya;var Ta=class{constructor(e,n){this.format=e,this.offset=n}};bn.StreamDescriptionImpl=Ta});var Uf=p(ps=>{"use strict";Object.defineProperty(ps,"__esModule",{value:!0});ps.encodeStreamDescription=void 0;var h_=(v(),x(I)),Mf=h_.__importStar(R()),ce=hs(),p_=M();function m_(t,e){e.startSequence(p_.StreamDescriptionBERID),e.writeIfDefined(t.format&&__(t.format),e.writeInt,0,Mf.BERDataTypes.INTEGER),e.writeIfDefined(t.offset,e.writeInt,1,Mf.BERDataTypes.INTEGER),e.endSequence()}ps.encodeStreamDescription=m_;function __(t){return{[ce.StreamFormat.UInt8]:0,[ce.StreamFormat.UInt16BE]:2,[ce.StreamFormat.UInt16LE]:3,[ce.StreamFormat.UInt32BE]:4,[ce.StreamFormat.UInt32LE]:5,[ce.StreamFormat.UInt64BE]:6,[ce.StreamFormat.UInt64LE]:7,[ce.StreamFormat.Int8]:8,[ce.StreamFormat.Int16BE]:10,[ce.StreamFormat.Int16LE]:11,[ce.StreamFormat.Int32BE]:12,[ce.StreamFormat.Int32LE]:13,[ce.StreamFormat.Int64BE]:14,[ce.StreamFormat.Int64LE]:15,[ce.StreamFormat.Float32BE]:20,[ce.StreamFormat.Float32LE]:21,[ce.StreamFormat.Float64BE]:22,[ce.StreamFormat.Float64LE]:23}[t]}});var jf=p(ms=>{"use strict";Object.defineProperty(ms,"__esModule",{value:!0});ms.encodeParameter=void 0;var E_=(v(),x(I)),U=E_.__importStar(R()),te=st(),b_=Lf(),g_=Uf();function y_(t,e){e.startSequence(U.BERDataTypes.SET);let n=r=>{switch(t.parameterType){case te.ParameterType.Null:e.writeNull();break;case te.ParameterType.Integer:e.writeInt(Number(r),U.BERDataTypes.INTEGER);break;case te.ParameterType.Real:e.writeReal(Number(r),U.BERDataTypes.REAL);break;case te.ParameterType.String:e.writeString(r+"",U.BERDataTypes.STRING);break;case te.ParameterType.Boolean:e.writeBoolean(r,U.BERDataTypes.BOOLEAN);break;case te.ParameterType.Enum:e.writeInt(r,U.BERDataTypes.INTEGER);break;case te.ParameterType.Octets:e.writeBuffer(r,U.BERDataTypes.OCTETSTRING);break;default:e.writeValue(r)}};e.writeIfDefined(t.identifier,e.writeString,0,U.BERDataTypes.STRING),e.writeIfDefined(t.description,e.writeString,1,U.BERDataTypes.STRING),t.value!==void 0&&(e.startSequence(U.CONTEXT(2)),n(t.value),e.endSequence()),t.minimum!==void 0&&(e.startSequence(U.CONTEXT(3)),n(t.minimum),e.endSequence()),t.maximum!==void 0&&(e.startSequence(U.CONTEXT(4)),n(t.maximum),e.endSequence()),e.writeIfDefined(t.access&&T_(t.access),e.writeInt,5,U.BERDataTypes.INTEGER),e.writeIfDefined(t.format,e.writeString,6,U.BERDataTypes.STRING),e.writeIfDefined(t.enumeration,e.writeString,7,U.BERDataTypes.STRING),e.writeIfDefined(t.factor,e.writeInt,8,U.BERDataTypes.INTEGER),e.writeIfDefined(t.isOnline,e.writeBoolean,9,U.BERDataTypes.BOOLEAN),e.writeIfDefined(t.formula,e.writeString,10,U.BERDataTypes.STRING),e.writeIfDefined(t.step,e.writeInt,11,U.BERDataTypes.INTEGER),t.defaultValue!==void 0&&(e.startSequence(U.CONTEXT(12)),n(t.defaultValue),e.endSequence()),t.parameterType&&(e.startSequence(U.CONTEXT(13)),e.writeInt(S_(t.parameterType)),e.endSequence()),e.writeIfDefined(t.streamIdentifier,e.writeInt,14,U.BERDataTypes.INTEGER),t.enumMap!=null&&(e.startSequence(U.CONTEXT(15)),(0,b_.encodeStringIntegerCollection)(t.enumMap,e),e.endSequence()),t.streamDescriptor!=null&&(e.startSequence(U.CONTEXT(16)),(0,g_.encodeStreamDescription)(t.streamDescriptor,e),e.endSequence()),e.writeIfDefined(t.schemaIdentifiers,e.writeString,17,U.BERDataTypes.STRING),e.writeIfDefined(t.templateReference,e.writeString,18,U.BERDataTypes.STRING),e.endSequence()}ms.encodeParameter=y_;function T_(t){return{[te.ParameterAccess.None]:0,[te.ParameterAccess.Read]:1,[te.ParameterAccess.Write]:2,[te.ParameterAccess.ReadWrite]:3}[t]}function S_(t){return{[te.ParameterType.Null]:0,[te.ParameterType.Integer]:1,[te.ParameterType.Real]:2,[te.ParameterType.String]:3,[te.ParameterType.Boolean]:4,[te.ParameterType.Trigger]:5,[te.ParameterType.Enum]:6,[te.ParameterType.Octets]:7}[t]}});var $f=p(_s=>{"use strict";Object.defineProperty(_s,"__esModule",{value:!0});_s.encodeNode=void 0;var x_=(v(),x(I)),He=x_.__importStar(R());function I_(t,e){e.startSequence(He.BERDataTypes.SET),t.identifier!=null&&(e.startSequence(He.CONTEXT(0)),e.writeString(t.identifier,He.BERDataTypes.STRING),e.endSequence()),t.description!=null&&(e.startSequence(He.CONTEXT(1)),e.writeString(t.description,He.BERDataTypes.STRING),e.endSequence()),t.isRoot!=null&&(e.startSequence(He.CONTEXT(2)),e.writeBoolean(t.isRoot),e.endSequence()),t.isOnline!=null&&(e.startSequence(He.CONTEXT(3)),e.writeBoolean(t.isOnline),e.endSequence()),t.schemaIdentifiers!=null&&(e.startSequence(He.CONTEXT(4)),e.writeString(t.schemaIdentifiers,He.BERDataTypes.STRING),e.endSequence()),t.templateReference!=null&&(e.startSequence(He.CONTEXT(5)),e.writeRelativeOID(t.templateReference,He.BERDataTypes.RELATIVE_OID),e.endSequence()),e.endSequence()}_s.encodeNode=I_});var Es=p(Ct=>{"use strict";Object.defineProperty(Ct,"__esModule",{value:!0});Ct.MatrixImpl=Ct.MatrixAddressingMode=Ct.MatrixType=void 0;var v_=Ie(),Sa;(function(t){t.OneToN="ONE_TO_N",t.OneToOne="ONE_TO_ONE",t.NToN="N_TO_N"})(Sa||(Sa={}));Ct.MatrixType=Sa;var xa;(function(t){t.Linear="LINEAR",t.NonLinear="NON_LINEAR"})(xa||(xa={}));Ct.MatrixAddressingMode=xa;var Ia=class{constructor(e,n,r,s,i,o,a,c,u,f,d,m,_,y,b,g){this.identifier=e,this.targets=n,this.sources=r,this.connections=s,this.description=i,this.matrixType=o,this.addressingMode=a,this.targetCount=c,this.sourceCount=u,this.maximumTotalConnects=f,this.maximumConnectsPerTarget=d,this.parametersLocation=m,this.gainParameterNumber=_,this.labels=y,this.schemaIdentifiers=b,this.templateReference=g,this.type=v_.ElementType.Matrix}};Ct.MatrixImpl=Ia});var Gf=p(gs=>{"use strict";Object.defineProperty(gs,"__esModule",{value:!0});gs.encodeLabel=void 0;var w_=(v(),x(I)),bs=w_.__importStar(R()),Vf=ts(),N_=M();function C_(t,e){if(e.startSequence(N_.LabelBERID),t.basePath==null)throw new Vf.InvalidEmberNode("","Missing label base path");if(e.startSequence(bs.CONTEXT(0)),e.writeRelativeOID(t.basePath,bs.BERDataTypes.RELATIVE_OID),e.endSequence(),t.description==null)throw new Vf.InvalidEmberNode("","Missing label description");e.startSequence(bs.CONTEXT(1)),e.writeString(t.description,bs.BERDataTypes.STRING),e.endSequence(),e.endSequence()}gs.encodeLabel=C_});var va=p(qe=>{"use strict";Object.defineProperty(qe,"__esModule",{value:!0});qe.matrixModeToInt=qe.matrixTypeToInt=qe.elementTypeToInt=qe.encodeSource=qe.encodeTarget=qe.encodeMatrix=void 0;var O_=(v(),x(I)),Q=O_.__importStar(R()),er=Es(),gn=Ie(),R_=Gf(),Xf=M();function k_(t,e){if(e.startSequence(Q.BERDataTypes.SET),e.writeIfDefined(t.identifier,e.writeString,0,Q.BERDataTypes.STRING),e.writeIfDefined(t.description,e.writeString,1,Q.BERDataTypes.STRING),e.writeIfDefined(t.matrixType&&Wf(t.matrixType),e.writeInt,2,Q.BERDataTypes.INTEGER),e.writeIfDefined(t.addressingMode&&zf(t.addressingMode),e.writeInt,3,Q.BERDataTypes.INTEGER),e.writeIfDefined(t.targetCount,e.writeInt,4,Q.BERDataTypes.INTEGER),e.writeIfDefined(t.sourceCount,e.writeInt,5,Q.BERDataTypes.INTEGER),e.writeIfDefined(t.maximumTotalConnects,e.writeInt,6,Q.BERDataTypes.INTEGER),e.writeIfDefined(t.maximumConnectsPerTarget,e.writeInt,7,Q.BERDataTypes.INTEGER),t.parametersLocation!=null){e.startSequence(Q.CONTEXT(8));let n=Number(t.parametersLocation);isNaN(n)?e.writeRelativeOID(t.parametersLocation,Q.BERDataTypes.RELATIVE_OID):e.writeInt(n),e.endSequence()}if(e.writeIfDefined(t.gainParameterNumber,e.writeInt,9,Q.BERDataTypes.INTEGER),t.labels!=null){e.startSequence(Q.CONTEXT(10)),e.startSequence(Q.BERDataTypes.SEQUENCE);for(let n=0;n<t.labels.length;n++)e.startSequence(Q.CONTEXT(0)),(0,R_.encodeLabel)(t.labels[n],e),e.endSequence();e.endSequence(),e.endSequence()}e.writeIfDefined(t.schemaIdentifiers,e.writeString,11,Q.BERDataTypes.STRING),t.templateReference!=null&&(e.startSequence(Q.CONTEXT(12)),e.writeRelativeOID(t.templateReference,Q.BERDataTypes.RELATIVE_OID),e.endSequence()),e.endSequence()}qe.encodeMatrix=k_;function B_(t,e){e.startSequence(Xf.TargetBERID),e.startSequence(Q.CONTEXT(0)),e.writeInt(t,Q.BERDataTypes.INTEGER),e.endSequence(),e.endSequence()}qe.encodeTarget=B_;function q_(t,e){e.startSequence(Xf.SourceBERID),e.startSequence(Q.CONTEXT(0)),e.writeInt(t,Q.BERDataTypes.INTEGER),e.endSequence(),e.endSequence()}qe.encodeSource=q_;function D_(t){return{[gn.ElementType.Parameter]:0,[gn.ElementType.Node]:1,[gn.ElementType.Command]:2,[gn.ElementType.Matrix]:3,[gn.ElementType.Function]:4,[gn.ElementType.Template]:5}[t]}qe.elementTypeToInt=D_;function Wf(t){return{[er.MatrixType.OneToN]:0,[er.MatrixType.OneToOne]:1,[er.MatrixType.NToN]:2}[t]}qe.matrixTypeToInt=Wf;function zf(t){return{[er.MatrixAddressingMode.Linear]:0,[er.MatrixAddressingMode.NonLinear]:1}[t]}qe.matrixModeToInt=zf});var Qf=p(ys=>{"use strict";Object.defineProperty(ys,"__esModule",{value:!0});ys.encodeFunctionArgument=void 0;var P_=(v(),x(I)),wa=P_.__importStar(R()),A_=ts(),Ot=st(),F_=M();function L_(t,e){if(e.startSequence(F_.FunctionArgumentBERID),t.type==null)throw new A_.InvalidEmberNode("","FunctionArgument requires a type");e.startSequence(wa.CONTEXT(0)),M_(t.type,e),e.endSequence(),t.name!=null&&(e.startSequence(wa.CONTEXT(1)),e.writeString(t.name,wa.BERDataTypes.STRING),e.endSequence()),e.endSequence()}ys.encodeFunctionArgument=L_;function M_(t,e){let n={[Ot.ParameterType.Null]:0,[Ot.ParameterType.Integer]:1,[Ot.ParameterType.Real]:2,[Ot.ParameterType.String]:3,[Ot.ParameterType.Boolean]:4,[Ot.ParameterType.Trigger]:5,[Ot.ParameterType.Enum]:6,[Ot.ParameterType.Octets]:7};e.writeInt(n[t])}});var Zf=p(Ts=>{"use strict";Object.defineProperty(Ts,"__esModule",{value:!0});Ts.encodeFunction=void 0;var U_=(v(),x(I)),Fe=U_.__importStar(R()),Hf=Qf();function j_(t,e){if(e.startSequence(Fe.BERDataTypes.SET),t.identifier!=null&&(e.startSequence(Fe.CONTEXT(0)),e.writeString(t.identifier,Fe.BERDataTypes.STRING),e.endSequence()),t.description!=null&&(e.startSequence(Fe.CONTEXT(1)),e.writeString(t.description,Fe.BERDataTypes.STRING),e.endSequence()),t.args!=null){e.startSequence(Fe.CONTEXT(2)),e.startSequence(Fe.BERDataTypes.SEQUENCE);for(let n=0;n<t.args.length;n++)e.startSequence(Fe.CONTEXT(0)),(0,Hf.encodeFunctionArgument)(t.args[n],e),e.endSequence();e.endSequence(),e.endSequence()}if(t.result!=null&&t.result.length>0){e.startSequence(Fe.CONTEXT(3)),e.startSequence(Fe.BERDataTypes.SEQUENCE);for(let n=0;n<t.result.length;n++)e.startSequence(Fe.CONTEXT(0)),(0,Hf.encodeFunctionArgument)(t.result[n],e),e.endSequence();e.endSequence(),e.endSequence()}t.templateReference!=null&&(e.startSequence(Fe.CONTEXT(4)),e.writeRelativeOID(t.templateReference,Fe.BERDataTypes.RELATIVE_OID),e.endSequence()),e.endSequence()}Ts.encodeFunction=j_});var Ca=p(Ss=>{"use strict";Object.defineProperty(Ss,"__esModule",{value:!0});Ss.encodeTemplate=void 0;var $_=(v(),x(I)),Na=$_.__importStar(R()),V_=xs();function G_(t,e){t.element!=null&&(e.startSequence(Na.CONTEXT(1)),(0,V_.encodeNumberedElement)(t.element,e),e.endSequence()),t.description!=null&&(e.startSequence(Na.CONTEXT(2)),e.writeString(t.description,Na.BERDataTypes.STRING),e.endSequence())}Ss.encodeTemplate=G_});var Kf=p(Is=>{"use strict";Object.defineProperty(Is,"__esModule",{value:!0});Is.encodeEmberElement=void 0;var yn=Ie(),X_=ga(),W_=jf(),z_=$f(),Q_=va(),H_=Zf(),Z_=Ca();function K_(t,e){switch(t.type){case yn.ElementType.Command:(0,X_.encodeCommand)(t,e);break;case yn.ElementType.Parameter:(0,W_.encodeParameter)(t,e);break;case yn.ElementType.Node:(0,z_.encodeNode)(t,e);break;case yn.ElementType.Matrix:(0,Q_.encodeMatrix)(t,e);break;case yn.ElementType.Function:(0,H_.encodeFunction)(t,e);break;case yn.ElementType.Template:(0,Z_.encodeTemplate)(t,e);break}}Is.encodeEmberElement=K_});var Yf=p(vs=>{"use strict";Object.defineProperty(vs,"__esModule",{value:!0});vs.encodeConnection=void 0;var Y_=(v(),x(I)),Gt=Hn(),tr=Y_.__importStar(R()),J_=M();function eE(t,e){e.startSequence(J_.ConnectionBERID),e.startSequence(tr.CONTEXT(0)),e.writeInt(t.target),e.endSequence(),t.sources!=null&&(e.startSequence(tr.CONTEXT(1)),e.writeRelativeOID(t.sources.join("."),tr.BERDataTypes.RELATIVE_OID),e.endSequence()),t.operation!=null&&(e.startSequence(tr.CONTEXT(2)),tE(t.operation,e),e.endSequence()),t.disposition!=null&&(e.startSequence(tr.CONTEXT(3)),nE(t.disposition,e),e.endSequence()),e.endSequence()}vs.encodeConnection=eE;function tE(t,e){let n={[Gt.ConnectionOperation.Absolute]:0,[Gt.ConnectionOperation.Connect]:1,[Gt.ConnectionOperation.Disconnect]:2};e.writeInt(n[t])}function nE(t,e){let n={[Gt.ConnectionDisposition.Tally]:0,[Gt.ConnectionDisposition.Modified]:1,[Gt.ConnectionDisposition.Pending]:2,[Gt.ConnectionDisposition.Locked]:3};e.writeInt(n[t])}});var xs=p(Sn=>{"use strict";Object.defineProperty(Sn,"__esModule",{value:!0});Sn.encodeTree=Sn.encodeNumberedElement=void 0;var rE=(v(),x(I)),De=rE.__importStar(R()),ot=Ie(),sE=Kf(),iE=ga(),oE=Ca(),aE=Yf(),Jf=va(),Tn=M();function ed(t,e){if(t.contents.type===ot.ElementType.Command){if(uE(t))throw new Error("Command cannot be qualified");(0,iE.encodeCommand)(t.contents,e);return}switch(t.contents.type){case ot.ElementType.Function:e.startSequence(Tn.FunctionBERID);break;case ot.ElementType.Matrix:e.startSequence(Tn.MatrixBERID);break;case ot.ElementType.Node:e.startSequence(Tn.NodeBERID);break;case ot.ElementType.Parameter:e.startSequence(Tn.ParameterBERID);break;case ot.ElementType.Template:e.startSequence(Tn.TemplateBERID);break}e.startSequence(De.CONTEXT(0)),e.writeInt(t.number,De.BERDataTypes.INTEGER),e.endSequence(),td(t,e)}Sn.encodeNumberedElement=ed;function td(t,e){if(fE(t.contents)){(0,oE.encodeTemplate)(t.contents,e),e.endSequence();return}if(Object.values(t.contents).filter(n=>n!==void 0).length>1&&(e.startSequence(De.CONTEXT(1)),(0,sE.encodeEmberElement)(t.contents,e),e.endSequence()),cE(t)){if(e.startSequence(De.CONTEXT(2)),e.startSequence(Tn.ElementCollectionBERID),t.children)for(let n of Object.values(t.children))e.startSequence(De.CONTEXT(0)),ed(n,e),e.endSequence();e.endSequence(),e.endSequence()}if(lE(t.contents)){if(t.contents.targets){e.startSequence(De.CONTEXT(3)),e.startSequence(De.BERDataTypes.SEQUENCE);for(let n of t.contents.targets)e.startSequence(De.CONTEXT(0)),(0,Jf.encodeTarget)(n,e),e.endSequence();e.endSequence(),e.endSequence()}if(t.contents.sources){e.startSequence(De.CONTEXT(4)),e.startSequence(De.BERDataTypes.SEQUENCE);for(let n of t.contents.sources)e.startSequence(De.CONTEXT(0)),(0,Jf.encodeSource)(n,e),e.endSequence();e.endSequence(),e.endSequence()}if(t.contents.connections){e.startSequence(De.CONTEXT(5)),e.startSequence(De.BERDataTypes.SEQUENCE);for(let n of Object.values(t.contents.connections))e.startSequence(De.CONTEXT(0)),(0,aE.encodeConnection)(n,e),e.endSequence();e.endSequence(),e.endSequence()}}e.endSequence()}Sn.encodeTree=td;function cE(t){return"children"in t&&t.children!==void 0&&!(t.contents.type===ot.ElementType.Command||t.contents.type===ot.ElementType.Template)}function uE(t){return"path"in t}function lE(t){return t.type===ot.ElementType.Matrix}function fE(t){return t.type===ot.ElementType.Template}});var rd=p(ws=>{"use strict";Object.defineProperty(ws,"__esModule",{value:!0});ws.encodeQualifedElement=void 0;var dE=(v(),x(I)),nd=dE.__importStar(R()),nr=Ie(),hE=xs(),rr=M();function pE(t,e){switch(t.contents.type){case nr.ElementType.Function:e.startSequence(rr.QualifiedFunctionBERID);break;case nr.ElementType.Matrix:e.startSequence(rr.QualifiedMatrixBERID);break;case nr.ElementType.Node:e.startSequence(rr.QualifiedNodeBERID);break;case nr.ElementType.Parameter:e.startSequence(rr.QualifiedParameterBERID);break;case nr.ElementType.Template:e.startSequence(rr.QualifiedTemplateBERID);break}e.startSequence(nd.CONTEXT(0)),e.writeRelativeOID(t.path,nd.BERDataTypes.RELATIVE_OID),e.endSequence(),(0,hE.encodeTree)(t,e)}ws.encodeQualifedElement=pE});var sd=p(Ns=>{"use strict";Object.defineProperty(Ns,"__esModule",{value:!0});Ns.encodeRootElement=void 0;var mE=xs(),_E=rd();function EE(t,e){"path"in t?(0,_E.encodeQualifedElement)(t,e):(0,mE.encodeNumberedElement)(t,e)}Ns.encodeRootElement=EE});var od=p(Cs=>{"use strict";Object.defineProperty(Cs,"__esModule",{value:!0});Cs.encodeStreamEntry=void 0;var bE=(v(),x(I)),id=bE.__importStar(R()),gE=M();function yE(t,e){e.startSequence(gE.StreamEntryBERID),t.identifier!==null&&(e.startSequence(id.CONTEXT(0)),e.writeInt(t.identifier),e.endSequence()),t.value!==null&&(e.startSequence(id.CONTEXT(1)),e.writeValue(t.value),e.endSequence()),e.endSequence()}Cs.encodeStreamEntry=yE});var Ra=p(Os=>{"use strict";Object.defineProperty(Os,"__esModule",{value:!0});Os.InvocationResultImpl=void 0;var Oa=class{constructor(e,n,r){this.id=e,this.success=n,this.result=r}};Os.InvocationResultImpl=Oa});var Ee=p(j=>{"use strict";Object.defineProperty(j,"__esModule",{value:!0});j.skipNext=j.unexpected=j.appendErrors=j.guarded=j.safeSet=j.unknownApplication=j.unknownContext=j.makeResult=j.DecodeError=j.check=j.whatever=j.defaultDecode=void 0;var ad=Ut(),sr=(0,ad.literal)({skipApplicationTags:!0,skipContextTags:!0,substituteForRequired:!0,skipUnexpected:!0});j.defaultDecode=sr;function TE(t){return t.value}j.whatever=TE;var Rs=class extends Error{constructor(e){super(`Decoding failed. Errors are:
+` +
+					n,
+			))
+	}
+	function Mt(t, e, n, r, s, i) {
+		if (t.listenerCount('wsClientError')) {
+			let o = new Error(s)
+			;(Error.captureStackTrace(o, Mt), t.emit('wsClientError', o, n, e))
+		} else Vn(n, r, s, i)
+	}
+})
+var mo = p((eS, gl) => {
+	'use strict'
+	var cm = ul(),
+		um = Rr(),
+		lm = Yt(),
+		fm = ro(),
+		dm = oo(),
+		hm = ho(),
+		Qe = Dr(),
+		bl = El()
+	Qe.createWebSocketStream = cm
+	Qe.extension = um
+	Qe.PerMessageDeflate = lm
+	Qe.Receiver = fm
+	Qe.Sender = dm
+	Qe.Server = bl
+	Qe.subprotocol = hm
+	Qe.WebSocket = Qe
+	Qe.WebSocketServer = bl
+	gl.exports = Qe
+})
+var Tl = p((tS, yl) => {
+	yl.exports = []
+})
+var wl = p((nS, vl) => {
+	var pm = mo(),
+		mm = [
+			{ id: 0, label: 'Input 1' },
+			{ id: 1, label: 'Input 2' },
+			{ id: 2, label: 'Input 3' },
+			{ id: 3, label: 'Input 4' },
+			{ id: 4, label: 'Input 5' },
+			{ id: 5, label: 'Input 6' },
+			{ id: 6, label: 'Input 7' },
+			{ id: 7, label: 'Input 8' },
+		],
+		Sl = [
+			{ id: 0, label: 'Off' },
+			{ id: 1, label: 'On' },
+			{ id: 2, label: 'Toggle' },
+		],
+		_m = 16,
+		Em = 76,
+		xl = 3,
+		tt = () => ({ id: 'input', type: 'dropdown', label: 'Input', default: 0, choices: mm }),
+		nt = async (t, e, n, r) => {
+			try {
+				await t.ember.setInputParameter(Number(e), n, r)
+			} catch (s) {
+				t.log('error', `Action failed: ${s.message}`)
+			}
+		},
+		bm = (t, e) => {
+			if (!t.ws || t.ws.readyState !== pm.OPEN) {
+				t.log('error', 'Action failed: WebSocket is not connected')
+				return
+			}
+			t.ws.send(JSON.stringify({ audio: { statusLeds: Number(e) } }), (n) => {
+				n && t.log('error', `Action failed: ${n.message}`)
+			})
+		},
+		Ar = (t, e, n, r) => {
+			let s = Number(e)
+			return s !== 2
+				? s
+				: n == null
+					? (t.log('error', `Cannot toggle ${r}: current device state has not been received`), null)
+					: n === !0 || Number(n) === 1
+						? 0
+						: 1
+		},
+		Il = async (t, e, n) => {
+			let r = Number(t.inputState?.[e]?.preamp_gain)
+			if (!Number.isFinite(r)) {
+				t.log('error', 'Cannot adjust preamp gain: current Ember+ value has not been received')
+				return
+			}
+			let s = Math.min(Em, Math.max(_m, r + n))
+			s !== r && (await nt(t, e, 'preamp_gain', s))
+		}
+	vl.exports = function (t) {
+		t.setActionDefinitions({
+			line_mic: {
+				name: 'Set Input Mode',
+				options: [
+					tt(),
+					{
+						id: 'mode',
+						type: 'dropdown',
+						label: 'Mode',
+						default: 0,
+						choices: [
+							{ id: 0, label: 'Mic' },
+							{ id: 1, label: 'Line' },
+						],
+					},
+				],
+				callback: async (e) => {
+					await nt(t, e.options.input, 'line_mic', Number(e.options.mode))
+				},
+			},
+			phantom_power: {
+				name: 'Set Phantom Power',
+				options: [tt(), { id: 'state', type: 'dropdown', label: 'Phantom Power', default: 0, choices: Sl }],
+				callback: async (e) => {
+					let n = Number(e.options.input),
+						r = Ar(t, e.options.state, t.inputState?.[n]?.phantom_power, 'phantom power')
+					r !== null && (await nt(t, n, 'phantom_power', r === 1))
+				},
+			},
+			set_preamp_gain: {
+				name: 'Set Preamp Gain',
+				options: [
+					tt(),
+					{
+						id: 'gain',
+						type: 'dropdown',
+						label: 'Gain',
+						default: 16,
+						choices: Array.from({ length: 21 }, (e, n) => {
+							let r = 16 + n * 3
+							return { id: r, label: `${r} dB` }
+						}),
+					},
+				],
+				callback: async (e) => {
+					let n = Number(e.options.input)
+					await nt(t, n, 'preamp_gain', Number(e.options.gain))
+				},
+			},
+			adjust_preamp_gain: {
+				name: 'Adjust Preamp Gain',
+				options: [
+					tt(),
+					{
+						id: 'operation',
+						type: 'dropdown',
+						label: 'Operation',
+						default: 'increase',
+						choices: [
+							{ id: 'increase', label: 'Increase' },
+							{ id: 'decrease', label: 'Decrease' },
+						],
+					},
+					{
+						id: 'step',
+						type: 'dropdown',
+						label: 'Gain Step',
+						default: 1,
+						isVisibleExpression: "$(options:operation) === 'increase' || $(options:operation) === 'decrease'",
+						choices: [1, 2, 4, 5, 10].map((e) => ({ id: e, label: `${e * 3} dB` })),
+						tooltip: 'Select the gain change applied per adjustment.',
+					},
+				],
+				callback: async (e) => {
+					let n = Number(e.options.input),
+						r = Math.max(1, Math.round(Number(e.options.step) || 1))
+					switch (e.options.operation || 'set') {
+						case 'increase':
+							await Il(t, n, r * xl)
+							break
+						case 'decrease':
+							await Il(t, n, -r * xl)
+							break
+					}
+				},
+			},
+			full_scale_level: {
+				name: 'Set Full Scale Level',
+				options: [
+					tt(),
+					{
+						id: 'level',
+						type: 'dropdown',
+						label: 'Full Scale Level',
+						default: 0,
+						choices: [
+							{ id: 0, label: '+15 dBu' },
+							{ id: 1, label: '+18 dBu' },
+							{ id: 2, label: '+20 dBu' },
+							{ id: 3, label: '+22 dBu' },
+							{ id: 4, label: '+24 dBu' },
+						],
+					},
+				],
+				callback: async (e) => {
+					await nt(t, e.options.input, 'full_scale_level', Number(e.options.level))
+				},
+			},
+			hpf_enable: {
+				name: 'Set High-Pass Filter State',
+				options: [tt(), { id: 'state', type: 'dropdown', label: 'High-Pass Filter', default: 0, choices: Sl }],
+				callback: async (e) => {
+					let n = Number(e.options.input),
+						r = Ar(t, e.options.state, t.inputState?.[n]?.hpf_enable, 'high-pass filter')
+					r !== null && (await nt(t, n, 'hpf_enable', r === 1))
+				},
+			},
+			hpf_freq: {
+				name: 'Set High-Pass Filter Frequency',
+				options: [
+					tt(),
+					{ id: 'frequency', type: 'number', label: 'Corner Frequency (Hz)', default: 125, min: 40, max: 3e3, step: 5 },
+				],
+				callback: async (e) => {
+					await nt(t, e.options.input, 'hpf_freq', Number(e.options.frequency))
+				},
+			},
+			sig_pres_timeout: {
+				name: 'Set Signal-Presence Timeout',
+				options: [tt(), { id: 'timeout', type: 'number', label: 'Timeout (seconds)', default: 5, min: 0, max: 300 }],
+				callback: async (e) => {
+					await nt(t, e.options.input, 'sig_pres_timeout', Number(e.options.timeout))
+				},
+			},
+			sig_pres_threshold: {
+				name: 'Set Signal-Presence Threshold',
+				options: [tt(), { id: 'threshold', type: 'number', label: 'Threshold (dBFS)', default: -40, min: -70, max: 0 }],
+				callback: async (e) => {
+					await nt(t, e.options.input, 'sig_pres_threshold', Number(e.options.threshold))
+				},
+			},
+			mute: {
+				name: 'Set Input Mute',
+				options: [
+					tt(),
+					{
+						id: 'state',
+						type: 'dropdown',
+						label: 'Mute',
+						default: 0,
+						choices: [
+							{ id: 0, label: 'Unmuted' },
+							{ id: 1, label: 'Muted' },
+							{ id: 2, label: 'Toggle' },
+						],
+					},
+				],
+				callback: async (e) => {
+					let n = Number(e.options.input),
+						r = Ar(t, e.options.state, t.inputState?.[n]?.mute, 'input mute')
+					r !== null && (await nt(t, n, 'mute', r === 1))
+				},
+			},
+			status_leds: {
+				name: 'Set Status LEDs',
+				options: [
+					{
+						id: 'state',
+						type: 'dropdown',
+						label: 'Status LEDs',
+						default: 1,
+						choices: [
+							{ id: 0, label: 'Disabled' },
+							{ id: 1, label: 'Enabled' },
+							{ id: 2, label: 'Toggle' },
+						],
+					},
+				],
+				callback: async (e) => {
+					let n = Ar(t, e.options.state, t.statusLeds, 'status LEDs')
+					n !== null && bm(t, n)
+				},
+			},
+		})
+	}
+})
+var Eo = p((rS, Nl) => {
+	var _o = (t) => t === !0 || Number(t) === 1,
+		gm = (t) => _o(t?.mute) || _o(t?.gpi_mute),
+		ym = (t) => String(t).trim().toLowerCase() === 'present'
+	Nl.exports = { isAsserted: _o, isMuted: gm, isPresent: ym }
+})
+var Ol = p((sS, Cl) => {
+	var { isAsserted: Tm, isMuted: Sm } = Eo(),
+		bo = [
+			{ id: 0, label: 'Input 1' },
+			{ id: 1, label: 'Input 2' },
+			{ id: 2, label: 'Input 3' },
+			{ id: 3, label: 'Input 4' },
+			{ id: 4, label: 'Input 5' },
+			{ id: 5, label: 'Input 6' },
+			{ id: 6, label: 'Input 7' },
+			{ id: 7, label: 'Input 8' },
+		],
+		xm = [
+			{ id: 'line_mic', label: 'Signal Level (0 = Mic, 1 = Line)' },
+			{ id: 'phantom_power', label: 'Phantom Power' },
+			{ id: 'preamp_gain', label: 'Preamp Gain' },
+			{ id: 'full_scale_level', label: 'Full Scale Level' },
+			{ id: 'hpf_enable', label: 'High-Pass Filter' },
+			{ id: 'hpf_freq', label: 'High-Pass Filter Frequency' },
+			{ id: 'sig_pres_timeout', label: 'Signal-Presence Timeout' },
+			{ id: 'sig_pres_threshold', label: 'Signal-Presence Threshold' },
+			{ id: 'mute', label: 'Mute' },
+		],
+		Gn = (t) => String(typeof t == 'boolean' ? Number(t) : (t ?? '')),
+		Im = [
+			null,
+			-52,
+			-47.33,
+			-42.66,
+			-38,
+			-33.33,
+			-28.66,
+			-24,
+			-22.5,
+			-21,
+			-19.5,
+			-18,
+			-16.5,
+			-15,
+			-13.5,
+			-12,
+			-10,
+			-8,
+			-6,
+			-4,
+			-2,
+			-0.1,
+		],
+		vm = Im.map((t, e) => ({ id: e, label: e === 0 ? 'Silence (below -52 dBFS)' : `${t} dBFS` }))
+	Cl.exports = function (t) {
+		t.setFeedbackDefinitions({
+			ParameterState: {
+				name: 'Ember+ Parameter',
+				description: 'Active when the selected Ember+ input parameter matches the specified value.',
+				type: 'boolean',
+				defaultStyle: { bgcolor: 65280, color: 0 },
+				options: [
+					{ id: 'input', type: 'dropdown', label: 'Input', default: 0, choices: bo },
+					{ id: 'parameter', type: 'dropdown', label: 'Parameter', default: 'line_mic', choices: xm },
+					{ id: 'value', type: 'textinput', label: 'Value', default: '1' },
+				],
+				callback: (e) => {
+					let n = t.inputState?.[Number(e.options.input)]?.[e.options.parameter]
+					return n !== void 0 && Gn(n) === Gn(e.options.value)
+				},
+				learn: (e) => {
+					let n = t.inputState?.[Number(e.options.input)]?.[e.options.parameter]
+					return n === void 0 ? void 0 : { value: Gn(n) }
+				},
+			},
+			MuteState: {
+				name: 'Input Mute',
+				description: 'Active when the selected input matches the mute state.',
+				type: 'boolean',
+				defaultStyle: { bgcolor: 16711680, color: 16777215 },
+				options: [
+					{ id: 'input', type: 'dropdown', label: 'Input', default: 0, choices: bo },
+					{
+						id: 'source',
+						type: 'dropdown',
+						label: 'Source',
+						default: 'any',
+						choices: [
+							{ id: 'any', label: 'Software or GPI' },
+							{ id: 'software', label: 'Software only' },
+							{ id: 'gpi', label: 'GPI only' },
+						],
+					},
+					{
+						id: 'state',
+						type: 'dropdown',
+						label: 'State',
+						default: 1,
+						choices: [
+							{ id: 1, label: 'Muted' },
+							{ id: 0, label: 'Unmuted' },
+						],
+					},
+				],
+				callback: (e) => {
+					let n = t.inputState?.[Number(e.options.input)],
+						r = e.options.source,
+						s = r === 'software' ? n?.mute : r === 'gpi' ? n?.gpi_mute : (n?.mute ?? n?.gpi_mute)
+					return s === void 0 ? !1 : (r === 'any' ? Sm(n) : Tm(s)) === (Number(e.options.state) === 1)
+				},
+			},
+			MeterLevel: {
+				name: 'Input Meter Level',
+				description: 'Active when the selected input meter compares as chosen against the level.',
+				type: 'boolean',
+				defaultStyle: { bgcolor: 65280, color: 0 },
+				options: [
+					{ id: 'input', type: 'dropdown', label: 'Input', default: 0, choices: bo },
+					{
+						id: 'comparison',
+						type: 'dropdown',
+						label: 'Comparison',
+						default: '>',
+						choices: [
+							{ id: '<', label: '<' },
+							{ id: '=', label: '=' },
+							{ id: '>', label: '>' },
+						],
+					},
+					{ id: 'threshold', type: 'dropdown', label: 'Level (dBFS)', default: 0, choices: vm },
+				],
+				callback: (e) => {
+					let n = t.meters?.[Number(e.options.input)]
+					if (n === void 0) return !1
+					let r = Number(e.options.threshold)
+					return e.options.comparison === '<' ? n < r : e.options.comparison === '=' ? n === r : n > r
+				},
+			},
+			PowerInput: {
+				name: 'PoE Input',
+				description: 'Active when the selected PoE input matches the state.',
+				type: 'boolean',
+				defaultStyle: { bgcolor: 16711680, color: 16777215 },
+				options: [
+					{
+						id: 'input',
+						type: 'dropdown',
+						label: 'PoE Input',
+						default: 1,
+						choices: [
+							{ id: 1, label: 'Primary' },
+							{ id: 2, label: 'Secondary' },
+						],
+					},
+					{
+						id: 'state',
+						type: 'dropdown',
+						label: 'State',
+						default: 0,
+						choices: [
+							{ id: 0, label: 'Not present' },
+							{ id: 1, label: 'Present' },
+						],
+					},
+				],
+				callback: (e) => {
+					let n = t.powerInputs?.[Number(e.options.input)]
+					return n === void 0 ? !1 : n === (Number(e.options.state) === 1)
+				},
+			},
+			StatusLeds: {
+				name: 'Status LEDs',
+				description: 'Active when the WebSocket-reported status LED setting matches the selected state.',
+				type: 'boolean',
+				defaultStyle: { bgcolor: 65280, color: 0 },
+				options: [
+					{
+						id: 'state',
+						type: 'dropdown',
+						label: 'State',
+						default: 1,
+						choices: [
+							{ id: 0, label: 'Disabled' },
+							{ id: 1, label: 'Enabled' },
+						],
+					},
+				],
+				callback: (e) => t.statusLeds !== void 0 && Gn(t.statusLeds) === Gn(e.options.state),
+			},
+		})
+	}
+})
+var kl = p((iS, Rl) => {
+	Rl.exports = function (t) {
+		let e = {
+			status_leds_enabled: { name: 'Status LEDs enabled' },
+			device_uptime: { name: 'Device uptime' },
+			device_temperature: { name: 'Device core temperature (\xB0C)' },
+			primary_poe_present: { name: 'Primary PoE present' },
+			secondary_poe_present: { name: 'Secondary PoE present' },
+		}
+		for (let n = 1; n <= 8; n++)
+			((e[`input${n}_dante_label`] = { name: `Input ${n} Dante label` }),
+				(e[`input${n}_friendly_name`] = { name: `Input ${n} friendly name` }),
+				(e[`input${n}_mode`] = { name: `Input ${n} mode` }),
+				(e[`input${n}_phantom_power`] = { name: `Input ${n} phantom power enabled` }),
+				(e[`input${n}_preamp_gain`] = { name: `Input ${n} preamp gain (dB)` }),
+				(e[`input${n}_full_scale_level`] = { name: `Input ${n} full scale level` }),
+				(e[`input${n}_hpf_enabled`] = { name: `Input ${n} high-pass filter enabled` }),
+				(e[`input${n}_hpf_frequency`] = { name: `Input ${n} high-pass filter frequency (Hz)` }),
+				(e[`input${n}_signal_presence_timeout`] = { name: `Input ${n} signal-presence timeout (seconds)` }),
+				(e[`input${n}_signal_presence_threshold`] = { name: `Input ${n} signal-presence threshold (dBFS)` }),
+				(e[`input${n}_mute`] = { name: `Input ${n} software mute active` }),
+				(e[`input${n}_gpi_mute`] = { name: `Input ${n} GPI mute active` }),
+				(e[`input${n}_mute_active`] = { name: `Input ${n} overall mute active (software or GPI)` }),
+				(e[`input${n}_meter`] = { name: `Input ${n} meter segments` }))
+		t.setVariableDefinitions(e)
+	}
+})
+var Pl = p((oS, Dl) => {
+	var { combineRgb: sn } = (Wi(), x(Xi)),
+		To = sn(0, 0, 0),
+		bt = sn(255, 255, 255),
+		Xn = sn(200, 0, 0),
+		go = sn(0, 160, 0),
+		Bl = sn(200, 130, 0),
+		wm = sn(0, 80, 160),
+		Wn = 'sonifex-avn-m8r',
+		ql = [1, 2, 3, 4, 5, 6, 7, 8],
+		_t = (...t) =>
+			t.join(`
+`),
+		Et = (t, e = To) => ({ text: t, size: 'auto', color: bt, bgcolor: e }),
+		zn = (t, e, n, r) => ({
+			type: 'simple',
+			name: t,
+			keywords: r,
+			style: e,
+			steps: [{ down: [], up: [] }],
+			feedbacks: n,
+		}),
+		yo = (t, e, n, r, s) => ({
+			type: 'simple',
+			name: t,
+			keywords: s,
+			style: e,
+			steps: [{ down: n, up: [] }],
+			feedbacks: r,
+		})
+	Dl.exports = function (t) {
+		let e = {}
+		for (let i of ql) {
+			let o = i - 1,
+				a = `IN ${i}`
+			;((e[`mute_${i}`] = yo(
+				`Input ${i} mute toggle`,
+				Et(_t(a, `$(${Wn}:input${i}_mute_active)`)),
+				[{ actionId: 'mute', options: { input: o, state: 2 } }],
+				[
+					{
+						feedbackId: 'MuteState',
+						options: { input: o, source: 'any', state: 1 },
+						style: { bgcolor: Xn, color: bt },
+						headline: 'Red while muted by either source',
+					},
+					{
+						feedbackId: 'MuteState',
+						options: { input: o, source: 'gpi', state: 1 },
+						style: { bgcolor: Bl, color: To },
+						headline: 'Amber when the GPI is holding the mute.',
+					},
+				],
+				['mute', 'gpi'],
+			)),
+				(e[`phantom_${i}`] = yo(
+					`Input ${i} phantom power toggle`,
+					Et(_t(a, '48V')),
+					[{ actionId: 'phantom_power', options: { input: o, state: 2 } }],
+					[
+						{
+							feedbackId: 'ParameterState',
+							options: { input: o, parameter: 'phantom_power', value: '1' },
+							style: { bgcolor: Xn, color: bt },
+						},
+					],
+					['phantom', '48v'],
+				)),
+				(e[`mode_${i}`] = {
+					type: 'simple',
+					name: `Input ${i} mic/line mode`,
+					keywords: ['mic', 'line'],
+					style: Et(_t(a, `$(${Wn}:input${i}_mode)`)),
+					steps: [
+						{ name: 'Set Line', down: [{ actionId: 'line_mic', options: { input: o, mode: 1 } }], up: [] },
+						{ name: 'Set Mic', down: [{ actionId: 'line_mic', options: { input: o, mode: 0 } }], up: [] },
+					],
+					feedbacks: [
+						{
+							feedbackId: 'ParameterState',
+							options: { input: o, parameter: 'line_mic', value: '1' },
+							style: { bgcolor: wm, color: bt },
+							headline: 'Blue in line mode',
+						},
+					],
+				}),
+				(e[`meter_${i}`] = {
+					type: 'layered',
+					name: `Input ${i} meter gauge`,
+					keywords: ['meter', 'gauge', 'level'],
+					elements: [
+						{ type: 'box', x: 0, y: 0, width: 100, height: 100, color: To },
+						{
+							type: 'text',
+							text: String(i),
+							x: 4,
+							y: 4,
+							width: 22,
+							height: 24,
+							fontsize: 80,
+							color: bt,
+							halign: 'left',
+							valign: 'top',
+						},
+						{
+							type: 'gauge',
+							x: 30,
+							y: 0,
+							width: 40,
+							height: 100,
+							value: { isExpression: !0, value: `$(${Wn}:input${i}_meter)` },
+							min: 0,
+							max: 21,
+							origin: 0,
+							orientation: 'vertical',
+							fillEnabled: !0,
+							multiColour: !0,
+							fillWidth: 100,
+							trackStyle: 'dimmed',
+							trackAmount: 20,
+							trackWidth: 100,
+							stops: [
+								{ value: 0, color: go, gradient: !0 },
+								{ value: 11, color: Bl, gradient: !0 },
+								{ value: 18, color: Xn, gradient: !0 },
+							],
+						},
+					],
+					steps: [{ down: [], up: [] }],
+					feedbacks: [],
+				}),
+				(e[`signal_${i}`] = zn(
+					`Input ${i} signal present`,
+					Et(_t(a, 'SIG')),
+					[
+						{
+							feedbackId: 'MeterLevel',
+							options: { input: o, comparison: '>', threshold: 0 },
+							style: { bgcolor: go, color: bt },
+						},
+					],
+					['signal', 'meter'],
+				)),
+				(e[`clip_${i}`] = zn(
+					`Input ${i} clip`,
+					Et(_t(a, 'CLIP')),
+					[
+						{
+							feedbackId: 'MeterLevel',
+							options: { input: o, comparison: '=', threshold: 21 },
+							style: { bgcolor: Xn, color: bt },
+						},
+					],
+					['clip', 'meter', 'peak'],
+				)))
+		}
+		e.status_leds = yo(
+			'Status LEDs toggle',
+			Et(_t('STATUS', 'LEDS')),
+			[{ actionId: 'status_leds', options: { state: 2 } }],
+			[{ feedbackId: 'StatusLeds', options: { state: 1 }, style: { bgcolor: go, color: bt } }],
+			['leds'],
+		)
+		for (let [i, o, a, c] of [
+			['poe_primary', 1, 'Primary', 'PRI'],
+			['poe_secondary', 2, 'Secondary', 'SEC'],
+		])
+			e[i] = zn(
+				`${a} PoE fail`,
+				Et(_t(c, 'PoE')),
+				[{ feedbackId: 'PowerInput', options: { input: o, state: 0 }, style: { bgcolor: Xn, color: bt } }],
+				['poe', 'power'],
+			)
+		;((e.temperature = zn('Device temperature', Et(_t('TEMP', `$(${Wn}:device_temperature) C`)), [], ['temp'])),
+			(e.uptime = zn('Device uptime', Et(_t('UPTIME', `$(${Wn}:device_uptime)`)), [], ['uptime'])))
+		let n = (i, o, a, c) => ({ id: i, type: 'simple', name: o, description: c, presets: a }),
+			r = (i) => ql.map((o) => `${i}_${o}`),
+			s = [
+				{
+					id: 'inputs',
+					name: 'Inputs',
+					description: 'One button per mic/line input.',
+					definitions: [
+						n('mute', 'Mute', r('mute'), 'Toggles the software mute; turns amber when a GPI is muting.'),
+						n('phantom', 'Phantom Power', r('phantom')),
+						n('mode', 'Mic/Line Mode', r('mode')),
+					],
+				},
+				{
+					id: 'metering',
+					name: 'Metering',
+					definitions: [
+						n('meter', 'Meter Gauges', r('meter')),
+						n('signal', 'Signal Present', r('signal')),
+						n('clip', 'Clip', r('clip')),
+					],
+				},
+				{
+					id: 'device',
+					name: 'Device',
+					definitions: ['status_leds', 'poe_primary', 'poe_secondary', 'temperature', 'uptime'],
+				},
+			]
+		t.setPresetDefinitions(s, e)
+	}
+})
+var I = {}
+wc(I, {
+	__addDisposableResource: () => af,
+	__assign: () => Fr,
+	__asyncDelegator: () => Yl,
+	__asyncGenerator: () => Kl,
+	__asyncValues: () => Jl,
+	__await: () => on,
+	__awaiter: () => Xl,
+	__classPrivateFieldGet: () => rf,
+	__classPrivateFieldIn: () => of,
+	__classPrivateFieldSet: () => sf,
+	__createBinding: () => Mr,
+	__decorate: () => Ll,
+	__disposeResources: () => cf,
+	__esDecorate: () => Ul,
+	__exportStar: () => zl,
+	__extends: () => Al,
+	__generator: () => Wl,
+	__importDefault: () => nf,
+	__importStar: () => tf,
+	__makeTemplateObject: () => ef,
+	__metadata: () => Gl,
+	__param: () => Ml,
+	__propKey: () => $l,
+	__read: () => Io,
+	__rest: () => Fl,
+	__rewriteRelativeImportExtension: () => uf,
+	__runInitializers: () => jl,
+	__setFunctionName: () => Vl,
+	__spread: () => Ql,
+	__spreadArray: () => Zl,
+	__spreadArrays: () => Hl,
+	__values: () => Lr,
+	default: () => Om,
+})
+function Al(t, e) {
+	if (typeof e != 'function' && e !== null)
+		throw new TypeError('Class extends value ' + String(e) + ' is not a constructor or null')
+	So(t, e)
+	function n() {
+		this.constructor = t
+	}
+	t.prototype = e === null ? Object.create(e) : ((n.prototype = e.prototype), new n())
+}
+function Fl(t, e) {
+	var n = {}
+	for (var r in t) Object.prototype.hasOwnProperty.call(t, r) && e.indexOf(r) < 0 && (n[r] = t[r])
+	if (t != null && typeof Object.getOwnPropertySymbols == 'function')
+		for (var s = 0, r = Object.getOwnPropertySymbols(t); s < r.length; s++)
+			e.indexOf(r[s]) < 0 && Object.prototype.propertyIsEnumerable.call(t, r[s]) && (n[r[s]] = t[r[s]])
+	return n
+}
+function Ll(t, e, n, r) {
+	var s = arguments.length,
+		i = s < 3 ? e : r === null ? (r = Object.getOwnPropertyDescriptor(e, n)) : r,
+		o
+	if (typeof Reflect == 'object' && typeof Reflect.decorate == 'function') i = Reflect.decorate(t, e, n, r)
+	else for (var a = t.length - 1; a >= 0; a--) (o = t[a]) && (i = (s < 3 ? o(i) : s > 3 ? o(e, n, i) : o(e, n)) || i)
+	return (s > 3 && i && Object.defineProperty(e, n, i), i)
+}
+function Ml(t, e) {
+	return function (n, r) {
+		e(n, r, t)
+	}
+}
+function Ul(t, e, n, r, s, i) {
+	function o(w) {
+		if (w !== void 0 && typeof w != 'function') throw new TypeError('Function expected')
+		return w
+	}
+	for (
+		var a = r.kind,
+			c = a === 'getter' ? 'get' : a === 'setter' ? 'set' : 'value',
+			u = !e && t ? (r.static ? t : t.prototype) : null,
+			f = e || (u ? Object.getOwnPropertyDescriptor(u, r.name) : {}),
+			d,
+			m = !1,
+			_ = n.length - 1;
+		_ >= 0;
+		_--
+	) {
+		var y = {}
+		for (var b in r) y[b] = b === 'access' ? {} : r[b]
+		for (var b in r.access) y.access[b] = r.access[b]
+		y.addInitializer = function (w) {
+			if (m) throw new TypeError('Cannot add initializers after decoration has completed')
+			i.push(o(w || null))
+		}
+		var g = (0, n[_])(a === 'accessor' ? { get: f.get, set: f.set } : f[c], y)
+		if (a === 'accessor') {
+			if (g === void 0) continue
+			if (g === null || typeof g != 'object') throw new TypeError('Object expected')
+			;((d = o(g.get)) && (f.get = d), (d = o(g.set)) && (f.set = d), (d = o(g.init)) && s.unshift(d))
+		} else (d = o(g)) && (a === 'field' ? s.unshift(d) : (f[c] = d))
+	}
+	;(u && Object.defineProperty(u, r.name, f), (m = !0))
+}
+function jl(t, e, n) {
+	for (var r = arguments.length > 2, s = 0; s < e.length; s++) n = r ? e[s].call(t, n) : e[s].call(t)
+	return r ? n : void 0
+}
+function $l(t) {
+	return typeof t == 'symbol' ? t : ''.concat(t)
+}
+function Vl(t, e, n) {
+	return (
+		typeof e == 'symbol' && (e = e.description ? '['.concat(e.description, ']') : ''),
+		Object.defineProperty(t, 'name', { configurable: !0, value: n ? ''.concat(n, ' ', e) : e })
+	)
+}
+function Gl(t, e) {
+	if (typeof Reflect == 'object' && typeof Reflect.metadata == 'function') return Reflect.metadata(t, e)
+}
+function Xl(t, e, n, r) {
+	function s(i) {
+		return i instanceof n
+			? i
+			: new n(function (o) {
+					o(i)
+				})
+	}
+	return new (n || (n = Promise))(function (i, o) {
+		function a(f) {
+			try {
+				u(r.next(f))
+			} catch (d) {
+				o(d)
+			}
+		}
+		function c(f) {
+			try {
+				u(r.throw(f))
+			} catch (d) {
+				o(d)
+			}
+		}
+		function u(f) {
+			f.done ? i(f.value) : s(f.value).then(a, c)
+		}
+		u((r = r.apply(t, e || [])).next())
+	})
+}
+function Wl(t, e) {
+	var n = {
+			label: 0,
+			sent: function () {
+				if (i[0] & 1) throw i[1]
+				return i[1]
+			},
+			trys: [],
+			ops: [],
+		},
+		r,
+		s,
+		i,
+		o = Object.create((typeof Iterator == 'function' ? Iterator : Object).prototype)
+	return (
+		(o.next = a(0)),
+		(o.throw = a(1)),
+		(o.return = a(2)),
+		typeof Symbol == 'function' &&
+			(o[Symbol.iterator] = function () {
+				return this
+			}),
+		o
+	)
+	function a(u) {
+		return function (f) {
+			return c([u, f])
+		}
+	}
+	function c(u) {
+		if (r) throw new TypeError('Generator is already executing.')
+		for (; o && ((o = 0), u[0] && (n = 0)), n;)
+			try {
+				if (
+					((r = 1),
+					s &&
+						(i = u[0] & 2 ? s.return : u[0] ? s.throw || ((i = s.return) && i.call(s), 0) : s.next) &&
+						!(i = i.call(s, u[1])).done)
+				)
+					return i
+				switch (((s = 0), i && (u = [u[0] & 2, i.value]), u[0])) {
+					case 0:
+					case 1:
+						i = u
+						break
+					case 4:
+						return (n.label++, { value: u[1], done: !1 })
+					case 5:
+						;(n.label++, (s = u[1]), (u = [0]))
+						continue
+					case 7:
+						;((u = n.ops.pop()), n.trys.pop())
+						continue
+					default:
+						if (((i = n.trys), !(i = i.length > 0 && i[i.length - 1]) && (u[0] === 6 || u[0] === 2))) {
+							n = 0
+							continue
+						}
+						if (u[0] === 3 && (!i || (u[1] > i[0] && u[1] < i[3]))) {
+							n.label = u[1]
+							break
+						}
+						if (u[0] === 6 && n.label < i[1]) {
+							;((n.label = i[1]), (i = u))
+							break
+						}
+						if (i && n.label < i[2]) {
+							;((n.label = i[2]), n.ops.push(u))
+							break
+						}
+						;(i[2] && n.ops.pop(), n.trys.pop())
+						continue
+				}
+				u = e.call(t, n)
+			} catch (f) {
+				;((u = [6, f]), (s = 0))
+			} finally {
+				r = i = 0
+			}
+		if (u[0] & 5) throw u[1]
+		return { value: u[0] ? u[1] : void 0, done: !0 }
+	}
+}
+function zl(t, e) {
+	for (var n in t) n !== 'default' && !Object.prototype.hasOwnProperty.call(e, n) && Mr(e, t, n)
+}
+function Lr(t) {
+	var e = typeof Symbol == 'function' && Symbol.iterator,
+		n = e && t[e],
+		r = 0
+	if (n) return n.call(t)
+	if (t && typeof t.length == 'number')
+		return {
+			next: function () {
+				return (t && r >= t.length && (t = void 0), { value: t && t[r++], done: !t })
+			},
+		}
+	throw new TypeError(e ? 'Object is not iterable.' : 'Symbol.iterator is not defined.')
+}
+function Io(t, e) {
+	var n = typeof Symbol == 'function' && t[Symbol.iterator]
+	if (!n) return t
+	var r = n.call(t),
+		s,
+		i = [],
+		o
+	try {
+		for (; (e === void 0 || e-- > 0) && !(s = r.next()).done;) i.push(s.value)
+	} catch (a) {
+		o = { error: a }
+	} finally {
+		try {
+			s && !s.done && (n = r.return) && n.call(r)
+		} finally {
+			if (o) throw o.error
+		}
+	}
+	return i
+}
+function Ql() {
+	for (var t = [], e = 0; e < arguments.length; e++) t = t.concat(Io(arguments[e]))
+	return t
+}
+function Hl() {
+	for (var t = 0, e = 0, n = arguments.length; e < n; e++) t += arguments[e].length
+	for (var r = Array(t), s = 0, e = 0; e < n; e++)
+		for (var i = arguments[e], o = 0, a = i.length; o < a; o++, s++) r[s] = i[o]
+	return r
+}
+function Zl(t, e, n) {
+	if (n || arguments.length === 2)
+		for (var r = 0, s = e.length, i; r < s; r++)
+			(i || !(r in e)) && (i || (i = Array.prototype.slice.call(e, 0, r)), (i[r] = e[r]))
+	return t.concat(i || Array.prototype.slice.call(e))
+}
+function on(t) {
+	return this instanceof on ? ((this.v = t), this) : new on(t)
+}
+function Kl(t, e, n) {
+	if (!Symbol.asyncIterator) throw new TypeError('Symbol.asyncIterator is not defined.')
+	var r = n.apply(t, e || []),
+		s,
+		i = []
+	return (
+		(s = Object.create((typeof AsyncIterator == 'function' ? AsyncIterator : Object).prototype)),
+		a('next'),
+		a('throw'),
+		a('return', o),
+		(s[Symbol.asyncIterator] = function () {
+			return this
+		}),
+		s
+	)
+	function o(_) {
+		return function (y) {
+			return Promise.resolve(y).then(_, d)
+		}
+	}
+	function a(_, y) {
+		r[_] &&
+			((s[_] = function (b) {
+				return new Promise(function (g, w) {
+					i.push([_, b, g, w]) > 1 || c(_, b)
+				})
+			}),
+			y && (s[_] = y(s[_])))
+	}
+	function c(_, y) {
+		try {
+			u(r[_](y))
+		} catch (b) {
+			m(i[0][3], b)
+		}
+	}
+	function u(_) {
+		_.value instanceof on ? Promise.resolve(_.value.v).then(f, d) : m(i[0][2], _)
+	}
+	function f(_) {
+		c('next', _)
+	}
+	function d(_) {
+		c('throw', _)
+	}
+	function m(_, y) {
+		;(_(y), i.shift(), i.length && c(i[0][0], i[0][1]))
+	}
+}
+function Yl(t) {
+	var e, n
+	return (
+		(e = {}),
+		r('next'),
+		r('throw', function (s) {
+			throw s
+		}),
+		r('return'),
+		(e[Symbol.iterator] = function () {
+			return this
+		}),
+		e
+	)
+	function r(s, i) {
+		e[s] = t[s]
+			? function (o) {
+					return (n = !n) ? { value: on(t[s](o)), done: !1 } : i ? i(o) : o
+				}
+			: i
+	}
+}
+function Jl(t) {
+	if (!Symbol.asyncIterator) throw new TypeError('Symbol.asyncIterator is not defined.')
+	var e = t[Symbol.asyncIterator],
+		n
+	return e
+		? e.call(t)
+		: ((t = typeof Lr == 'function' ? Lr(t) : t[Symbol.iterator]()),
+			(n = {}),
+			r('next'),
+			r('throw'),
+			r('return'),
+			(n[Symbol.asyncIterator] = function () {
+				return this
+			}),
+			n)
+	function r(i) {
+		n[i] =
+			t[i] &&
+			function (o) {
+				return new Promise(function (a, c) {
+					;((o = t[i](o)), s(a, c, o.done, o.value))
+				})
+			}
+	}
+	function s(i, o, a, c) {
+		Promise.resolve(c).then(function (u) {
+			i({ value: u, done: a })
+		}, o)
+	}
+}
+function ef(t, e) {
+	return (Object.defineProperty ? Object.defineProperty(t, 'raw', { value: e }) : (t.raw = e), t)
+}
+function tf(t) {
+	if (t && t.__esModule) return t
+	var e = {}
+	if (t != null) for (var n = xo(t), r = 0; r < n.length; r++) n[r] !== 'default' && Mr(e, t, n[r])
+	return (Nm(e, t), e)
+}
+function nf(t) {
+	return t && t.__esModule ? t : { default: t }
+}
+function rf(t, e, n, r) {
+	if (n === 'a' && !r) throw new TypeError('Private accessor was defined without a getter')
+	if (typeof e == 'function' ? t !== e || !r : !e.has(t))
+		throw new TypeError('Cannot read private member from an object whose class did not declare it')
+	return n === 'm' ? r : n === 'a' ? r.call(t) : r ? r.value : e.get(t)
+}
+function sf(t, e, n, r, s) {
+	if (r === 'm') throw new TypeError('Private method is not writable')
+	if (r === 'a' && !s) throw new TypeError('Private accessor was defined without a setter')
+	if (typeof e == 'function' ? t !== e || !s : !e.has(t))
+		throw new TypeError('Cannot write private member to an object whose class did not declare it')
+	return (r === 'a' ? s.call(t, n) : s ? (s.value = n) : e.set(t, n), n)
+}
+function of(t, e) {
+	if (e === null || (typeof e != 'object' && typeof e != 'function'))
+		throw new TypeError("Cannot use 'in' operator on non-object")
+	return typeof t == 'function' ? e === t : t.has(e)
+}
+function af(t, e, n) {
+	if (e != null) {
+		if (typeof e != 'object' && typeof e != 'function') throw new TypeError('Object expected.')
+		var r, s
+		if (n) {
+			if (!Symbol.asyncDispose) throw new TypeError('Symbol.asyncDispose is not defined.')
+			r = e[Symbol.asyncDispose]
+		}
+		if (r === void 0) {
+			if (!Symbol.dispose) throw new TypeError('Symbol.dispose is not defined.')
+			;((r = e[Symbol.dispose]), n && (s = r))
+		}
+		if (typeof r != 'function') throw new TypeError('Object not disposable.')
+		;(s &&
+			(r = function () {
+				try {
+					s.call(this)
+				} catch (i) {
+					return Promise.reject(i)
+				}
+			}),
+			t.stack.push({ value: e, dispose: r, async: n }))
+	} else n && t.stack.push({ async: !0 })
+	return e
+}
+function cf(t) {
+	function e(i) {
+		;((t.error = t.hasError ? new Cm(i, t.error, 'An error was suppressed during disposal.') : i), (t.hasError = !0))
+	}
+	var n,
+		r = 0
+	function s() {
+		for (; (n = t.stack.pop());)
+			try {
+				if (!n.async && r === 1) return ((r = 0), t.stack.push(n), Promise.resolve().then(s))
+				if (n.dispose) {
+					var i = n.dispose.call(n.value)
+					if (n.async)
+						return (
+							(r |= 2),
+							Promise.resolve(i).then(s, function (o) {
+								return (e(o), s())
+							})
+						)
+				} else r |= 1
+			} catch (o) {
+				e(o)
+			}
+		if (r === 1) return t.hasError ? Promise.reject(t.error) : Promise.resolve()
+		if (t.hasError) throw t.error
+	}
+	return s()
+}
+function uf(t, e) {
+	return typeof t == 'string' && /^\.\.?\//.test(t)
+		? t.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function (n, r, s, i, o) {
+				return r ? (e ? '.jsx' : '.js') : s && (!i || !o) ? n : s + i + '.' + o.toLowerCase() + 'js'
+			})
+		: t
+}
+var So,
+	Fr,
+	Mr,
+	Nm,
+	xo,
+	Cm,
+	Om,
+	v = q(() => {
+		So = function (t, e) {
+			return (
+				(So =
+					Object.setPrototypeOf ||
+					({ __proto__: [] } instanceof Array &&
+						function (n, r) {
+							n.__proto__ = r
+						}) ||
+					function (n, r) {
+						for (var s in r) Object.prototype.hasOwnProperty.call(r, s) && (n[s] = r[s])
+					}),
+				So(t, e)
+			)
+		}
+		Fr = function () {
+			return (
+				(Fr =
+					Object.assign ||
+					function (e) {
+						for (var n, r = 1, s = arguments.length; r < s; r++) {
+							n = arguments[r]
+							for (var i in n) Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i])
+						}
+						return e
+					}),
+				Fr.apply(this, arguments)
+			)
+		}
+		Mr = Object.create
+			? function (t, e, n, r) {
+					r === void 0 && (r = n)
+					var s = Object.getOwnPropertyDescriptor(e, n)
+					;((!s || ('get' in s ? !e.__esModule : s.writable || s.configurable)) &&
+						(s = {
+							enumerable: !0,
+							get: function () {
+								return e[n]
+							},
+						}),
+						Object.defineProperty(t, r, s))
+				}
+			: function (t, e, n, r) {
+					;(r === void 0 && (r = n), (t[r] = e[n]))
+				}
+		;((Nm = Object.create
+			? function (t, e) {
+					Object.defineProperty(t, 'default', { enumerable: !0, value: e })
+				}
+			: function (t, e) {
+					t.default = e
+				}),
+			(xo = function (t) {
+				return (
+					(xo =
+						Object.getOwnPropertyNames ||
+						function (e) {
+							var n = []
+							for (var r in e) Object.prototype.hasOwnProperty.call(e, r) && (n[n.length] = r)
+							return n
+						}),
+					xo(t)
+				)
+			}))
+		Cm =
+			typeof SuppressedError == 'function'
+				? SuppressedError
+				: function (t, e, n) {
+						var r = new Error(n)
+						return ((r.name = 'SuppressedError'), (r.error = t), (r.suppressed = e), r)
+					}
+		Om = {
+			__extends: Al,
+			__assign: Fr,
+			__rest: Fl,
+			__decorate: Ll,
+			__param: Ml,
+			__esDecorate: Ul,
+			__runInitializers: jl,
+			__propKey: $l,
+			__setFunctionName: Vl,
+			__metadata: Gl,
+			__awaiter: Xl,
+			__generator: Wl,
+			__createBinding: Mr,
+			__exportStar: zl,
+			__values: Lr,
+			__read: Io,
+			__spread: Ql,
+			__spreadArrays: Hl,
+			__spreadArray: Zl,
+			__await: on,
+			__asyncGenerator: Kl,
+			__asyncDelegator: Yl,
+			__asyncValues: Jl,
+			__makeTemplateObject: ef,
+			__importStar: tf,
+			__importDefault: nf,
+			__classPrivateFieldGet: rf,
+			__classPrivateFieldSet: sf,
+			__classPrivateFieldIn: of,
+			__addDisposableResource: af,
+			__disposeResources: cf,
+			__rewriteRelativeImportExtension: uf,
+		}
+	})
+var Ut = p((an) => {
+	'use strict'
+	Object.defineProperty(an, '__esModule', { value: !0 })
+	an.literal = an.RootType = void 0
+	var vo
+	;(function (t) {
+		;((t[(t.Elements = 0)] = 'Elements'),
+			(t[(t.Streams = 1)] = 'Streams'),
+			(t[(t.InvocationResult = 2)] = 'InvocationResult'))
+	})(vo || (vo = {}))
+	an.RootType = vo
+	function Rm(t) {
+		return t
+	}
+	an.literal = Rm
+})
+var Ie = p((cn) => {
+	'use strict'
+	Object.defineProperty(cn, '__esModule', { value: !0 })
+	cn.isEmberElement = cn.ElementType = void 0
+	var Ur
+	;(function (t) {
+		;((t.Parameter = 'PARAMETER'),
+			(t.Node = 'NODE'),
+			(t.Command = 'COMMAND'),
+			(t.Matrix = 'MATRIX'),
+			(t.Function = 'FUNCTION'),
+			(t.Template = 'TEMPLATE'))
+	})(Ur || (Ur = {}))
+	cn.ElementType = Ur
+	function km(t) {
+		if (t == null || !(typeof t == 'object' && 'type' in t)) return !1
+		let { type: e } = t
+		return !(!e || !Object.values(Ur).includes(e))
+	}
+	cn.isEmberElement = km
+})
+var Qn = p((oe) => {
+	'use strict'
+	Object.defineProperty(oe, '__esModule', { value: !0 })
+	oe.isGetDirectory =
+		oe.isInvoke =
+		oe.InvokeImpl =
+		oe.GetDirectoryImpl =
+		oe.UnsubscribeImpl =
+		oe.SubscribeImpl =
+		oe.FieldFlags =
+		oe.CommandType =
+			void 0
+	var Bm = Ie(),
+		gt
+	;(function (t) {
+		;((t[(t.Subscribe = 30)] = 'Subscribe'),
+			(t[(t.Unsubscribe = 31)] = 'Unsubscribe'),
+			(t[(t.GetDirectory = 32)] = 'GetDirectory'),
+			(t[(t.Invoke = 33)] = 'Invoke'))
+	})(gt || (gt = {}))
+	oe.CommandType = gt
+	var wo
+	;(function (t) {
+		;((t.Sparse = 'SPARSE'),
+			(t.All = 'ALL'),
+			(t.Default = 'DEFAULT'),
+			(t.Identifier = 'IDENTIFIER'),
+			(t.Description = 'DESCRIPTION'),
+			(t.Tree = 'TREE'),
+			(t.Value = 'VALUE'),
+			(t.Connections = 'CONNECTIONS'))
+	})(wo || (wo = {}))
+	oe.FieldFlags = wo
+	function qm(t) {
+		return t !== null && t.number === gt.Invoke
+	}
+	oe.isInvoke = qm
+	function Dm(t) {
+		return t !== null && t.number === gt.GetDirectory
+	}
+	oe.isGetDirectory = Dm
+	var un = class {
+			constructor() {
+				this.type = Bm.ElementType.Command
+			}
+		},
+		No = class extends un {
+			constructor() {
+				;(super(), (this.number = gt.Subscribe))
+			}
+		}
+	oe.SubscribeImpl = No
+	var Co = class extends un {
+		constructor() {
+			;(super(), (this.number = gt.Unsubscribe))
+		}
+	}
+	oe.UnsubscribeImpl = Co
+	var Oo = class extends un {
+		constructor(e) {
+			;(super(), (this.dirFieldMask = e), (this.number = gt.GetDirectory))
+		}
+	}
+	oe.GetDirectoryImpl = Oo
+	var Ro = class extends un {
+		constructor(e) {
+			;(super(), (this.invocation = e), (this.number = gt.Invoke))
+		}
+	}
+	oe.InvokeImpl = Ro
+})
+var Hn = p((vt) => {
+	'use strict'
+	Object.defineProperty(vt, '__esModule', { value: !0 })
+	vt.ConnectionImpl = vt.ConnectionOperation = vt.ConnectionDisposition = void 0
+	var ko
+	;(function (t) {
+		;((t.Absolute = 'ABSOLUTE'), (t.Connect = 'CONNECT'), (t.Disconnect = 'DISCONNECT'))
+	})(ko || (ko = {}))
+	vt.ConnectionOperation = ko
+	var Bo
+	;(function (t) {
+		;((t.Tally = 'TALLY'), (t.Modified = 'MODIFIED'), (t.Pending = 'PENDING'), (t.Locked = 'LOCKED'))
+	})(Bo || (Bo = {}))
+	vt.ConnectionDisposition = Bo
+	var qo = class {
+		constructor(e, n, r, s) {
+			;((this.target = e), (this.sources = n), (this.operation = r), (this.disposition = s))
+		}
+	}
+	vt.ConnectionImpl = qo
+})
+var jt = p((fS, Do) => {
+	'use strict'
+	var Pm = Object.prototype.hasOwnProperty,
+		ve = '~'
+	function Zn() {}
+	Object.create && ((Zn.prototype = Object.create(null)), new Zn().__proto__ || (ve = !1))
+	function Am(t, e, n) {
+		;((this.fn = t), (this.context = e), (this.once = n || !1))
+	}
+	function lf(t, e, n, r, s) {
+		if (typeof n != 'function') throw new TypeError('The listener must be a function')
+		var i = new Am(n, r || t, s),
+			o = ve ? ve + e : e
+		return (
+			t._events[o]
+				? t._events[o].fn
+					? (t._events[o] = [t._events[o], i])
+					: t._events[o].push(i)
+				: ((t._events[o] = i), t._eventsCount++),
+			t
+		)
+	}
+	function jr(t, e) {
+		--t._eventsCount === 0 ? (t._events = new Zn()) : delete t._events[e]
+	}
+	function be() {
+		;((this._events = new Zn()), (this._eventsCount = 0))
+	}
+	be.prototype.eventNames = function () {
+		var e = [],
+			n,
+			r
+		if (this._eventsCount === 0) return e
+		for (r in (n = this._events)) Pm.call(n, r) && e.push(ve ? r.slice(1) : r)
+		return Object.getOwnPropertySymbols ? e.concat(Object.getOwnPropertySymbols(n)) : e
+	}
+	be.prototype.listeners = function (e) {
+		var n = ve ? ve + e : e,
+			r = this._events[n]
+		if (!r) return []
+		if (r.fn) return [r.fn]
+		for (var s = 0, i = r.length, o = new Array(i); s < i; s++) o[s] = r[s].fn
+		return o
+	}
+	be.prototype.listenerCount = function (e) {
+		var n = ve ? ve + e : e,
+			r = this._events[n]
+		return r ? (r.fn ? 1 : r.length) : 0
+	}
+	be.prototype.emit = function (e, n, r, s, i, o) {
+		var a = ve ? ve + e : e
+		if (!this._events[a]) return !1
+		var c = this._events[a],
+			u = arguments.length,
+			f,
+			d
+		if (c.fn) {
+			switch ((c.once && this.removeListener(e, c.fn, void 0, !0), u)) {
+				case 1:
+					return (c.fn.call(c.context), !0)
+				case 2:
+					return (c.fn.call(c.context, n), !0)
+				case 3:
+					return (c.fn.call(c.context, n, r), !0)
+				case 4:
+					return (c.fn.call(c.context, n, r, s), !0)
+				case 5:
+					return (c.fn.call(c.context, n, r, s, i), !0)
+				case 6:
+					return (c.fn.call(c.context, n, r, s, i, o), !0)
+			}
+			for (d = 1, f = new Array(u - 1); d < u; d++) f[d - 1] = arguments[d]
+			c.fn.apply(c.context, f)
+		} else {
+			var m = c.length,
+				_
+			for (d = 0; d < m; d++)
+				switch ((c[d].once && this.removeListener(e, c[d].fn, void 0, !0), u)) {
+					case 1:
+						c[d].fn.call(c[d].context)
+						break
+					case 2:
+						c[d].fn.call(c[d].context, n)
+						break
+					case 3:
+						c[d].fn.call(c[d].context, n, r)
+						break
+					case 4:
+						c[d].fn.call(c[d].context, n, r, s)
+						break
+					default:
+						if (!f) for (_ = 1, f = new Array(u - 1); _ < u; _++) f[_ - 1] = arguments[_]
+						c[d].fn.apply(c[d].context, f)
+				}
+		}
+		return !0
+	}
+	be.prototype.on = function (e, n, r) {
+		return lf(this, e, n, r, !1)
+	}
+	be.prototype.once = function (e, n, r) {
+		return lf(this, e, n, r, !0)
+	}
+	be.prototype.removeListener = function (e, n, r, s) {
+		var i = ve ? ve + e : e
+		if (!this._events[i]) return this
+		if (!n) return (jr(this, i), this)
+		var o = this._events[i]
+		if (o.fn) o.fn === n && (!s || o.once) && (!r || o.context === r) && jr(this, i)
+		else {
+			for (var a = 0, c = [], u = o.length; a < u; a++)
+				(o[a].fn !== n || (s && !o[a].once) || (r && o[a].context !== r)) && c.push(o[a])
+			c.length ? (this._events[i] = c.length === 1 ? c[0] : c) : jr(this, i)
+		}
+		return this
+	}
+	be.prototype.removeAllListeners = function (e) {
+		var n
+		return (
+			e
+				? ((n = ve ? ve + e : e), this._events[n] && jr(this, n))
+				: ((this._events = new Zn()), (this._eventsCount = 0)),
+			this
+		)
+	}
+	be.prototype.off = be.prototype.removeListener
+	be.prototype.addListener = be.prototype.on
+	be.prefixed = ve
+	be.EventEmitter = be
+	typeof Do < 'u' && (Do.exports = be)
+})
+var df = p((ff) => {
+	'use strict'
+	var Fm = 'utf8',
+		Po = class t {
+			constructor(e, n) {
+				if (
+					((this.length = 0), (this.encoding = Fm), (this.writeOffset = 0), (this.readOffset = 0), typeof e == 'number')
+				)
+					if (Number.isFinite(e) && Number.isInteger(e) && e > 0) this.buff = Buffer.allocUnsafe(e)
+					else throw new Error('Invalid size provided. Size must be a valid integer greater than zero.')
+				else if (typeof e == 'string')
+					if (Buffer.isEncoding(e)) ((this.buff = Buffer.allocUnsafe(4096)), (this.encoding = e))
+					else
+						throw new Error(
+							'Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.',
+						)
+				else if (e instanceof Buffer) ((this.buff = e), (this.length = e.length))
+				else if (t.isSmartBufferOptions(e)) {
+					if (e.encoding)
+						if (Buffer.isEncoding(e.encoding)) this.encoding = e.encoding
+						else
+							throw new Error(
+								'Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.',
+							)
+					if (e.size)
+						if (Number.isFinite(e.size) && Number.isInteger(e.size) && e.size > 0)
+							this.buff = Buffer.allocUnsafe(e.size)
+						else throw new Error('Invalid size provided. Size must be a valid integer greater than zero.')
+					else if (e.buff)
+						if (e.buff instanceof Buffer) ((this.buff = e.buff), (this.length = e.buff.length))
+						else throw new Error('Invalid buffer provided in SmartBufferOptions.')
+					else this.buff = Buffer.allocUnsafe(4096)
+				} else {
+					if (typeof e == 'object') throw new Error('Invalid object supplied to SmartBuffer constructor.')
+					this.buff = Buffer.allocUnsafe(4096)
+				}
+				if (typeof n == 'string')
+					if (Buffer.isEncoding(n)) this.encoding = n
+					else
+						throw new Error(
+							'Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.',
+						)
+			}
+			static fromSize(e, n) {
+				return new this({ size: e, encoding: n })
+			}
+			static fromBuffer(e, n) {
+				return new this({ buff: e, encoding: n })
+			}
+			static fromOptions(e) {
+				return new this(e)
+			}
+			static isSmartBufferOptions(e) {
+				let n = e
+				return n && (n.encoding !== void 0 || n.size !== void 0 || n.buff !== void 0)
+			}
+			readInt8() {
+				return this.readNumberValue(Buffer.prototype.readInt8, 1)
+			}
+			readInt16BE() {
+				return this.readNumberValue(Buffer.prototype.readInt16BE, 2)
+			}
+			readInt16LE() {
+				return this.readNumberValue(Buffer.prototype.readInt16LE, 2)
+			}
+			readInt32BE() {
+				return this.readNumberValue(Buffer.prototype.readInt32BE, 4)
+			}
+			readInt32LE() {
+				return this.readNumberValue(Buffer.prototype.readInt32LE, 4)
+			}
+			writeInt8(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeInt8, 1, e, n), this)
+			}
+			writeInt16BE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeInt16BE, 2, e, n), this)
+			}
+			writeInt16LE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeInt16LE, 2, e, n), this)
+			}
+			writeInt32BE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeInt32BE, 4, e, n), this)
+			}
+			writeInt32LE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeInt32LE, 4, e, n), this)
+			}
+			readUInt8() {
+				return this.readNumberValue(Buffer.prototype.readUInt8, 1)
+			}
+			readUInt16BE() {
+				return this.readNumberValue(Buffer.prototype.readUInt16BE, 2)
+			}
+			readUInt16LE() {
+				return this.readNumberValue(Buffer.prototype.readUInt16LE, 2)
+			}
+			readUInt32BE() {
+				return this.readNumberValue(Buffer.prototype.readUInt32BE, 4)
+			}
+			readUInt32LE() {
+				return this.readNumberValue(Buffer.prototype.readUInt32LE, 4)
+			}
+			writeUInt8(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeUInt8, 1, e, n), this)
+			}
+			writeUInt16BE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeUInt16BE, 2, e, n), this)
+			}
+			writeUInt16LE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeUInt16LE, 2, e, n), this)
+			}
+			writeUInt32BE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeUInt32BE, 4, e, n), this)
+			}
+			writeUInt32LE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeUInt32LE, 4, e, n), this)
+			}
+			readFloatBE() {
+				return this.readNumberValue(Buffer.prototype.readFloatBE, 4)
+			}
+			readFloatLE() {
+				return this.readNumberValue(Buffer.prototype.readFloatLE, 4)
+			}
+			writeFloatBE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeFloatBE, 4, e, n), this)
+			}
+			writeFloatLE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeFloatLE, 4, e, n), this)
+			}
+			readDoubleBE() {
+				return this.readNumberValue(Buffer.prototype.readDoubleBE, 8)
+			}
+			readDoubleLE() {
+				return this.readNumberValue(Buffer.prototype.readDoubleLE, 8)
+			}
+			writeDoubleBE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeDoubleBE, 8, e, n), this)
+			}
+			writeDoubleLE(e, n) {
+				return (this.writeNumberValue(Buffer.prototype.writeDoubleLE, 8, e, n), this)
+			}
+			readString(e, n) {
+				let r = typeof e == 'number' ? Math.min(e, this.length - this.readOffset) : this.length - this.readOffset,
+					s = this.buff.slice(this.readOffset, this.readOffset + r).toString(n || this.encoding)
+				return ((this.readOffset += r), s)
+			}
+			writeString(e, n, r) {
+				let s = this.writeOffset,
+					i = this.encoding
+				if (typeof n == 'number') s = n
+				else if (typeof n == 'string')
+					if (Buffer.isEncoding(n)) i = n
+					else
+						throw new Error(
+							'Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.',
+						)
+				if (typeof r == 'string')
+					if (Buffer.isEncoding(r)) i = r
+					else
+						throw new Error(
+							'Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.',
+						)
+				let o = Buffer.byteLength(e, i)
+				return (this.ensureWriteable(o, s), this.buff.write(e, s, o, i), (this.writeOffset += o), this)
+			}
+			readStringNT(e) {
+				let n = this.length
+				for (let s = this.readOffset; s < this.length; s++)
+					if (this.buff[s] === 0) {
+						n = s
+						break
+					}
+				let r = this.buff.slice(this.readOffset, n)
+				return ((this.readOffset = n + 1), r.toString(e || this.encoding))
+			}
+			writeStringNT(e, n, r) {
+				;(this.writeString(e, n, r), this.writeUInt8(0, typeof n == 'number' ? n + e.length : this.writeOffset))
+			}
+			readBuffer(e) {
+				let n = typeof e == 'number' ? e : this.length,
+					r = Math.min(this.length, this.readOffset + n),
+					s = this.buff.slice(this.readOffset, r)
+				return ((this.readOffset = r), s)
+			}
+			writeBuffer(e, n) {
+				let r = typeof n == 'number' ? n : this.writeOffset
+				return (this.ensureWriteable(e.length, r), e.copy(this.buff, r), (this.writeOffset += e.length), this)
+			}
+			readBufferNT() {
+				let e = this.length
+				for (let r = this.readOffset; r < this.length; r++)
+					if (this.buff[r] === 0) {
+						e = r
+						break
+					}
+				let n = this.buff.slice(this.readOffset, e)
+				return ((this.readOffset = e + 1), n)
+			}
+			writeBufferNT(e, n) {
+				return (
+					this.writeBuffer(e, n),
+					this.writeUInt8(0, typeof n == 'number' ? n + e.length : this.writeOffset),
+					this
+				)
+			}
+			clear() {
+				;((this.writeOffset = 0), (this.readOffset = 0), (this.length = 0))
+			}
+			remaining() {
+				return this.length - this.readOffset
+			}
+			skip(e) {
+				if (this.readOffset + e > this.length)
+					throw new Error('Target position is beyond the bounds of the SmartBuffer size.')
+				this.readOffset += e
+			}
+			rewind(e) {
+				if (this.readOffset - e < 0) throw new Error('Target position is beyond the bounds of the SmartBuffer size.')
+				this.readOffset -= e
+			}
+			skipTo(e) {
+				this.moveTo(e)
+			}
+			moveTo(e) {
+				if (e > this.length) throw new Error('Target position is beyond the bounds of the SmartBuffer size.')
+				this.readOffset = e
+			}
+			toBuffer() {
+				return this.buff.slice(0, this.length)
+			}
+			toString(e) {
+				let n = typeof e == 'string' ? e : this.encoding
+				if (Buffer.isEncoding(n)) return this.buff.toString(n, 0, this.length)
+				throw new Error(
+					'Invalid encoding provided. Please specify a valid encoding the internal Node.js Buffer supports.',
+				)
+			}
+			destroy() {
+				this.clear()
+			}
+			ensureReadable(e) {
+				if (this.remaining() < e) throw new Error('Reading beyond the bounds of the data.')
+			}
+			ensureWriteable(e, n) {
+				let r = typeof n == 'number' ? n : 0
+				;(this.ensureCapacity(this.length + e + r),
+					typeof n == 'number' && this.buff.copy(this.buff, r + e, r, this.buff.length),
+					(this.length = Math.max(this.length + e, r + e)))
+			}
+			ensureCapacity(e) {
+				let n = this.buff.length
+				if (e > n) {
+					let r = this.buff,
+						s = (n * 3) / 2 + 1
+					;(s < e && (s = e), (this.buff = Buffer.allocUnsafe(s)), r.copy(this.buff, 0, 0, n))
+				}
+			}
+			readNumberValue(e, n) {
+				this.ensureReadable(n)
+				let r = e.call(this.buff, this.readOffset)
+				return ((this.readOffset += n), r)
+			}
+			writeNumberValue(e, n, r, s) {
+				let i = typeof s == 'number' ? s : this.writeOffset
+				;(this.ensureWriteable(n, s), e.call(this.buff, r, i), (this.writeOffset += n))
+			}
+		}
+	ff.SmartBuffer = Po
+})
+var pf = p((hS, hf) => {
+	var ln = 1e3,
+		fn = ln * 60,
+		dn = fn * 60,
+		$t = dn * 24,
+		Lm = $t * 7,
+		Mm = $t * 365.25
+	hf.exports = function (t, e) {
+		e = e || {}
+		var n = typeof t
+		if (n === 'string' && t.length > 0) return Um(t)
+		if (n === 'number' && isFinite(t)) return e.long ? $m(t) : jm(t)
+		throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(t))
+	}
+	function Um(t) {
+		if (((t = String(t)), !(t.length > 100))) {
+			var e =
+				/^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
+					t,
+				)
+			if (e) {
+				var n = parseFloat(e[1]),
+					r = (e[2] || 'ms').toLowerCase()
+				switch (r) {
+					case 'years':
+					case 'year':
+					case 'yrs':
+					case 'yr':
+					case 'y':
+						return n * Mm
+					case 'weeks':
+					case 'week':
+					case 'w':
+						return n * Lm
+					case 'days':
+					case 'day':
+					case 'd':
+						return n * $t
+					case 'hours':
+					case 'hour':
+					case 'hrs':
+					case 'hr':
+					case 'h':
+						return n * dn
+					case 'minutes':
+					case 'minute':
+					case 'mins':
+					case 'min':
+					case 'm':
+						return n * fn
+					case 'seconds':
+					case 'second':
+					case 'secs':
+					case 'sec':
+					case 's':
+						return n * ln
+					case 'milliseconds':
+					case 'millisecond':
+					case 'msecs':
+					case 'msec':
+					case 'ms':
+						return n
+					default:
+						return
+				}
+			}
+		}
+	}
+	function jm(t) {
+		var e = Math.abs(t)
+		return e >= $t
+			? Math.round(t / $t) + 'd'
+			: e >= dn
+				? Math.round(t / dn) + 'h'
+				: e >= fn
+					? Math.round(t / fn) + 'm'
+					: e >= ln
+						? Math.round(t / ln) + 's'
+						: t + 'ms'
+	}
+	function $m(t) {
+		var e = Math.abs(t)
+		return e >= $t
+			? $r(t, e, $t, 'day')
+			: e >= dn
+				? $r(t, e, dn, 'hour')
+				: e >= fn
+					? $r(t, e, fn, 'minute')
+					: e >= ln
+						? $r(t, e, ln, 'second')
+						: t + ' ms'
+	}
+	function $r(t, e, n, r) {
+		var s = e >= n * 1.5
+		return Math.round(t / n) + ' ' + r + (s ? 's' : '')
+	}
+})
+var Ao = p((pS, mf) => {
+	function Vm(t) {
+		;((n.debug = n),
+			(n.default = n),
+			(n.coerce = c),
+			(n.disable = o),
+			(n.enable = s),
+			(n.enabled = a),
+			(n.humanize = pf()),
+			(n.destroy = u),
+			Object.keys(t).forEach((f) => {
+				n[f] = t[f]
+			}),
+			(n.names = []),
+			(n.skips = []),
+			(n.formatters = {}))
+		function e(f) {
+			let d = 0
+			for (let m = 0; m < f.length; m++) ((d = (d << 5) - d + f.charCodeAt(m)), (d |= 0))
+			return n.colors[Math.abs(d) % n.colors.length]
+		}
+		n.selectColor = e
+		function n(f) {
+			let d,
+				m = null,
+				_,
+				y
+			function b(...g) {
+				if (!b.enabled) return
+				let w = b,
+					$ = Number(new Date()),
+					Te = $ - (d || $)
+				;((w.diff = Te),
+					(w.prev = d),
+					(w.curr = $),
+					(d = $),
+					(g[0] = n.coerce(g[0])),
+					typeof g[0] != 'string' && g.unshift('%O'))
+				let Y = 0
+				;((g[0] = g[0].replace(/%([a-zA-Z%])/g, (fe, W) => {
+					if (fe === '%%') return '%'
+					Y++
+					let E = n.formatters[W]
+					if (typeof E == 'function') {
+						let h = g[Y]
+						;((fe = E.call(w, h)), g.splice(Y, 1), Y--)
+					}
+					return fe
+				})),
+					n.formatArgs.call(w, g),
+					(w.log || n.log).apply(w, g))
+			}
+			return (
+				(b.namespace = f),
+				(b.useColors = n.useColors()),
+				(b.color = n.selectColor(f)),
+				(b.extend = r),
+				(b.destroy = n.destroy),
+				Object.defineProperty(b, 'enabled', {
+					enumerable: !0,
+					configurable: !1,
+					get: () => (m !== null ? m : (_ !== n.namespaces && ((_ = n.namespaces), (y = n.enabled(f))), y)),
+					set: (g) => {
+						m = g
+					},
+				}),
+				typeof n.init == 'function' && n.init(b),
+				b
+			)
+		}
+		function r(f, d) {
+			let m = n(this.namespace + (typeof d > 'u' ? ':' : d) + f)
+			return ((m.log = this.log), m)
+		}
+		function s(f) {
+			;(n.save(f), (n.namespaces = f), (n.names = []), (n.skips = []))
+			let d = (typeof f == 'string' ? f : '').trim().replace(/\s+/g, ',').split(',').filter(Boolean)
+			for (let m of d) m[0] === '-' ? n.skips.push(m.slice(1)) : n.names.push(m)
+		}
+		function i(f, d) {
+			let m = 0,
+				_ = 0,
+				y = -1,
+				b = 0
+			for (; m < f.length;)
+				if (_ < d.length && (d[_] === f[m] || d[_] === '*')) d[_] === '*' ? ((y = _), (b = m), _++) : (m++, _++)
+				else if (y !== -1) ((_ = y + 1), b++, (m = b))
+				else return !1
+			for (; _ < d.length && d[_] === '*';) _++
+			return _ === d.length
+		}
+		function o() {
+			let f = [...n.names, ...n.skips.map((d) => '-' + d)].join(',')
+			return (n.enable(''), f)
+		}
+		function a(f) {
+			for (let d of n.skips) if (i(f, d)) return !1
+			for (let d of n.names) if (i(f, d)) return !0
+			return !1
+		}
+		function c(f) {
+			return f instanceof Error ? f.stack || f.message : f
+		}
+		function u() {
+			console.warn(
+				'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.',
+			)
+		}
+		return (n.enable(n.load()), n)
+	}
+	mf.exports = Vm
+})
+var _f = p((Re, Vr) => {
+	Re.formatArgs = Xm
+	Re.save = Wm
+	Re.load = zm
+	Re.useColors = Gm
+	Re.storage = Qm()
+	Re.destroy = (() => {
+		let t = !1
+		return () => {
+			t ||
+				((t = !0),
+				console.warn(
+					'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.',
+				))
+		}
+	})()
+	Re.colors = [
+		'#0000CC',
+		'#0000FF',
+		'#0033CC',
+		'#0033FF',
+		'#0066CC',
+		'#0066FF',
+		'#0099CC',
+		'#0099FF',
+		'#00CC00',
+		'#00CC33',
+		'#00CC66',
+		'#00CC99',
+		'#00CCCC',
+		'#00CCFF',
+		'#3300CC',
+		'#3300FF',
+		'#3333CC',
+		'#3333FF',
+		'#3366CC',
+		'#3366FF',
+		'#3399CC',
+		'#3399FF',
+		'#33CC00',
+		'#33CC33',
+		'#33CC66',
+		'#33CC99',
+		'#33CCCC',
+		'#33CCFF',
+		'#6600CC',
+		'#6600FF',
+		'#6633CC',
+		'#6633FF',
+		'#66CC00',
+		'#66CC33',
+		'#9900CC',
+		'#9900FF',
+		'#9933CC',
+		'#9933FF',
+		'#99CC00',
+		'#99CC33',
+		'#CC0000',
+		'#CC0033',
+		'#CC0066',
+		'#CC0099',
+		'#CC00CC',
+		'#CC00FF',
+		'#CC3300',
+		'#CC3333',
+		'#CC3366',
+		'#CC3399',
+		'#CC33CC',
+		'#CC33FF',
+		'#CC6600',
+		'#CC6633',
+		'#CC9900',
+		'#CC9933',
+		'#CCCC00',
+		'#CCCC33',
+		'#FF0000',
+		'#FF0033',
+		'#FF0066',
+		'#FF0099',
+		'#FF00CC',
+		'#FF00FF',
+		'#FF3300',
+		'#FF3333',
+		'#FF3366',
+		'#FF3399',
+		'#FF33CC',
+		'#FF33FF',
+		'#FF6600',
+		'#FF6633',
+		'#FF9900',
+		'#FF9933',
+		'#FFCC00',
+		'#FFCC33',
+	]
+	function Gm() {
+		if (typeof window < 'u' && window.process && (window.process.type === 'renderer' || window.process.__nwjs))
+			return !0
+		if (
+			typeof navigator < 'u' &&
+			navigator.userAgent &&
+			navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)
+		)
+			return !1
+		let t
+		return (
+			(typeof document < 'u' &&
+				document.documentElement &&
+				document.documentElement.style &&
+				document.documentElement.style.WebkitAppearance) ||
+			(typeof window < 'u' &&
+				window.console &&
+				(window.console.firebug || (window.console.exception && window.console.table))) ||
+			(typeof navigator < 'u' &&
+				navigator.userAgent &&
+				(t = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) &&
+				parseInt(t[1], 10) >= 31) ||
+			(typeof navigator < 'u' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/))
+		)
+	}
+	function Xm(t) {
+		if (
+			((t[0] =
+				(this.useColors ? '%c' : '') +
+				this.namespace +
+				(this.useColors ? ' %c' : ' ') +
+				t[0] +
+				(this.useColors ? '%c ' : ' ') +
+				'+' +
+				Vr.exports.humanize(this.diff)),
+			!this.useColors)
+		)
+			return
+		let e = 'color: ' + this.color
+		t.splice(1, 0, e, 'color: inherit')
+		let n = 0,
+			r = 0
+		;(t[0].replace(/%[a-zA-Z%]/g, (s) => {
+			s !== '%%' && (n++, s === '%c' && (r = n))
+		}),
+			t.splice(r, 0, e))
+	}
+	Re.log = console.debug || console.log || (() => {})
+	function Wm(t) {
+		try {
+			t ? Re.storage.setItem('debug', t) : Re.storage.removeItem('debug')
+		} catch {}
+	}
+	function zm() {
+		let t
+		try {
+			t = Re.storage.getItem('debug') || Re.storage.getItem('DEBUG')
+		} catch {}
+		return (!t && typeof process < 'u' && 'env' in process && (t = process.env.DEBUG), t)
+	}
+	function Qm() {
+		try {
+			return localStorage
+		} catch {}
+	}
+	Vr.exports = Ao()(Re)
+	var { formatters: Hm } = Vr.exports
+	Hm.j = function (t) {
+		try {
+			return JSON.stringify(t)
+		} catch (e) {
+			return '[UnexpectedJSONParseError]: ' + e.message
+		}
+	}
+})
+var bf = p((ae, Xr) => {
+	var Zm = B('tty'),
+		Gr = B('util')
+	ae.init = r0
+	ae.log = e0
+	ae.formatArgs = Ym
+	ae.save = t0
+	ae.load = n0
+	ae.useColors = Km
+	ae.destroy = Gr.deprecate(
+		() => {},
+		'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.',
+	)
+	ae.colors = [6, 2, 3, 4, 5, 1]
+	try {
+		let t = B('supports-color')
+		t &&
+			(t.stderr || t).level >= 2 &&
+			(ae.colors = [
+				20, 21, 26, 27, 32, 33, 38, 39, 40, 41, 42, 43, 44, 45, 56, 57, 62, 63, 68, 69, 74, 75, 76, 77, 78, 79, 80, 81,
+				92, 93, 98, 99, 112, 113, 128, 129, 134, 135, 148, 149, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170,
+				171, 172, 173, 178, 179, 184, 185, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 214,
+				215, 220, 221,
+			])
+	} catch {}
+	ae.inspectOpts = Object.keys(process.env)
+		.filter((t) => /^debug_/i.test(t))
+		.reduce((t, e) => {
+			let n = e
+					.substring(6)
+					.toLowerCase()
+					.replace(/_([a-z])/g, (s, i) => i.toUpperCase()),
+				r = process.env[e]
+			return (
+				/^(yes|on|true|enabled)$/i.test(r)
+					? (r = !0)
+					: /^(no|off|false|disabled)$/i.test(r)
+						? (r = !1)
+						: r === 'null'
+							? (r = null)
+							: (r = Number(r)),
+				(t[n] = r),
+				t
+			)
+		}, {})
+	function Km() {
+		return 'colors' in ae.inspectOpts ? !!ae.inspectOpts.colors : Zm.isatty(process.stderr.fd)
+	}
+	function Ym(t) {
+		let { namespace: e, useColors: n } = this
+		if (n) {
+			let r = this.color,
+				s = '\x1B[3' + (r < 8 ? r : '8;5;' + r),
+				i = `  ${s};1m${e} \x1B[0m`
+			;((t[0] =
+				i +
+				t[0]
+					.split(
+						`
+`,
+					)
+					.join(
+						`
+` + i,
+					)),
+				t.push(s + 'm+' + Xr.exports.humanize(this.diff) + '\x1B[0m'))
+		} else t[0] = Jm() + e + ' ' + t[0]
+	}
+	function Jm() {
+		return ae.inspectOpts.hideDate ? '' : new Date().toISOString() + ' '
+	}
+	function e0(...t) {
+		return process.stderr.write(
+			Gr.formatWithOptions(ae.inspectOpts, ...t) +
+				`
+`,
+		)
+	}
+	function t0(t) {
+		t ? (process.env.DEBUG = t) : delete process.env.DEBUG
+	}
+	function n0() {
+		return process.env.DEBUG
+	}
+	function r0(t) {
+		t.inspectOpts = {}
+		let e = Object.keys(ae.inspectOpts)
+		for (let n = 0; n < e.length; n++) t.inspectOpts[e[n]] = ae.inspectOpts[e[n]]
+	}
+	Xr.exports = Ao()(ae)
+	var { formatters: Ef } = Xr.exports
+	Ef.o = function (t) {
+		return (
+			(this.inspectOpts.colors = this.useColors),
+			Gr.inspect(t, this.inspectOpts)
+				.split(
+					`
+`,
+				)
+				.map((e) => e.trim())
+				.join(' ')
+		)
+	}
+	Ef.O = function (t) {
+		return ((this.inspectOpts.colors = this.useColors), Gr.inspect(t, this.inspectOpts))
+	}
+})
+var Wr = p((mS, Fo) => {
+	typeof process > 'u' || process.type === 'renderer' || process.browser === !0 || process.__nwjs
+		? (Fo.exports = _f())
+		: (Fo.exports = bf())
+})
+var zr = p((_S, gf) => {
+	gf.exports = {
+		newInvalidAsn1Error: function (t) {
+			var e = new Error()
+			return ((e.name = 'InvalidAsn1Error'), (e.message = t || ''), e)
+		},
+	}
+})
+var Qr = p((ES, yf) => {
+	yf.exports = {
+		EOC: 0,
+		Boolean: 1,
+		Integer: 2,
+		BitString: 3,
+		OctetString: 4,
+		Null: 5,
+		OID: 6,
+		ObjectDescriptor: 7,
+		External: 8,
+		Real: 9,
+		Enumeration: 10,
+		PDV: 11,
+		Utf8String: 12,
+		RelativeOID: 13,
+		Sequence: 16,
+		Set: 17,
+		NumericString: 18,
+		PrintableString: 19,
+		T61String: 20,
+		VideotexString: 21,
+		IA5String: 22,
+		UTCTime: 23,
+		GeneralizedTime: 24,
+		GraphicString: 25,
+		VisibleString: 26,
+		GeneralString: 28,
+		UniversalString: 29,
+		CharacterString: 30,
+		BMPString: 31,
+		Constructor: 32,
+		Context: 128,
+	}
+})
+var Lo = p((bS, Tf) => {
+	'use strict'
+	var Hr = B('buffer'),
+		hn = Hr.Buffer,
+		Ve = {},
+		Ge
+	for (Ge in Hr) Hr.hasOwnProperty(Ge) && (Ge === 'SlowBuffer' || Ge === 'Buffer' || (Ve[Ge] = Hr[Ge]))
+	var pn = (Ve.Buffer = {})
+	for (Ge in hn) hn.hasOwnProperty(Ge) && (Ge === 'allocUnsafe' || Ge === 'allocUnsafeSlow' || (pn[Ge] = hn[Ge]))
+	Ve.Buffer.prototype = hn.prototype
+	;(!pn.from || pn.from === Uint8Array.from) &&
+		(pn.from = function (t, e, n) {
+			if (typeof t == 'number')
+				throw new TypeError('The "value" argument must not be of type number. Received type ' + typeof t)
+			if (t && typeof t.length > 'u')
+				throw new TypeError(
+					'The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type ' +
+						typeof t,
+				)
+			return hn(t, e, n)
+		})
+	pn.alloc ||
+		(pn.alloc = function (t, e, n) {
+			if (typeof t != 'number')
+				throw new TypeError('The "size" argument must be of type number. Received type ' + typeof t)
+			if (t < 0 || t >= 2 * (1 << 30)) throw new RangeError('The value "' + t + '" is invalid for option "size"')
+			var r = hn(t)
+			return (!e || e.length === 0 ? r.fill(0) : typeof n == 'string' ? r.fill(e, n) : r.fill(e), r)
+		})
+	if (!Ve.kStringMaxLength)
+		try {
+			Ve.kStringMaxLength = process.binding('buffer').kStringMaxLength
+		} catch {}
+	Ve.constants ||
+		((Ve.constants = { MAX_LENGTH: Ve.kMaxLength }),
+		Ve.kStringMaxLength && (Ve.constants.MAX_STRING_LENGTH = Ve.kStringMaxLength))
+	Tf.exports = Ve
+})
+var If = p((gS, xf) => {
+	var s0 = B('assert'),
+		Sf = Lo().Buffer,
+		mn = Qr(),
+		i0 = zr(),
+		Kn = i0.newInvalidAsn1Error
+	function me(t) {
+		if (!t || !Sf.isBuffer(t)) throw new TypeError('data must be a node Buffer')
+		;((this._buf = t),
+			(this._size = t.length),
+			(this._blocklevel = 0),
+			(this._blockInfo = {}),
+			(this._len = 0),
+			(this._offset = 0))
+	}
+	Object.defineProperty(me.prototype, 'length', {
+		enumerable: !0,
+		get: function () {
+			return this._len
+		},
+	})
+	Object.defineProperty(me.prototype, 'offset', {
+		enumerable: !0,
+		get: function () {
+			return this._offset
+		},
+	})
+	Object.defineProperty(me.prototype, 'remain', {
+		get: function () {
+			return this._size - this._offset
+		},
+	})
+	Object.defineProperty(me.prototype, 'buffer', {
+		get: function () {
+			return this._buf.slice(this._offset)
+		},
+	})
+	me.prototype.readByte = function (t) {
+		if (this._size - this._offset < 1) return null
+		var e = this._buf[this._offset] & 255
+		return (t || (this._offset += 1), e)
+	}
+	me.prototype.readBlock = function (t) {
+		t === void 0 && (t = this._offset)
+		var e = t,
+			n,
+			r
+		if (this._blockInfo[t] !== void 0) return this._blockInfo[t]
+		for (; this.remain > 0 && ((n = this._buf[e++]), (r = this._buf[e++]), !(n == 0 && r == 0));) {
+			var s = 0
+			if ((r & 128) == 128)
+				if (((r &= 127), r == 0)) (this._blocklevel++, (r = this.readBlock(e)), this._blocklevel--)
+				else {
+					if (r > 4) throw InvalidAsn1Error('encoding too long')
+					if (this._size - this.offset < r) return null
+					for (var i = 0; i < r; i++) s = (s << 8) + (this._buf[e++] & 255)
+					r = s
+				}
+			if (((e += r), e > this._size)) throw new Error('invalid block at offset ' + t)
+		}
+		return ((r = e - t), (this._blockInfo[t] = r), r)
+	}
+	me.prototype.peek = function () {
+		return this.readByte(!0)
+	}
+	me.prototype.readLength = function (t) {
+		if ((t === void 0 && (t = this._offset), t >= this._size)) return null
+		var e = this._buf[t++] & 255
+		if (e === null) return null
+		if ((e & 128) === 128)
+			if (((e &= 127), e === 0)) this._len = this.readBlock(t)
+			else {
+				if (e > 4) throw Kn('encoding too long')
+				if (this._size - t < e) return null
+				this._len = 0
+				for (var n = 0; n < e; n++) this._len = (this._len << 8) + (this._buf[t++] & 255)
+			}
+		else this._len = e
+		return t
+	}
+	me.prototype.readSequence = function (t) {
+		var e = this.peek()
+		if (e === null) return null
+		if (t !== void 0 && t !== e) throw Kn('Expected 0x' + t.toString(16) + ': got 0x' + e.toString(16))
+		var n = this.readLength(this._offset + 1)
+		return n === null ? null : ((this._offset = n), e)
+	}
+	me.prototype.readInt = function () {
+		return this._readTag(mn.Integer)
+	}
+	me.prototype.readBoolean = function () {
+		return this._readTag(mn.Boolean) !== 0
+	}
+	me.prototype.readEnumeration = function () {
+		return this._readTag(mn.Enumeration)
+	}
+	me.prototype.readString = function (t, e) {
+		t || (t = mn.OctetString)
+		var n = this.peek()
+		if (n === null) return null
+		if (n !== t) throw Kn('Expected 0x' + t.toString(16) + ': got 0x' + n.toString(16))
+		var r = this.readLength(this._offset + 1)
+		if (r === null || this.length > this._size - r) return null
+		var s = this.length
+		if ((this._blockInfo[this._offset + 2] !== void 0 && (s = s - 2), (this._offset = r), s === 0))
+			return e ? Sf.alloc(0) : ''
+		var i = this._buf.slice(this._offset, this._offset + s)
+		return ((this._offset += this.length), e ? i : i.toString('utf8'))
+	}
+	me.prototype.readRelativeOID = function (t) {
+		t || (t = mn.RelativeOID)
+		var e = this.readString(t, !0)
+		if (e === null) return null
+		for (var n = [], r = 0, s = 0; s < e.length; s++) {
+			var i = e[s] & 255
+			if (((r += i & 127), (i & 128) == 128)) {
+				r <<= 7
+				continue
+			}
+			;(n.push(r), (r = 0))
+		}
+		return n.join('.')
+	}
+	me.prototype.readOID = function (t) {
+		t || (t = mn.OID)
+		var e = this.readString(t, !0)
+		if (e === null) return null
+		for (var n = [], r = 0, s = 0; s < e.length; s++) {
+			var i = e[s] & 255
+			;((r <<= 7), (r += i & 127), (i & 128) === 0 && (n.push(r), (r = 0)))
+		}
+		return ((r = n.shift()), n.unshift(r % 40), n.unshift((r / 40) >> 0), n.join('.'))
+	}
+	me.prototype._readTag = function (t) {
+		s0.ok(t !== void 0)
+		var e = this.peek()
+		if (e === null) return null
+		if (e !== t) throw Kn('Expected 0x' + t.toString(16) + ': got 0x' + e.toString(16))
+		var n = this.readLength(this._offset + 1)
+		if (n === null) return null
+		if (this.length > 8) throw Kn('Integer too long: ' + this.length)
+		if (this.length > this._size - n) return null
+		this._offset = n
+		for (var r = this._buf[this._offset], s = 0, i = 0; i < this.length; i++)
+			((s <<= 8), (s |= this._buf[this._offset++] & 255))
+		return ((r & 128) === 128 && i !== 4 && (s -= 1 << (i * 8)), s >> 0)
+	}
+	xf.exports = me
+})
+var wf = p((yS, vf) => {
+	var wt = B('assert'),
+		Zr = Lo().Buffer,
+		yt = Qr(),
+		o0 = zr(),
+		Kr = o0.newInvalidAsn1Error,
+		a0 = { size: 1024, growthFactor: 8 }
+	function c0(t, e) {
+		;(wt.ok(t), wt.equal(typeof t, 'object'), wt.ok(e), wt.equal(typeof e, 'object'))
+		var n = Object.getOwnPropertyNames(t)
+		return (
+			n.forEach(function (r) {
+				if (!e[r]) {
+					var s = Object.getOwnPropertyDescriptor(t, r)
+					Object.defineProperty(e, r, s)
+				}
+			}),
+			e
+		)
+	}
+	function _e(t) {
+		;((t = c0(a0, t || {})),
+			(this._buf = Zr.alloc(t.size || 1024)),
+			(this._size = this._buf.length),
+			(this._offset = 0),
+			(this._options = t),
+			(this._seq = []))
+	}
+	Object.defineProperty(_e.prototype, 'buffer', {
+		get: function () {
+			if (this._seq.length) throw Kr(this._seq.length + ' unended sequence(s)')
+			return this._buf.slice(0, this._offset)
+		},
+	})
+	_e.prototype.writeByte = function (t) {
+		if (typeof t != 'number') throw new TypeError('argument must be a Number')
+		;(this._ensure(1), (this._buf[this._offset++] = t))
+	}
+	_e.prototype.writeInt = function (t, e) {
+		if (typeof t != 'number') throw new TypeError('argument must be a Number')
+		typeof e != 'number' && (e = yt.Integer)
+		for (var n = 4; ((t & 4286578688) === 0 || (t & 4286578688) === -8388608) && n > 1;) (n--, (t <<= 8))
+		if (n > 4) throw Kr('BER ints cannot be > 0xffffffff')
+		for (this._ensure(2 + n), this._buf[this._offset++] = e, this._buf[this._offset++] = n; n-- > 0;)
+			((this._buf[this._offset++] = (t & 4278190080) >>> 24), (t <<= 8))
+	}
+	_e.prototype.writeNull = function () {
+		;(this.writeByte(yt.Null), this.writeByte(0))
+	}
+	_e.prototype.writeEnumeration = function (t, e) {
+		if (typeof t != 'number') throw new TypeError('argument must be a Number')
+		return (typeof e != 'number' && (e = yt.Enumeration), this.writeInt(t, e))
+	}
+	_e.prototype.writeBoolean = function (t, e) {
+		if (typeof t != 'boolean') throw new TypeError('argument must be a Boolean')
+		;(typeof e != 'number' && (e = yt.Boolean),
+			this._ensure(3),
+			(this._buf[this._offset++] = e),
+			(this._buf[this._offset++] = 1),
+			(this._buf[this._offset++] = t ? 255 : 0))
+	}
+	_e.prototype.writeString = function (t, e) {
+		if (typeof t != 'string') throw new TypeError('argument must be a string (was: ' + typeof t + ')')
+		typeof e != 'number' && (e = yt.OctetString)
+		var n = Zr.byteLength(t)
+		;(this.writeByte(e),
+			this.writeLength(n),
+			n && (this._ensure(n), this._buf.write(t, this._offset), (this._offset += n)))
+	}
+	_e.prototype.writeBuffer = function (t, e) {
+		if (typeof e != 'number') throw new TypeError('tag must be a number')
+		if (!Zr.isBuffer(t)) throw new TypeError('argument must be a buffer')
+		;(this.writeByte(e),
+			this.writeLength(t.length),
+			this._ensure(t.length),
+			t.copy(this._buf, this._offset, 0, t.length),
+			(this._offset += t.length))
+	}
+	_e.prototype.writeStringArray = function (t) {
+		if ((!t) instanceof Array) throw new TypeError('argument must be an Array[String]')
+		var e = this
+		t.forEach(function (n) {
+			e.writeString(n)
+		})
+	}
+	_e.prototype.writeRelativeOID = function (t, e) {
+		if (typeof t != 'string') throw new TypeError('argument must be a string')
+		if ((typeof e != 'number' && (e = yt.RelativeOID), !/^([0-9]+\.)*[0-9]*$/.test(t)))
+			throw new Error('argument is not a valid OID string')
+		for (var n = t === '' ? [] : t.split('.'), r = [], s = 0; s < n.length; s++) {
+			for (var i = parseInt(n[s]), o = []; i > 127;) {
+				var a = i & 127
+				;(o.push(a), (i = i >> 7))
+			}
+			o.push(i)
+			for (var c = o.length - 1; c >= 0;) (c > 0 ? r.push(o[c] | 128) : r.push(o[c]), c--)
+		}
+		var u = this
+		;(this._ensure(2 + r.length),
+			this.writeByte(e),
+			this.writeLength(r.length),
+			r.forEach(function (f) {
+				u.writeByte(f)
+			}))
+	}
+	_e.prototype.writeOID = function (t, e) {
+		if (typeof t != 'string') throw new TypeError('argument must be a string')
+		if ((typeof e != 'number' && (e = yt.OID), !/^([0-9]+\.)*[0-9]+$/.test(t)))
+			throw new Error('argument is not a valid OID string')
+		function n(o, a) {
+			a < 128
+				? o.push(a)
+				: a < 16384
+					? (o.push((a >>> 7) | 128), o.push(a & 127))
+					: a < 2097152
+						? (o.push((a >>> 14) | 128), o.push(((a >>> 7) | 128) & 255), o.push(a & 127))
+						: a < 268435456
+							? (o.push((a >>> 21) | 128),
+								o.push(((a >>> 14) | 128) & 255),
+								o.push(((a >>> 7) | 128) & 255),
+								o.push(a & 127))
+							: (o.push(((a >>> 28) | 128) & 255),
+								o.push(((a >>> 21) | 128) & 255),
+								o.push(((a >>> 14) | 128) & 255),
+								o.push(((a >>> 7) | 128) & 255),
+								o.push(a & 127))
+		}
+		var r = t.split('.'),
+			s = []
+		;(s.push(parseInt(r[0], 10) * 40 + parseInt(r[1], 10)),
+			r.slice(2).forEach(function (o) {
+				n(s, parseInt(o, 10))
+			}))
+		var i = this
+		;(this._ensure(2 + s.length),
+			this.writeByte(e),
+			this.writeLength(s.length),
+			s.forEach(function (o) {
+				i.writeByte(o)
+			}))
+	}
+	_e.prototype.writeLength = function (t) {
+		if (typeof t != 'number') throw new TypeError('argument must be a Number')
+		if ((this._ensure(4), t <= 127)) this._buf[this._offset++] = t
+		else if (t <= 255) ((this._buf[this._offset++] = 129), (this._buf[this._offset++] = t))
+		else if (t <= 65535)
+			((this._buf[this._offset++] = 130), (this._buf[this._offset++] = t >> 8), (this._buf[this._offset++] = t))
+		else if (t <= 16777215)
+			((this._buf[this._offset++] = 131),
+				(this._buf[this._offset++] = t >> 16),
+				(this._buf[this._offset++] = t >> 8),
+				(this._buf[this._offset++] = t))
+		else throw Kr('Length too long (> 4 bytes)')
+	}
+	_e.prototype.startSequence = function (t) {
+		;(typeof t != 'number' && (t = yt.Sequence | yt.Constructor),
+			this.writeByte(t),
+			this._seq.push(this._offset),
+			this._ensure(3),
+			(this._offset += 3))
+	}
+	_e.prototype.endSequence = function () {
+		var t = this._seq.pop(),
+			e = t + 3,
+			n = this._offset - e
+		if (n <= 127) (this._shift(e, n, -2), (this._buf[t] = n))
+		else if (n <= 255) (this._shift(e, n, -1), (this._buf[t] = 129), (this._buf[t + 1] = n))
+		else if (n <= 65535) ((this._buf[t] = 130), (this._buf[t + 1] = n >> 8), (this._buf[t + 2] = n))
+		else if (n <= 16777215)
+			(this._shift(e, n, 1),
+				(this._buf[t] = 131),
+				(this._buf[t + 1] = n >> 16),
+				(this._buf[t + 2] = n >> 8),
+				(this._buf[t + 3] = n))
+		else throw Kr('Sequence too long')
+	}
+	_e.prototype._shift = function (t, e, n) {
+		;(wt.ok(t !== void 0),
+			wt.ok(e !== void 0),
+			wt.ok(n),
+			this._buf.copy(this._buf, t + n, t, t + e),
+			(this._offset += n))
+	}
+	_e.prototype._ensure = function (t) {
+		if ((wt.ok(t), this._size - this._offset < t)) {
+			var e = this._size * this._options.growthFactor
+			e - this._offset < t && (e += t)
+			var n = Zr.alloc(e)
+			;(this._buf.copy(n, 0, 0, this._offset), (this._buf = n), (this._size = e))
+		}
+	}
+	vf.exports = _e
+})
+var Nf = p((TS, es) => {
+	var Mo = zr(),
+		Uo = Qr(),
+		u0 = If(),
+		l0 = wf()
+	es.exports = { Reader: u0, Writer: l0 }
+	for (Yr in Uo) Uo.hasOwnProperty(Yr) && (es.exports[Yr] = Uo[Yr])
+	var Yr
+	for (Jr in Mo) Mo.hasOwnProperty(Jr) && (es.exports[Jr] = Mo[Jr])
+	var Jr
+})
+var $o = p((SS, Cf) => {
+	var jo = Nf()
+	Cf.exports = { Ber: jo, Reader: jo.Reader, Writer: jo.Writer }
+})
+var Vo = p((Of, Yn) => {
+	;(function (t, e) {
+		typeof define == 'function' && define.amd
+			? define([], e)
+			: typeof B == 'function' && typeof Yn == 'object' && Yn && Yn.exports
+				? (Yn.exports = e())
+				: ((t.dcodeIO = t.dcodeIO || {}).Long = e())
+	})(Of, function () {
+		'use strict'
+		function t(h, l, S) {
+			;((this.low = h | 0), (this.high = l | 0), (this.unsigned = !!S))
+		}
+		;(t.prototype.__isLong__,
+			Object.defineProperty(t.prototype, '__isLong__', { value: !0, enumerable: !1, configurable: !1 }))
+		function e(h) {
+			return (h && h.__isLong__) === !0
+		}
+		t.isLong = e
+		var n = {},
+			r = {}
+		function s(h, l) {
+			var S, D, z
+			return l
+				? ((h >>>= 0),
+					(z = 0 <= h && h < 256) && ((D = r[h]), D) ? D : ((S = o(h, (h | 0) < 0 ? -1 : 0, !0)), z && (r[h] = S), S))
+				: ((h |= 0),
+					(z = -128 <= h && h < 128) && ((D = n[h]), D) ? D : ((S = o(h, h < 0 ? -1 : 0, !1)), z && (n[h] = S), S))
+		}
+		t.fromInt = s
+		function i(h, l) {
+			if (isNaN(h) || !isFinite(h)) return l ? w : g
+			if (l) {
+				if (h < 0) return w
+				if (h >= _) return fe
+			} else {
+				if (h <= -y) return W
+				if (h + 1 >= y) return Ue
+			}
+			return h < 0 ? i(-h, l).neg() : o((h % m) | 0, (h / m) | 0, l)
+		}
+		t.fromNumber = i
+		function o(h, l, S) {
+			return new t(h, l, S)
+		}
+		t.fromBits = o
+		var a = Math.pow
+		function c(h, l, S) {
+			if (h.length === 0) throw Error('empty string')
+			if (h === 'NaN' || h === 'Infinity' || h === '+Infinity' || h === '-Infinity') return g
+			if ((typeof l == 'number' ? ((S = l), (l = !1)) : (l = !!l), (S = S || 10), S < 2 || 36 < S))
+				throw RangeError('radix')
+			var D
+			if ((D = h.indexOf('-')) > 0) throw Error('interior hyphen')
+			if (D === 0) return c(h.substring(1), l, S).neg()
+			for (var z = i(a(S, 8)), J = g, de = 0; de < h.length; de += 8) {
+				var Ne = Math.min(8, h.length - de),
+					re = parseInt(h.substring(de, de + Ne), S)
+				if (Ne < 8) {
+					var Se = i(a(S, Ne))
+					J = J.mul(Se).add(i(re))
+				} else ((J = J.mul(z)), (J = J.add(i(re))))
+			}
+			return ((J.unsigned = l), J)
+		}
+		t.fromString = c
+		function u(h) {
+			return h instanceof t
+				? h
+				: typeof h == 'number'
+					? i(h)
+					: typeof h == 'string'
+						? c(h)
+						: o(h.low, h.high, h.unsigned)
+		}
+		t.fromValue = u
+		var f = 65536,
+			d = 1 << 24,
+			m = f * f,
+			_ = m * m,
+			y = _ / 2,
+			b = s(d),
+			g = s(0)
+		t.ZERO = g
+		var w = s(0, !0)
+		t.UZERO = w
+		var $ = s(1)
+		t.ONE = $
+		var Te = s(1, !0)
+		t.UONE = Te
+		var Y = s(-1)
+		t.NEG_ONE = Y
+		var Ue = o(-1, 2147483647, !1)
+		t.MAX_VALUE = Ue
+		var fe = o(-1, -1, !0)
+		t.MAX_UNSIGNED_VALUE = fe
+		var W = o(0, -2147483648, !1)
+		t.MIN_VALUE = W
+		var E = t.prototype
+		return (
+			(E.toInt = function () {
+				return this.unsigned ? this.low >>> 0 : this.low
+			}),
+			(E.toNumber = function () {
+				return this.unsigned ? (this.high >>> 0) * m + (this.low >>> 0) : this.high * m + (this.low >>> 0)
+			}),
+			(E.toString = function (l) {
+				if (((l = l || 10), l < 2 || 36 < l)) throw RangeError('radix')
+				if (this.isZero()) return '0'
+				if (this.isNegative())
+					if (this.eq(W)) {
+						var S = i(l),
+							D = this.div(S),
+							z = D.mul(S).sub(this)
+						return D.toString(l) + z.toInt().toString(l)
+					} else return '-' + this.neg().toString(l)
+				for (var J = i(a(l, 6), this.unsigned), de = this, Ne = ''; ;) {
+					var re = de.div(J),
+						Se = de.sub(re.mul(J)).toInt() >>> 0,
+						he = Se.toString(l)
+					if (((de = re), de.isZero())) return he + Ne
+					for (; he.length < 6;) he = '0' + he
+					Ne = '' + he + Ne
+				}
+			}),
+			(E.getHighBits = function () {
+				return this.high
+			}),
+			(E.getHighBitsUnsigned = function () {
+				return this.high >>> 0
+			}),
+			(E.getLowBits = function () {
+				return this.low
+			}),
+			(E.getLowBitsUnsigned = function () {
+				return this.low >>> 0
+			}),
+			(E.getNumBitsAbs = function () {
+				if (this.isNegative()) return this.eq(W) ? 64 : this.neg().getNumBitsAbs()
+				for (var l = this.high != 0 ? this.high : this.low, S = 31; S > 0 && (l & (1 << S)) == 0; S--);
+				return this.high != 0 ? S + 33 : S + 1
+			}),
+			(E.isZero = function () {
+				return this.high === 0 && this.low === 0
+			}),
+			(E.isNegative = function () {
+				return !this.unsigned && this.high < 0
+			}),
+			(E.isPositive = function () {
+				return this.unsigned || this.high >= 0
+			}),
+			(E.isOdd = function () {
+				return (this.low & 1) === 1
+			}),
+			(E.isEven = function () {
+				return (this.low & 1) === 0
+			}),
+			(E.equals = function (l) {
+				return (
+					e(l) || (l = u(l)),
+					this.unsigned !== l.unsigned && this.high >>> 31 === 1 && l.high >>> 31 === 1
+						? !1
+						: this.high === l.high && this.low === l.low
+				)
+			}),
+			(E.eq = E.equals),
+			(E.notEquals = function (l) {
+				return !this.eq(l)
+			}),
+			(E.neq = E.notEquals),
+			(E.lessThan = function (l) {
+				return this.comp(l) < 0
+			}),
+			(E.lt = E.lessThan),
+			(E.lessThanOrEqual = function (l) {
+				return this.comp(l) <= 0
+			}),
+			(E.lte = E.lessThanOrEqual),
+			(E.greaterThan = function (l) {
+				return this.comp(l) > 0
+			}),
+			(E.gt = E.greaterThan),
+			(E.greaterThanOrEqual = function (l) {
+				return this.comp(l) >= 0
+			}),
+			(E.gte = E.greaterThanOrEqual),
+			(E.compare = function (l) {
+				if ((e(l) || (l = u(l)), this.eq(l))) return 0
+				var S = this.isNegative(),
+					D = l.isNegative()
+				return S && !D
+					? -1
+					: !S && D
+						? 1
+						: this.unsigned
+							? l.high >>> 0 > this.high >>> 0 || (l.high === this.high && l.low >>> 0 > this.low >>> 0)
+								? -1
+								: 1
+							: this.sub(l).isNegative()
+								? -1
+								: 1
+			}),
+			(E.comp = E.compare),
+			(E.negate = function () {
+				return !this.unsigned && this.eq(W) ? W : this.not().add($)
+			}),
+			(E.neg = E.negate),
+			(E.add = function (l) {
+				e(l) || (l = u(l))
+				var S = this.high >>> 16,
+					D = this.high & 65535,
+					z = this.low >>> 16,
+					J = this.low & 65535,
+					de = l.high >>> 16,
+					Ne = l.high & 65535,
+					re = l.low >>> 16,
+					Se = l.low & 65535,
+					he = 0,
+					se = 0,
+					Ce = 0,
+					ft = 0
+				return (
+					(ft += J + Se),
+					(Ce += ft >>> 16),
+					(ft &= 65535),
+					(Ce += z + re),
+					(se += Ce >>> 16),
+					(Ce &= 65535),
+					(se += D + Ne),
+					(he += se >>> 16),
+					(se &= 65535),
+					(he += S + de),
+					(he &= 65535),
+					o((Ce << 16) | ft, (he << 16) | se, this.unsigned)
+				)
+			}),
+			(E.subtract = function (l) {
+				return (e(l) || (l = u(l)), this.add(l.neg()))
+			}),
+			(E.sub = E.subtract),
+			(E.multiply = function (l) {
+				if (this.isZero() || (e(l) || (l = u(l)), l.isZero())) return g
+				if (this.eq(W)) return l.isOdd() ? W : g
+				if (l.eq(W)) return this.isOdd() ? W : g
+				if (this.isNegative()) return l.isNegative() ? this.neg().mul(l.neg()) : this.neg().mul(l).neg()
+				if (l.isNegative()) return this.mul(l.neg()).neg()
+				if (this.lt(b) && l.lt(b)) return i(this.toNumber() * l.toNumber(), this.unsigned)
+				var S = this.high >>> 16,
+					D = this.high & 65535,
+					z = this.low >>> 16,
+					J = this.low & 65535,
+					de = l.high >>> 16,
+					Ne = l.high & 65535,
+					re = l.low >>> 16,
+					Se = l.low & 65535,
+					he = 0,
+					se = 0,
+					Ce = 0,
+					ft = 0
+				return (
+					(ft += J * Se),
+					(Ce += ft >>> 16),
+					(ft &= 65535),
+					(Ce += z * Se),
+					(se += Ce >>> 16),
+					(Ce &= 65535),
+					(Ce += J * re),
+					(se += Ce >>> 16),
+					(Ce &= 65535),
+					(se += D * Se),
+					(he += se >>> 16),
+					(se &= 65535),
+					(se += z * re),
+					(he += se >>> 16),
+					(se &= 65535),
+					(se += J * Ne),
+					(he += se >>> 16),
+					(se &= 65535),
+					(he += S * Se + D * re + z * Ne + J * de),
+					(he &= 65535),
+					o((Ce << 16) | ft, (he << 16) | se, this.unsigned)
+				)
+			}),
+			(E.mul = E.multiply),
+			(E.divide = function (l) {
+				if ((e(l) || (l = u(l)), l.isZero())) throw Error('division by zero')
+				if (this.isZero()) return this.unsigned ? w : g
+				var S, D, z
+				if (this.unsigned) {
+					if ((l.unsigned || (l = l.toUnsigned()), l.gt(this))) return w
+					if (l.gt(this.shru(1))) return Te
+					z = w
+				} else {
+					if (this.eq(W)) {
+						if (l.eq($) || l.eq(Y)) return W
+						if (l.eq(W)) return $
+						var J = this.shr(1)
+						return (
+							(S = J.div(l).shl(1)),
+							S.eq(g) ? (l.isNegative() ? $ : Y) : ((D = this.sub(l.mul(S))), (z = S.add(D.div(l))), z)
+						)
+					} else if (l.eq(W)) return this.unsigned ? w : g
+					if (this.isNegative()) return l.isNegative() ? this.neg().div(l.neg()) : this.neg().div(l).neg()
+					if (l.isNegative()) return this.div(l.neg()).neg()
+					z = g
+				}
+				for (D = this; D.gte(l);) {
+					S = Math.max(1, Math.floor(D.toNumber() / l.toNumber()))
+					for (
+						var de = Math.ceil(Math.log(S) / Math.LN2), Ne = de <= 48 ? 1 : a(2, de - 48), re = i(S), Se = re.mul(l);
+						Se.isNegative() || Se.gt(D);
+					)
+						((S -= Ne), (re = i(S, this.unsigned)), (Se = re.mul(l)))
+					;(re.isZero() && (re = $), (z = z.add(re)), (D = D.sub(Se)))
+				}
+				return z
+			}),
+			(E.div = E.divide),
+			(E.modulo = function (l) {
+				return (e(l) || (l = u(l)), this.sub(this.div(l).mul(l)))
+			}),
+			(E.mod = E.modulo),
+			(E.not = function () {
+				return o(~this.low, ~this.high, this.unsigned)
+			}),
+			(E.and = function (l) {
+				return (e(l) || (l = u(l)), o(this.low & l.low, this.high & l.high, this.unsigned))
+			}),
+			(E.or = function (l) {
+				return (e(l) || (l = u(l)), o(this.low | l.low, this.high | l.high, this.unsigned))
+			}),
+			(E.xor = function (l) {
+				return (e(l) || (l = u(l)), o(this.low ^ l.low, this.high ^ l.high, this.unsigned))
+			}),
+			(E.shiftLeft = function (l) {
+				return (
+					e(l) && (l = l.toInt()),
+					(l &= 63) === 0
+						? this
+						: l < 32
+							? o(this.low << l, (this.high << l) | (this.low >>> (32 - l)), this.unsigned)
+							: o(0, this.low << (l - 32), this.unsigned)
+				)
+			}),
+			(E.shl = E.shiftLeft),
+			(E.shiftRight = function (l) {
+				return (
+					e(l) && (l = l.toInt()),
+					(l &= 63) === 0
+						? this
+						: l < 32
+							? o((this.low >>> l) | (this.high << (32 - l)), this.high >> l, this.unsigned)
+							: o(this.high >> (l - 32), this.high >= 0 ? 0 : -1, this.unsigned)
+				)
+			}),
+			(E.shr = E.shiftRight),
+			(E.shiftRightUnsigned = function (l) {
+				if ((e(l) && (l = l.toInt()), (l &= 63), l === 0)) return this
+				var S = this.high
+				if (l < 32) {
+					var D = this.low
+					return o((D >>> l) | (S << (32 - l)), S >>> l, this.unsigned)
+				} else return l === 32 ? o(S, 0, this.unsigned) : o(S >>> (l - 32), 0, this.unsigned)
+			}),
+			(E.shru = E.shiftRightUnsigned),
+			(E.toSigned = function () {
+				return this.unsigned ? o(this.low, this.high, !1) : this
+			}),
+			(E.toUnsigned = function () {
+				return this.unsigned ? this : o(this.low, this.high, !0)
+			}),
+			(E.toBytes = function (h) {
+				return h ? this.toBytesLE() : this.toBytesBE()
+			}),
+			(E.toBytesLE = function () {
+				var h = this.high,
+					l = this.low
+				return [
+					l & 255,
+					(l >>> 8) & 255,
+					(l >>> 16) & 255,
+					(l >>> 24) & 255,
+					h & 255,
+					(h >>> 8) & 255,
+					(h >>> 16) & 255,
+					(h >>> 24) & 255,
+				]
+			}),
+			(E.toBytesBE = function () {
+				var h = this.high,
+					l = this.low
+				return [
+					(h >>> 24) & 255,
+					(h >>> 16) & 255,
+					(h >>> 8) & 255,
+					h & 255,
+					(l >>> 24) & 255,
+					(l >>> 16) & 255,
+					(l >>> 8) & 255,
+					l & 255,
+				]
+			}),
+			t
+		)
+	})
+})
+var ts = p((N) => {
+	'use strict'
+	Object.defineProperty(N, '__esModule', { value: !0 })
+	N.PathDiscoveryFailure =
+		N.InvalidStringPair =
+		N.InvalidRequesrFormat =
+		N.InvalidMatrixSignal =
+		N.InvalidResultFormat =
+		N.InvalidBERFormat =
+		N.S101SocketError =
+		N.ASN1Error =
+		N.EmberAccessError =
+		N.EmberTimeoutError =
+		N.InvalidCommand =
+		N.MissingElementNumber =
+		N.MissingElementContents =
+		N.UnknownElement =
+		N.InvalidSourcesFormat =
+		N.InvalidRequest =
+		N.InvalidEmberResponse =
+		N.InvalidRequestFormat =
+		N.InvalidEmberNode =
+		N.UnimplementedEmberTypeError =
+			void 0
+	var Go = class extends Error {
+		constructor(e) {
+			;(super(), (this.name = this.constructor.name))
+			let n = (e & 192) >> 6,
+				r = (e & 31).toString(),
+				s = e.toString()
+			;(n == 0
+				? (s = '[UNIVERSAL ' + r + ']')
+				: n == 1
+					? (s = '[APPLICATION ' + r + ']')
+					: n == 2
+						? (s = '[CONTEXT ' + r + ']')
+						: (s = '[PRIVATE ' + r + ']'),
+				(this.message = 'Unimplemented EmBER type ' + s))
+		}
+	}
+	N.UnimplementedEmberTypeError = Go
+	var Xo = class extends Error {
+		constructor(e) {
+			super(e)
+		}
+	}
+	N.S101SocketError = Xo
+	var Wo = class extends Error {
+		constructor(e) {
+			super(e)
+		}
+	}
+	N.ASN1Error = Wo
+	var zo = class extends Error {
+		constructor(e) {
+			super(e)
+		}
+	}
+	N.EmberAccessError = zo
+	var Qo = class extends Error {
+		constructor(e) {
+			super(e)
+		}
+	}
+	N.EmberTimeoutError = Qo
+	var Ho = class extends Error {
+		constructor(e) {
+			super(`Invalid command ${e}`)
+		}
+	}
+	N.InvalidCommand = Ho
+	var Zo = class extends Error {
+		constructor() {
+			super('Missing element number')
+		}
+	}
+	N.MissingElementNumber = Zo
+	var Ko = class extends Error {
+		constructor(e) {
+			super(`Missing element contents at ${e}`)
+		}
+	}
+	N.MissingElementContents = Ko
+	var Yo = class extends Error {
+		constructor(e) {
+			super(`No element at path ${e}`)
+		}
+	}
+	N.UnknownElement = Yo
+	var Jo = class extends Error {
+		constructor() {
+			super('Invalid Request')
+		}
+	}
+	N.InvalidRequest = Jo
+	var ea = class extends Error {
+		constructor(e) {
+			super(`Invalid Request Format with path ${e}`)
+		}
+	}
+	N.InvalidRequestFormat = ea
+	var ta = class extends Error {
+		constructor(e = 'unknown', n = '') {
+			super(`Invalid Ember Node at ${e}: ${n}`)
+		}
+	}
+	N.InvalidEmberNode = ta
+	var na = class extends Error {
+		constructor(e) {
+			super(`Invalid Ember Response to ${e}`)
+		}
+	}
+	N.InvalidEmberResponse = na
+	var ra = class t extends Error {
+		constructor(e) {
+			super(t.getMessage(e))
+		}
+		setPath(e) {
+			this.message = t.getMessage(e)
+		}
+		static getMessage(e) {
+			return `Failed path discovery at ${e}`
+		}
+	}
+	N.PathDiscoveryFailure = ra
+	var sa = class extends Error {
+		constructor() {
+			super('Sources should be an array')
+		}
+	}
+	N.InvalidSourcesFormat = sa
+	var ia = class extends Error {
+		constructor(e = '') {
+			super(`Invalid BER format: ${e}`)
+		}
+	}
+	N.InvalidBERFormat = ia
+	var oa = class extends Error {
+		constructor(e = '') {
+			super(`Invalid Result format: ${e}`)
+		}
+	}
+	N.InvalidResultFormat = oa
+	var aa = class extends Error {
+		constructor(e, n) {
+			super(`Invalid Matrix Signal ${e}: ${n}`)
+		}
+	}
+	N.InvalidMatrixSignal = aa
+	var ca = class extends Error {
+		constructor() {
+			super('Invalid StringPair Value')
+		}
+	}
+	N.InvalidStringPair = ca
+	var ua = class extends Error {
+		constructor(e) {
+			super(`Can't process request for node ${e}`)
+		}
+	}
+	N.InvalidRequesrFormat = ua
+})
+var rs = p((ns) => {
+	'use strict'
+	Object.defineProperty(ns, '__esModule', { value: !0 })
+	ns.BERDataTypes = void 0
+	var la
+	;(function (t) {
+		;((t[(t.BOOLEAN = 1)] = 'BOOLEAN'),
+			(t[(t.INTEGER = 2)] = 'INTEGER'),
+			(t[(t.BITSTRING = 3)] = 'BITSTRING'),
+			(t[(t.OCTETSTRING = 4)] = 'OCTETSTRING'),
+			(t[(t.NULL = 5)] = 'NULL'),
+			(t[(t.OBJECTIDENTIFIER = 6)] = 'OBJECTIDENTIFIER'),
+			(t[(t.OBJECTDESCRIPTOR = 7)] = 'OBJECTDESCRIPTOR'),
+			(t[(t.EXTERNAL = 8)] = 'EXTERNAL'),
+			(t[(t.REAL = 9)] = 'REAL'),
+			(t[(t.ENUMERATED = 10)] = 'ENUMERATED'),
+			(t[(t.EMBEDDED = 11)] = 'EMBEDDED'),
+			(t[(t.STRING = 12)] = 'STRING'),
+			(t[(t.RELATIVE_OID = 13)] = 'RELATIVE_OID'),
+			(t[(t.SEQUENCE = 48)] = 'SEQUENCE'),
+			(t[(t.SET = 49)] = 'SET'))
+	})(la || (la = {}))
+	ns.BERDataTypes = la
+})
+var ss = p((Nt) => {
+	'use strict'
+	Object.defineProperty(Nt, '__esModule', { value: !0 })
+	Nt.UNIVERSAL = Nt.CONTEXT = Nt.APPLICATION = void 0
+	function f0(t) {
+		return t | 96
+	}
+	Nt.APPLICATION = f0
+	function d0(t) {
+		return t | 160
+	}
+	Nt.CONTEXT = d0
+	function h0(t) {
+		return t
+	}
+	Nt.UNIVERSAL = h0
+})
+var st = p((rt) => {
+	'use strict'
+	Object.defineProperty(rt, '__esModule', { value: !0 })
+	rt.ParameterImpl = rt.isParameter = rt.ParameterAccess = rt.ParameterType = void 0
+	var fa = Ie(),
+		da
+	;(function (t) {
+		;((t.Null = 'NULL'),
+			(t.Integer = 'INTEGER'),
+			(t.Real = 'REAL'),
+			(t.String = 'STRING'),
+			(t.Boolean = 'BOOLEAN'),
+			(t.Trigger = 'TRIGGER'),
+			(t.Enum = 'ENUM'),
+			(t.Octets = 'OCTETS'))
+	})(da || (da = {}))
+	rt.ParameterType = da
+	var ha
+	;(function (t) {
+		;((t.None = 'NONE'), (t.Read = 'READ'), (t.Write = 'WRITE'), (t.ReadWrite = 'READ_WRITE'))
+	})(ha || (ha = {}))
+	rt.ParameterAccess = ha
+	function p0(t) {
+		if (!(0, fa.isEmberElement)(t)) return !1
+		let { type: e, parameterType: n, templateReference: r } = t
+		return !(e !== fa.ElementType.Parameter || !n || !r)
+	}
+	rt.isParameter = p0
+	var pa = class {
+		constructor(e, n, r, s, i, o, a, c, u, f, d, m, _, y, b, g, w, $, Te) {
+			;((this.parameterType = e),
+				(this.identifier = n),
+				(this.description = r),
+				(this.value = s),
+				(this.maximum = i),
+				(this.minimum = o),
+				(this.access = a),
+				(this.format = c),
+				(this.enumeration = u),
+				(this.factor = f),
+				(this.isOnline = d),
+				(this.formula = m),
+				(this.step = _),
+				(this.defaultValue = y),
+				(this.streamIdentifier = b),
+				(this.enumMap = g),
+				(this.streamDescriptor = w),
+				(this.schemaIdentifiers = $),
+				(this.templateReference = Te),
+				(this.type = fa.ElementType.Parameter))
+		}
+	}
+	rt.ParameterImpl = pa
+})
+var Bf = p((is) => {
+	'use strict'
+	Object.defineProperty(is, '__esModule', { value: !0 })
+	is.Reader = void 0
+	var m0 = (v(), x(I)),
+		_0 = $o(),
+		_n = m0.__importDefault(Vo()),
+		Rf = ts(),
+		Tt = rs(),
+		kf = ss(),
+		Vt = st(),
+		ma = class extends _0.Reader {
+			constructor(e) {
+				super(e)
+			}
+			readValue() {
+				let e = this.peek()
+				if (!e) throw new Error('No tag available')
+				switch (e) {
+					case Tt.BERDataTypes.STRING:
+						return { type: Vt.ParameterType.String, value: this.readString(Tt.BERDataTypes.STRING) }
+					case Tt.BERDataTypes.INTEGER:
+						return { type: Vt.ParameterType.Integer, value: this.readInt() }
+					case Tt.BERDataTypes.REAL:
+						return { type: Vt.ParameterType.Real, value: this.readReal() }
+					case Tt.BERDataTypes.BOOLEAN:
+						return { type: Vt.ParameterType.Boolean, value: this.readBoolean() }
+					case Tt.BERDataTypes.OCTETSTRING:
+						return { type: Vt.ParameterType.Octets, value: this.readString((0, kf.UNIVERSAL)(4), !0) }
+					case Tt.BERDataTypes.RELATIVE_OID:
+						return { type: Vt.ParameterType.String, value: this.readOID(Tt.BERDataTypes.RELATIVE_OID) }
+					case Tt.BERDataTypes.NULL:
+						return (this.readByte(!1), this.readByte(!1), { type: Vt.ParameterType.Null, value: null })
+					default:
+						throw new Rf.UnimplementedEmberTypeError(e)
+				}
+			}
+			readReal(e) {
+				e !== null && (e = (0, kf.UNIVERSAL)(9))
+				let n = this.peek()
+				if (n === null) return null
+				let r = this.readString(n, !0)
+				if (r.length === 0) return 0
+				let s = r.readUInt8(0),
+					i = 1
+				if (r.length === 1)
+					switch (s) {
+						case 64:
+							return 1 / 0
+						case 65:
+							return -1 / 0
+						case 66:
+							return NaN
+					}
+				let o = s & 64 ? -1 : 1,
+					a = 1 + (s & 3),
+					c = (s >> 2) & 3,
+					u = 0
+				if ((r.readUInt8(i) & 128 && (u = -1), r.length - i < a))
+					throw new Rf.ASN1Error('Invalid ASN.1; not enough length to contain exponent')
+				for (let _ = 0; _ < a; _++) u = (u << 8) | r.readUInt8(i++)
+				let f = new _n.default(0, 0, !0)
+				for (; i < r.length;) f = f.shl(8).or(r.readUInt8(i++))
+				for (f = f.shl(c); f.and(_n.default.fromBits(0, 2147479552, !0)).eq(0);) f = f.shl(8)
+				for (; f.and(_n.default.fromBits(0, 2146435072, !0)).eq(0);) f = f.shl(1)
+				f = f.and(_n.default.fromBits(4294967295, 1048575, !0))
+				let d = _n.default.fromNumber(u).add(1023).shl(52).or(f)
+				o < 0 && (d = d.or(_n.default.fromBits(0, 2147483648, !0)))
+				let m = Buffer.alloc(8)
+				return (
+					m.writeUInt32LE(d.getLowBitsUnsigned(), 0),
+					m.writeUInt32LE(d.getHighBitsUnsigned(), 4),
+					m.readDoubleLE(0)
+				)
+			}
+		}
+	is.Reader = ma
+})
+var Df = p((os) => {
+	'use strict'
+	Object.defineProperty(os, '__esModule', { value: !0 })
+	os.Writer = void 0
+	var E0 = (v(), x(I)),
+		En = E0.__importDefault(Vo()),
+		b0 = $o(),
+		qf = ss(),
+		ee = rs(),
+		ke = st(),
+		_a = class extends b0.Writer {
+			constructor(e) {
+				super(e)
+			}
+			writeReal(e, n) {
+				switch ((n === void 0 && (n = (0, qf.UNIVERSAL)(9)), this.writeByte(n), e)) {
+					case 0:
+						this.writeLength(0)
+						return
+					case 1 / 0:
+						;(this.writeLength(1), this.writeByte(64))
+						return
+					case -1 / 0:
+						;(this.writeLength(1), this.writeByte(65))
+						return
+					default:
+						if (isNaN(e)) {
+							;(this.writeLength(1), this.writeByte(66))
+							return
+						}
+				}
+				let r = Buffer.alloc(8)
+				r.writeDoubleLE(e, 0)
+				let s = En.default.fromBits(r.readUInt32LE(0), r.readUInt32LE(4), !0),
+					i = s.and(En.default.fromBits(4294967295, 1048575, !0)).or(En.default.fromBits(0, 1048576, !0)),
+					o = s
+						.and(En.default.fromBits(0, 2146435072, !0))
+						.shru(52)
+						.sub(1023)
+						.toSigned()
+				for (; i.and(255).toNumber() === 0;) i = i.shru(8)
+				for (; i.and(1).toNumber() === 0;) i = i.shru(1)
+				o = o.toNumber()
+				let a = g0(o),
+					c = y0(i)
+				this.writeLength(1 + a.size + c.size)
+				let u = e < 0 ? 192 : 128
+				this.writeByte(u)
+				for (let d = 0; d < a.size; d++) (this.writeByte((a.value & 4278190080) >> 24), (a.value <<= 8))
+				let f = En.default.fromBits(0, 4278190080, !0)
+				for (let d = 0; d < c.size; d++)
+					(this.writeByte(c.value.and(f).shru(56).toNumber()), (c.value = c.value.shl(8)))
+			}
+			writeValue(e, n) {
+				let r
+				if (
+					(e && typeof e == 'object' && 'type' in e ? ((r = e.value), (n = T0(e.type))) : (r = e),
+					n === ee.BERDataTypes.NULL && r == null)
+				) {
+					this.writeNull()
+					return
+				}
+				if (r == null) {
+					this.writeNull()
+					return
+				}
+				if (typeof r == 'number') {
+					if (n !== ee.BERDataTypes.REAL && Number.isInteger(r)) {
+						;(n === void 0 && (n = ee.BERDataTypes.INTEGER), this.writeInt(r, n))
+						return
+					}
+					;(n === void 0 && (n = ee.BERDataTypes.REAL), this.writeReal(r, n))
+					return
+				}
+				if (typeof r == 'boolean') {
+					;(n === void 0 && (n = ee.BERDataTypes.BOOLEAN), this.writeBoolean(r, n))
+					return
+				}
+				if (Buffer.isBuffer(r) && n) {
+					r.length === 0 ? (this.writeByte(n), this.writeLength(0)) : this.writeBuffer(r, n)
+					return
+				}
+				;(n === void 0 && (n = ee.BERDataTypes.STRING), this.writeString(r.toString(), n))
+			}
+			writeEmberParameter(e) {
+				if ((0, ke.isParameter)(e))
+					switch (e.parameterType) {
+						case ke.ParameterType.Real:
+							this.writeReal(e.value, ee.BERDataTypes.REAL)
+							break
+						case ke.ParameterType.Integer:
+							this.writeInt(e.value, ee.BERDataTypes.INTEGER)
+							break
+						case ke.ParameterType.Boolean:
+							this.writeBoolean(e.value, ee.BERDataTypes.BOOLEAN)
+							break
+						case ke.ParameterType.Octets:
+							;(Buffer.isBuffer(e.value) || (e.value = Buffer.from(`${e.value}`)),
+								e.value.length
+									? (this.writeByte(ee.BERDataTypes.OCTETSTRING), this.writeLength(0))
+									: this.writeBuffer(e.value, ee.BERDataTypes.OCTETSTRING))
+							break
+						case ke.ParameterType.Null:
+							this.writeNull()
+							break
+						default:
+							this.writeString(e.value, ee.BERDataTypes.STRING)
+					}
+				else this.writeValue(e.value, void 0)
+			}
+			writeIfDefined(e, n, r, s) {
+				e != null && (this.startSequence((0, qf.CONTEXT)(r)), n.call(this, e, s), this.endSequence())
+			}
+		}
+	os.Writer = _a
+	function g0(t) {
+		let e = 4
+		for (; ((t & 4286578688) === 0 || (t & 4286578688) === -8388608) && e > 1;) (e--, (t <<= 8))
+		return { size: e, value: t }
+	}
+	function y0(t) {
+		let e = En.default.fromBits(0, 4286578688, !0)
+		t = t.toUnsigned()
+		let n = 8
+		for (; t.and(e).eq(0) || (t.and(e).eq(e) && n > 1);) (n--, (t = t.shl(8)))
+		return { size: n, value: t }
+	}
+	function T0(t) {
+		switch (t) {
+			case ke.ParameterType.Integer:
+				return ee.BERDataTypes.INTEGER
+			case ke.ParameterType.Real:
+				return ee.BERDataTypes.REAL
+			case ke.ParameterType.String:
+				return ee.BERDataTypes.STRING
+			case ke.ParameterType.Boolean:
+				return ee.BERDataTypes.BOOLEAN
+			case ke.ParameterType.Trigger:
+				return ee.BERDataTypes.STRING
+			case ke.ParameterType.Enum:
+				return ee.BERDataTypes.ENUMERATED
+			case ke.ParameterType.Octets:
+				return ee.BERDataTypes.OCTETSTRING
+			case ke.ParameterType.Null:
+				return ee.BERDataTypes.NULL
+			default:
+				throw new Error('')
+		}
+	}
+})
+var R = p((Be) => {
+	'use strict'
+	Object.defineProperty(Be, '__esModule', { value: !0 })
+	Be.UNIVERSAL = Be.CONTEXT = Be.APPLICATION = Be.BERDataTypes = Be.Writer = Be.Reader = void 0
+	var S0 = Bf()
+	Object.defineProperty(Be, 'Reader', {
+		enumerable: !0,
+		get: function () {
+			return S0.Reader
+		},
+	})
+	var x0 = Df()
+	Object.defineProperty(Be, 'Writer', {
+		enumerable: !0,
+		get: function () {
+			return x0.Writer
+		},
+	})
+	var I0 = rs()
+	Object.defineProperty(Be, 'BERDataTypes', {
+		enumerable: !0,
+		get: function () {
+			return I0.BERDataTypes
+		},
+	})
+	var Ea = ss()
+	Object.defineProperty(Be, 'APPLICATION', {
+		enumerable: !0,
+		get: function () {
+			return Ea.APPLICATION
+		},
+	})
+	Object.defineProperty(Be, 'CONTEXT', {
+		enumerable: !0,
+		get: function () {
+			return Ea.CONTEXT
+		},
+	})
+	Object.defineProperty(Be, 'UNIVERSAL', {
+		enumerable: !0,
+		get: function () {
+			return Ea.UNIVERSAL
+		},
+	})
+})
+var M = p((T) => {
+	'use strict'
+	Object.defineProperty(T, '__esModule', { value: !0 })
+	T.QualifiedTemplateBERID =
+		T.TemplateBERID =
+		T.InvocationResultBERID =
+		T.InvocationBERID =
+		T.FunctionArgumentBERID =
+		T.QualifiedFunctionBERID =
+		T.FunctionBERID =
+		T.LabelBERID =
+		T.QualifiedMatrixBERID =
+		T.ConnectionBERID =
+		T.SourceBERID =
+		T.TargetBERID =
+		T.MatrixBERID =
+		T.StreamDescriptionBERID =
+		T.RootElementsBERID =
+		T.QualifiedNodeBERID =
+		T.QualifiedParameterBERID =
+		T.StringIntegerCollectionBERID =
+		T.StringIntegerPairBERID =
+		T.StreamEntriesBERID =
+		T.StreamEntryBERID =
+		T.ElementCollectionBERID =
+		T.NodeBERID =
+		T.CommandBERID =
+		T.ParameterBERID =
+		T.RootBERID =
+			void 0
+	var v0 = (v(), x(I)),
+		L = v0.__importStar(R()),
+		w0 = L.APPLICATION(0)
+	T.RootBERID = w0
+	var N0 = L.APPLICATION(1)
+	T.ParameterBERID = N0
+	var C0 = L.APPLICATION(2)
+	T.CommandBERID = C0
+	var O0 = L.APPLICATION(3)
+	T.NodeBERID = O0
+	var R0 = L.APPLICATION(4)
+	T.ElementCollectionBERID = R0
+	var k0 = L.APPLICATION(5)
+	T.StreamEntryBERID = k0
+	var B0 = L.APPLICATION(6)
+	T.StreamEntriesBERID = B0
+	var q0 = L.APPLICATION(7)
+	T.StringIntegerPairBERID = q0
+	var D0 = L.APPLICATION(8)
+	T.StringIntegerCollectionBERID = D0
+	var P0 = L.APPLICATION(9)
+	T.QualifiedParameterBERID = P0
+	var A0 = L.APPLICATION(10)
+	T.QualifiedNodeBERID = A0
+	var F0 = L.APPLICATION(11)
+	T.RootElementsBERID = F0
+	var L0 = L.APPLICATION(12)
+	T.StreamDescriptionBERID = L0
+	var M0 = L.APPLICATION(13)
+	T.MatrixBERID = M0
+	var U0 = L.APPLICATION(14)
+	T.TargetBERID = U0
+	var j0 = L.APPLICATION(15)
+	T.SourceBERID = j0
+	var $0 = L.APPLICATION(16)
+	T.ConnectionBERID = $0
+	var V0 = L.APPLICATION(17)
+	T.QualifiedMatrixBERID = V0
+	var G0 = L.APPLICATION(18)
+	T.LabelBERID = G0
+	var X0 = L.APPLICATION(19)
+	T.FunctionBERID = X0
+	var W0 = L.APPLICATION(20)
+	T.QualifiedFunctionBERID = W0
+	var z0 = L.APPLICATION(21)
+	T.FunctionArgumentBERID = z0
+	var Q0 = L.APPLICATION(22)
+	T.InvocationBERID = Q0
+	var H0 = L.APPLICATION(23)
+	T.InvocationResultBERID = H0
+	var Z0 = L.APPLICATION(24)
+	T.TemplateBERID = Z0
+	var K0 = L.APPLICATION(25)
+	T.QualifiedTemplateBERID = K0
+})
+var Pf = p((as) => {
+	'use strict'
+	Object.defineProperty(as, '__esModule', { value: !0 })
+	as.encodeInvocationResult = void 0
+	var Y0 = (v(), x(I)),
+		Jn = Y0.__importStar(R()),
+		J0 = M()
+	function e_(t, e) {
+		if (
+			(e.startSequence(J0.InvocationResultBERID),
+			t.id != null && (e.startSequence(Jn.CONTEXT(0)), e.writeInt(t.id), e.endSequence()),
+			t.success != null && (e.startSequence(Jn.CONTEXT(1)), e.writeBoolean(t.success), e.endSequence()),
+			t.result != null && t.result.length)
+		) {
+			;(e.startSequence(Jn.CONTEXT(2)), e.startSequence(Jn.BERDataTypes.SEQUENCE))
+			for (let n = 0; n < t.result.length; n++)
+				(e.startSequence(Jn.CONTEXT(0)), e.writeValue(t.result[n]), e.endSequence())
+			;(e.endSequence(), e.endSequence())
+		}
+		e.endSequence()
+	}
+	as.encodeInvocationResult = e_
+})
+var Af = p((us) => {
+	'use strict'
+	Object.defineProperty(us, '__esModule', { value: !0 })
+	us.encodeInvocation = void 0
+	var t_ = (v(), x(I)),
+		cs = t_.__importStar(R()),
+		n_ = M()
+	function r_(t, e) {
+		;(e.startSequence(n_.InvocationBERID),
+			t.id != null && (e.startSequence(cs.CONTEXT(0)), e.writeInt(t.id), e.endSequence()),
+			e.startSequence(cs.CONTEXT(1)),
+			e.startSequence(cs.BERDataTypes.SEQUENCE))
+		for (let n = 0; n < t.args.length; n++) (e.startSequence(cs.CONTEXT(0)), e.writeValue(t.args[n]), e.endSequence())
+		;(e.endSequence(), e.endSequence(), e.endSequence())
+	}
+	us.encodeInvocation = r_
+})
+var ga = p((ls) => {
+	'use strict'
+	Object.defineProperty(ls, '__esModule', { value: !0 })
+	ls.encodeCommand = void 0
+	var s_ = (v(), x(I)),
+		ba = s_.__importStar(R()),
+		it = Qn(),
+		i_ = Af(),
+		o_ = M()
+	function a_(t, e) {
+		;(e.startSequence(o_.CommandBERID),
+			e.startSequence(ba.CONTEXT(0)),
+			e.writeInt(t.number),
+			e.endSequence(),
+			u_(t) && t.dirFieldMask && (e.startSequence(ba.CONTEXT(1)), l_(t.dirFieldMask, e), e.endSequence()),
+			c_(t) &&
+				t.invocation &&
+				(e.startSequence(ba.CONTEXT(2)), (0, i_.encodeInvocation)(t.invocation, e), e.endSequence()),
+			e.endSequence())
+	}
+	ls.encodeCommand = a_
+	function c_(t) {
+		return t.number === it.CommandType.Invoke
+	}
+	function u_(t) {
+		return t.number === it.CommandType.GetDirectory
+	}
+	function l_(t, e) {
+		let n = {
+			[it.FieldFlags.Sparse]: -2,
+			[it.FieldFlags.All]: -1,
+			[it.FieldFlags.Default]: 0,
+			[it.FieldFlags.Identifier]: 1,
+			[it.FieldFlags.Description]: 2,
+			[it.FieldFlags.Tree]: 3,
+			[it.FieldFlags.Value]: 4,
+			[it.FieldFlags.Connections]: 5,
+		}
+		e.writeInt(n[t])
+	}
+})
+var Lf = p((ds) => {
+	'use strict'
+	Object.defineProperty(ds, '__esModule', { value: !0 })
+	ds.encodeStringIntegerCollection = void 0
+	var f_ = (v(), x(I)),
+		fs = f_.__importStar(R()),
+		Ff = M()
+	function d_(t, e) {
+		e.startSequence(Ff.StringIntegerCollectionBERID)
+		for (let [n, r] of t)
+			(e.startSequence(fs.CONTEXT(0)),
+				e.startSequence(Ff.StringIntegerPairBERID),
+				e.startSequence(fs.CONTEXT(0)),
+				e.writeString(n, fs.BERDataTypes.STRING),
+				e.endSequence(),
+				e.startSequence(fs.CONTEXT(1)),
+				e.writeInt(r),
+				e.endSequence(),
+				e.endSequence(),
+				e.endSequence())
+		e.endSequence()
+	}
+	ds.encodeStringIntegerCollection = d_
+})
+var hs = p((bn) => {
+	'use strict'
+	Object.defineProperty(bn, '__esModule', { value: !0 })
+	bn.StreamDescriptionImpl = bn.StreamFormat = void 0
+	var ya
+	;(function (t) {
+		;((t.UInt8 = 'UInt8'),
+			(t.UInt16BE = 'UInt16BE'),
+			(t.UInt16LE = 'UInt16LE'),
+			(t.UInt32BE = 'UInt32BE'),
+			(t.UInt32LE = 'UInt32LE'),
+			(t.UInt64BE = 'UInt64BE'),
+			(t.UInt64LE = 'UInt64LE'),
+			(t.Int8 = 'Int8'),
+			(t.Int16BE = 'Int16BE'),
+			(t.Int16LE = 'Int16LE'),
+			(t.Int32BE = 'Int32BE'),
+			(t.Int32LE = 'Int32LE'),
+			(t.Int64BE = 'Int64BE'),
+			(t.Int64LE = 'Int64LE'),
+			(t.Float32BE = 'Float32BE'),
+			(t.Float32LE = 'Float32LE'),
+			(t.Float64BE = 'Float64BE'),
+			(t.Float64LE = 'Float64LE'))
+	})(ya || (ya = {}))
+	bn.StreamFormat = ya
+	var Ta = class {
+		constructor(e, n) {
+			;((this.format = e), (this.offset = n))
+		}
+	}
+	bn.StreamDescriptionImpl = Ta
+})
+var Uf = p((ps) => {
+	'use strict'
+	Object.defineProperty(ps, '__esModule', { value: !0 })
+	ps.encodeStreamDescription = void 0
+	var h_ = (v(), x(I)),
+		Mf = h_.__importStar(R()),
+		ce = hs(),
+		p_ = M()
+	function m_(t, e) {
+		;(e.startSequence(p_.StreamDescriptionBERID),
+			e.writeIfDefined(t.format && __(t.format), e.writeInt, 0, Mf.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.offset, e.writeInt, 1, Mf.BERDataTypes.INTEGER),
+			e.endSequence())
+	}
+	ps.encodeStreamDescription = m_
+	function __(t) {
+		return {
+			[ce.StreamFormat.UInt8]: 0,
+			[ce.StreamFormat.UInt16BE]: 2,
+			[ce.StreamFormat.UInt16LE]: 3,
+			[ce.StreamFormat.UInt32BE]: 4,
+			[ce.StreamFormat.UInt32LE]: 5,
+			[ce.StreamFormat.UInt64BE]: 6,
+			[ce.StreamFormat.UInt64LE]: 7,
+			[ce.StreamFormat.Int8]: 8,
+			[ce.StreamFormat.Int16BE]: 10,
+			[ce.StreamFormat.Int16LE]: 11,
+			[ce.StreamFormat.Int32BE]: 12,
+			[ce.StreamFormat.Int32LE]: 13,
+			[ce.StreamFormat.Int64BE]: 14,
+			[ce.StreamFormat.Int64LE]: 15,
+			[ce.StreamFormat.Float32BE]: 20,
+			[ce.StreamFormat.Float32LE]: 21,
+			[ce.StreamFormat.Float64BE]: 22,
+			[ce.StreamFormat.Float64LE]: 23,
+		}[t]
+	}
+})
+var jf = p((ms) => {
+	'use strict'
+	Object.defineProperty(ms, '__esModule', { value: !0 })
+	ms.encodeParameter = void 0
+	var E_ = (v(), x(I)),
+		U = E_.__importStar(R()),
+		te = st(),
+		b_ = Lf(),
+		g_ = Uf()
+	function y_(t, e) {
+		e.startSequence(U.BERDataTypes.SET)
+		let n = (r) => {
+			switch (t.parameterType) {
+				case te.ParameterType.Null:
+					e.writeNull()
+					break
+				case te.ParameterType.Integer:
+					e.writeInt(Number(r), U.BERDataTypes.INTEGER)
+					break
+				case te.ParameterType.Real:
+					e.writeReal(Number(r), U.BERDataTypes.REAL)
+					break
+				case te.ParameterType.String:
+					e.writeString(r + '', U.BERDataTypes.STRING)
+					break
+				case te.ParameterType.Boolean:
+					e.writeBoolean(r, U.BERDataTypes.BOOLEAN)
+					break
+				case te.ParameterType.Enum:
+					e.writeInt(r, U.BERDataTypes.INTEGER)
+					break
+				case te.ParameterType.Octets:
+					e.writeBuffer(r, U.BERDataTypes.OCTETSTRING)
+					break
+				default:
+					e.writeValue(r)
+			}
+		}
+		;(e.writeIfDefined(t.identifier, e.writeString, 0, U.BERDataTypes.STRING),
+			e.writeIfDefined(t.description, e.writeString, 1, U.BERDataTypes.STRING),
+			t.value !== void 0 && (e.startSequence(U.CONTEXT(2)), n(t.value), e.endSequence()),
+			t.minimum !== void 0 && (e.startSequence(U.CONTEXT(3)), n(t.minimum), e.endSequence()),
+			t.maximum !== void 0 && (e.startSequence(U.CONTEXT(4)), n(t.maximum), e.endSequence()),
+			e.writeIfDefined(t.access && T_(t.access), e.writeInt, 5, U.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.format, e.writeString, 6, U.BERDataTypes.STRING),
+			e.writeIfDefined(t.enumeration, e.writeString, 7, U.BERDataTypes.STRING),
+			e.writeIfDefined(t.factor, e.writeInt, 8, U.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.isOnline, e.writeBoolean, 9, U.BERDataTypes.BOOLEAN),
+			e.writeIfDefined(t.formula, e.writeString, 10, U.BERDataTypes.STRING),
+			e.writeIfDefined(t.step, e.writeInt, 11, U.BERDataTypes.INTEGER),
+			t.defaultValue !== void 0 && (e.startSequence(U.CONTEXT(12)), n(t.defaultValue), e.endSequence()),
+			t.parameterType && (e.startSequence(U.CONTEXT(13)), e.writeInt(S_(t.parameterType)), e.endSequence()),
+			e.writeIfDefined(t.streamIdentifier, e.writeInt, 14, U.BERDataTypes.INTEGER),
+			t.enumMap != null &&
+				(e.startSequence(U.CONTEXT(15)), (0, b_.encodeStringIntegerCollection)(t.enumMap, e), e.endSequence()),
+			t.streamDescriptor != null &&
+				(e.startSequence(U.CONTEXT(16)), (0, g_.encodeStreamDescription)(t.streamDescriptor, e), e.endSequence()),
+			e.writeIfDefined(t.schemaIdentifiers, e.writeString, 17, U.BERDataTypes.STRING),
+			e.writeIfDefined(t.templateReference, e.writeString, 18, U.BERDataTypes.STRING),
+			e.endSequence())
+	}
+	ms.encodeParameter = y_
+	function T_(t) {
+		return {
+			[te.ParameterAccess.None]: 0,
+			[te.ParameterAccess.Read]: 1,
+			[te.ParameterAccess.Write]: 2,
+			[te.ParameterAccess.ReadWrite]: 3,
+		}[t]
+	}
+	function S_(t) {
+		return {
+			[te.ParameterType.Null]: 0,
+			[te.ParameterType.Integer]: 1,
+			[te.ParameterType.Real]: 2,
+			[te.ParameterType.String]: 3,
+			[te.ParameterType.Boolean]: 4,
+			[te.ParameterType.Trigger]: 5,
+			[te.ParameterType.Enum]: 6,
+			[te.ParameterType.Octets]: 7,
+		}[t]
+	}
+})
+var $f = p((_s) => {
+	'use strict'
+	Object.defineProperty(_s, '__esModule', { value: !0 })
+	_s.encodeNode = void 0
+	var x_ = (v(), x(I)),
+		He = x_.__importStar(R())
+	function I_(t, e) {
+		;(e.startSequence(He.BERDataTypes.SET),
+			t.identifier != null &&
+				(e.startSequence(He.CONTEXT(0)), e.writeString(t.identifier, He.BERDataTypes.STRING), e.endSequence()),
+			t.description != null &&
+				(e.startSequence(He.CONTEXT(1)), e.writeString(t.description, He.BERDataTypes.STRING), e.endSequence()),
+			t.isRoot != null && (e.startSequence(He.CONTEXT(2)), e.writeBoolean(t.isRoot), e.endSequence()),
+			t.isOnline != null && (e.startSequence(He.CONTEXT(3)), e.writeBoolean(t.isOnline), e.endSequence()),
+			t.schemaIdentifiers != null &&
+				(e.startSequence(He.CONTEXT(4)), e.writeString(t.schemaIdentifiers, He.BERDataTypes.STRING), e.endSequence()),
+			t.templateReference != null &&
+				(e.startSequence(He.CONTEXT(5)),
+				e.writeRelativeOID(t.templateReference, He.BERDataTypes.RELATIVE_OID),
+				e.endSequence()),
+			e.endSequence())
+	}
+	_s.encodeNode = I_
+})
+var Es = p((Ct) => {
+	'use strict'
+	Object.defineProperty(Ct, '__esModule', { value: !0 })
+	Ct.MatrixImpl = Ct.MatrixAddressingMode = Ct.MatrixType = void 0
+	var v_ = Ie(),
+		Sa
+	;(function (t) {
+		;((t.OneToN = 'ONE_TO_N'), (t.OneToOne = 'ONE_TO_ONE'), (t.NToN = 'N_TO_N'))
+	})(Sa || (Sa = {}))
+	Ct.MatrixType = Sa
+	var xa
+	;(function (t) {
+		;((t.Linear = 'LINEAR'), (t.NonLinear = 'NON_LINEAR'))
+	})(xa || (xa = {}))
+	Ct.MatrixAddressingMode = xa
+	var Ia = class {
+		constructor(e, n, r, s, i, o, a, c, u, f, d, m, _, y, b, g) {
+			;((this.identifier = e),
+				(this.targets = n),
+				(this.sources = r),
+				(this.connections = s),
+				(this.description = i),
+				(this.matrixType = o),
+				(this.addressingMode = a),
+				(this.targetCount = c),
+				(this.sourceCount = u),
+				(this.maximumTotalConnects = f),
+				(this.maximumConnectsPerTarget = d),
+				(this.parametersLocation = m),
+				(this.gainParameterNumber = _),
+				(this.labels = y),
+				(this.schemaIdentifiers = b),
+				(this.templateReference = g),
+				(this.type = v_.ElementType.Matrix))
+		}
+	}
+	Ct.MatrixImpl = Ia
+})
+var Gf = p((gs) => {
+	'use strict'
+	Object.defineProperty(gs, '__esModule', { value: !0 })
+	gs.encodeLabel = void 0
+	var w_ = (v(), x(I)),
+		bs = w_.__importStar(R()),
+		Vf = ts(),
+		N_ = M()
+	function C_(t, e) {
+		if ((e.startSequence(N_.LabelBERID), t.basePath == null))
+			throw new Vf.InvalidEmberNode('', 'Missing label base path')
+		if (
+			(e.startSequence(bs.CONTEXT(0)),
+			e.writeRelativeOID(t.basePath, bs.BERDataTypes.RELATIVE_OID),
+			e.endSequence(),
+			t.description == null)
+		)
+			throw new Vf.InvalidEmberNode('', 'Missing label description')
+		;(e.startSequence(bs.CONTEXT(1)),
+			e.writeString(t.description, bs.BERDataTypes.STRING),
+			e.endSequence(),
+			e.endSequence())
+	}
+	gs.encodeLabel = C_
+})
+var va = p((qe) => {
+	'use strict'
+	Object.defineProperty(qe, '__esModule', { value: !0 })
+	qe.matrixModeToInt =
+		qe.matrixTypeToInt =
+		qe.elementTypeToInt =
+		qe.encodeSource =
+		qe.encodeTarget =
+		qe.encodeMatrix =
+			void 0
+	var O_ = (v(), x(I)),
+		Q = O_.__importStar(R()),
+		er = Es(),
+		gn = Ie(),
+		R_ = Gf(),
+		Xf = M()
+	function k_(t, e) {
+		if (
+			(e.startSequence(Q.BERDataTypes.SET),
+			e.writeIfDefined(t.identifier, e.writeString, 0, Q.BERDataTypes.STRING),
+			e.writeIfDefined(t.description, e.writeString, 1, Q.BERDataTypes.STRING),
+			e.writeIfDefined(t.matrixType && Wf(t.matrixType), e.writeInt, 2, Q.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.addressingMode && zf(t.addressingMode), e.writeInt, 3, Q.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.targetCount, e.writeInt, 4, Q.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.sourceCount, e.writeInt, 5, Q.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.maximumTotalConnects, e.writeInt, 6, Q.BERDataTypes.INTEGER),
+			e.writeIfDefined(t.maximumConnectsPerTarget, e.writeInt, 7, Q.BERDataTypes.INTEGER),
+			t.parametersLocation != null)
+		) {
+			e.startSequence(Q.CONTEXT(8))
+			let n = Number(t.parametersLocation)
+			;(isNaN(n) ? e.writeRelativeOID(t.parametersLocation, Q.BERDataTypes.RELATIVE_OID) : e.writeInt(n),
+				e.endSequence())
+		}
+		if ((e.writeIfDefined(t.gainParameterNumber, e.writeInt, 9, Q.BERDataTypes.INTEGER), t.labels != null)) {
+			;(e.startSequence(Q.CONTEXT(10)), e.startSequence(Q.BERDataTypes.SEQUENCE))
+			for (let n = 0; n < t.labels.length; n++)
+				(e.startSequence(Q.CONTEXT(0)), (0, R_.encodeLabel)(t.labels[n], e), e.endSequence())
+			;(e.endSequence(), e.endSequence())
+		}
+		;(e.writeIfDefined(t.schemaIdentifiers, e.writeString, 11, Q.BERDataTypes.STRING),
+			t.templateReference != null &&
+				(e.startSequence(Q.CONTEXT(12)),
+				e.writeRelativeOID(t.templateReference, Q.BERDataTypes.RELATIVE_OID),
+				e.endSequence()),
+			e.endSequence())
+	}
+	qe.encodeMatrix = k_
+	function B_(t, e) {
+		;(e.startSequence(Xf.TargetBERID),
+			e.startSequence(Q.CONTEXT(0)),
+			e.writeInt(t, Q.BERDataTypes.INTEGER),
+			e.endSequence(),
+			e.endSequence())
+	}
+	qe.encodeTarget = B_
+	function q_(t, e) {
+		;(e.startSequence(Xf.SourceBERID),
+			e.startSequence(Q.CONTEXT(0)),
+			e.writeInt(t, Q.BERDataTypes.INTEGER),
+			e.endSequence(),
+			e.endSequence())
+	}
+	qe.encodeSource = q_
+	function D_(t) {
+		return {
+			[gn.ElementType.Parameter]: 0,
+			[gn.ElementType.Node]: 1,
+			[gn.ElementType.Command]: 2,
+			[gn.ElementType.Matrix]: 3,
+			[gn.ElementType.Function]: 4,
+			[gn.ElementType.Template]: 5,
+		}[t]
+	}
+	qe.elementTypeToInt = D_
+	function Wf(t) {
+		return { [er.MatrixType.OneToN]: 0, [er.MatrixType.OneToOne]: 1, [er.MatrixType.NToN]: 2 }[t]
+	}
+	qe.matrixTypeToInt = Wf
+	function zf(t) {
+		return { [er.MatrixAddressingMode.Linear]: 0, [er.MatrixAddressingMode.NonLinear]: 1 }[t]
+	}
+	qe.matrixModeToInt = zf
+})
+var Qf = p((ys) => {
+	'use strict'
+	Object.defineProperty(ys, '__esModule', { value: !0 })
+	ys.encodeFunctionArgument = void 0
+	var P_ = (v(), x(I)),
+		wa = P_.__importStar(R()),
+		A_ = ts(),
+		Ot = st(),
+		F_ = M()
+	function L_(t, e) {
+		if ((e.startSequence(F_.FunctionArgumentBERID), t.type == null))
+			throw new A_.InvalidEmberNode('', 'FunctionArgument requires a type')
+		;(e.startSequence(wa.CONTEXT(0)),
+			M_(t.type, e),
+			e.endSequence(),
+			t.name != null &&
+				(e.startSequence(wa.CONTEXT(1)), e.writeString(t.name, wa.BERDataTypes.STRING), e.endSequence()),
+			e.endSequence())
+	}
+	ys.encodeFunctionArgument = L_
+	function M_(t, e) {
+		let n = {
+			[Ot.ParameterType.Null]: 0,
+			[Ot.ParameterType.Integer]: 1,
+			[Ot.ParameterType.Real]: 2,
+			[Ot.ParameterType.String]: 3,
+			[Ot.ParameterType.Boolean]: 4,
+			[Ot.ParameterType.Trigger]: 5,
+			[Ot.ParameterType.Enum]: 6,
+			[Ot.ParameterType.Octets]: 7,
+		}
+		e.writeInt(n[t])
+	}
+})
+var Zf = p((Ts) => {
+	'use strict'
+	Object.defineProperty(Ts, '__esModule', { value: !0 })
+	Ts.encodeFunction = void 0
+	var U_ = (v(), x(I)),
+		Fe = U_.__importStar(R()),
+		Hf = Qf()
+	function j_(t, e) {
+		if (
+			(e.startSequence(Fe.BERDataTypes.SET),
+			t.identifier != null &&
+				(e.startSequence(Fe.CONTEXT(0)), e.writeString(t.identifier, Fe.BERDataTypes.STRING), e.endSequence()),
+			t.description != null &&
+				(e.startSequence(Fe.CONTEXT(1)), e.writeString(t.description, Fe.BERDataTypes.STRING), e.endSequence()),
+			t.args != null)
+		) {
+			;(e.startSequence(Fe.CONTEXT(2)), e.startSequence(Fe.BERDataTypes.SEQUENCE))
+			for (let n = 0; n < t.args.length; n++)
+				(e.startSequence(Fe.CONTEXT(0)), (0, Hf.encodeFunctionArgument)(t.args[n], e), e.endSequence())
+			;(e.endSequence(), e.endSequence())
+		}
+		if (t.result != null && t.result.length > 0) {
+			;(e.startSequence(Fe.CONTEXT(3)), e.startSequence(Fe.BERDataTypes.SEQUENCE))
+			for (let n = 0; n < t.result.length; n++)
+				(e.startSequence(Fe.CONTEXT(0)), (0, Hf.encodeFunctionArgument)(t.result[n], e), e.endSequence())
+			;(e.endSequence(), e.endSequence())
+		}
+		;(t.templateReference != null &&
+			(e.startSequence(Fe.CONTEXT(4)),
+			e.writeRelativeOID(t.templateReference, Fe.BERDataTypes.RELATIVE_OID),
+			e.endSequence()),
+			e.endSequence())
+	}
+	Ts.encodeFunction = j_
+})
+var Ca = p((Ss) => {
+	'use strict'
+	Object.defineProperty(Ss, '__esModule', { value: !0 })
+	Ss.encodeTemplate = void 0
+	var $_ = (v(), x(I)),
+		Na = $_.__importStar(R()),
+		V_ = xs()
+	function G_(t, e) {
+		;(t.element != null &&
+			(e.startSequence(Na.CONTEXT(1)), (0, V_.encodeNumberedElement)(t.element, e), e.endSequence()),
+			t.description != null &&
+				(e.startSequence(Na.CONTEXT(2)), e.writeString(t.description, Na.BERDataTypes.STRING), e.endSequence()))
+	}
+	Ss.encodeTemplate = G_
+})
+var Kf = p((Is) => {
+	'use strict'
+	Object.defineProperty(Is, '__esModule', { value: !0 })
+	Is.encodeEmberElement = void 0
+	var yn = Ie(),
+		X_ = ga(),
+		W_ = jf(),
+		z_ = $f(),
+		Q_ = va(),
+		H_ = Zf(),
+		Z_ = Ca()
+	function K_(t, e) {
+		switch (t.type) {
+			case yn.ElementType.Command:
+				;(0, X_.encodeCommand)(t, e)
+				break
+			case yn.ElementType.Parameter:
+				;(0, W_.encodeParameter)(t, e)
+				break
+			case yn.ElementType.Node:
+				;(0, z_.encodeNode)(t, e)
+				break
+			case yn.ElementType.Matrix:
+				;(0, Q_.encodeMatrix)(t, e)
+				break
+			case yn.ElementType.Function:
+				;(0, H_.encodeFunction)(t, e)
+				break
+			case yn.ElementType.Template:
+				;(0, Z_.encodeTemplate)(t, e)
+				break
+		}
+	}
+	Is.encodeEmberElement = K_
+})
+var Yf = p((vs) => {
+	'use strict'
+	Object.defineProperty(vs, '__esModule', { value: !0 })
+	vs.encodeConnection = void 0
+	var Y_ = (v(), x(I)),
+		Gt = Hn(),
+		tr = Y_.__importStar(R()),
+		J_ = M()
+	function eE(t, e) {
+		;(e.startSequence(J_.ConnectionBERID),
+			e.startSequence(tr.CONTEXT(0)),
+			e.writeInt(t.target),
+			e.endSequence(),
+			t.sources != null &&
+				(e.startSequence(tr.CONTEXT(1)),
+				e.writeRelativeOID(t.sources.join('.'), tr.BERDataTypes.RELATIVE_OID),
+				e.endSequence()),
+			t.operation != null && (e.startSequence(tr.CONTEXT(2)), tE(t.operation, e), e.endSequence()),
+			t.disposition != null && (e.startSequence(tr.CONTEXT(3)), nE(t.disposition, e), e.endSequence()),
+			e.endSequence())
+	}
+	vs.encodeConnection = eE
+	function tE(t, e) {
+		let n = {
+			[Gt.ConnectionOperation.Absolute]: 0,
+			[Gt.ConnectionOperation.Connect]: 1,
+			[Gt.ConnectionOperation.Disconnect]: 2,
+		}
+		e.writeInt(n[t])
+	}
+	function nE(t, e) {
+		let n = {
+			[Gt.ConnectionDisposition.Tally]: 0,
+			[Gt.ConnectionDisposition.Modified]: 1,
+			[Gt.ConnectionDisposition.Pending]: 2,
+			[Gt.ConnectionDisposition.Locked]: 3,
+		}
+		e.writeInt(n[t])
+	}
+})
+var xs = p((Sn) => {
+	'use strict'
+	Object.defineProperty(Sn, '__esModule', { value: !0 })
+	Sn.encodeTree = Sn.encodeNumberedElement = void 0
+	var rE = (v(), x(I)),
+		De = rE.__importStar(R()),
+		ot = Ie(),
+		sE = Kf(),
+		iE = ga(),
+		oE = Ca(),
+		aE = Yf(),
+		Jf = va(),
+		Tn = M()
+	function ed(t, e) {
+		if (t.contents.type === ot.ElementType.Command) {
+			if (uE(t)) throw new Error('Command cannot be qualified')
+			;(0, iE.encodeCommand)(t.contents, e)
+			return
+		}
+		switch (t.contents.type) {
+			case ot.ElementType.Function:
+				e.startSequence(Tn.FunctionBERID)
+				break
+			case ot.ElementType.Matrix:
+				e.startSequence(Tn.MatrixBERID)
+				break
+			case ot.ElementType.Node:
+				e.startSequence(Tn.NodeBERID)
+				break
+			case ot.ElementType.Parameter:
+				e.startSequence(Tn.ParameterBERID)
+				break
+			case ot.ElementType.Template:
+				e.startSequence(Tn.TemplateBERID)
+				break
+		}
+		;(e.startSequence(De.CONTEXT(0)), e.writeInt(t.number, De.BERDataTypes.INTEGER), e.endSequence(), td(t, e))
+	}
+	Sn.encodeNumberedElement = ed
+	function td(t, e) {
+		if (fE(t.contents)) {
+			;((0, oE.encodeTemplate)(t.contents, e), e.endSequence())
+			return
+		}
+		if (
+			(Object.values(t.contents).filter((n) => n !== void 0).length > 1 &&
+				(e.startSequence(De.CONTEXT(1)), (0, sE.encodeEmberElement)(t.contents, e), e.endSequence()),
+			cE(t))
+		) {
+			if ((e.startSequence(De.CONTEXT(2)), e.startSequence(Tn.ElementCollectionBERID), t.children))
+				for (let n of Object.values(t.children)) (e.startSequence(De.CONTEXT(0)), ed(n, e), e.endSequence())
+			;(e.endSequence(), e.endSequence())
+		}
+		if (lE(t.contents)) {
+			if (t.contents.targets) {
+				;(e.startSequence(De.CONTEXT(3)), e.startSequence(De.BERDataTypes.SEQUENCE))
+				for (let n of t.contents.targets) (e.startSequence(De.CONTEXT(0)), (0, Jf.encodeTarget)(n, e), e.endSequence())
+				;(e.endSequence(), e.endSequence())
+			}
+			if (t.contents.sources) {
+				;(e.startSequence(De.CONTEXT(4)), e.startSequence(De.BERDataTypes.SEQUENCE))
+				for (let n of t.contents.sources) (e.startSequence(De.CONTEXT(0)), (0, Jf.encodeSource)(n, e), e.endSequence())
+				;(e.endSequence(), e.endSequence())
+			}
+			if (t.contents.connections) {
+				;(e.startSequence(De.CONTEXT(5)), e.startSequence(De.BERDataTypes.SEQUENCE))
+				for (let n of Object.values(t.contents.connections))
+					(e.startSequence(De.CONTEXT(0)), (0, aE.encodeConnection)(n, e), e.endSequence())
+				;(e.endSequence(), e.endSequence())
+			}
+		}
+		e.endSequence()
+	}
+	Sn.encodeTree = td
+	function cE(t) {
+		return (
+			'children' in t &&
+			t.children !== void 0 &&
+			!(t.contents.type === ot.ElementType.Command || t.contents.type === ot.ElementType.Template)
+		)
+	}
+	function uE(t) {
+		return 'path' in t
+	}
+	function lE(t) {
+		return t.type === ot.ElementType.Matrix
+	}
+	function fE(t) {
+		return t.type === ot.ElementType.Template
+	}
+})
+var rd = p((ws) => {
+	'use strict'
+	Object.defineProperty(ws, '__esModule', { value: !0 })
+	ws.encodeQualifedElement = void 0
+	var dE = (v(), x(I)),
+		nd = dE.__importStar(R()),
+		nr = Ie(),
+		hE = xs(),
+		rr = M()
+	function pE(t, e) {
+		switch (t.contents.type) {
+			case nr.ElementType.Function:
+				e.startSequence(rr.QualifiedFunctionBERID)
+				break
+			case nr.ElementType.Matrix:
+				e.startSequence(rr.QualifiedMatrixBERID)
+				break
+			case nr.ElementType.Node:
+				e.startSequence(rr.QualifiedNodeBERID)
+				break
+			case nr.ElementType.Parameter:
+				e.startSequence(rr.QualifiedParameterBERID)
+				break
+			case nr.ElementType.Template:
+				e.startSequence(rr.QualifiedTemplateBERID)
+				break
+		}
+		;(e.startSequence(nd.CONTEXT(0)),
+			e.writeRelativeOID(t.path, nd.BERDataTypes.RELATIVE_OID),
+			e.endSequence(),
+			(0, hE.encodeTree)(t, e))
+	}
+	ws.encodeQualifedElement = pE
+})
+var sd = p((Ns) => {
+	'use strict'
+	Object.defineProperty(Ns, '__esModule', { value: !0 })
+	Ns.encodeRootElement = void 0
+	var mE = xs(),
+		_E = rd()
+	function EE(t, e) {
+		'path' in t ? (0, _E.encodeQualifedElement)(t, e) : (0, mE.encodeNumberedElement)(t, e)
+	}
+	Ns.encodeRootElement = EE
+})
+var od = p((Cs) => {
+	'use strict'
+	Object.defineProperty(Cs, '__esModule', { value: !0 })
+	Cs.encodeStreamEntry = void 0
+	var bE = (v(), x(I)),
+		id = bE.__importStar(R()),
+		gE = M()
+	function yE(t, e) {
+		;(e.startSequence(gE.StreamEntryBERID),
+			t.identifier !== null && (e.startSequence(id.CONTEXT(0)), e.writeInt(t.identifier), e.endSequence()),
+			t.value !== null && (e.startSequence(id.CONTEXT(1)), e.writeValue(t.value), e.endSequence()),
+			e.endSequence())
+	}
+	Cs.encodeStreamEntry = yE
+})
+var Ra = p((Os) => {
+	'use strict'
+	Object.defineProperty(Os, '__esModule', { value: !0 })
+	Os.InvocationResultImpl = void 0
+	var Oa = class {
+		constructor(e, n, r) {
+			;((this.id = e), (this.success = n), (this.result = r))
+		}
+	}
+	Os.InvocationResultImpl = Oa
+})
+var Ee = p((j) => {
+	'use strict'
+	Object.defineProperty(j, '__esModule', { value: !0 })
+	j.skipNext =
+		j.unexpected =
+		j.appendErrors =
+		j.guarded =
+		j.safeSet =
+		j.unknownApplication =
+		j.unknownContext =
+		j.makeResult =
+		j.DecodeError =
+		j.check =
+		j.whatever =
+		j.defaultDecode =
+			void 0
+	var ad = Ut(),
+		sr = (0, ad.literal)({
+			skipApplicationTags: !0,
+			skipContextTags: !0,
+			substituteForRequired: !0,
+			skipUnexpected: !0,
+		})
+	j.defaultDecode = sr
+	function TE(t) {
+		return t.value
+	}
+	j.whatever = TE
+	var Rs = class extends Error {
+		constructor(e) {
+			;(super(`Decoding failed. Errors are:
 ${e.join(`
-`)}`),this.sub=e}};j.DecodeError=Rs;function SE(t){if(t.errors&&t.errors.length>0)throw new Rs(t.errors);return t.value}j.guarded=SE;function cd(t,e){return(0,ad.literal)({value:t,errors:Array.isArray(e)?e:[]})}j.makeResult=cd;function xE(t,e,n,r=sr){let s=new Error(`${e}: Unexpected BER context tag '${n}'`),i=Array.isArray(t)?t:t.errors;if(r.skipContextTags)i||(i=[]),i.push(s),Array.isArray(t)||(t.errors=i);else throw s}j.unknownContext=xE;function IE(t,e,n,r=sr){let s=new Error(`${e}: Unexpected BER application tag '${n}'`),i=Array.isArray(t)?t:t.errors;if(r.skipApplicationTags)i||(i=[]),i.push(s),Array.isArray(t)||(t.errors=i);else throw s}j.unknownApplication=IE;function vE(t,e,n){return t.errors&&t.errors.length>0&&(e.errors=e.errors?e.errors.concat(t.errors):t.errors),e.value=n(t.value,e.value),e}j.safeSet=vE;function wE(t,e,n,r,s,i=sr){if(t==null){let o=`${e}: For required property '${n}', value is missing.`;if(i.substituteForRequired){let a=Array.isArray(s)?s:s.errors;return a||(a=[]),a.push(new Error(o+` Substituting '${r}'`)),Array.isArray(s)||(s.errors=a),r}else throw new Error(o)}return t}j.check=wE;function NE(t,e){return t.errors&&t.errors.length>0&&(Array.isArray(e)?e.push(...t.errors):e.errors=e.errors?e.errors.concat(t.errors):t.errors),t.value}j.appendErrors=NE;function CE(t,e,n="",r,s=sr){let i=Array.isArray(t)?t:t.errors,o=new Error(`${e}${n?": "+n:""}`);if(s.skipUnexpected)return i||(i=[]),i.push(o),Array.isArray(t)?cd(r,i):(t.errors=i,t.value=r,t);throw o}j.unexpected=CE;function OE(t){let e=t.peek();e&&t.readString(e,!0)}j.skipNext=OE});var ud=p(ks=>{"use strict";Object.defineProperty(ks,"__esModule",{value:!0});ks.decodeInvocationResult=void 0;var RE=(v(),x(I)),ir=RE.__importStar(R()),kE=Ra(),BE=M(),Xt=Ee();function qE(t,e=Xt.defaultDecode){t.readSequence(BE.InvocationResultBERID);let n=null,r,s,i,o=[],a=t.offset+t.length;for(;t.offset<a;){let c=t.readSequence();switch(c){case ir.CONTEXT(0):n=t.readInt();break;case ir.CONTEXT(1):r=t.readBoolean();break;case ir.CONTEXT(2):for(s=[],t.readSequence(ir.BERDataTypes.SEQUENCE),i=t.offset+t.length;t.offset<i;){let u=t.readSequence();if(u!==0){if(u===null||u!==ir.CONTEXT(0)){(0,Xt.unknownContext)(o,"decode invocation result: result",u,e),(0,Xt.skipNext)(t);continue}s.push(t.readValue())}}break;case 0:break;default:(0,Xt.unknownContext)(o,"decode invocation result",c,e),(0,Xt.skipNext)(t);break}}return n=(0,Xt.check)(n,"decode invocation result","id",-1,o,e),(0,Xt.makeResult)(new kE.InvocationResultImpl(n,r,s),o)}ks.decodeInvocationResult=qE});var Rt=p(xn=>{"use strict";Object.defineProperty(xn,"__esModule",{value:!0});xn.QualifiedElementImpl=xn.NumberedTreeNodeImpl=void 0;var Bs=class{constructor(e,n,r){this.contents=e,this.children=n,this.parent=r}},ka=class extends Bs{constructor(e,n,r,s){super(n,r,s),this.number=e}};xn.NumberedTreeNodeImpl=ka;var Ba=class extends Bs{constructor(e,n,r){super(n,r),this.path=e,this.parent=void 0}};xn.QualifiedElementImpl=Ba});var Da=p(qs=>{"use strict";Object.defineProperty(qs,"__esModule",{value:!0});qs.EmberFunctionImpl=void 0;var DE=Ie(),qa=class{constructor(e,n,r,s,i){this.identifier=e,this.description=n,this.args=r,this.result=s,this.templateReference=i,this.type=DE.ElementType.Function}};qs.EmberFunctionImpl=qa});var Aa=p(Ds=>{"use strict";Object.defineProperty(Ds,"__esModule",{value:!0});Ds.FunctionArgumentImpl=void 0;var Pa=class{constructor(e,n){this.type=e,this.name=n}};Ds.FunctionArgumentImpl=Pa});var fd=p(Ps=>{"use strict";Object.defineProperty(Ps,"__esModule",{value:!0});Ps.decodeStreamDescription=void 0;var PE=(v(),x(I)),ld=PE.__importStar(R()),Z=hs(),AE=M(),A=Ee();function FE(t,e=A.defaultDecode){t.readSequence(AE.StreamDescriptionBERID);let n=null,r=null,s=[],i=t.offset+t.length;for(;t.offset<i;){let o=t.readSequence();switch(o){case ld.CONTEXT(0):n=(0,A.appendErrors)(LE(t.readInt(),e),s);break;case ld.CONTEXT(1):r=t.readInt();break;case 0:break;default:(0,A.unknownContext)(s,"decode stream description",o,e),(0,A.skipNext)(t);break}}return n=(0,A.check)(n,"decode stream description","format",Z.StreamFormat.UInt8,s,e),r=(0,A.check)(r,"decode stream description","offset",0,s,e),(0,A.makeResult)(new Z.StreamDescriptionImpl(n,r),s)}Ps.decodeStreamDescription=FE;function LE(t,e=A.defaultDecode){switch(t){case 0:return(0,A.makeResult)(Z.StreamFormat.UInt8);case 2:return(0,A.makeResult)(Z.StreamFormat.UInt16BE);case 3:return(0,A.makeResult)(Z.StreamFormat.UInt16LE);case 4:return(0,A.makeResult)(Z.StreamFormat.UInt32BE);case 5:return(0,A.makeResult)(Z.StreamFormat.UInt32LE);case 6:return(0,A.makeResult)(Z.StreamFormat.UInt64BE);case 7:return(0,A.makeResult)(Z.StreamFormat.UInt64LE);case 8:return(0,A.makeResult)(Z.StreamFormat.Int8);case 10:return(0,A.makeResult)(Z.StreamFormat.Int16BE);case 11:return(0,A.makeResult)(Z.StreamFormat.Int16LE);case 12:return(0,A.makeResult)(Z.StreamFormat.Int32BE);case 13:return(0,A.makeResult)(Z.StreamFormat.Int32LE);case 14:return(0,A.makeResult)(Z.StreamFormat.Int64BE);case 15:return(0,A.makeResult)(Z.StreamFormat.Int64LE);case 20:return(0,A.makeResult)(Z.StreamFormat.Float32BE);case 21:return(0,A.makeResult)(Z.StreamFormat.Float32LE);case 22:return(0,A.makeResult)(Z.StreamFormat.Float64BE);case 23:return(0,A.makeResult)(Z.StreamFormat.Float64LE);default:return(0,A.unexpected)([],"read stream format",`unexpected stream format '${t}'`,Z.StreamFormat.UInt8,e)}}});var hd=p(Fs=>{"use strict";Object.defineProperty(Fs,"__esModule",{value:!0});Fs.decodeStringIntegerCollection=void 0;var ME=(v(),x(I)),As=ME.__importStar(R()),dd=M(),Ze=Ee();function UE(t,e=Ze.defaultDecode){t.readSequence(dd.StringIntegerCollectionBERID);let n=new Map,r=[],s=t.offset+t.length;for(;t.offset<s;){let i=t.readSequence();if(i===0)continue;if(i!==As.CONTEXT(0)){(0,Ze.unknownContext)(r,"decode string integer collection",i,e),(0,Ze.skipNext)(t);continue}let o=(0,Ze.appendErrors)(jE(t,e),r);n.set(o.key,o.value)}return(0,Ze.makeResult)(n,r)}Fs.decodeStringIntegerCollection=UE;function jE(t,e=Ze.defaultDecode){let n=null,r=null,s=[];t.readSequence(dd.StringIntegerPairBERID);let i=t.offset+t.length;for(;t.offset<i;){let o=t.readSequence();switch(o){case As.CONTEXT(0):n=t.readString(As.BERDataTypes.STRING);break;case As.CONTEXT(1):r=t.readInt();break;case 0:break;default:(0,Ze.unknownContext)(s,"deocde string integer pair",o,e),(0,Ze.skipNext)(t);break}}return n=(0,Ze.check)(n,"decode string integer pair","key",`key${Math.random()*1e6|0}`,s,e),r=(0,Ze.check)(r,"decode string integer pair","value",-1,s,e),(0,Ze.makeResult)({key:n,value:r},s)}});var Fa=p(In=>{"use strict";Object.defineProperty(In,"__esModule",{value:!0});In.readParameterType=In.decodeParameter=void 0;var $E=(v(),x(I)),F=$E.__importStar(R()),ne=st(),VE=fd(),GE=hd(),G=Ee();function XE(t,e=G.defaultDecode){t.readSequence(F.BERDataTypes.SET);let n,r,s,i,o,a,c,u,f,d,m,_,y,b,g,w,$,Te,Y,Ue,fe=[],W=t.offset+t.length;for(;t.offset<W;){let E=t.readSequence();switch(E){case F.CONTEXT(0):n=t.readString(F.BERDataTypes.STRING);break;case F.CONTEXT(1):r=t.readString(F.BERDataTypes.STRING);break;case F.CONTEXT(2):{let h=t.readValue();s=h.value,i=h.type;break}case F.CONTEXT(3):o=t.readValue().value;break;case F.CONTEXT(4):a=t.readValue().value;break;case F.CONTEXT(5):c=(0,G.appendErrors)(WE(t.readInt(),e),fe);break;case F.CONTEXT(6):u=t.readString(F.BERDataTypes.STRING);break;case F.CONTEXT(7):f=t.readString(F.BERDataTypes.STRING);break;case F.CONTEXT(8):d=t.readInt();break;case F.CONTEXT(9):m=t.readBoolean();break;case F.CONTEXT(10):_=t.readString(F.BERDataTypes.STRING);break;case F.CONTEXT(11):y=t.readInt();break;case F.CONTEXT(12):b=t.readValue().value;break;case F.CONTEXT(13):g=(0,G.appendErrors)(pd(t.readInt(),e),fe);break;case F.CONTEXT(14):w=t.readInt();break;case F.CONTEXT(15):$=(0,G.appendErrors)((0,GE.decodeStringIntegerCollection)(t,e),fe);break;case F.CONTEXT(16):Te=(0,G.appendErrors)((0,VE.decodeStreamDescription)(t,e),fe);break;case F.CONTEXT(17):Y=t.readString(F.BERDataTypes.STRING);break;case F.CONTEXT(18):Ue=t.readString(F.BERDataTypes.STRING);break;case 0:break;default:(0,G.unknownContext)(fe,"decode parameter",E,e),(0,G.skipNext)(t);break}}return g=g===ne.ParameterType.Trigger?ne.ParameterType.Trigger:$||f?ne.ParameterType.Enum:i||g,g=(0,G.check)(g,"decode parameter","parameterType",ne.ParameterType.Null,fe,e),(0,G.makeResult)(new ne.ParameterImpl(g,n,r,s,a,o,c,u,f,d,m,_,y,b,w,$,Te,Y,Ue),fe)}In.decodeParameter=XE;function WE(t,e){switch(t){case 0:return(0,G.makeResult)(ne.ParameterAccess.None);case 1:return(0,G.makeResult)(ne.ParameterAccess.Read);case 2:return(0,G.makeResult)(ne.ParameterAccess.Write);case 3:return(0,G.makeResult)(ne.ParameterAccess.ReadWrite);default:return(0,G.unexpected)([],"read parameter access",`unexpected parameter access '${t}'`,ne.ParameterAccess.ReadWrite,e)}}function pd(t,e){switch(t){case 0:return(0,G.makeResult)(ne.ParameterType.Null);case 1:return(0,G.makeResult)(ne.ParameterType.Integer);case 2:return(0,G.makeResult)(ne.ParameterType.Real);case 3:return(0,G.makeResult)(ne.ParameterType.String);case 4:return(0,G.makeResult)(ne.ParameterType.Boolean);case 5:return(0,G.makeResult)(ne.ParameterType.Trigger);case 6:return(0,G.makeResult)(ne.ParameterType.Enum);case 7:return(0,G.makeResult)(ne.ParameterType.Octets);default:return(0,G.unexpected)([],"read parameter type",`unexpected parameter type '${t}'`,ne.ParameterType.Null,e)}}In.readParameterType=pd});var md=p(Ls=>{"use strict";Object.defineProperty(Ls,"__esModule",{value:!0});Ls.decodeFunctionArgument=void 0;var zE=(v(),x(I)),La=zE.__importStar(R()),QE=Aa(),HE=st(),ZE=M(),KE=Fa(),vn=Ee();function YE(t,e=vn.defaultDecode){t.readSequence(ZE.FunctionArgumentBERID);let n=null,r,s=[],i=t.offset+t.length;for(;t.offset<i;){let o=t.readSequence();switch(o){case La.CONTEXT(0):n=(0,vn.appendErrors)((0,KE.readParameterType)(t.readInt(),e),s);break;case La.CONTEXT(1):r=t.readString(La.BERDataTypes.STRING);break;case 0:break;default:(0,vn.unknownContext)(s,"decode function context",o,e),(0,vn.skipNext)(t);break}}return n=(0,vn.check)(n,"decode function argument","type",HE.ParameterType.Null,s,e),(0,vn.makeResult)(new QE.FunctionArgumentImpl(n,r),s)}Ls.decodeFunctionArgument=YE});var Ed=p(Ms=>{"use strict";Object.defineProperty(Ms,"__esModule",{value:!0});Ms.decodeFunctionContent=void 0;var JE=(v(),x(I)),Le=JE.__importStar(R()),eb=Da(),_d=md(),at=Ee();function tb(t,e=at.defaultDecode){t.readSequence(Le.BERDataTypes.SET);let n,r,s,i,o,a,c,u=[],f=t.offset+t.length;for(;t.offset<f;){let d=t.readSequence();switch(d){case Le.CONTEXT(0):n=t.readString(Le.BERDataTypes.STRING);break;case Le.CONTEXT(1):r=t.readString(Le.BERDataTypes.STRING);break;case Le.CONTEXT(2):for(s=[],t.readSequence(Le.BERDataTypes.SEQUENCE),a=t.offset+t.length;t.offset<a;){let m=t.readSequence();if(m===0)continue;if(m!==Le.CONTEXT(0)){(0,at.unknownContext)(u,"decode function content: arguments",m,e),(0,at.skipNext)(t);continue}let _=(0,at.appendErrors)((0,_d.decodeFunctionArgument)(t,e),u);s.push(_)}break;case Le.CONTEXT(3):for(i=[],t.readSequence(Le.BERDataTypes.SEQUENCE),c=t.offset+t.length;t.offset<c;){let m=t.readSequence();if(m===0)continue;if(m!==Le.CONTEXT(0)){(0,at.unknownContext)(u,"decode function content: result",m,e),(0,at.skipNext)(t);continue}let _=(0,at.appendErrors)((0,_d.decodeFunctionArgument)(t,e),u);i.push(_)}break;case Le.CONTEXT(4):o=t.readRelativeOID(Le.BERDataTypes.RELATIVE_OID);break;case 0:break;default:(0,at.unknownContext)(u,"decode function content",d,e),(0,at.skipNext)(t);break}}return(0,at.makeResult)(new eb.EmberFunctionImpl(n,r,s,i,o),u)}Ms.decodeFunctionContent=tb});var or=p(Us=>{"use strict";Object.defineProperty(Us,"__esModule",{value:!0});Us.EmberNodeImpl=void 0;var nb=Ie(),Ma=class{constructor(e,n,r,s,i,o){this.identifier=e,this.description=n,this.isRoot=r,this.isOnline=s,this.schemaIdentifiers=i,this.templateReference=o,this.type=nb.ElementType.Node}};Us.EmberNodeImpl=Ma});var bd=p($s=>{"use strict";Object.defineProperty($s,"__esModule",{value:!0});$s.decodeNode=void 0;var rb=(v(),x(I)),Ke=rb.__importStar(R()),sb=or(),js=Ee();function ib(t,e=js.defaultDecode){t.readSequence(Ke.BERDataTypes.SET);let n,r,s,i,o,a,c=[],u=t.offset+t.length;for(;t.offset<u;){let f=t.readSequence();switch(f){case Ke.CONTEXT(0):n=t.readString(Ke.BERDataTypes.STRING);break;case Ke.CONTEXT(1):r=t.readString(Ke.BERDataTypes.STRING);break;case Ke.CONTEXT(2):s=t.readBoolean();break;case Ke.CONTEXT(3):i=t.readBoolean();break;case Ke.CONTEXT(4):o=t.readString(Ke.BERDataTypes.STRING);break;case Ke.CONTEXT(5):a=t.readRelativeOID(Ke.BERDataTypes.RELATIVE_OID);break;case 0:break;default:(0,js.unknownContext)(c,"deocde node",f,e),(0,js.skipNext)(t);break}}return(0,js.makeResult)(new sb.EmberNodeImpl(n,r,s,i,o,a),c)}$s.decodeNode=ib});var ja=p(Vs=>{"use strict";Object.defineProperty(Vs,"__esModule",{value:!0});Vs.TemplateImpl=void 0;var ob=Ie(),Ua=class{constructor(e,n){this.element=e,this.description=n,this.type=ob.ElementType.Template}};Vs.TemplateImpl=Ua});var Sd=p(Xs=>{"use strict";Object.defineProperty(Xs,"__esModule",{value:!0});Xs.decodeTemplate=void 0;var ab=(v(),x(I)),Gs=ab.__importStar(R()),gd=ja(),yd=M(),cb=Ws(),Td=Rt(),kt=Ee();function ub(t,e=!1,n=kt.defaultDecode){t.readSequence(e?yd.QualifiedTemplateBERID:yd.TemplateBERID);let r=null,s=null,i,o,a=[],c=t.offset+t.length;for(;t.offset<c;){let u=t.readSequence();switch(u){case Gs.CONTEXT(0):e?s=t.readRelativeOID():r=t.readInt();break;case Gs.CONTEXT(1):i=(0,kt.appendErrors)((0,cb.decodeGenericElement)(t,n),a);break;case Gs.CONTEXT(2):o=t.readString(Gs.BERDataTypes.STRING);break;case 0:break;default:(0,kt.unknownContext)(a,"decode template",u,n),(0,kt.skipNext)(t);break}}return e?(s=(0,kt.check)(s,"decode template","path","",a,n),(0,kt.makeResult)(new Td.QualifiedElementImpl(s,new gd.TemplateImpl(i,o)),a)):(r=(0,kt.check)(r,"decode tempalte","number",-1,a,n),(0,kt.makeResult)(new Td.NumberedTreeNodeImpl(r,new gd.TemplateImpl(i,o)),a))}Xs.decodeTemplate=ub});var xd=p(zs=>{"use strict";Object.defineProperty(zs,"__esModule",{value:!0});zs.decodeConnection=void 0;var lb=(v(),x(I)),ar=lb.__importStar(R()),ct=Hn(),fb=M(),ue=Ee();function db(t,e=ue.defaultDecode){t.readSequence(fb.ConnectionBERID);let n=null,r,s,i,o,a=[],c=t.offset+t.length;for(;t.offset<c;){let u=t.readSequence();switch(u){case ar.CONTEXT(0):n=t.readInt();break;case ar.CONTEXT(1):o=t.readRelativeOID(ar.BERDataTypes.RELATIVE_OID),o.length===0?r=[]:r=o.split(".").map(f=>Number(f));break;case ar.CONTEXT(2):s=(0,ue.appendErrors)(hb(t.readInt(),e),a);break;case ar.CONTEXT(3):i=(0,ue.appendErrors)(pb(t.readInt(),e),a);break;case 0:break;default:(0,ue.unknownContext)(a,"decode connection",u,e),(0,ue.skipNext)(t);break}}return n=(0,ue.check)(n,"deocde connection","target",-1,a,e),(0,ue.makeResult)(new ct.ConnectionImpl(n,r,s,i),a)}zs.decodeConnection=db;function hb(t,e=ue.defaultDecode){switch(t){case 0:return(0,ue.makeResult)(ct.ConnectionOperation.Absolute);case 1:return(0,ue.makeResult)(ct.ConnectionOperation.Connect);case 2:return(0,ue.makeResult)(ct.ConnectionOperation.Disconnect);default:return(0,ue.unexpected)([],"read connection options",`unexpected connection operation '${t}'`,ct.ConnectionOperation.Absolute,e)}}function pb(t,e=ue.defaultDecode){switch(t){case 0:return(0,ue.makeResult)(ct.ConnectionDisposition.Tally);case 1:return(0,ue.makeResult)(ct.ConnectionDisposition.Modified);case 2:return(0,ue.makeResult)(ct.ConnectionDisposition.Pending);case 3:return(0,ue.makeResult)(ct.ConnectionDisposition.Locked);default:return(0,ue.unexpected)([],"read connection options",`unexpected connection operation '${t}'`,ct.ConnectionDisposition.Tally,e)}}});var Id=p(Qs=>{"use strict";Object.defineProperty(Qs,"__esModule",{value:!0});Qs.LabelImpl=void 0;var $a=class{constructor(e,n){this.basePath=e,this.description=n}};Qs.LabelImpl=$a});var vd=p(Zs=>{"use strict";Object.defineProperty(Zs,"__esModule",{value:!0});Zs.decodeLabel=void 0;var mb=(v(),x(I)),Hs=mb.__importStar(R()),_b=Id(),Eb=M(),wn=Ee();function bb(t,e=wn.defaultDecode){t.readSequence(Eb.LabelBERID);let n=null,r=null,s=[],i=t.offset+t.length;for(;t.offset<i;){let o=t.readSequence();switch(o){case Hs.CONTEXT(0):n=t.readRelativeOID(Hs.BERDataTypes.RELATIVE_OID);break;case Hs.CONTEXT(1):r=t.readString(Hs.BERDataTypes.STRING);break;case 0:break;default:(0,wn.unknownContext)(s,"decode label",o,e),(0,wn.skipNext)(t);break}}return n=(0,wn.check)(n,"decode label","basePath","",s,e),r=(0,wn.check)(r,"decode label","description","",s,e),(0,wn.makeResult)(new _b.LabelImpl(n,r),s)}Zs.decodeLabel=bb});var Nd=p(Ys=>{"use strict";Object.defineProperty(Ys,"__esModule",{value:!0});Ys.decodeMatrix=void 0;var gb=(v(),x(I)),O=gb.__importStar(R()),St=Es(),yb=Ws(),Tb=xd(),Sb=vd(),Ks=M(),wd=Rt(),C=Ee();function xb(t,e=!1,n=C.defaultDecode){t.readSequence(e?Ks.QualifiedMatrixBERID:Ks.MatrixBERID);let r=null,s=null,i,o,a,c=null,u,f=[],d=t.offset+t.length;for(;t.offset<d;){let _=t.readSequence();switch(_){case O.CONTEXT(0):e?s=t.readRelativeOID():r=t.readInt();break;case O.CONTEXT(1):c=(0,C.appendErrors)(Ib(t,n),f);break;case O.CONTEXT(2):u=(0,C.appendErrors)((0,yb.decodeChildren)(t,n),f);break;case O.CONTEXT(3):i=(0,C.appendErrors)(vb(t,n),f);break;case O.CONTEXT(4):o=(0,C.appendErrors)(wb(t,n),f);break;case O.CONTEXT(5):a=(0,C.appendErrors)(Nb(t,n),f);break;case 0:break;default:(0,C.unknownContext)(f,"decode matrix",_,n),(0,C.skipNext)(t);break}}c=(0,C.check)(c,"decode matrix","contents",new St.MatrixImpl(""),f,n),c.targets=i,c.sources=o,c.connections=a;let m;if(e?(s=(0,C.check)(s,"decode matrix","path","",f,n),m=new wd.QualifiedElementImpl(s,c,u)):(r=(0,C.check)(r,"decode matrix","number",-1,f,n),m=new wd.NumberedTreeNodeImpl(r,c,u)),u)for(let _ of Object.values(u))_.parent=m;return(0,C.makeResult)(m,f)}Ys.decodeMatrix=xb;function Ib(t,e=C.defaultDecode){t.readSequence(O.BERDataTypes.SET);let n,r,s,i,o,a,c,u,f,d,m,_,y,b,g,w=[],$=t.offset+t.length;for(;t.offset<$;){let Te=t.readSequence();switch(Te){case O.CONTEXT(0):r=t.readString(O.BERDataTypes.STRING);break;case O.CONTEXT(1):s=t.readString(O.BERDataTypes.STRING);break;case O.CONTEXT(2):i=(0,C.appendErrors)(Cb(t.readInt(),e),w);break;case O.CONTEXT(3):o=(0,C.appendErrors)(Ob(t.readInt(),e),w);break;case O.CONTEXT(4):a=t.readInt();break;case O.CONTEXT(5):c=t.readInt();break;case O.CONTEXT(6):u=t.readInt();break;case O.CONTEXT(7):f=t.readInt();break;case O.CONTEXT(8):n=t.peek(),n===O.BERDataTypes.RELATIVE_OID?d=t.readRelativeOID(O.BERDataTypes.RELATIVE_OID):d=t.readInt();break;case O.CONTEXT(9):m=t.readInt();break;case O.CONTEXT(10):for(_=[],t.readSequence(O.BERDataTypes.SEQUENCE),g=t.offset+t.length;t.offset<g;){t.readSequence(O.CONTEXT(0));let Y=(0,C.appendErrors)((0,Sb.decodeLabel)(t,e),w);_.push(Y)}break;case O.CONTEXT(11):y=t.readString(O.BERDataTypes.STRING);break;case O.CONTEXT(12):b=t.readRelativeOID(O.BERDataTypes.RELATIVE_OID);break;case 0:break;default:(0,C.unknownContext)(w,"decode mattric contents",Te,e),(0,C.skipNext)(t);break}}return r=(0,C.check)(r,"decode matrix contents","identifier","",w,e),(0,C.makeResult)(new St.MatrixImpl(r,void 0,void 0,void 0,s,i,o,a,c,u,f,d,m,_,y,b),w)}function vb(t,e=C.defaultDecode){let n=[];t.readSequence(O.BERDataTypes.SEQUENCE);let r=t.offset+t.length;for(;t.offset<r;)t.readSequence(O.CONTEXT(0)),t.readSequence(Ks.TargetBERID),t.readSequence(O.CONTEXT(0)),n.push(t.readInt());return(0,C.makeResult)(n)}function wb(t,e=C.defaultDecode){let n=[];t.readSequence(O.BERDataTypes.SEQUENCE);let r=t.offset+t.length;for(;t.offset<r;)t.readSequence(O.CONTEXT(0)),t.readSequence(Ks.SourceBERID),t.readSequence(O.CONTEXT(0)),n.push(t.readInt());return(0,C.makeResult)(n)}function Nb(t,e=C.defaultDecode){let n=(0,C.makeResult)({});t.readSequence(O.BERDataTypes.SEQUENCE);let r=t.offset+t.length;for(;t.offset<r;)if(t.readSequence()===O.CONTEXT(0)){let i=(0,C.appendErrors)((0,Tb.decodeConnection)(t,e),n);n.value[i.target]=i}else(0,C.skipNext)(t);return n}function Cb(t,e=C.defaultDecode){switch(t){case 0:return(0,C.makeResult)(St.MatrixType.OneToN);case 1:return(0,C.makeResult)(St.MatrixType.OneToOne);case 2:return(0,C.makeResult)(St.MatrixType.NToN);default:return(0,C.unexpected)([],"read matrix type",`unexpected matrix type '${t}'`,St.MatrixType.NToN,e)}}function Ob(t,e=C.defaultDecode){switch(t){case 0:return(0,C.makeResult)(St.MatrixAddressingMode.Linear);case 1:return(0,C.makeResult)(St.MatrixAddressingMode.NonLinear);default:return(0,C.unexpected)([],"read addressing mode",`unexpected addressing mode '${t}'`,St.MatrixAddressingMode.Linear,e)}}});var Cd=p(Js=>{"use strict";Object.defineProperty(Js,"__esModule",{value:!0});Js.InvocationImpl=void 0;var Va=class{constructor(e,n){this.id=e,this.args=n}};Js.InvocationImpl=Va});var Od=p(ti=>{"use strict";Object.defineProperty(ti,"__esModule",{value:!0});ti.decodeInvocation=void 0;var Rb=(v(),x(I)),ei=Rb.__importStar(R()),kb=Cd(),Bb=M(),Nn=Ee();function qb(t,e=Nn.defaultDecode){t.readSequence(Bb.InvocationBERID);let n,r=[],s,i=[],o=t.offset+t.length;for(;t.offset<o;){let a=t.readSequence();switch(a){case ei.CONTEXT(0):n=t.readInt();break;case ei.CONTEXT(1):for(t.readSequence(ei.BERDataTypes.SEQUENCE),s=t.offset+t.length;t.offset<s;){let c=t.readSequence();c===ei.CONTEXT(0)?r.push(t.readValue()):((0,Nn.unknownContext)(i,"decode invocation arguments",c,e),(0,Nn.skipNext)(t))}break;case 0:break;default:(0,Nn.unknownContext)(i,"decode invocation",a,e),(0,Nn.skipNext)(t);break}}return(0,Nn.makeResult)(new kb.InvocationImpl(n,r),i)}ti.decodeInvocation=qb});var Rd=p(ni=>{"use strict";Object.defineProperty(ni,"__esModule",{value:!0});ni.decodeCommand=void 0;var Db=(v(),x(I)),Ga=Db.__importStar(R()),le=Qn(),Pb=Od(),Ab=M(),ut=Ee();function Fb(t){return{[-2]:le.FieldFlags.Sparse,[-1]:le.FieldFlags.All,0:le.FieldFlags.Default,1:le.FieldFlags.Identifier,2:le.FieldFlags.Description,3:le.FieldFlags.Tree,4:le.FieldFlags.Value,5:le.FieldFlags.Connections}[t.readInt()]}function Lb(t,e=ut.defaultDecode){t.readSequence(Ab.CommandBERID);let n=null,r,s,i=[],o=t.offset+t.length;for(;t.offset<o;){let a=t.readSequence();switch(a){case Ga.CONTEXT(0):n=t.readInt();break;case Ga.CONTEXT(1):r=Fb(t),r||i.push(new Error("decode command: encounted unknown dir field mask"));break;case Ga.CONTEXT(2):s=(0,ut.appendErrors)((0,Pb.decodeInvocation)(t,e),i);break;case 0:break;default:(0,ut.unknownContext)(i,"decode command",a,e),(0,ut.skipNext)(t);break}}switch(n=(0,ut.check)(n,"decode command","type",le.CommandType.Subscribe,i,e),n){case le.CommandType.Subscribe:return(0,ut.makeResult)(new le.SubscribeImpl,i);case le.CommandType.Unsubscribe:return(0,ut.makeResult)(new le.UnsubscribeImpl,i);case le.CommandType.GetDirectory:return(0,ut.makeResult)(new le.GetDirectoryImpl(r),i);case le.CommandType.Invoke:return(0,ut.makeResult)(new le.InvokeImpl(s),i);default:return(0,ut.unexpected)(i,"decode command",`command type '${n}' is not recognized`,new le.SubscribeImpl,e)}}ni.decodeCommand=Lb});var ri=p(P=>{"use strict";Object.defineProperty(P,"__esModule",{value:!0});P.QualifiedElementImpl=P.NumberedTreeNodeImpl=P.TemplateImpl=P.StreamFormat=P.ParameterImpl=P.ParameterAccess=P.ParameterType=P.MatrixImpl=P.MatrixAddressingMode=P.MatrixType=P.FunctionArgumentImpl=P.EmberNodeImpl=P.EmberFunctionImpl=P.ElementType=void 0;var Mb=Ie();Object.defineProperty(P,"ElementType",{enumerable:!0,get:function(){return Mb.ElementType}});var Ub=Da();Object.defineProperty(P,"EmberFunctionImpl",{enumerable:!0,get:function(){return Ub.EmberFunctionImpl}});var jb=or();Object.defineProperty(P,"EmberNodeImpl",{enumerable:!0,get:function(){return jb.EmberNodeImpl}});var $b=Aa();Object.defineProperty(P,"FunctionArgumentImpl",{enumerable:!0,get:function(){return $b.FunctionArgumentImpl}});var Xa=Es();Object.defineProperty(P,"MatrixType",{enumerable:!0,get:function(){return Xa.MatrixType}});Object.defineProperty(P,"MatrixAddressingMode",{enumerable:!0,get:function(){return Xa.MatrixAddressingMode}});Object.defineProperty(P,"MatrixImpl",{enumerable:!0,get:function(){return Xa.MatrixImpl}});var Wa=st();Object.defineProperty(P,"ParameterType",{enumerable:!0,get:function(){return Wa.ParameterType}});Object.defineProperty(P,"ParameterAccess",{enumerable:!0,get:function(){return Wa.ParameterAccess}});Object.defineProperty(P,"ParameterImpl",{enumerable:!0,get:function(){return Wa.ParameterImpl}});var Vb=hs();Object.defineProperty(P,"StreamFormat",{enumerable:!0,get:function(){return Vb.StreamFormat}});var Gb=ja();Object.defineProperty(P,"TemplateImpl",{enumerable:!0,get:function(){return Gb.TemplateImpl}});var kd=Rt();Object.defineProperty(P,"NumberedTreeNodeImpl",{enumerable:!0,get:function(){return kd.NumberedTreeNodeImpl}});Object.defineProperty(P,"QualifiedElementImpl",{enumerable:!0,get:function(){return kd.QualifiedElementImpl}})});var Ws=p(Bt=>{"use strict";Object.defineProperty(Bt,"__esModule",{value:!0});Bt.decodeRootElements=Bt.decodeGenericElement=Bt.decodeChildren=void 0;var Xb=(v(),x(I)),ii=Xb.__importStar(R()),K=Ie(),si=Rt(),Wb=Ed(),zb=bd(),Qb=Fa(),Hb=Sd(),X=M(),Zb=Nd(),Kb=Rd(),k=Ee(),za=or(),Qa=ri();function Bd(t,e=k.defaultDecode){t.readSequence(X.ElementCollectionBERID);let n=(0,k.makeResult)({}),r=t.offset+t.length;for(;t.offset<r;){if(t.readSequence()===0)continue;let i=Ha(t,e);(0,k.safeSet)(i,n,(o,a)=>(a[o.number]=o,a))}return n}Bt.decodeChildren=Bd;function Ha(t,e=k.defaultDecode){let n=t.peek(),r=new Array;if(n===null)return(0,k.unknownApplication)(r,"decode generic element",n,e),(0,k.skipNext)(t),(0,k.makeResult)(new si.NumberedTreeNodeImpl(-1,new za.EmberNodeImpl),r);let s=Jb(n),i=(0,k.appendErrors)(eg(n,e),r);if(n===X.MatrixBERID||n===X.QualifiedMatrixBERID)return(0,Zb.decodeMatrix)(t,s);if(n===X.TemplateBERID||n===X.QualifiedTemplateBERID)return(0,Hb.decodeTemplate)(t,s);if(n===X.CommandBERID){let m=(0,Kb.decodeCommand)(t,e);return(0,k.makeResult)(new si.NumberedTreeNodeImpl(m.value.number,m.value),m.errors)}t.readSequence(n);let o=null,a=null,c,u,f=t.offset+t.length;for(;t.offset<f;){let m=t.readSequence();switch(m){case ii.CONTEXT(0):s?o=t.readRelativeOID():a=t.readInt();break;case ii.CONTEXT(1):switch(i){case K.ElementType.Command:(0,k.unknownApplication)(r,"decode generic element: command is not generic",m,e),(0,k.skipNext)(t);break;case K.ElementType.Function:c=(0,k.appendErrors)((0,Wb.decodeFunctionContent)(t,e),r);break;case K.ElementType.Matrix:(0,k.unknownApplication)(r,"decode generic element: matrix is not generic",m,e),(0,k.skipNext)(t);break;case K.ElementType.Node:c=(0,k.appendErrors)((0,zb.decodeNode)(t,e),r);break;case K.ElementType.Parameter:c=(0,k.appendErrors)((0,Qb.decodeParameter)(t,e),r);break;case K.ElementType.Template:(0,k.unknownApplication)(r,"decode generic element: template is not generic",m,e),(0,k.skipNext)(t);break;default:(0,k.unknownApplication)(r,"decode generic element",m,e),(0,k.skipNext)(t);break}break;case ii.CONTEXT(2):u=(0,k.appendErrors)(Bd(t,e),r);break;case 0:break;default:(0,k.unknownContext)(r,"decode generic element",m,e),(0,k.skipNext)(t);break}}if(!c)switch(i){case K.ElementType.Node:c=new za.EmberNodeImpl;break;case K.ElementType.Parameter:c=new Qa.ParameterImpl(Qa.ParameterType.Null);break;case K.ElementType.Function:c=new Qa.EmberFunctionImpl;break;default:r.push(new Error(`decodeGenericElement: No contents and unexpected type ${i}`)),c=new za.EmberNodeImpl;break}let d;if(s?(o=(0,k.check)(o,"decode generic element","path","",r,e),d=new si.QualifiedElementImpl(o,c,u)):(a=(0,k.check)(a,"decode generic element","number",-1,r,e),d=new si.NumberedTreeNodeImpl(a,c,u)),u)for(let m of Object.values(u))m.parent=d;return(0,k.makeResult)(d,r)}Bt.decodeGenericElement=Ha;function Yb(t,e=k.defaultDecode){t.readSequence(X.RootElementsBERID);let n=(0,k.makeResult)({}),r=t.offset+t.length;for(;t.offset<r;){let s=t.readSequence();if(s===0)continue;if(s!==ii.CONTEXT(0)){(0,k.unknownContext)(n,"decode root elements",s,e),(0,k.skipNext)(t);continue}let i=Ha(t,e);(0,k.safeSet)(i,n,(o,a)=>(o.number?a[o.number]=o:a[Object.values(a).length]=o,a))}return n}Bt.decodeRootElements=Yb;function Jb(t){return new Set([X.QualifiedTemplateBERID,X.QualifiedParameterBERID,X.QualifiedNodeBERID,X.QualifiedMatrixBERID,X.QualifiedFunctionBERID]).has(t)}function eg(t,e=k.defaultDecode){let n={[X.CommandBERID]:K.ElementType.Command,[X.FunctionBERID]:K.ElementType.Function,[X.NodeBERID]:K.ElementType.Node,[X.MatrixBERID]:K.ElementType.Matrix,[X.ParameterBERID]:K.ElementType.Parameter,[X.TemplateBERID]:K.ElementType.Template,[X.QualifiedTemplateBERID]:K.ElementType.Template,[X.QualifiedParameterBERID]:K.ElementType.Parameter,[X.QualifiedNodeBERID]:K.ElementType.Node,[X.QualifiedMatrixBERID]:K.ElementType.Matrix,[X.QualifiedFunctionBERID]:K.ElementType.Function};return n[t]?(0,k.makeResult)(n[t]):(0,k.unexpected)([],"tag to element type",`Unexpected element type tag '${t}'`,K.ElementType.Node,e)}});var qd=p(oi=>{"use strict";Object.defineProperty(oi,"__esModule",{value:!0});oi.StreamEntryImpl=void 0;var Za=class{constructor(e,n){this.identifier=e,this.value=n}};oi.StreamEntryImpl=Za});var Ad=p(Cn=>{"use strict";Object.defineProperty(Cn,"__esModule",{value:!0});Cn.decodeStreamEntries=Cn.decodeStreamEntry=void 0;var tg=(v(),x(I)),Ka=tg.__importStar(R()),ng=qd(),rg=Ut(),Dd=M(),Ye=Ee(),sg=st();function ig(t,e=Ye.defaultDecode){t.readSequence(Dd.StreamEntriesBERID);let n=(0,Ye.makeResult)([]),r=t.offset+t.length;for(;t.offset<r;){let s=t.readSequence();if(s===0)continue;if(s!==Ka.CONTEXT(0)){(0,Ye.unknownContext)(n,"decode stream entries",s,e),(0,Ye.skipNext)(t);continue}let i=Pd(t);(0,Ye.safeSet)(i,n,(o,a)=>(a.push(o),a))}return n}Cn.decodeStreamEntries=ig;function Pd(t,e=Ye.defaultDecode){t.readSequence(Dd.StreamEntryBERID);let n=null,r=null,s=[],i=t.offset+t.length;for(;t.offset<i;){let o=t.readSequence();switch(o){case Ka.CONTEXT(0):n=t.readInt();break;case Ka.CONTEXT(1):r=t.readValue();break;case 0:break;default:(0,Ye.unknownContext)(s,"decode stream entry",o,e),(0,Ye.skipNext)(t);break}}return n=(0,Ye.check)(n,"decode stream entry","identifier",0,s,e),r=(0,Ye.check)(r,"decode stream entry","value",(0,rg.literal)({value:null,type:sg.ParameterType.Null}),s,e),(0,Ye.makeResult)(new ng.StreamEntryImpl(n,r),s)}Cn.decodeStreamEntry=Pd});var ur=p(On=>{"use strict";Object.defineProperty(On,"__esModule",{value:!0});On.berDecode=On.berEncode=void 0;var og=(v(),x(I)),Ya=Ut(),ai=og.__importStar(R()),ag=Pf(),cg=sd(),ug=od(),lg=ud(),fg=Ws(),dg=Ad(),cr=Ee(),Wt=M(),Fd=Rt(),Ld=or();function hg(t,e){let n=new ai.Writer;switch(n.startSequence(Wt.RootBERID),e){case Ya.RootType.Elements:n.startSequence(Wt.RootElementsBERID);for(let r of Object.values(t))n.startSequence(ai.CONTEXT(0)),(0,cg.encodeRootElement)(r,n),n.endSequence();n.endSequence();break;case Ya.RootType.Streams:n.startSequence(Wt.StreamEntriesBERID);for(let r of Object.values(t))n.startSequence(ai.CONTEXT(0)),(0,ug.encodeStreamEntry)(r,n),n.endSequence();n.endSequence();break;case Ya.RootType.InvocationResult:(0,ag.encodeInvocationResult)(t,n);break}return n.endSequence(),n.buffer}On.berEncode=hg;function pg(t,e=cr.defaultDecode){let n=new ai.Reader(t),r=new Array,s=n.peek();if(s!==Wt.RootBERID)return(0,cr.unknownApplication)(r,"decode root",s,e),(0,cr.makeResult)([new Fd.NumberedTreeNodeImpl(-1,new Ld.EmberNodeImpl)],r);n.readSequence(s);let i=n.peek();return i===Wt.RootElementsBERID?(0,fg.decodeRootElements)(n,e):i===Wt.StreamEntriesBERID?(0,dg.decodeStreamEntries)(n,e):i===Wt.InvocationResultBERID?(0,lg.decodeInvocationResult)(n,e):((0,cr.unknownApplication)(r,"decode root",i,e),(0,cr.makeResult)([new Fd.NumberedTreeNodeImpl(-1,new Ld.EmberNodeImpl)],r))}On.berDecode=pg});var Vd=p(ac=>{"use strict";Object.defineProperty(ac,"__esModule",{value:!0});var mg=(v(),x(I)),_g=jt(),zt=df(),Eg=mg.__importDefault(Wr()),Ja=B("util"),bg=ur(),qt=(0,Eg.default)("emberplus-connection:S101Codec"),ci=254,ec=255,Rn=253,lr=32,tc=248,ui=0,li=14,Md=0,Ud=1,jd=2,fi=1,nc=192,rc=128,sc=64,gg=32,yg=0,ic=1,Tg=2,Sg=31,$d=[0,4489,8978,12955,17956,22445,25910,29887,35912,40385,44890,48851,51820,56293,59774,63735,4225,264,13203,8730,22181,18220,30135,25662,40137,36160,49115,44626,56045,52068,63999,59510,8450,12427,528,5017,26406,30383,17460,21949,44362,48323,36440,40913,60270,64231,51324,55797,12675,8202,4753,792,30631,26158,21685,17724,48587,44098,40665,36688,64495,60006,55549,51572,16900,21389,24854,28831,1056,5545,10034,14011,52812,57285,60766,64727,34920,39393,43898,47859,21125,17164,29079,24606,5281,1320,14259,9786,57037,53060,64991,60502,39145,35168,48123,43634,25350,29327,16404,20893,9506,13483,1584,6073,61262,65223,52316,56789,43370,47331,35448,39921,29575,25102,20629,16668,13731,9258,5809,1848,65487,60998,56541,52564,47595,43106,39673,35696,33800,38273,42778,46739,49708,54181,57662,61623,2112,6601,11090,15067,20068,24557,28022,31999,38025,34048,47003,42514,53933,49956,61887,57398,6337,2376,15315,10842,24293,20332,32247,27774,42250,46211,34328,38801,58158,62119,49212,53685,10562,14539,2640,7129,28518,32495,19572,24061,46475,41986,38553,34576,62383,57894,53437,49460,14787,10314,6865,2904,32743,28270,23797,19836,50700,55173,58654,62615,32808,37281,41786,45747,19012,23501,26966,30943,3168,7657,12146,16123,54925,50948,62879,58390,37033,33056,46011,41522,23237,19276,31191,26718,7393,3432,16371,11898,59150,63111,50204,54677,41258,45219,33336,37809,27462,31439,18516,23005,11618,15595,3696,8185,63375,58886,54429,50452,45483,40994,37561,33584,31687,27214,22741,18780,15843,11370,7921,3960],xg=64*1024,oc=class extends _g.EventEmitter{constructor(){super(...arguments),this.inbuf=new zt.SmartBuffer({size:xg}),this.escaped=!1,this.isMultiPacket=!1}dataIn(e){this.frameBuffer&&(e=Buffer.concat([this.frameBuffer,e]),this.frameBuffer=void 0);let n=0;for(;n<e.length;){let r=e.indexOf(ci,n);if(r===-1)break;let s=e.indexOf(ec,r+1);if(s===-1||s-r<4){this.frameBuffer=e.subarray(r);break}this.inbuf.clear();let i=r+1;for(this.escaped=!1;i<s;){let o=e[i];if(this.escaped)this.inbuf.writeUInt8(o^lr),this.escaped=!1,i++;else if(o===Rn)this.escaped=!0,i++;else{let a=i+1;for(;a<s;){let c=e[a];if(c===Rn||c===ec)break;a++}this.inbuf.writeBuffer(e.subarray(i,a)),i=a}}this.escaped=!1,this.inbuf.moveTo(0),this.handleFrame(this.inbuf),n=s+1}}isEmberStreamPacket(e){if(e.length<3)return!1;if(e[0]===96){let n=e[1];if(n<128)return e[2]===102;{let r=n&127;if(e.length>=2+r)return e[2+r]===102}}return!1}handleFrame(e){if(!this.validateFrame(e.toBuffer()))throw new Error((0,Ja.format)("dropping frame of length %d with invalid CRC",e.length));let n=e.readUInt8(),r=e.readUInt8();if(n!=ui||r!=li)throw new Error((0,Ja.format)("dropping frame of length %d (not an ember frame; slot=%d, msg=%d)",e.length,n,r));let s=e.readUInt8();if(s===Ud)qt("received keepalive request"),this.emit("keepaliveReq");else if(s===jd)qt("received keepalive response"),this.emit("keepaliveResp");else if(s===Md){let i=e.readBuffer(),o=zt.SmartBuffer.fromBuffer(i);this.handleEmberFrame(o)}else throw new Error((0,Ja.format)("dropping frame of length %d with unknown command %d",e.length,s))}handleEmberFrame(e){let n=e.readUInt8(),r=e.readUInt8(),s=e.readUInt8(),i=e.readUInt8();n!==fi&&qt("Warning: Unknown ember frame version %d",n),s!==ic&&qt("Warning: Received frame with DTD %d, expected %d",s,ic),i<2?(qt("Warning: Frame missing Glow DTD version"),e.skip(i)):(e.skip(1),e.skip(1),i-=2,i>0&&(e.skip(i),qt("Warning: App bytes with unknown meaning left over")));let o=e.readBuffer();if(o=o.slice(0,o.length-2),(r&nc)===nc)(r&gg)===0&&(this.isEmberStreamPacket(o)?this.handleEmberStreamPacket(o):this.handleEmberPacket(o));else if((r&rc)===rc)qt("multi ember packet start"),this.multiPacketBuffer=new zt.SmartBuffer,this.isMultiPacket=!0,this.multiPacketBuffer.writeBuffer(o);else if(this.isMultiPacket&&this.multiPacketBuffer&&(this.multiPacketBuffer.writeBuffer(o),(r&sc)===sc)){qt("multi ember packet end");let a=this.multiPacketBuffer.toBuffer();a[0]===96&&a[2]===102?this.handleEmberStreamPacket(a):this.handleEmberPacket(a),this.resetMultiPacketBuffer()}}handleEmberPacket(e){try{let n=(0,bg.berDecode)(e);e[0]===96&&n.value&&this.emit("emberPacket",e)}catch(n){console.error("Error decoding packet:",n)}}handleEmberStreamPacket(e){try{this.emit("emberStreamPacket",e)}catch(n){console.error("Error decoding stream packet:",n),this.resetMultiPacketBuffer()}}resetMultiPacketBuffer(){this.multiPacketBuffer=void 0,this.isMultiPacket=!1}encodeBER(e){let n=[],r=new zt.SmartBuffer;for(let s=0;s<e.length;s++){let i=e.readUInt8(s);i<tc?r.writeUInt8(i):(r.writeUInt8(Rn),r.writeUInt8(i^lr)),r.length>=1024&&s<e.length-1&&(n.length===0?n.push(this._makeBERFrame(rc,r.toBuffer())):n.push(this._makeBERFrame(yg,r.toBuffer())),r.clear())}return n.length==0?n.push(this._makeBERFrame(nc,r.toBuffer())):n.push(this._makeBERFrame(sc,r.toBuffer())),n}keepAliveRequest(){let e=new zt.SmartBuffer;return e.writeUInt8(ci),e.writeUInt8(ui),e.writeUInt8(li),e.writeUInt8(Ud),e.writeUInt8(fi),this._finalizeBuffer(e)}keepAliveResponse(){let e=new zt.SmartBuffer;return e.writeUInt8(ci),e.writeUInt8(ui),e.writeUInt8(li),e.writeUInt8(jd),e.writeUInt8(fi),this._finalizeBuffer(e)}validateFrame(e){return this._calculateCRC(e)==61624}_makeBERFrame(e,n){let r=new zt.SmartBuffer;return r.writeUInt8(ci),r.writeUInt8(ui),r.writeUInt8(li),r.writeUInt8(Md),r.writeUInt8(fi),r.writeUInt8(e),r.writeUInt8(ic),r.writeUInt8(2),r.writeUInt8(Sg),r.writeUInt8(Tg),r.writeBuffer(n),this._finalizeBuffer(r)}_finalizeBuffer(e){let n=~this._calculateCRCCE(e.toBuffer().slice(1,e.length))&65535,r=n>>8,s=n&255;return s<tc?e.writeUInt8(s):(e.writeUInt8(Rn),e.writeUInt8(s^lr)),r<tc?e.writeUInt8(r):(e.writeUInt8(Rn),e.writeUInt8(r^lr)),e.writeUInt8(ec),e.toBuffer()}_calculateCRC(e){let n=65535;for(let r=0;r<e.length;r++){let s=e.readUInt8(r);n=(n>>8^$d[(n^s)&255])&65535}return n}_calculateCRCCE(e){let n=65535;for(let r=0;r<e.length;r++){let s=e.readUInt8(r);s==Rn&&(s=lr^e.readUInt8(++r)),n=(n>>8^$d[(n^s)&255])&65535}return n}};ac.default=oc});var cc=p(di=>{"use strict";Object.defineProperty(di,"__esModule",{value:!0});di.S101Codec=void 0;var Ig=(v(),x(I)),vg=Ig.__importDefault(Vd());di.S101Codec=vg.default});var fr=p(ge=>{"use strict";Object.defineProperty(ge,"__esModule",{value:!0});ge.isEmptyNode=ge.normalizeError=ge.updateProps=ge.insertCommand=ge.toQualifiedEmberNode=ge.getPath=ge.assertQualifiedEmberNode=void 0;var Gd=Ie(),uc=Rt();function wg(t){return"path"in t?t:Xd(t)}ge.assertQualifiedEmberNode=wg;function lc(t){function e(r){return"path"in r}function n(r){return"number"in r}return e(t)?t.path:n(t)?t.parent?lc(t.parent)+"."+t.number:t.number+"":""}ge.getPath=lc;function Xd(t){let e=lc(t);if(t.contents.type===Gd.ElementType.Command)throw new Error("Cannot convert a command to a qualified node");return new uc.QualifiedElementImpl(e,t.contents,t.children)}ge.toQualifiedEmberNode=Xd;function Ng(t,e){return new uc.QualifiedElementImpl(t.path,t.contents,[new uc.NumberedTreeNodeImpl(0,e)])}ge.insertCommand=Ng;function Cg(t,e,n){n||(n=Object.keys(e));for(let r of n)e[r]!==void 0&&e[r]!==t[r]&&(t[r]=e[r])}ge.updateProps=Cg;function Og(t){return t instanceof Error?t:new Error(typeof t=="string"?t:t?.toString())}ge.normalizeError=Og;function Rg(t){return!(r=>r.contents.type===Gd.ElementType.Node)(t)||t.children?!1:![t.contents.description,t.contents.identifier,t.contents.isOnline,t.contents.isRoot,t.contents.schemaIdentifiers,t.contents.templateReference].some(r=>r!=null)}ge.isEmptyNode=Rg});var hc=p(dc=>{"use strict";Object.defineProperty(dc,"__esModule",{value:!0});var kg=jt(),Bg=cc(),Wd=pc(),dr=pi(),hi=fr(),fc=class extends kg.EventEmitter{constructor(e){super(),this.keepaliveInterval=10,this.keepaliveMaxResponseTime=500,this.codec=new Bg.S101Codec,this.socket=e,this.keepaliveIntervalTimer=void 0,this.keepaliveResponseWindowTimer=null,this.status=this.isConnected()?dr.ConnectionStatus.Connected:dr.ConnectionStatus.Disconnected,this.codec.on("keepaliveReq",()=>{this.sendKeepaliveResponse()}),this.codec.on("keepaliveResp",()=>{clearInterval(this.keepaliveResponseWindowTimer)}),this.codec.on("emberPacket",n=>{try{let r=(0,Wd.berDecode)(n);r!=null&&this.emit("emberTree",r)}catch(r){this.emit("error",(0,hi.normalizeError)(r))}}),this.codec.on("emberStreamPacket",n=>{try{let r=(0,Wd.berDecode)(n);r!=null&&this.emit("emberStreamTree",r)}catch(r){this.emit("error",(0,hi.normalizeError)(r))}}),this._initSocket()}_initSocket(){this.socket!=null&&(this.socket.on("data",e=>{try{this.codec.dataIn(e)}catch(n){this.emit("error",(0,hi.normalizeError)(n))}}),this.socket.on("close",()=>{this.emit("disconnected"),this.status=dr.ConnectionStatus.Connected,this.socket?.removeAllListeners(),this.socket=void 0}),this.socket.on("error",e=>{this.emit("error",e)}))}async disconnect(e=2){return!this.isConnected()||this.socket===void 0?Promise.resolve():new Promise(n=>{if(this.keepaliveIntervalTimer!=null&&(clearInterval(this.keepaliveIntervalTimer),this.keepaliveIntervalTimer=void 0),this.socket){let r=!1,s=()=>{r||(r=!0,i!==void 0&&(clearTimeout(i),i=void 0),n())},i;e!=null&&!isNaN(e)&&e>0&&(i=setTimeout(s,100*e)),this.socket.end(s)}this.status=dr.ConnectionStatus.Disconnected})}handleClose(){this.socket=void 0,this.keepaliveIntervalTimer&&clearInterval(this.keepaliveIntervalTimer),this.status=dr.ConnectionStatus.Disconnected,this.emit("disconnected")}isConnected(){return this.socket!==void 0&&!!this.socket}sendBER(e){if(this.isConnected()&&this.socket)try{let n=this.codec.encodeBER(e);for(let r=0;r<n.length;r++)this.socket.write(n[r]);return!0}catch{return this.handleClose(),!1}else return!1}sendKeepaliveRequest(){if(this.isConnected()&&this.socket)try{this.socket.write(this.codec.keepAliveRequest()),this.keepaliveResponseWindowTimer=setTimeout(()=>{this.handleClose()},this.keepaliveMaxResponseTime)}catch{this.handleClose()}}sendKeepaliveResponse(){if(this.isConnected()&&this.socket)try{this.socket.write(this.codec.keepAliveResponse())}catch{this.handleClose()}}startKeepAlive(){this.keepaliveIntervalTimer=setInterval(()=>{try{this.sendKeepaliveRequest()}catch(e){this.emit("error",(0,hi.normalizeError)(e))}},1e3*this.keepaliveInterval)}};dc.default=fc});var zd=p(Ec=>{"use strict";Object.defineProperty(Ec,"__esModule",{value:!0});var _c=(v(),x(I)),qg=_c.__importDefault(B("net")),Dg=_c.__importDefault(hc()),Qt=pi(),Pg=fr(),Ag=_c.__importDefault(Wr()),Fg=(0,Ag.default)("emberplus-connection:S101Client"),Lg=9e3,Mg=60,Ug=5e3,mc=class extends Dg.default{constructor(e,n=Lg,r){super(),this.autoConnect=!1,this._autoReconnect=!0,this._autoReconnectDelay=Ug,this._connectionAttemptTimer=void 0,this._reconnectAttempt=0,this._reconnectAttempts=Mg,this._lastConnectionAttempt=0,this.address=e,this.port=n,this.autoConnect=!!r,this._shouldBeConnected=this.autoConnect,this.autoConnect&&this.connect().catch(()=>null)}async connect(e=5){return new Promise(n=>{if(this.status!==Qt.ConnectionStatus.Disconnected){n();return}if(!this._lastConnectionAttempt||Date.now()-this._lastConnectionAttempt>=this._autoReconnectDelay){this.socket&&this.socket.connecting&&(this.socket.destroy(),this.socket.removeAllListeners(),delete this.socket),this.socket||(this.socket=new qg.default.Socket,this.socket.on("close",i=>this._onClose(i)),this.socket.on("connect",()=>this._onConnect()),this.socket.on("data",i=>{Fg("Data from Ember connection received:",{address:this.socket?.remoteAddress,port:this.socket?.remotePort,dataLength:i.length,data:i.toString("hex")});try{this.codec.dataIn(i)}catch(o){this.emit("error",(0,Pg.normalizeError)(o))}}),this.socket.on("error",i=>this._onError(i))),this.emit("connecting"),this.status=Qt.ConnectionStatus.Disconnected;let r=()=>{this.socket&&(this.socket.destroy(),this.socket.removeAllListeners(),delete this.socket);let i=new Error(`Could not connect to ${this.address}:${this.port} after a timeout of ${e} seconds`);n(i),this._connectionAttemptTimer||this.connect().catch(()=>null)},s=setTimeout(()=>r(),e*1e3);this.socket.connect(this.port,this.address),this.socket.once("connect",()=>{clearInterval(s),n()}),this._shouldBeConnected=!0,this._lastConnectionAttempt=Date.now()}this._connectionAttemptTimer||(this._connectionAttemptTimer=setInterval(()=>this._autoReconnectionAttempt(),this._autoReconnectDelay))})}async disconnect(e){return this._shouldBeConnected=!1,super.disconnect(e)}handleClose(){this.keepaliveIntervalTimer&&clearInterval(this.keepaliveIntervalTimer),this.socket?.destroy()}_autoReconnectionAttempt(){if(this._autoReconnect&&this._reconnectAttempts>0){if(this._reconnectAttempt>=this._reconnectAttempts){this._clearConnectionAttemptTimer(),this.status=Qt.ConnectionStatus.Disconnected;return}this.status!==Qt.ConnectionStatus.Connected&&(this._reconnectAttempt++,this.connect().catch(()=>null))}}_clearConnectionAttemptTimer(){this._reconnectAttempt=0,this._connectionAttemptTimer&&clearInterval(this._connectionAttemptTimer),delete this._connectionAttemptTimer}_onConnect(){this._clearConnectionAttemptTimer(),this.startKeepAlive(),this.status=Qt.ConnectionStatus.Connected,this.emit("connected")}_onError(e){e.message.match(/ECONNREFUSED/)||this.emit("error",e)}_onClose(e){this.status!==Qt.ConnectionStatus.Disconnected&&this.emit("disconnected"),this.status=Qt.ConnectionStatus.Disconnected,this._shouldBeConnected===!0&&(this.emit("connecting"),this.connect().catch(()=>null))}};Ec.default=mc});var bc=p(mi=>{"use strict";Object.defineProperty(mi,"__esModule",{value:!0});mi.S101Client=void 0;var jg=(v(),x(I)),$g=jg.__importDefault(zd());mi.S101Client=$g.default});var Hd=p(_i=>{"use strict";Object.defineProperty(_i,"__esModule",{value:!0});_i.StreamManager=void 0;var Vg=(v(),x(I)),Gg=jt(),Qd=st(),Xg=Vg.__importDefault(Wr()),Xe=(0,Xg.default)("emberplus-connection:StreamManager"),gc=class extends Gg.EventEmitter{constructor(){super(),this.registeredStreams=new Map,this.streamsByIdentifier=new Map}registerParameter(e,n){if(!e.streamIdentifier){Xe("Warning: Attempted to register parameter without streamIdentifier");return}if(this.registeredStreams.has(n)){Xe("Stream already registered:",{path:n,identifier:e.streamIdentifier});return}let r={parameter:e,path:n,streamIdentifier:e.streamIdentifier,offset:e.streamDescriptor?.offset||0};this.registeredStreams.set(n,r),this.streamsByIdentifier.has(e.streamIdentifier)||(this.streamsByIdentifier.set(e.streamIdentifier,new Set),Xe("Registered new stream identifier and adding set:",e.streamIdentifier)),this.streamsByIdentifier.get(e.streamIdentifier)?.add(n),Xe("Registered new stream:",{path:n,identifier:e.streamIdentifier,totalRegistered:this.registeredStreams.size})}unregisterParameter(e){let n=this.registeredStreams.get(e);if(n?.streamIdentifier){this.registeredStreams.delete(e);let r=this.streamsByIdentifier.get(n.streamIdentifier);r&&(r.delete(e),r.size===0&&this.streamsByIdentifier.delete(n.streamIdentifier)),Xe("Unregistered stream:",{path:e,identifier:n.parameter.identifier})}}getStreamInfoByPath(e){return this.registeredStreams.get(e)}hasStream(e){return this.registeredStreams.has(e)}updateStreamValues(e){Object.values(e).forEach(n=>{let r=this.streamsByIdentifier.get(n.identifier);if(!r){Xe("Received update for unregistered stream:",n.identifier);return}r.forEach(s=>{let i=this.registeredStreams.get(s);if(!(!i||!n.value)){if(n.value.type===Qd.ParameterType.Integer)this.updateStreamValue(s,n.value.value);else if(n.value.type===Qd.ParameterType.Octets&&Buffer.isBuffer(n.value.value)){let o=n.value.value;if(o.length>=i.offset+4){let c=new DataView(o.buffer,o.byteOffset,o.length).getFloat32(i.offset,!0);this.updateStreamValue(s,c)}}}})})}updateStreamValue(e,n){if(e){let r=this.registeredStreams.get(e);r&&(r.parameter.value=n,this.emit("streamUpdate",e,n))}}getAllRegisteredPaths(){return Array.from(this.registeredStreams.keys())}printStreamState(){Xe(`
-Current Stream State:`),Xe("Registered Streams:"),this.registeredStreams.forEach((e,n)=>{Xe(`  Path: ${n}`),Xe(`    Identifier: ${e.parameter.identifier}`),Xe(`    StreamId: ${e.parameter.streamIdentifier}`),Xe(`    Current Value: ${e.parameter.value}`)})}};_i.StreamManager=gc});var pi=p(lt=>{"use strict";Object.defineProperty(lt,"__esModule",{value:!0});lt.EmberClient=lt.ConnectionStatus=lt.ExpectResponse=void 0;var Wg=Ut(),We=Ie(),Ei=Qn(),hr=Hn(),zg=jt(),Qg=bc(),we=fr(),Hg=ur(),bi=Rt(),Zg=Hd(),Me;(function(t){t.None="none",t.Any="any",t.HasChildren="has-children"})(Me=lt.ExpectResponse||(lt.ExpectResponse={}));var Zd;(function(t){t[t.Error=0]="Error",t[t.Disconnected=1]="Disconnected",t[t.Connecting=2]="Connecting",t[t.Connected=3]="Connected"})(Zd=lt.ConnectionStatus||(lt.ConnectionStatus={}));var yc=class extends zg.EventEmitter{constructor(e,n=9e3,r=3e3,s=!1,i=1e3){super(),this.tree=[],this._requests=new Map,this._lastInvocation=0,this._subscriptions=[],this._timeout=3e3,this._resendTimeout=1e3,this._resends=!1,this.host=e,this.port=n,this._timeout=r,this._resendTimeout=i,this._resends=s,this._streamManager=new Zg.StreamManager,this._streamManager.on("streamUpdate",(a,c)=>{this.emit("streamUpdate",a,c)});let o=(a,c)=>{for(;c;){let u=c;c=a%c,a=u}return a};this._timer=setInterval(()=>this._resendTimer(),o(this._timeout,this._resendTimeout)),this._client=new Qg.S101Client(this.host,this.port),this._client.on("emberTree",a=>{this._handleIncoming(a)}),this._client.on("emberStreamTree",a=>{let c=a.value;this._streamManager.updateStreamValues(c)}),this._client.on("error",a=>this.emit("error",a)),this._client.on("connected",()=>this.emit("connected")),this._client.on("disconnected",()=>{this._requests.forEach(a=>{a.reject(new Error("Socket was disconnected")),this._requests.delete(a.reqId)}),this.emit("disconnected")})}async connect(e,n){return e&&(this.host=e),n&&(this.port=n),this.host?(this._client.address=this.host,this._client.port=this.port,this._client.connect()):Promise.reject("No host specified")}async disconnect(){return this._client.disconnect()}discard(){this.disconnect().catch(()=>null),this._client.removeAllListeners(),delete this._client,this._requests.forEach(e=>{e.reject(new Error("Socket was disconnected")),this._requests.delete(e.reqId)}),clearInterval(this._timer)}get connected(){return this._client.status===Zd.Connected}async getDirectory(e,n,r){if(!e)throw new Error("No node specified");let s=new Ei.GetDirectoryImpl(n);return"number"in e||"path"in e?(r&&this._subscriptions.push({path:(0,we.getPath)(e),cb:r}),this._sendCommand(e,s,Me.HasChildren)):(r&&this._subscriptions.push({path:void 0,cb:r}),this._sendRequest(new bi.NumberedTreeNodeImpl(0,s),Me.Any))}async subscribe(e,n){if(!e)throw new Error("No node specified");let r=new Ei.SubscribeImpl;if(Array.isArray(e))return n&&this._subscriptions.push({path:void 0,cb:n}),this._sendRequest(new bi.NumberedTreeNodeImpl(0,r),Me.Any);if(e.contents.type===We.ElementType.Parameter){let s=e.contents;s.streamIdentifier!==void 0&&this._streamManager.registerParameter(s,(0,we.getPath)(e))}return n&&this._subscriptions.push({path:(0,we.getPath)(e),cb:n}),this._sendCommand(e,r,Me.None)}async unsubscribe(e){if(!e)throw new Error("No node specified");let n=new Ei.UnsubscribeImpl,r=Array.isArray(e)?"":(0,we.getPath)(e);for(let s in this._subscriptions)this._subscriptions[s].path===r&&this._subscriptions.splice(Number(s),1);return!Array.isArray(e)&&e.contents.type===We.ElementType.Parameter&&e.contents.streamIdentifier!==void 0&&this._streamManager.unregisterParameter(r),Array.isArray(e)?this._sendRequest(new bi.NumberedTreeNodeImpl(0,n),Me.Any):this._sendCommand(e,n,Me.None)}async invoke(e,...n){if(!e)throw new Error("No node specified");let r={type:We.ElementType.Command,number:Ei.CommandType.Invoke,invocation:{id:++this._lastInvocation,args:n}};return this._sendCommand(e,r,Me.Any)}async setValue(e,n,r=!0){if(!e)throw new Error("No node specified");let s=(0,we.assertQualifiedEmberNode)(e);return s.contents.value=n,this._sendRequest(s,r?Me.Any:Me.None)}async matrixConnect(e,n,r){return this._matrixMutation(e,n,r,hr.ConnectionOperation.Connect)}async matrixDisconnect(e,n,r){return this._matrixMutation(e,n,r,hr.ConnectionOperation.Disconnect)}async matrixSetConnection(e,n,r){return this._matrixMutation(e,n,r,hr.ConnectionOperation.Absolute)}async expand(e){if(!e)throw new Error("No node specified");if(!("number"in e)){await(await this.getDirectory(e)).response;for(let i of Object.values(this.tree))await this.expand(i);return}let n=[e],r=i=>i.contents.type===We.ElementType.Node?i.contents.isOnline!==!1:i.contents.type!==We.ElementType.Parameter&&i.contents.type!==We.ElementType.Function,s;for(;s=n.shift();)if(s.children)n.push(...Object.values(s.children).filter(r));else{let i=await this.getDirectory(s);if(!i.response)continue;let o=await i.response;o.children&&Object.values(o.children).forEach(a=>r(a)&&n.push(a))}}async getElementByPath(e,n,r="."){let s=(f,d)=>Object.values(f||{}).find(m=>m.number===Number(d)||m.contents.identifier===d||m.contents.description===d),i=(f,d)=>f.children&&s(f.children,d),o=[],a=e.split(r),c=a.shift();if(!c)throw new Error("Expected at least one segment in the path");let u=s(this.tree,c);for(u?.number!==void 0&&o.push(u.number);a.length;){let f=a.shift();if(f===void 0||!u)break;let d=i(u,f);if(d||(u=await(await this.getDirectory(u)).response,d=i(u,f)),u=d,!u)throw new Error(`Could not find node ${f} on given path ${o.join()}`);u?.number!==void 0&&o.push(u.number)}return u?.contents.type===We.ElementType.Parameter&&await(await this.getDirectory(u)).response,n&&o&&this._subscriptions.push({path:o.join("."),cb:n}),u}getInternalNodePath(e){if("path"in e&&typeof e.path=="string")return e.path;if("number"in e){let n=[],r=e;for(;r;)n.unshift(r.number),r.parent&&"number"in r.parent?r=r.parent:r=void 0;return n.join(".")}}async _matrixMutation(e,n,r,s){if(!e)throw new Error("No matrix specified");let i=(0,we.assertQualifiedEmberNode)(e),o={operation:s,target:n,sources:r};return i.contents.connections=[o],this._sendRequest(i,Me.Any)}async _sendCommand(e,n,r){let s=(0,we.assertQualifiedEmberNode)(e),i=(0,we.insertCommand)(s,n);return this._sendRequest(i,r)}async _sendRequest(e,n){let r=Math.random().toString(24).substr(-4),s={reqId:r,sentOk:!1},i=(0,Hg.berEncode)([e],Wg.RootType.Elements);if(n!==Me.None){let a=new Promise((c,u)=>{let f={reqId:r,node:e,nodeResponse:n,resolve:c,reject:u,message:i,firstSent:Date.now(),lastSent:Date.now()};this._requests.set(r,f),s.cancel=()=>{u(new Error("Request cancelled")),this._requests.delete(r)}});s.response=a}let o=this._client.sendBER(i);return!o&&s.cancel&&(this._requests.get(r)?.reject(new Error("Request was not sent correctly")),this._requests.delete(r)),{...s,sentOk:o}}_handleIncoming(e){let n=e.value,r=this._applyRootToTree(n);for(let s of r){let i=this._subscriptions.find(o=>o.path===s.path);i&&s.node&&i.cb(s.node)}for(let s of r){let i=Array.from(this._requests.values()).filter(o=>!("path"in o.node)&&!s.path||"path"in o.node&&o.node.path===s.path);for(let o of i){if(o.nodeResponse===Me.HasChildren&&!s.node.children&&s.node.contents.type!==We.ElementType.Parameter){if(!s.emptyNode)continue}o.cb&&o.cb(s.node),o.resolve&&(o.resolve(s.node),this._requests.delete(o.reqId))}}e.errors?.forEach(s=>this.emit("warn",s))}_applyRootToTree(e){let n=[];if("id"in e)this._requests.forEach(r=>{r.node.contents.type===We.ElementType.Function&&r.node.children&&r.node.children[0]&&"invocation"in r.node.children[0].contents&&r.node.children[0].contents.invocation?.id&&r.node.children[0].contents.invocation?.id===e.id&&(r.resolve(e),this._requests.delete(r.reqId))});else for(let r of Object.values(e))if(!("identifier"in r))if("path"in r){let s=r.path.split("."),i=this.tree[Number(s.shift())],o=!1;if(!i)if(s.length){n.push({path:r.path,node:r});continue}else{let a=Number(r.path);this.tree[a]=new bi.NumberedTreeNodeImpl(a,r.contents,r.children),n.push({path:void 0,node:this.tree[a]});continue}for(let a of s){if(i.children||(i.children={}),!i.children[Number(a)]){i.children[Number(a)]={...r,number:Number(a),parent:i},n.push({path:r.path.split(".").slice(0,-1).join("."),node:i}),o=!0;break}i=i.children[Number(a)]}if(o)continue;n.push(...this._updateTree(r,i))}else r.children?this.tree[r.number]?n.push(...this._updateTree(r,this.tree[r.number])):(this.tree[r.number]=r,n.push({path:void 0,node:r})):(0,we.isEmptyNode)(r)?n.push({path:r.number+"",node:r,emptyNode:!0}):(this.tree[r.number]=r,n.push({path:void 0,node:r}));return n}_updateTree(e,n){let r=[];if(e.contents.type===n.contents.type)switch(r.push({path:(0,we.getPath)(n),node:n,emptyNode:(0,we.isEmptyNode)(e)}),n.contents.type){case We.ElementType.Node:this._updateEmberNode(e.contents,n.contents);break;case We.ElementType.Parameter:this._updateParameter(e.contents,n.contents);break;case We.ElementType.Matrix:this._updateMatrix(e.contents,n.contents);break}if(e.children&&n.children)for(let s of Object.values(e.children)){let i=s.number,o=n.children[i];r.push(...this._updateTree(s,o))}else if(e.children){r.push({path:(0,we.getPath)(n),node:n}),n.children=e.children;for(let s of Object.values(e.children))s.parent=n}return r}_updateEmberNode(e,n){(0,we.updateProps)(n,e,["isOnline"])}_updateParameter(e,n){(0,we.updateProps)(n,e,["value","isOnline","access"])}_updateMatrix(e,n){if((0,we.updateProps)(n,e,["targets","targetCount","sources","sourceCount","connections"]),e.connections)if(n.connections){for(let r of Object.values(e.connections))if(!r.disposition||!(r.disposition===hr.ConnectionDisposition.Locked||r.disposition===hr.ConnectionDisposition.Pending)){let s=!1;for(let i in n.connections)n.connections[i].target===r.target&&(s=!0,n.connections[i].sources=r.sources);s||(n.connections[r.target]={target:r.target,sources:r.sources})}}else n.connections=e.connections}_resendTimer(){this.connected&&this._requests.forEach(e=>{let n=Date.now()-e.lastSent,r=Date.now()-e.firstSent;this._resends&&n>=this._resendTimeout&&(this._client.sendBER(e.message)?e.lastSent=Date.now():e.reject(new Error("Request was not sent correctly"))),r>=this._timeout&&(e.reject(new Error("Request timed out")),this._requests.delete(e.reqId))})}};lt.EmberClient=yc});var Kd=p(gi=>{"use strict";Object.defineProperty(gi,"__esModule",{value:!0});gi.EmberLib=void 0;var Kg={DecodeBuffer:null};gi.EmberLib=Kg});var Yd=p(yi=>{"use strict";Object.defineProperty(yi,"__esModule",{value:!0});yi.S101Server=void 0;var Yg=(v(),x(I)),Jg=jt(),ey=B("net"),ty=Yg.__importDefault(hc()),Tc=class extends Jg.EventEmitter{constructor(e,n){super(),this.port=e,this.address=n,this.server=null,this.status="disconnected"}addClient(e){let n=new ty.default(e);this.emit("connection",n)}async listen(){return new Promise((e,n)=>{if(this.status!=="disconnected")return n(new Error("Already listening"));this.server=(0,ey.createServer)(r=>{this.addClient(r)}).on("error",r=>{if(this.emit("error",r),this.status==="disconnected")return n(r)}).on("listening",()=>{this.emit("listening"),this.status="listening",e(void 0)}),this.server.listen(this.port,this.address)})}discard(){this.server?.close()}};yi.S101Server=Tc});var Jd=p(xi=>{"use strict";Object.defineProperty(xi,"__esModule",{value:!0});xi.EmberServer=void 0;var ny=jt(),ry=Yd(),ye=ri(),kn=Ut(),Ti=fr(),Bn=ur(),pr=Qn(),Si=Hn(),sy=Ra(),Sc=class extends ny.EventEmitter{constructor(e,n){super(),this.tree={},this._clients=new Set,this._subscriptions={},this.address=n,this.port=e,this._server=new ry.S101Server(e,n),this._server.on("connection",r=>{this._clients.add(r),r.on("emberTree",s=>this._handleIncoming(s,r)),r.on("error",s=>{this.emit("clientError",r,s)}),r.on("disconnected",()=>{this._clearSubscription(r),this._clients.delete(r)})})}async init(e){let n=(r,s)=>{if(s.parent=r,s.children)for(let i of Object.values(s.children))n(s,i)};for(let r of Object.values(e))if(r.children)for(let s of Object.values(r.children))n(r,s);return this.tree=e,this._server.listen()}discard(){this._clients.forEach(e=>{e.removeAllListeners()}),this._clients.clear(),this._server.server?.close()}update(e,n){if(e.contents.type===ye.ElementType.Matrix){let o=e,a=n;if(a.connections)for(let c of Object.values(a.connections))this.updateMatrixConnection(o,c)}for(let[o,a]of Object.entries(n))e.contents[o]=a;let r=(0,Ti.toQualifiedEmberNode)(e),s=(0,Bn.berEncode)([r],kn.RootType.Elements),i=r.path;if(r.contents.type!==ye.ElementType.Node&&!("targets"in n||"sources"in n)){let o=i.lastIndexOf(".");o>-1?i=i.slice(0,o):i=""}for(let[o,a]of Object.entries(this._subscriptions))i===o&&a.forEach(c=>{c.sendBER(s)})}updateMatrixConnection(e,n){e.contents.connections||(e.contents.connections={});let r=e.contents.connections[n.target];switch(r||(e.contents.connections[n.target]=new Si.ConnectionImpl(n.target,[]),r=e.contents.connections[n.target]),r.sources||(r.sources=[]),n.operation){case Si.ConnectionOperation.Connect:for(let o of n.sources||[])r.sources.find(a=>a===o)||r.sources.push(o);break;case Si.ConnectionOperation.Disconnect:for(let o of n.sources||[])r.sources=r.sources.filter(a=>a!==o);break;case Si.ConnectionOperation.Absolute:default:r.sources=n.sources;break}let s=(0,Ti.toQualifiedEmberNode)(e);s.contents=new ye.MatrixImpl(s.contents.identifier,void 0,void 0,{[r.target]:r});let i=(0,Bn.berEncode)([s],kn.RootType.Elements);for(let[o,a]of Object.entries(this._subscriptions))s.path===o&&a.forEach(c=>{c.sendBER(i)})}_handleIncoming(e,n){for(let r of Object.values(e.value))r.contents.type===ye.ElementType.Command?this._handleCommand("",r,n).catch(s=>this.emit("error",s)):"path"in r?this._handleNode(r.path||"",r,n):"number"in r&&this._handleNode(r.number+""||"",r,n)}_handleNode(e,n,r){let s=Object.values(n.children||{});if(s[0]&&s[0].contents.type===ye.ElementType.Command){this._handleCommand(e,s[0],r).catch(i=>this.emit("error",i));return}else n.contents.type===ye.ElementType.Matrix&&"connections"in n.contents&&this._handleMatrix(e,n).catch(i=>this.emit("error",i));if(!n.children)n.contents.type===ye.ElementType.Parameter&&this._handleSetValue(e,n,r).catch(i=>this.emit("error",i));else for(let i of s)this._handleNode(e+"."+i.number,i,r)}async _handleMatrix(e,n){if(this.onMatrixOperation){let r=this.getElementByPath(e);return!r||r.contents.type!==ye.ElementType.Matrix||!n.contents.connections?void 0:this.onMatrixOperation(r,n.contents.connections)}}async _handleSetValue(e,n,r){let s=this.getElementByPath(e);if(!s||s.contents.type!==ye.ElementType.Parameter||n.contents.value===void 0)return;let i=!1;if(this.onSetValue&&(i=await this.onSetValue(s,n.contents.value)),!i){let o=(0,Ti.toQualifiedEmberNode)(s),a=(0,Bn.berEncode)([o],kn.RootType.Elements);r.sendBER(a)}}async _handleCommand(e,n,r){let s=e?this.getElementByPath(e):this.tree;if(s){if(n.contents.number===pr.CommandType.Subscribe)this._subscribe(e,r);else if(n.contents.number===pr.CommandType.Unsubscribe)this._unsubscribe(e,r);else if(n.contents.number===pr.CommandType.GetDirectory)this._subscribe(e,r),this._handleGetDirectory(s,n.contents.dirFieldMask||pr.FieldFlags.Default,r);else if(n.contents.number===pr.CommandType.Invoke){let i;this.onInvocation?i=await this.onInvocation(s,n):i=new sy.InvocationResultImpl(n.contents.invocation?.id||-1,!1);let o=(0,Bn.berEncode)(i,kn.RootType.InvocationResult);r.sendBER(o)}}}getElementByPath(e,n="."){let r=(u,f)=>Object.values(u||{}).find(d=>d.number===Number(f)||d.contents.identifier===f||d.contents.description===f),s=(u,f)=>u.children&&r(u.children,f),i=[],o=e.split(n),a=o.shift(),c=r(this.tree,a);for(c?.number&&i.push(c?.number);o.length;){let u=o.shift();if(!u||!c)break;let f=s(c,u);if(!f||(c=f,!c))return;c?.number&&i.push(c?.number)}return c}_subscribe(e,n){this._subscriptions[e]=[...this._subscriptions[e]||[],n]}_unsubscribe(e,n){this._subscriptions[e]&&this._subscriptions[e].forEach((r,s)=>{r===n&&this._subscriptions[e].splice(s,1)})}_clearSubscription(e){for(let n of Object.keys(this._subscriptions))this._unsubscribe(n,e)}_handleGetDirectory(e,n,r){if(e===this.tree){let s={...this.tree};for(let[o,a]of Object.entries(this.tree))s[o]=new ye.NumberedTreeNodeImpl(a.number,a.contents);let i=(0,Bn.berEncode)(s,kn.RootType.Elements);r.sendBER(i)}else{let s=(0,Ti.toQualifiedEmberNode)(e);if(s.children={},"children"in e&&e.children)for(let[o,a]of Object.entries(e.children))a.contents.type===ye.ElementType.Matrix?s.children[o]=new ye.NumberedTreeNodeImpl(a.number,new ye.MatrixImpl(a.contents.identifier,void 0,void 0,void 0,a.contents.description,a.contents.matrixType,a.contents.addressingMode,a.contents.targetCount,a.contents.sourceCount,a.contents.maximumTotalConnects,a.contents.maximumConnectsPerTarget,a.contents.parametersLocation,a.contents.gainParameterNumber,a.contents.labels,a.contents.schemaIdentifiers,a.contents.templateReference)):s.children[o]=new ye.NumberedTreeNodeImpl(a.number,a.contents);else s.contents.type===ye.ElementType.Node&&!("children"in e&&e.children)&&(s.contents=new ye.EmberNodeImpl,s.children=void 0);let i=(0,Bn.berEncode)([s],kn.RootType.Elements);r.sendBER(i)}}};xi.EmberServer=Sc});var eh=p(Ii=>{"use strict";Object.defineProperty(Ii,"__esModule",{value:!0});Ii.RootType=void 0;var iy=Ut();Object.defineProperty(Ii,"RootType",{enumerable:!0,get:function(){return iy.RootType}})});var pc=p(H=>{"use strict";Object.defineProperty(H,"__esModule",{value:!0});H.Model=H.Types=H.berDecode=H.berEncode=H.S101Client=H.S101Codec=H.EmberServer=H.EmberLib=H.Decoder=H.EmberClient=void 0;var th=(v(),x(I)),oy=pi();Object.defineProperty(H,"EmberClient",{enumerable:!0,get:function(){return oy.EmberClient}});var nh=Kd();Object.defineProperty(H,"EmberLib",{enumerable:!0,get:function(){return nh.EmberLib}});var ay=Jd();Object.defineProperty(H,"EmberServer",{enumerable:!0,get:function(){return ay.EmberServer}});var cy=cc();Object.defineProperty(H,"S101Codec",{enumerable:!0,get:function(){return cy.S101Codec}});var uy=bc();Object.defineProperty(H,"S101Client",{enumerable:!0,get:function(){return uy.S101Client}});var rh=ur();Object.defineProperty(H,"berEncode",{enumerable:!0,get:function(){return rh.berEncode}});Object.defineProperty(H,"berDecode",{enumerable:!0,get:function(){return rh.berDecode}});var ly=th.__importStar(eh());H.Types=ly;var fy=th.__importStar(ri());H.Model=fy;var dy=nh.EmberLib.DecodeBuffer;H.Decoder=dy});var oh=p((Lx,ih)=>{var{EmberClient:hy,Model:py}=pc(),sh=t=>{let e=t?.contents||t;return`${e?.identifier||""} ${e?.description||""}`.toLowerCase().replace(/[^a-z0-9]+/g," ").trim()},my=t=>{let e=sh(t);return e.includes("gpi mute")?null:e.includes("signal presence")&&e.includes("timeout")?"sig_pres_timeout":e.includes("signal presence")&&e.includes("threshold")?"sig_pres_threshold":(e.includes("high pass")||e.includes("hpf"))&&(e.includes("frequ")||e.includes("corner"))?"hpf_freq":e.includes("high pass")||e.includes("hpf")?"hpf_enable":e.includes("phantom")?"phantom_power":e.includes("preamp gain")||e.includes("mic gain")?"preamp_gain":e.includes("full scale")||e.includes("lineup")||e.includes("fsd")?"full_scale_level":e.includes("line mic")||e.includes("input level")||e.includes("signal level")?"line_mic":e.includes("mute")?"mute":null},_y=t=>{let e=sh(t).match(/(?:^| )(?:input|channel|ch) 0?([1-8])(?: |$)/);return e?Number(e[1])-1:null},Ey=["+15 dBu","+18 dBu","+20 dBu","+22 dBu","+24 dBu"],by={line_mic:t=>Number(t)===1?"Line":"Mic",full_scale_level:t=>Ey[Number(t)]??t},gy={line_mic:"mode",phantom_power:"phantom_power",preamp_gain:"preamp_gain",full_scale_level:"full_scale_level",hpf_enable:"hpf_enabled",hpf_freq:"hpf_frequency",sig_pres_timeout:"signal_presence_timeout",sig_pres_threshold:"signal_presence_threshold",mute:"mute"},xc=class{constructor(e){this.instance=e,this.client=null,this.ready=!1,this.inputParameters=Array.from({length:8},()=>({}))}async connect(e,n=9e3){if(await this.disconnect(),!e)return;let r=new hy(e,n,1e4,!0,1e3);this.client=r,r.on("error",s=>this.instance.log("error",`Ember+ error: ${s.message||s}`)),r.on("warn",s=>this.instance.log("warn",`Ember+ warning: ${s.message||s}`)),r.on("disconnected",()=>{this.client===r&&(this.ready=!1)});try{if(await r.connect(),this.client!==r)return;try{await r.expand(r.tree)}catch(i){this.instance.log("warn",`Ember+ tree expansion warning: ${i.message||i}`)}if(this.client!==r)return;let s=this.discoverParameters(r.tree);if(s===0)throw new Error("No Ember+ control parameters were discovered");if(await this.subscribeParameters(r),this.client!==r)return;this.ready=!0,this.instance.log("info",`Ember+ controls ready on ${e}:${n} (${s} parameters)`)}catch(s){this.client===r&&(this.ready=!1,this.instance.log("error",`Failed to initialise Ember+ controls: ${s.message||s}`))}}async disconnect(){this.ready=!1;let e=this.client;this.client=null,e&&(e.removeAllListeners(),e.discard())}discoverParameters(e){this.inputParameters=Array.from({length:8},()=>({}));let n=(r,s=null)=>{if(!r||typeof r!="object")return;if(!r.contents){for(let o of Object.values(r))n(o,s);return}let i=_y(r)??s;if(r.contents.type===py.ElementType.Parameter){let o=my(r);o&&i!==null&&(this.inputParameters[i][o]=r)}for(let o of Object.values(r.children||{}))n(o,i)};return n(e),this.inputParameters.reduce((r,s)=>r+Object.keys(s).length,0)}async subscribeParameters(e){let n=[],r=async(s,i)=>{i(s);let o=await e.getDirectory(s,void 0,i);o.response&&n.push(o.response)};for(let s=0;s<this.inputParameters.length;s++)for(let[i,o]of Object.entries(this.inputParameters[s]))await r(o,a=>this.updateInputState(s,i,a.contents?.value));await Promise.all(n)}updateInputState(e,n,r){if(r===void 0)return;this.instance.inputState[e]={...this.instance.inputState[e],[n]:r};let s=gy[n];if(s){let i=by[n];this.instance.setVariableValues({[`input${e+1}_${s}`]:i?i(r):r})}n==="mute"&&(this.instance.setVariableValues(this.instance.muteVariableValues(e)),this.instance.checkFeedbacks("MuteState")),this.instance.checkFeedbacks("ParameterState")}async setInputParameter(e,n,r){let s=this.inputParameters[e]?.[n];await this.setParameter(s,r,`'${n}' for input ${e+1}`)}async setParameter(e,n,r){if(!this.ready||!this.client)throw new Error("Ember+ controls are not ready");if(!e)throw new Error(`Ember+ parameter ${r} was not found`);let s=await this.client.setValue(e,n,!0);s.response&&await s.response}};ih.exports={EmberControl:xc}});var ky=p((Mx,vc)=>{var{InstanceBase:yy,Regex:ah,InstanceStatus:vi}=(Wi(),x(Xi)),Ty=mo(),Sy=Tl(),xy=wl(),Iy=Ol(),vy=kl(),wy=Pl(),{EmberControl:Ny}=oh(),{isAsserted:ch,isMuted:Cy,isPresent:Oy}=Eo(),Ry=8081,Ic=class extends yy{constructor(e){super(e),this.ember=new Ny(this)}async init(e){this.config=e,this.inputState=Array.from({length:8},()=>({})),this.statusLeds=void 0,this.powerInputs={},this.meters=Array.from({length:8},()=>{}),this.updateActions(),this.updateFeedbacks(),this.updateVariableDefinitions(),this.updatePresets(),this.initWebSocket(),this.initEmber()}async destroy(){this.closeWebSockets(),await this.ember.disconnect(),this.log("debug","destroy")}async configUpdated(e){this.config=e,this.inputState=Array.from({length:8},()=>({})),this.statusLeds=void 0,this.powerInputs={},this.meters=Array.from({length:8},()=>{}),this.initWebSocket(),this.initEmber()}getConfigFields(){return[{type:"textinput",id:"host",label:"Device IP",width:8,regex:ah.IP,tooltip:"The IP address of the AVN-M8R."},{type:"textinput",id:"ember_port",label:"Ember+ Port",width:4,default:"9000",regex:ah.PORT,tooltip:"The TCP port used by the AVN-M8R Ember+ provider."}]}async initEmber(){this.config.host&&await this.ember.connect(this.config.host,Number(this.config.ember_port)||9e3)}initWebSocket(){if(!this.config.host){this.updateStatus(vi.BadConfig,"Target IP is not defined");return}this.closeWebSockets(),this.updateStatus(vi.Connecting),this.ws=this.openWebSocket("audio",e=>this.handleAudioMessage(e),!0),this.devinfoWs=this.openWebSocket("devinfo",e=>this.handleDevInfoMessage(e),!1)}closeWebSockets(){for(let e of["ws","devinfoWs"])this[e]&&(this[e].close(1e3),this[e]=null)}openWebSocket(e,n,r){let s=`ws://${this.config.host}:${Ry}`,i=new Ty(s,e);return i.on("open",()=>{r&&this.updateStatus(vi.Ok),this.log("debug",`Connected to ${s} (${e})`)}),i.on("close",o=>{r&&this.updateStatus(vi.Disconnected,`Connection closed with code ${o}`),this.log("debug",`${e} connection closed with code ${o}`)}),i.on("message",o=>{let a;try{a=JSON.parse(o.toString())}catch(c){this.log("warn",`Ignoring invalid ${e} WebSocket JSON: ${c.message}`);return}n(a)}),i.on("error",o=>this.log("error",`${e} WebSocket error: ${o.message}`)),i}handleAudioMessage(e){let n=e.audio||e,r={},s=(i,o)=>Object.prototype.hasOwnProperty.call(i,o);if(s(n,"statusLeds")&&(this.statusLeds=ch(n.statusLeds),r.status_leds_enabled=this.statusLeds?1:0,this.checkFeedbacks("StatusLeds")),Array.isArray(n.meter)){let i=!1;for(let o=0;o<Math.min(n.meter.length,8);o++){if(!s(n.meter[o],"segments"))continue;let a=Number(n.meter[o].segments);!Number.isFinite(a)||a===this.meters[o]||(this.meters[o]=a,r[`input${o+1}_meter`]=a,i=!0)}i&&this.checkFeedbacks("MeterLevel")}if(Array.isArray(n.inputs)){let i=!1;for(let o of n.inputs){if(!o||typeof o!="object")continue;let a=Number(o.idx);if(!(!Number.isInteger(a)||a<0||a>7)&&(s(o,"lbl")&&(r[`input${a+1}_dante_label`]=o.lbl),s(o,"fnm")&&(r[`input${a+1}_friendly_name`]=o.fnm),s(o,"gpi_m"))){let c=ch(o.gpi_m);this.inputState[a]={...this.inputState[a],gpi_mute:c},r[`input${a+1}_gpi_mute`]=c,Object.assign(r,this.muteVariableValues(a)),i=!0}}i&&this.checkFeedbacks("MuteState")}Object.keys(r).length>0&&this.setVariableValues(r)}handleDevInfoMessage(e){let n=e.devinfo||e,r={},s=(o,a)=>Object.prototype.hasOwnProperty.call(o,a);if(s(n,"uptime")&&(r.device_uptime=String(n.uptime).replace(/\s+/g," ").trim()),s(n,"ctemp")){let o=String(n.ctemp).trim(),a=Number(o);o!==""&&Number.isFinite(a)?r.device_temperature=a:this.log("debug",`Ignoring unreadable ctemp value: ${JSON.stringify(n.ctemp)}`)}let i=!1;for(let[o,a,c]of[["ac1",1,"primary_poe_present"],["ac2",2,"secondary_poe_present"]])s(n,o)&&(this.powerInputs[a]=Oy(n[o]),r[c]=String(n[o]).trim(),i=!0);Object.keys(r).length>0&&this.setVariableValues(r),i&&this.checkFeedbacks("PowerInput")}muteVariableValues(e){return{[`input${e+1}_mute_active`]:Cy(this.inputState?.[e])}}updateActions(){xy(this)}updateFeedbacks(){Iy(this)}updateVariableDefinitions(){vy(this)}updatePresets(){wy(this)}};vc.exports=Ic;vc.exports.UpgradeScripts=Sy});export default ky();
+`)}`),
+				(this.sub = e))
+		}
+	}
+	j.DecodeError = Rs
+	function SE(t) {
+		if (t.errors && t.errors.length > 0) throw new Rs(t.errors)
+		return t.value
+	}
+	j.guarded = SE
+	function cd(t, e) {
+		return (0, ad.literal)({ value: t, errors: Array.isArray(e) ? e : [] })
+	}
+	j.makeResult = cd
+	function xE(t, e, n, r = sr) {
+		let s = new Error(`${e}: Unexpected BER context tag '${n}'`),
+			i = Array.isArray(t) ? t : t.errors
+		if (r.skipContextTags) (i || (i = []), i.push(s), Array.isArray(t) || (t.errors = i))
+		else throw s
+	}
+	j.unknownContext = xE
+	function IE(t, e, n, r = sr) {
+		let s = new Error(`${e}: Unexpected BER application tag '${n}'`),
+			i = Array.isArray(t) ? t : t.errors
+		if (r.skipApplicationTags) (i || (i = []), i.push(s), Array.isArray(t) || (t.errors = i))
+		else throw s
+	}
+	j.unknownApplication = IE
+	function vE(t, e, n) {
+		return (
+			t.errors && t.errors.length > 0 && (e.errors = e.errors ? e.errors.concat(t.errors) : t.errors),
+			(e.value = n(t.value, e.value)),
+			e
+		)
+	}
+	j.safeSet = vE
+	function wE(t, e, n, r, s, i = sr) {
+		if (t == null) {
+			let o = `${e}: For required property '${n}', value is missing.`
+			if (i.substituteForRequired) {
+				let a = Array.isArray(s) ? s : s.errors
+				return (a || (a = []), a.push(new Error(o + ` Substituting '${r}'`)), Array.isArray(s) || (s.errors = a), r)
+			} else throw new Error(o)
+		}
+		return t
+	}
+	j.check = wE
+	function NE(t, e) {
+		return (
+			t.errors &&
+				t.errors.length > 0 &&
+				(Array.isArray(e) ? e.push(...t.errors) : (e.errors = e.errors ? e.errors.concat(t.errors) : t.errors)),
+			t.value
+		)
+	}
+	j.appendErrors = NE
+	function CE(t, e, n = '', r, s = sr) {
+		let i = Array.isArray(t) ? t : t.errors,
+			o = new Error(`${e}${n ? ': ' + n : ''}`)
+		if (s.skipUnexpected)
+			return (i || (i = []), i.push(o), Array.isArray(t) ? cd(r, i) : ((t.errors = i), (t.value = r), t))
+		throw o
+	}
+	j.unexpected = CE
+	function OE(t) {
+		let e = t.peek()
+		e && t.readString(e, !0)
+	}
+	j.skipNext = OE
+})
+var ud = p((ks) => {
+	'use strict'
+	Object.defineProperty(ks, '__esModule', { value: !0 })
+	ks.decodeInvocationResult = void 0
+	var RE = (v(), x(I)),
+		ir = RE.__importStar(R()),
+		kE = Ra(),
+		BE = M(),
+		Xt = Ee()
+	function qE(t, e = Xt.defaultDecode) {
+		t.readSequence(BE.InvocationResultBERID)
+		let n = null,
+			r,
+			s,
+			i,
+			o = [],
+			a = t.offset + t.length
+		for (; t.offset < a;) {
+			let c = t.readSequence()
+			switch (c) {
+				case ir.CONTEXT(0):
+					n = t.readInt()
+					break
+				case ir.CONTEXT(1):
+					r = t.readBoolean()
+					break
+				case ir.CONTEXT(2):
+					for (s = [], t.readSequence(ir.BERDataTypes.SEQUENCE), i = t.offset + t.length; t.offset < i;) {
+						let u = t.readSequence()
+						if (u !== 0) {
+							if (u === null || u !== ir.CONTEXT(0)) {
+								;((0, Xt.unknownContext)(o, 'decode invocation result: result', u, e), (0, Xt.skipNext)(t))
+								continue
+							}
+							s.push(t.readValue())
+						}
+					}
+					break
+				case 0:
+					break
+				default:
+					;((0, Xt.unknownContext)(o, 'decode invocation result', c, e), (0, Xt.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(n = (0, Xt.check)(n, 'decode invocation result', 'id', -1, o, e)),
+			(0, Xt.makeResult)(new kE.InvocationResultImpl(n, r, s), o)
+		)
+	}
+	ks.decodeInvocationResult = qE
+})
+var Rt = p((xn) => {
+	'use strict'
+	Object.defineProperty(xn, '__esModule', { value: !0 })
+	xn.QualifiedElementImpl = xn.NumberedTreeNodeImpl = void 0
+	var Bs = class {
+			constructor(e, n, r) {
+				;((this.contents = e), (this.children = n), (this.parent = r))
+			}
+		},
+		ka = class extends Bs {
+			constructor(e, n, r, s) {
+				;(super(n, r, s), (this.number = e))
+			}
+		}
+	xn.NumberedTreeNodeImpl = ka
+	var Ba = class extends Bs {
+		constructor(e, n, r) {
+			;(super(n, r), (this.path = e), (this.parent = void 0))
+		}
+	}
+	xn.QualifiedElementImpl = Ba
+})
+var Da = p((qs) => {
+	'use strict'
+	Object.defineProperty(qs, '__esModule', { value: !0 })
+	qs.EmberFunctionImpl = void 0
+	var DE = Ie(),
+		qa = class {
+			constructor(e, n, r, s, i) {
+				;((this.identifier = e),
+					(this.description = n),
+					(this.args = r),
+					(this.result = s),
+					(this.templateReference = i),
+					(this.type = DE.ElementType.Function))
+			}
+		}
+	qs.EmberFunctionImpl = qa
+})
+var Aa = p((Ds) => {
+	'use strict'
+	Object.defineProperty(Ds, '__esModule', { value: !0 })
+	Ds.FunctionArgumentImpl = void 0
+	var Pa = class {
+		constructor(e, n) {
+			;((this.type = e), (this.name = n))
+		}
+	}
+	Ds.FunctionArgumentImpl = Pa
+})
+var fd = p((Ps) => {
+	'use strict'
+	Object.defineProperty(Ps, '__esModule', { value: !0 })
+	Ps.decodeStreamDescription = void 0
+	var PE = (v(), x(I)),
+		ld = PE.__importStar(R()),
+		Z = hs(),
+		AE = M(),
+		A = Ee()
+	function FE(t, e = A.defaultDecode) {
+		t.readSequence(AE.StreamDescriptionBERID)
+		let n = null,
+			r = null,
+			s = [],
+			i = t.offset + t.length
+		for (; t.offset < i;) {
+			let o = t.readSequence()
+			switch (o) {
+				case ld.CONTEXT(0):
+					n = (0, A.appendErrors)(LE(t.readInt(), e), s)
+					break
+				case ld.CONTEXT(1):
+					r = t.readInt()
+					break
+				case 0:
+					break
+				default:
+					;((0, A.unknownContext)(s, 'decode stream description', o, e), (0, A.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(n = (0, A.check)(n, 'decode stream description', 'format', Z.StreamFormat.UInt8, s, e)),
+			(r = (0, A.check)(r, 'decode stream description', 'offset', 0, s, e)),
+			(0, A.makeResult)(new Z.StreamDescriptionImpl(n, r), s)
+		)
+	}
+	Ps.decodeStreamDescription = FE
+	function LE(t, e = A.defaultDecode) {
+		switch (t) {
+			case 0:
+				return (0, A.makeResult)(Z.StreamFormat.UInt8)
+			case 2:
+				return (0, A.makeResult)(Z.StreamFormat.UInt16BE)
+			case 3:
+				return (0, A.makeResult)(Z.StreamFormat.UInt16LE)
+			case 4:
+				return (0, A.makeResult)(Z.StreamFormat.UInt32BE)
+			case 5:
+				return (0, A.makeResult)(Z.StreamFormat.UInt32LE)
+			case 6:
+				return (0, A.makeResult)(Z.StreamFormat.UInt64BE)
+			case 7:
+				return (0, A.makeResult)(Z.StreamFormat.UInt64LE)
+			case 8:
+				return (0, A.makeResult)(Z.StreamFormat.Int8)
+			case 10:
+				return (0, A.makeResult)(Z.StreamFormat.Int16BE)
+			case 11:
+				return (0, A.makeResult)(Z.StreamFormat.Int16LE)
+			case 12:
+				return (0, A.makeResult)(Z.StreamFormat.Int32BE)
+			case 13:
+				return (0, A.makeResult)(Z.StreamFormat.Int32LE)
+			case 14:
+				return (0, A.makeResult)(Z.StreamFormat.Int64BE)
+			case 15:
+				return (0, A.makeResult)(Z.StreamFormat.Int64LE)
+			case 20:
+				return (0, A.makeResult)(Z.StreamFormat.Float32BE)
+			case 21:
+				return (0, A.makeResult)(Z.StreamFormat.Float32LE)
+			case 22:
+				return (0, A.makeResult)(Z.StreamFormat.Float64BE)
+			case 23:
+				return (0, A.makeResult)(Z.StreamFormat.Float64LE)
+			default:
+				return (0, A.unexpected)([], 'read stream format', `unexpected stream format '${t}'`, Z.StreamFormat.UInt8, e)
+		}
+	}
+})
+var hd = p((Fs) => {
+	'use strict'
+	Object.defineProperty(Fs, '__esModule', { value: !0 })
+	Fs.decodeStringIntegerCollection = void 0
+	var ME = (v(), x(I)),
+		As = ME.__importStar(R()),
+		dd = M(),
+		Ze = Ee()
+	function UE(t, e = Ze.defaultDecode) {
+		t.readSequence(dd.StringIntegerCollectionBERID)
+		let n = new Map(),
+			r = [],
+			s = t.offset + t.length
+		for (; t.offset < s;) {
+			let i = t.readSequence()
+			if (i === 0) continue
+			if (i !== As.CONTEXT(0)) {
+				;((0, Ze.unknownContext)(r, 'decode string integer collection', i, e), (0, Ze.skipNext)(t))
+				continue
+			}
+			let o = (0, Ze.appendErrors)(jE(t, e), r)
+			n.set(o.key, o.value)
+		}
+		return (0, Ze.makeResult)(n, r)
+	}
+	Fs.decodeStringIntegerCollection = UE
+	function jE(t, e = Ze.defaultDecode) {
+		let n = null,
+			r = null,
+			s = []
+		t.readSequence(dd.StringIntegerPairBERID)
+		let i = t.offset + t.length
+		for (; t.offset < i;) {
+			let o = t.readSequence()
+			switch (o) {
+				case As.CONTEXT(0):
+					n = t.readString(As.BERDataTypes.STRING)
+					break
+				case As.CONTEXT(1):
+					r = t.readInt()
+					break
+				case 0:
+					break
+				default:
+					;((0, Ze.unknownContext)(s, 'deocde string integer pair', o, e), (0, Ze.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(n = (0, Ze.check)(n, 'decode string integer pair', 'key', `key${(Math.random() * 1e6) | 0}`, s, e)),
+			(r = (0, Ze.check)(r, 'decode string integer pair', 'value', -1, s, e)),
+			(0, Ze.makeResult)({ key: n, value: r }, s)
+		)
+	}
+})
+var Fa = p((In) => {
+	'use strict'
+	Object.defineProperty(In, '__esModule', { value: !0 })
+	In.readParameterType = In.decodeParameter = void 0
+	var $E = (v(), x(I)),
+		F = $E.__importStar(R()),
+		ne = st(),
+		VE = fd(),
+		GE = hd(),
+		G = Ee()
+	function XE(t, e = G.defaultDecode) {
+		t.readSequence(F.BERDataTypes.SET)
+		let n,
+			r,
+			s,
+			i,
+			o,
+			a,
+			c,
+			u,
+			f,
+			d,
+			m,
+			_,
+			y,
+			b,
+			g,
+			w,
+			$,
+			Te,
+			Y,
+			Ue,
+			fe = [],
+			W = t.offset + t.length
+		for (; t.offset < W;) {
+			let E = t.readSequence()
+			switch (E) {
+				case F.CONTEXT(0):
+					n = t.readString(F.BERDataTypes.STRING)
+					break
+				case F.CONTEXT(1):
+					r = t.readString(F.BERDataTypes.STRING)
+					break
+				case F.CONTEXT(2): {
+					let h = t.readValue()
+					;((s = h.value), (i = h.type))
+					break
+				}
+				case F.CONTEXT(3):
+					o = t.readValue().value
+					break
+				case F.CONTEXT(4):
+					a = t.readValue().value
+					break
+				case F.CONTEXT(5):
+					c = (0, G.appendErrors)(WE(t.readInt(), e), fe)
+					break
+				case F.CONTEXT(6):
+					u = t.readString(F.BERDataTypes.STRING)
+					break
+				case F.CONTEXT(7):
+					f = t.readString(F.BERDataTypes.STRING)
+					break
+				case F.CONTEXT(8):
+					d = t.readInt()
+					break
+				case F.CONTEXT(9):
+					m = t.readBoolean()
+					break
+				case F.CONTEXT(10):
+					_ = t.readString(F.BERDataTypes.STRING)
+					break
+				case F.CONTEXT(11):
+					y = t.readInt()
+					break
+				case F.CONTEXT(12):
+					b = t.readValue().value
+					break
+				case F.CONTEXT(13):
+					g = (0, G.appendErrors)(pd(t.readInt(), e), fe)
+					break
+				case F.CONTEXT(14):
+					w = t.readInt()
+					break
+				case F.CONTEXT(15):
+					$ = (0, G.appendErrors)((0, GE.decodeStringIntegerCollection)(t, e), fe)
+					break
+				case F.CONTEXT(16):
+					Te = (0, G.appendErrors)((0, VE.decodeStreamDescription)(t, e), fe)
+					break
+				case F.CONTEXT(17):
+					Y = t.readString(F.BERDataTypes.STRING)
+					break
+				case F.CONTEXT(18):
+					Ue = t.readString(F.BERDataTypes.STRING)
+					break
+				case 0:
+					break
+				default:
+					;((0, G.unknownContext)(fe, 'decode parameter', E, e), (0, G.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(g = g === ne.ParameterType.Trigger ? ne.ParameterType.Trigger : $ || f ? ne.ParameterType.Enum : i || g),
+			(g = (0, G.check)(g, 'decode parameter', 'parameterType', ne.ParameterType.Null, fe, e)),
+			(0, G.makeResult)(new ne.ParameterImpl(g, n, r, s, a, o, c, u, f, d, m, _, y, b, w, $, Te, Y, Ue), fe)
+		)
+	}
+	In.decodeParameter = XE
+	function WE(t, e) {
+		switch (t) {
+			case 0:
+				return (0, G.makeResult)(ne.ParameterAccess.None)
+			case 1:
+				return (0, G.makeResult)(ne.ParameterAccess.Read)
+			case 2:
+				return (0, G.makeResult)(ne.ParameterAccess.Write)
+			case 3:
+				return (0, G.makeResult)(ne.ParameterAccess.ReadWrite)
+			default:
+				return (0, G.unexpected)(
+					[],
+					'read parameter access',
+					`unexpected parameter access '${t}'`,
+					ne.ParameterAccess.ReadWrite,
+					e,
+				)
+		}
+	}
+	function pd(t, e) {
+		switch (t) {
+			case 0:
+				return (0, G.makeResult)(ne.ParameterType.Null)
+			case 1:
+				return (0, G.makeResult)(ne.ParameterType.Integer)
+			case 2:
+				return (0, G.makeResult)(ne.ParameterType.Real)
+			case 3:
+				return (0, G.makeResult)(ne.ParameterType.String)
+			case 4:
+				return (0, G.makeResult)(ne.ParameterType.Boolean)
+			case 5:
+				return (0, G.makeResult)(ne.ParameterType.Trigger)
+			case 6:
+				return (0, G.makeResult)(ne.ParameterType.Enum)
+			case 7:
+				return (0, G.makeResult)(ne.ParameterType.Octets)
+			default:
+				return (0, G.unexpected)(
+					[],
+					'read parameter type',
+					`unexpected parameter type '${t}'`,
+					ne.ParameterType.Null,
+					e,
+				)
+		}
+	}
+	In.readParameterType = pd
+})
+var md = p((Ls) => {
+	'use strict'
+	Object.defineProperty(Ls, '__esModule', { value: !0 })
+	Ls.decodeFunctionArgument = void 0
+	var zE = (v(), x(I)),
+		La = zE.__importStar(R()),
+		QE = Aa(),
+		HE = st(),
+		ZE = M(),
+		KE = Fa(),
+		vn = Ee()
+	function YE(t, e = vn.defaultDecode) {
+		t.readSequence(ZE.FunctionArgumentBERID)
+		let n = null,
+			r,
+			s = [],
+			i = t.offset + t.length
+		for (; t.offset < i;) {
+			let o = t.readSequence()
+			switch (o) {
+				case La.CONTEXT(0):
+					n = (0, vn.appendErrors)((0, KE.readParameterType)(t.readInt(), e), s)
+					break
+				case La.CONTEXT(1):
+					r = t.readString(La.BERDataTypes.STRING)
+					break
+				case 0:
+					break
+				default:
+					;((0, vn.unknownContext)(s, 'decode function context', o, e), (0, vn.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(n = (0, vn.check)(n, 'decode function argument', 'type', HE.ParameterType.Null, s, e)),
+			(0, vn.makeResult)(new QE.FunctionArgumentImpl(n, r), s)
+		)
+	}
+	Ls.decodeFunctionArgument = YE
+})
+var Ed = p((Ms) => {
+	'use strict'
+	Object.defineProperty(Ms, '__esModule', { value: !0 })
+	Ms.decodeFunctionContent = void 0
+	var JE = (v(), x(I)),
+		Le = JE.__importStar(R()),
+		eb = Da(),
+		_d = md(),
+		at = Ee()
+	function tb(t, e = at.defaultDecode) {
+		t.readSequence(Le.BERDataTypes.SET)
+		let n,
+			r,
+			s,
+			i,
+			o,
+			a,
+			c,
+			u = [],
+			f = t.offset + t.length
+		for (; t.offset < f;) {
+			let d = t.readSequence()
+			switch (d) {
+				case Le.CONTEXT(0):
+					n = t.readString(Le.BERDataTypes.STRING)
+					break
+				case Le.CONTEXT(1):
+					r = t.readString(Le.BERDataTypes.STRING)
+					break
+				case Le.CONTEXT(2):
+					for (s = [], t.readSequence(Le.BERDataTypes.SEQUENCE), a = t.offset + t.length; t.offset < a;) {
+						let m = t.readSequence()
+						if (m === 0) continue
+						if (m !== Le.CONTEXT(0)) {
+							;((0, at.unknownContext)(u, 'decode function content: arguments', m, e), (0, at.skipNext)(t))
+							continue
+						}
+						let _ = (0, at.appendErrors)((0, _d.decodeFunctionArgument)(t, e), u)
+						s.push(_)
+					}
+					break
+				case Le.CONTEXT(3):
+					for (i = [], t.readSequence(Le.BERDataTypes.SEQUENCE), c = t.offset + t.length; t.offset < c;) {
+						let m = t.readSequence()
+						if (m === 0) continue
+						if (m !== Le.CONTEXT(0)) {
+							;((0, at.unknownContext)(u, 'decode function content: result', m, e), (0, at.skipNext)(t))
+							continue
+						}
+						let _ = (0, at.appendErrors)((0, _d.decodeFunctionArgument)(t, e), u)
+						i.push(_)
+					}
+					break
+				case Le.CONTEXT(4):
+					o = t.readRelativeOID(Le.BERDataTypes.RELATIVE_OID)
+					break
+				case 0:
+					break
+				default:
+					;((0, at.unknownContext)(u, 'decode function content', d, e), (0, at.skipNext)(t))
+					break
+			}
+		}
+		return (0, at.makeResult)(new eb.EmberFunctionImpl(n, r, s, i, o), u)
+	}
+	Ms.decodeFunctionContent = tb
+})
+var or = p((Us) => {
+	'use strict'
+	Object.defineProperty(Us, '__esModule', { value: !0 })
+	Us.EmberNodeImpl = void 0
+	var nb = Ie(),
+		Ma = class {
+			constructor(e, n, r, s, i, o) {
+				;((this.identifier = e),
+					(this.description = n),
+					(this.isRoot = r),
+					(this.isOnline = s),
+					(this.schemaIdentifiers = i),
+					(this.templateReference = o),
+					(this.type = nb.ElementType.Node))
+			}
+		}
+	Us.EmberNodeImpl = Ma
+})
+var bd = p(($s) => {
+	'use strict'
+	Object.defineProperty($s, '__esModule', { value: !0 })
+	$s.decodeNode = void 0
+	var rb = (v(), x(I)),
+		Ke = rb.__importStar(R()),
+		sb = or(),
+		js = Ee()
+	function ib(t, e = js.defaultDecode) {
+		t.readSequence(Ke.BERDataTypes.SET)
+		let n,
+			r,
+			s,
+			i,
+			o,
+			a,
+			c = [],
+			u = t.offset + t.length
+		for (; t.offset < u;) {
+			let f = t.readSequence()
+			switch (f) {
+				case Ke.CONTEXT(0):
+					n = t.readString(Ke.BERDataTypes.STRING)
+					break
+				case Ke.CONTEXT(1):
+					r = t.readString(Ke.BERDataTypes.STRING)
+					break
+				case Ke.CONTEXT(2):
+					s = t.readBoolean()
+					break
+				case Ke.CONTEXT(3):
+					i = t.readBoolean()
+					break
+				case Ke.CONTEXT(4):
+					o = t.readString(Ke.BERDataTypes.STRING)
+					break
+				case Ke.CONTEXT(5):
+					a = t.readRelativeOID(Ke.BERDataTypes.RELATIVE_OID)
+					break
+				case 0:
+					break
+				default:
+					;((0, js.unknownContext)(c, 'deocde node', f, e), (0, js.skipNext)(t))
+					break
+			}
+		}
+		return (0, js.makeResult)(new sb.EmberNodeImpl(n, r, s, i, o, a), c)
+	}
+	$s.decodeNode = ib
+})
+var ja = p((Vs) => {
+	'use strict'
+	Object.defineProperty(Vs, '__esModule', { value: !0 })
+	Vs.TemplateImpl = void 0
+	var ob = Ie(),
+		Ua = class {
+			constructor(e, n) {
+				;((this.element = e), (this.description = n), (this.type = ob.ElementType.Template))
+			}
+		}
+	Vs.TemplateImpl = Ua
+})
+var Sd = p((Xs) => {
+	'use strict'
+	Object.defineProperty(Xs, '__esModule', { value: !0 })
+	Xs.decodeTemplate = void 0
+	var ab = (v(), x(I)),
+		Gs = ab.__importStar(R()),
+		gd = ja(),
+		yd = M(),
+		cb = Ws(),
+		Td = Rt(),
+		kt = Ee()
+	function ub(t, e = !1, n = kt.defaultDecode) {
+		t.readSequence(e ? yd.QualifiedTemplateBERID : yd.TemplateBERID)
+		let r = null,
+			s = null,
+			i,
+			o,
+			a = [],
+			c = t.offset + t.length
+		for (; t.offset < c;) {
+			let u = t.readSequence()
+			switch (u) {
+				case Gs.CONTEXT(0):
+					e ? (s = t.readRelativeOID()) : (r = t.readInt())
+					break
+				case Gs.CONTEXT(1):
+					i = (0, kt.appendErrors)((0, cb.decodeGenericElement)(t, n), a)
+					break
+				case Gs.CONTEXT(2):
+					o = t.readString(Gs.BERDataTypes.STRING)
+					break
+				case 0:
+					break
+				default:
+					;((0, kt.unknownContext)(a, 'decode template', u, n), (0, kt.skipNext)(t))
+					break
+			}
+		}
+		return e
+			? ((s = (0, kt.check)(s, 'decode template', 'path', '', a, n)),
+				(0, kt.makeResult)(new Td.QualifiedElementImpl(s, new gd.TemplateImpl(i, o)), a))
+			: ((r = (0, kt.check)(r, 'decode tempalte', 'number', -1, a, n)),
+				(0, kt.makeResult)(new Td.NumberedTreeNodeImpl(r, new gd.TemplateImpl(i, o)), a))
+	}
+	Xs.decodeTemplate = ub
+})
+var xd = p((zs) => {
+	'use strict'
+	Object.defineProperty(zs, '__esModule', { value: !0 })
+	zs.decodeConnection = void 0
+	var lb = (v(), x(I)),
+		ar = lb.__importStar(R()),
+		ct = Hn(),
+		fb = M(),
+		ue = Ee()
+	function db(t, e = ue.defaultDecode) {
+		t.readSequence(fb.ConnectionBERID)
+		let n = null,
+			r,
+			s,
+			i,
+			o,
+			a = [],
+			c = t.offset + t.length
+		for (; t.offset < c;) {
+			let u = t.readSequence()
+			switch (u) {
+				case ar.CONTEXT(0):
+					n = t.readInt()
+					break
+				case ar.CONTEXT(1):
+					;((o = t.readRelativeOID(ar.BERDataTypes.RELATIVE_OID)),
+						o.length === 0 ? (r = []) : (r = o.split('.').map((f) => Number(f))))
+					break
+				case ar.CONTEXT(2):
+					s = (0, ue.appendErrors)(hb(t.readInt(), e), a)
+					break
+				case ar.CONTEXT(3):
+					i = (0, ue.appendErrors)(pb(t.readInt(), e), a)
+					break
+				case 0:
+					break
+				default:
+					;((0, ue.unknownContext)(a, 'decode connection', u, e), (0, ue.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(n = (0, ue.check)(n, 'deocde connection', 'target', -1, a, e)),
+			(0, ue.makeResult)(new ct.ConnectionImpl(n, r, s, i), a)
+		)
+	}
+	zs.decodeConnection = db
+	function hb(t, e = ue.defaultDecode) {
+		switch (t) {
+			case 0:
+				return (0, ue.makeResult)(ct.ConnectionOperation.Absolute)
+			case 1:
+				return (0, ue.makeResult)(ct.ConnectionOperation.Connect)
+			case 2:
+				return (0, ue.makeResult)(ct.ConnectionOperation.Disconnect)
+			default:
+				return (0, ue.unexpected)(
+					[],
+					'read connection options',
+					`unexpected connection operation '${t}'`,
+					ct.ConnectionOperation.Absolute,
+					e,
+				)
+		}
+	}
+	function pb(t, e = ue.defaultDecode) {
+		switch (t) {
+			case 0:
+				return (0, ue.makeResult)(ct.ConnectionDisposition.Tally)
+			case 1:
+				return (0, ue.makeResult)(ct.ConnectionDisposition.Modified)
+			case 2:
+				return (0, ue.makeResult)(ct.ConnectionDisposition.Pending)
+			case 3:
+				return (0, ue.makeResult)(ct.ConnectionDisposition.Locked)
+			default:
+				return (0, ue.unexpected)(
+					[],
+					'read connection options',
+					`unexpected connection operation '${t}'`,
+					ct.ConnectionDisposition.Tally,
+					e,
+				)
+		}
+	}
+})
+var Id = p((Qs) => {
+	'use strict'
+	Object.defineProperty(Qs, '__esModule', { value: !0 })
+	Qs.LabelImpl = void 0
+	var $a = class {
+		constructor(e, n) {
+			;((this.basePath = e), (this.description = n))
+		}
+	}
+	Qs.LabelImpl = $a
+})
+var vd = p((Zs) => {
+	'use strict'
+	Object.defineProperty(Zs, '__esModule', { value: !0 })
+	Zs.decodeLabel = void 0
+	var mb = (v(), x(I)),
+		Hs = mb.__importStar(R()),
+		_b = Id(),
+		Eb = M(),
+		wn = Ee()
+	function bb(t, e = wn.defaultDecode) {
+		t.readSequence(Eb.LabelBERID)
+		let n = null,
+			r = null,
+			s = [],
+			i = t.offset + t.length
+		for (; t.offset < i;) {
+			let o = t.readSequence()
+			switch (o) {
+				case Hs.CONTEXT(0):
+					n = t.readRelativeOID(Hs.BERDataTypes.RELATIVE_OID)
+					break
+				case Hs.CONTEXT(1):
+					r = t.readString(Hs.BERDataTypes.STRING)
+					break
+				case 0:
+					break
+				default:
+					;((0, wn.unknownContext)(s, 'decode label', o, e), (0, wn.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(n = (0, wn.check)(n, 'decode label', 'basePath', '', s, e)),
+			(r = (0, wn.check)(r, 'decode label', 'description', '', s, e)),
+			(0, wn.makeResult)(new _b.LabelImpl(n, r), s)
+		)
+	}
+	Zs.decodeLabel = bb
+})
+var Nd = p((Ys) => {
+	'use strict'
+	Object.defineProperty(Ys, '__esModule', { value: !0 })
+	Ys.decodeMatrix = void 0
+	var gb = (v(), x(I)),
+		O = gb.__importStar(R()),
+		St = Es(),
+		yb = Ws(),
+		Tb = xd(),
+		Sb = vd(),
+		Ks = M(),
+		wd = Rt(),
+		C = Ee()
+	function xb(t, e = !1, n = C.defaultDecode) {
+		t.readSequence(e ? Ks.QualifiedMatrixBERID : Ks.MatrixBERID)
+		let r = null,
+			s = null,
+			i,
+			o,
+			a,
+			c = null,
+			u,
+			f = [],
+			d = t.offset + t.length
+		for (; t.offset < d;) {
+			let _ = t.readSequence()
+			switch (_) {
+				case O.CONTEXT(0):
+					e ? (s = t.readRelativeOID()) : (r = t.readInt())
+					break
+				case O.CONTEXT(1):
+					c = (0, C.appendErrors)(Ib(t, n), f)
+					break
+				case O.CONTEXT(2):
+					u = (0, C.appendErrors)((0, yb.decodeChildren)(t, n), f)
+					break
+				case O.CONTEXT(3):
+					i = (0, C.appendErrors)(vb(t, n), f)
+					break
+				case O.CONTEXT(4):
+					o = (0, C.appendErrors)(wb(t, n), f)
+					break
+				case O.CONTEXT(5):
+					a = (0, C.appendErrors)(Nb(t, n), f)
+					break
+				case 0:
+					break
+				default:
+					;((0, C.unknownContext)(f, 'decode matrix', _, n), (0, C.skipNext)(t))
+					break
+			}
+		}
+		;((c = (0, C.check)(c, 'decode matrix', 'contents', new St.MatrixImpl(''), f, n)),
+			(c.targets = i),
+			(c.sources = o),
+			(c.connections = a))
+		let m
+		if (
+			(e
+				? ((s = (0, C.check)(s, 'decode matrix', 'path', '', f, n)), (m = new wd.QualifiedElementImpl(s, c, u)))
+				: ((r = (0, C.check)(r, 'decode matrix', 'number', -1, f, n)), (m = new wd.NumberedTreeNodeImpl(r, c, u))),
+			u)
+		)
+			for (let _ of Object.values(u)) _.parent = m
+		return (0, C.makeResult)(m, f)
+	}
+	Ys.decodeMatrix = xb
+	function Ib(t, e = C.defaultDecode) {
+		t.readSequence(O.BERDataTypes.SET)
+		let n,
+			r,
+			s,
+			i,
+			o,
+			a,
+			c,
+			u,
+			f,
+			d,
+			m,
+			_,
+			y,
+			b,
+			g,
+			w = [],
+			$ = t.offset + t.length
+		for (; t.offset < $;) {
+			let Te = t.readSequence()
+			switch (Te) {
+				case O.CONTEXT(0):
+					r = t.readString(O.BERDataTypes.STRING)
+					break
+				case O.CONTEXT(1):
+					s = t.readString(O.BERDataTypes.STRING)
+					break
+				case O.CONTEXT(2):
+					i = (0, C.appendErrors)(Cb(t.readInt(), e), w)
+					break
+				case O.CONTEXT(3):
+					o = (0, C.appendErrors)(Ob(t.readInt(), e), w)
+					break
+				case O.CONTEXT(4):
+					a = t.readInt()
+					break
+				case O.CONTEXT(5):
+					c = t.readInt()
+					break
+				case O.CONTEXT(6):
+					u = t.readInt()
+					break
+				case O.CONTEXT(7):
+					f = t.readInt()
+					break
+				case O.CONTEXT(8):
+					;((n = t.peek()),
+						n === O.BERDataTypes.RELATIVE_OID
+							? (d = t.readRelativeOID(O.BERDataTypes.RELATIVE_OID))
+							: (d = t.readInt()))
+					break
+				case O.CONTEXT(9):
+					m = t.readInt()
+					break
+				case O.CONTEXT(10):
+					for (_ = [], t.readSequence(O.BERDataTypes.SEQUENCE), g = t.offset + t.length; t.offset < g;) {
+						t.readSequence(O.CONTEXT(0))
+						let Y = (0, C.appendErrors)((0, Sb.decodeLabel)(t, e), w)
+						_.push(Y)
+					}
+					break
+				case O.CONTEXT(11):
+					y = t.readString(O.BERDataTypes.STRING)
+					break
+				case O.CONTEXT(12):
+					b = t.readRelativeOID(O.BERDataTypes.RELATIVE_OID)
+					break
+				case 0:
+					break
+				default:
+					;((0, C.unknownContext)(w, 'decode mattric contents', Te, e), (0, C.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(r = (0, C.check)(r, 'decode matrix contents', 'identifier', '', w, e)),
+			(0, C.makeResult)(new St.MatrixImpl(r, void 0, void 0, void 0, s, i, o, a, c, u, f, d, m, _, y, b), w)
+		)
+	}
+	function vb(t, e = C.defaultDecode) {
+		let n = []
+		t.readSequence(O.BERDataTypes.SEQUENCE)
+		let r = t.offset + t.length
+		for (; t.offset < r;)
+			(t.readSequence(O.CONTEXT(0)), t.readSequence(Ks.TargetBERID), t.readSequence(O.CONTEXT(0)), n.push(t.readInt()))
+		return (0, C.makeResult)(n)
+	}
+	function wb(t, e = C.defaultDecode) {
+		let n = []
+		t.readSequence(O.BERDataTypes.SEQUENCE)
+		let r = t.offset + t.length
+		for (; t.offset < r;)
+			(t.readSequence(O.CONTEXT(0)), t.readSequence(Ks.SourceBERID), t.readSequence(O.CONTEXT(0)), n.push(t.readInt()))
+		return (0, C.makeResult)(n)
+	}
+	function Nb(t, e = C.defaultDecode) {
+		let n = (0, C.makeResult)({})
+		t.readSequence(O.BERDataTypes.SEQUENCE)
+		let r = t.offset + t.length
+		for (; t.offset < r;)
+			if (t.readSequence() === O.CONTEXT(0)) {
+				let i = (0, C.appendErrors)((0, Tb.decodeConnection)(t, e), n)
+				n.value[i.target] = i
+			} else (0, C.skipNext)(t)
+		return n
+	}
+	function Cb(t, e = C.defaultDecode) {
+		switch (t) {
+			case 0:
+				return (0, C.makeResult)(St.MatrixType.OneToN)
+			case 1:
+				return (0, C.makeResult)(St.MatrixType.OneToOne)
+			case 2:
+				return (0, C.makeResult)(St.MatrixType.NToN)
+			default:
+				return (0, C.unexpected)([], 'read matrix type', `unexpected matrix type '${t}'`, St.MatrixType.NToN, e)
+		}
+	}
+	function Ob(t, e = C.defaultDecode) {
+		switch (t) {
+			case 0:
+				return (0, C.makeResult)(St.MatrixAddressingMode.Linear)
+			case 1:
+				return (0, C.makeResult)(St.MatrixAddressingMode.NonLinear)
+			default:
+				return (0, C.unexpected)(
+					[],
+					'read addressing mode',
+					`unexpected addressing mode '${t}'`,
+					St.MatrixAddressingMode.Linear,
+					e,
+				)
+		}
+	}
+})
+var Cd = p((Js) => {
+	'use strict'
+	Object.defineProperty(Js, '__esModule', { value: !0 })
+	Js.InvocationImpl = void 0
+	var Va = class {
+		constructor(e, n) {
+			;((this.id = e), (this.args = n))
+		}
+	}
+	Js.InvocationImpl = Va
+})
+var Od = p((ti) => {
+	'use strict'
+	Object.defineProperty(ti, '__esModule', { value: !0 })
+	ti.decodeInvocation = void 0
+	var Rb = (v(), x(I)),
+		ei = Rb.__importStar(R()),
+		kb = Cd(),
+		Bb = M(),
+		Nn = Ee()
+	function qb(t, e = Nn.defaultDecode) {
+		t.readSequence(Bb.InvocationBERID)
+		let n,
+			r = [],
+			s,
+			i = [],
+			o = t.offset + t.length
+		for (; t.offset < o;) {
+			let a = t.readSequence()
+			switch (a) {
+				case ei.CONTEXT(0):
+					n = t.readInt()
+					break
+				case ei.CONTEXT(1):
+					for (t.readSequence(ei.BERDataTypes.SEQUENCE), s = t.offset + t.length; t.offset < s;) {
+						let c = t.readSequence()
+						c === ei.CONTEXT(0)
+							? r.push(t.readValue())
+							: ((0, Nn.unknownContext)(i, 'decode invocation arguments', c, e), (0, Nn.skipNext)(t))
+					}
+					break
+				case 0:
+					break
+				default:
+					;((0, Nn.unknownContext)(i, 'decode invocation', a, e), (0, Nn.skipNext)(t))
+					break
+			}
+		}
+		return (0, Nn.makeResult)(new kb.InvocationImpl(n, r), i)
+	}
+	ti.decodeInvocation = qb
+})
+var Rd = p((ni) => {
+	'use strict'
+	Object.defineProperty(ni, '__esModule', { value: !0 })
+	ni.decodeCommand = void 0
+	var Db = (v(), x(I)),
+		Ga = Db.__importStar(R()),
+		le = Qn(),
+		Pb = Od(),
+		Ab = M(),
+		ut = Ee()
+	function Fb(t) {
+		return {
+			[-2]: le.FieldFlags.Sparse,
+			[-1]: le.FieldFlags.All,
+			0: le.FieldFlags.Default,
+			1: le.FieldFlags.Identifier,
+			2: le.FieldFlags.Description,
+			3: le.FieldFlags.Tree,
+			4: le.FieldFlags.Value,
+			5: le.FieldFlags.Connections,
+		}[t.readInt()]
+	}
+	function Lb(t, e = ut.defaultDecode) {
+		t.readSequence(Ab.CommandBERID)
+		let n = null,
+			r,
+			s,
+			i = [],
+			o = t.offset + t.length
+		for (; t.offset < o;) {
+			let a = t.readSequence()
+			switch (a) {
+				case Ga.CONTEXT(0):
+					n = t.readInt()
+					break
+				case Ga.CONTEXT(1):
+					;((r = Fb(t)), r || i.push(new Error('decode command: encounted unknown dir field mask')))
+					break
+				case Ga.CONTEXT(2):
+					s = (0, ut.appendErrors)((0, Pb.decodeInvocation)(t, e), i)
+					break
+				case 0:
+					break
+				default:
+					;((0, ut.unknownContext)(i, 'decode command', a, e), (0, ut.skipNext)(t))
+					break
+			}
+		}
+		switch (((n = (0, ut.check)(n, 'decode command', 'type', le.CommandType.Subscribe, i, e)), n)) {
+			case le.CommandType.Subscribe:
+				return (0, ut.makeResult)(new le.SubscribeImpl(), i)
+			case le.CommandType.Unsubscribe:
+				return (0, ut.makeResult)(new le.UnsubscribeImpl(), i)
+			case le.CommandType.GetDirectory:
+				return (0, ut.makeResult)(new le.GetDirectoryImpl(r), i)
+			case le.CommandType.Invoke:
+				return (0, ut.makeResult)(new le.InvokeImpl(s), i)
+			default:
+				return (0, ut.unexpected)(
+					i,
+					'decode command',
+					`command type '${n}' is not recognized`,
+					new le.SubscribeImpl(),
+					e,
+				)
+		}
+	}
+	ni.decodeCommand = Lb
+})
+var ri = p((P) => {
+	'use strict'
+	Object.defineProperty(P, '__esModule', { value: !0 })
+	P.QualifiedElementImpl =
+		P.NumberedTreeNodeImpl =
+		P.TemplateImpl =
+		P.StreamFormat =
+		P.ParameterImpl =
+		P.ParameterAccess =
+		P.ParameterType =
+		P.MatrixImpl =
+		P.MatrixAddressingMode =
+		P.MatrixType =
+		P.FunctionArgumentImpl =
+		P.EmberNodeImpl =
+		P.EmberFunctionImpl =
+		P.ElementType =
+			void 0
+	var Mb = Ie()
+	Object.defineProperty(P, 'ElementType', {
+		enumerable: !0,
+		get: function () {
+			return Mb.ElementType
+		},
+	})
+	var Ub = Da()
+	Object.defineProperty(P, 'EmberFunctionImpl', {
+		enumerable: !0,
+		get: function () {
+			return Ub.EmberFunctionImpl
+		},
+	})
+	var jb = or()
+	Object.defineProperty(P, 'EmberNodeImpl', {
+		enumerable: !0,
+		get: function () {
+			return jb.EmberNodeImpl
+		},
+	})
+	var $b = Aa()
+	Object.defineProperty(P, 'FunctionArgumentImpl', {
+		enumerable: !0,
+		get: function () {
+			return $b.FunctionArgumentImpl
+		},
+	})
+	var Xa = Es()
+	Object.defineProperty(P, 'MatrixType', {
+		enumerable: !0,
+		get: function () {
+			return Xa.MatrixType
+		},
+	})
+	Object.defineProperty(P, 'MatrixAddressingMode', {
+		enumerable: !0,
+		get: function () {
+			return Xa.MatrixAddressingMode
+		},
+	})
+	Object.defineProperty(P, 'MatrixImpl', {
+		enumerable: !0,
+		get: function () {
+			return Xa.MatrixImpl
+		},
+	})
+	var Wa = st()
+	Object.defineProperty(P, 'ParameterType', {
+		enumerable: !0,
+		get: function () {
+			return Wa.ParameterType
+		},
+	})
+	Object.defineProperty(P, 'ParameterAccess', {
+		enumerable: !0,
+		get: function () {
+			return Wa.ParameterAccess
+		},
+	})
+	Object.defineProperty(P, 'ParameterImpl', {
+		enumerable: !0,
+		get: function () {
+			return Wa.ParameterImpl
+		},
+	})
+	var Vb = hs()
+	Object.defineProperty(P, 'StreamFormat', {
+		enumerable: !0,
+		get: function () {
+			return Vb.StreamFormat
+		},
+	})
+	var Gb = ja()
+	Object.defineProperty(P, 'TemplateImpl', {
+		enumerable: !0,
+		get: function () {
+			return Gb.TemplateImpl
+		},
+	})
+	var kd = Rt()
+	Object.defineProperty(P, 'NumberedTreeNodeImpl', {
+		enumerable: !0,
+		get: function () {
+			return kd.NumberedTreeNodeImpl
+		},
+	})
+	Object.defineProperty(P, 'QualifiedElementImpl', {
+		enumerable: !0,
+		get: function () {
+			return kd.QualifiedElementImpl
+		},
+	})
+})
+var Ws = p((Bt) => {
+	'use strict'
+	Object.defineProperty(Bt, '__esModule', { value: !0 })
+	Bt.decodeRootElements = Bt.decodeGenericElement = Bt.decodeChildren = void 0
+	var Xb = (v(), x(I)),
+		ii = Xb.__importStar(R()),
+		K = Ie(),
+		si = Rt(),
+		Wb = Ed(),
+		zb = bd(),
+		Qb = Fa(),
+		Hb = Sd(),
+		X = M(),
+		Zb = Nd(),
+		Kb = Rd(),
+		k = Ee(),
+		za = or(),
+		Qa = ri()
+	function Bd(t, e = k.defaultDecode) {
+		t.readSequence(X.ElementCollectionBERID)
+		let n = (0, k.makeResult)({}),
+			r = t.offset + t.length
+		for (; t.offset < r;) {
+			if (t.readSequence() === 0) continue
+			let i = Ha(t, e)
+			;(0, k.safeSet)(i, n, (o, a) => ((a[o.number] = o), a))
+		}
+		return n
+	}
+	Bt.decodeChildren = Bd
+	function Ha(t, e = k.defaultDecode) {
+		let n = t.peek(),
+			r = new Array()
+		if (n === null)
+			return (
+				(0, k.unknownApplication)(r, 'decode generic element', n, e),
+				(0, k.skipNext)(t),
+				(0, k.makeResult)(new si.NumberedTreeNodeImpl(-1, new za.EmberNodeImpl()), r)
+			)
+		let s = Jb(n),
+			i = (0, k.appendErrors)(eg(n, e), r)
+		if (n === X.MatrixBERID || n === X.QualifiedMatrixBERID) return (0, Zb.decodeMatrix)(t, s)
+		if (n === X.TemplateBERID || n === X.QualifiedTemplateBERID) return (0, Hb.decodeTemplate)(t, s)
+		if (n === X.CommandBERID) {
+			let m = (0, Kb.decodeCommand)(t, e)
+			return (0, k.makeResult)(new si.NumberedTreeNodeImpl(m.value.number, m.value), m.errors)
+		}
+		t.readSequence(n)
+		let o = null,
+			a = null,
+			c,
+			u,
+			f = t.offset + t.length
+		for (; t.offset < f;) {
+			let m = t.readSequence()
+			switch (m) {
+				case ii.CONTEXT(0):
+					s ? (o = t.readRelativeOID()) : (a = t.readInt())
+					break
+				case ii.CONTEXT(1):
+					switch (i) {
+						case K.ElementType.Command:
+							;((0, k.unknownApplication)(r, 'decode generic element: command is not generic', m, e),
+								(0, k.skipNext)(t))
+							break
+						case K.ElementType.Function:
+							c = (0, k.appendErrors)((0, Wb.decodeFunctionContent)(t, e), r)
+							break
+						case K.ElementType.Matrix:
+							;((0, k.unknownApplication)(r, 'decode generic element: matrix is not generic', m, e), (0, k.skipNext)(t))
+							break
+						case K.ElementType.Node:
+							c = (0, k.appendErrors)((0, zb.decodeNode)(t, e), r)
+							break
+						case K.ElementType.Parameter:
+							c = (0, k.appendErrors)((0, Qb.decodeParameter)(t, e), r)
+							break
+						case K.ElementType.Template:
+							;((0, k.unknownApplication)(r, 'decode generic element: template is not generic', m, e),
+								(0, k.skipNext)(t))
+							break
+						default:
+							;((0, k.unknownApplication)(r, 'decode generic element', m, e), (0, k.skipNext)(t))
+							break
+					}
+					break
+				case ii.CONTEXT(2):
+					u = (0, k.appendErrors)(Bd(t, e), r)
+					break
+				case 0:
+					break
+				default:
+					;((0, k.unknownContext)(r, 'decode generic element', m, e), (0, k.skipNext)(t))
+					break
+			}
+		}
+		if (!c)
+			switch (i) {
+				case K.ElementType.Node:
+					c = new za.EmberNodeImpl()
+					break
+				case K.ElementType.Parameter:
+					c = new Qa.ParameterImpl(Qa.ParameterType.Null)
+					break
+				case K.ElementType.Function:
+					c = new Qa.EmberFunctionImpl()
+					break
+				default:
+					;(r.push(new Error(`decodeGenericElement: No contents and unexpected type ${i}`)),
+						(c = new za.EmberNodeImpl()))
+					break
+			}
+		let d
+		if (
+			(s
+				? ((o = (0, k.check)(o, 'decode generic element', 'path', '', r, e)),
+					(d = new si.QualifiedElementImpl(o, c, u)))
+				: ((a = (0, k.check)(a, 'decode generic element', 'number', -1, r, e)),
+					(d = new si.NumberedTreeNodeImpl(a, c, u))),
+			u)
+		)
+			for (let m of Object.values(u)) m.parent = d
+		return (0, k.makeResult)(d, r)
+	}
+	Bt.decodeGenericElement = Ha
+	function Yb(t, e = k.defaultDecode) {
+		t.readSequence(X.RootElementsBERID)
+		let n = (0, k.makeResult)({}),
+			r = t.offset + t.length
+		for (; t.offset < r;) {
+			let s = t.readSequence()
+			if (s === 0) continue
+			if (s !== ii.CONTEXT(0)) {
+				;((0, k.unknownContext)(n, 'decode root elements', s, e), (0, k.skipNext)(t))
+				continue
+			}
+			let i = Ha(t, e)
+			;(0, k.safeSet)(i, n, (o, a) => (o.number ? (a[o.number] = o) : (a[Object.values(a).length] = o), a))
+		}
+		return n
+	}
+	Bt.decodeRootElements = Yb
+	function Jb(t) {
+		return new Set([
+			X.QualifiedTemplateBERID,
+			X.QualifiedParameterBERID,
+			X.QualifiedNodeBERID,
+			X.QualifiedMatrixBERID,
+			X.QualifiedFunctionBERID,
+		]).has(t)
+	}
+	function eg(t, e = k.defaultDecode) {
+		let n = {
+			[X.CommandBERID]: K.ElementType.Command,
+			[X.FunctionBERID]: K.ElementType.Function,
+			[X.NodeBERID]: K.ElementType.Node,
+			[X.MatrixBERID]: K.ElementType.Matrix,
+			[X.ParameterBERID]: K.ElementType.Parameter,
+			[X.TemplateBERID]: K.ElementType.Template,
+			[X.QualifiedTemplateBERID]: K.ElementType.Template,
+			[X.QualifiedParameterBERID]: K.ElementType.Parameter,
+			[X.QualifiedNodeBERID]: K.ElementType.Node,
+			[X.QualifiedMatrixBERID]: K.ElementType.Matrix,
+			[X.QualifiedFunctionBERID]: K.ElementType.Function,
+		}
+		return n[t]
+			? (0, k.makeResult)(n[t])
+			: (0, k.unexpected)([], 'tag to element type', `Unexpected element type tag '${t}'`, K.ElementType.Node, e)
+	}
+})
+var qd = p((oi) => {
+	'use strict'
+	Object.defineProperty(oi, '__esModule', { value: !0 })
+	oi.StreamEntryImpl = void 0
+	var Za = class {
+		constructor(e, n) {
+			;((this.identifier = e), (this.value = n))
+		}
+	}
+	oi.StreamEntryImpl = Za
+})
+var Ad = p((Cn) => {
+	'use strict'
+	Object.defineProperty(Cn, '__esModule', { value: !0 })
+	Cn.decodeStreamEntries = Cn.decodeStreamEntry = void 0
+	var tg = (v(), x(I)),
+		Ka = tg.__importStar(R()),
+		ng = qd(),
+		rg = Ut(),
+		Dd = M(),
+		Ye = Ee(),
+		sg = st()
+	function ig(t, e = Ye.defaultDecode) {
+		t.readSequence(Dd.StreamEntriesBERID)
+		let n = (0, Ye.makeResult)([]),
+			r = t.offset + t.length
+		for (; t.offset < r;) {
+			let s = t.readSequence()
+			if (s === 0) continue
+			if (s !== Ka.CONTEXT(0)) {
+				;((0, Ye.unknownContext)(n, 'decode stream entries', s, e), (0, Ye.skipNext)(t))
+				continue
+			}
+			let i = Pd(t)
+			;(0, Ye.safeSet)(i, n, (o, a) => (a.push(o), a))
+		}
+		return n
+	}
+	Cn.decodeStreamEntries = ig
+	function Pd(t, e = Ye.defaultDecode) {
+		t.readSequence(Dd.StreamEntryBERID)
+		let n = null,
+			r = null,
+			s = [],
+			i = t.offset + t.length
+		for (; t.offset < i;) {
+			let o = t.readSequence()
+			switch (o) {
+				case Ka.CONTEXT(0):
+					n = t.readInt()
+					break
+				case Ka.CONTEXT(1):
+					r = t.readValue()
+					break
+				case 0:
+					break
+				default:
+					;((0, Ye.unknownContext)(s, 'decode stream entry', o, e), (0, Ye.skipNext)(t))
+					break
+			}
+		}
+		return (
+			(n = (0, Ye.check)(n, 'decode stream entry', 'identifier', 0, s, e)),
+			(r = (0, Ye.check)(
+				r,
+				'decode stream entry',
+				'value',
+				(0, rg.literal)({ value: null, type: sg.ParameterType.Null }),
+				s,
+				e,
+			)),
+			(0, Ye.makeResult)(new ng.StreamEntryImpl(n, r), s)
+		)
+	}
+	Cn.decodeStreamEntry = Pd
+})
+var ur = p((On) => {
+	'use strict'
+	Object.defineProperty(On, '__esModule', { value: !0 })
+	On.berDecode = On.berEncode = void 0
+	var og = (v(), x(I)),
+		Ya = Ut(),
+		ai = og.__importStar(R()),
+		ag = Pf(),
+		cg = sd(),
+		ug = od(),
+		lg = ud(),
+		fg = Ws(),
+		dg = Ad(),
+		cr = Ee(),
+		Wt = M(),
+		Fd = Rt(),
+		Ld = or()
+	function hg(t, e) {
+		let n = new ai.Writer()
+		switch ((n.startSequence(Wt.RootBERID), e)) {
+			case Ya.RootType.Elements:
+				n.startSequence(Wt.RootElementsBERID)
+				for (let r of Object.values(t))
+					(n.startSequence(ai.CONTEXT(0)), (0, cg.encodeRootElement)(r, n), n.endSequence())
+				n.endSequence()
+				break
+			case Ya.RootType.Streams:
+				n.startSequence(Wt.StreamEntriesBERID)
+				for (let r of Object.values(t))
+					(n.startSequence(ai.CONTEXT(0)), (0, ug.encodeStreamEntry)(r, n), n.endSequence())
+				n.endSequence()
+				break
+			case Ya.RootType.InvocationResult:
+				;(0, ag.encodeInvocationResult)(t, n)
+				break
+		}
+		return (n.endSequence(), n.buffer)
+	}
+	On.berEncode = hg
+	function pg(t, e = cr.defaultDecode) {
+		let n = new ai.Reader(t),
+			r = new Array(),
+			s = n.peek()
+		if (s !== Wt.RootBERID)
+			return (
+				(0, cr.unknownApplication)(r, 'decode root', s, e),
+				(0, cr.makeResult)([new Fd.NumberedTreeNodeImpl(-1, new Ld.EmberNodeImpl())], r)
+			)
+		n.readSequence(s)
+		let i = n.peek()
+		return i === Wt.RootElementsBERID
+			? (0, fg.decodeRootElements)(n, e)
+			: i === Wt.StreamEntriesBERID
+				? (0, dg.decodeStreamEntries)(n, e)
+				: i === Wt.InvocationResultBERID
+					? (0, lg.decodeInvocationResult)(n, e)
+					: ((0, cr.unknownApplication)(r, 'decode root', i, e),
+						(0, cr.makeResult)([new Fd.NumberedTreeNodeImpl(-1, new Ld.EmberNodeImpl())], r))
+	}
+	On.berDecode = pg
+})
+var Vd = p((ac) => {
+	'use strict'
+	Object.defineProperty(ac, '__esModule', { value: !0 })
+	var mg = (v(), x(I)),
+		_g = jt(),
+		zt = df(),
+		Eg = mg.__importDefault(Wr()),
+		Ja = B('util'),
+		bg = ur(),
+		qt = (0, Eg.default)('emberplus-connection:S101Codec'),
+		ci = 254,
+		ec = 255,
+		Rn = 253,
+		lr = 32,
+		tc = 248,
+		ui = 0,
+		li = 14,
+		Md = 0,
+		Ud = 1,
+		jd = 2,
+		fi = 1,
+		nc = 192,
+		rc = 128,
+		sc = 64,
+		gg = 32,
+		yg = 0,
+		ic = 1,
+		Tg = 2,
+		Sg = 31,
+		$d = [
+			0, 4489, 8978, 12955, 17956, 22445, 25910, 29887, 35912, 40385, 44890, 48851, 51820, 56293, 59774, 63735, 4225,
+			264, 13203, 8730, 22181, 18220, 30135, 25662, 40137, 36160, 49115, 44626, 56045, 52068, 63999, 59510, 8450, 12427,
+			528, 5017, 26406, 30383, 17460, 21949, 44362, 48323, 36440, 40913, 60270, 64231, 51324, 55797, 12675, 8202, 4753,
+			792, 30631, 26158, 21685, 17724, 48587, 44098, 40665, 36688, 64495, 60006, 55549, 51572, 16900, 21389, 24854,
+			28831, 1056, 5545, 10034, 14011, 52812, 57285, 60766, 64727, 34920, 39393, 43898, 47859, 21125, 17164, 29079,
+			24606, 5281, 1320, 14259, 9786, 57037, 53060, 64991, 60502, 39145, 35168, 48123, 43634, 25350, 29327, 16404,
+			20893, 9506, 13483, 1584, 6073, 61262, 65223, 52316, 56789, 43370, 47331, 35448, 39921, 29575, 25102, 20629,
+			16668, 13731, 9258, 5809, 1848, 65487, 60998, 56541, 52564, 47595, 43106, 39673, 35696, 33800, 38273, 42778,
+			46739, 49708, 54181, 57662, 61623, 2112, 6601, 11090, 15067, 20068, 24557, 28022, 31999, 38025, 34048, 47003,
+			42514, 53933, 49956, 61887, 57398, 6337, 2376, 15315, 10842, 24293, 20332, 32247, 27774, 42250, 46211, 34328,
+			38801, 58158, 62119, 49212, 53685, 10562, 14539, 2640, 7129, 28518, 32495, 19572, 24061, 46475, 41986, 38553,
+			34576, 62383, 57894, 53437, 49460, 14787, 10314, 6865, 2904, 32743, 28270, 23797, 19836, 50700, 55173, 58654,
+			62615, 32808, 37281, 41786, 45747, 19012, 23501, 26966, 30943, 3168, 7657, 12146, 16123, 54925, 50948, 62879,
+			58390, 37033, 33056, 46011, 41522, 23237, 19276, 31191, 26718, 7393, 3432, 16371, 11898, 59150, 63111, 50204,
+			54677, 41258, 45219, 33336, 37809, 27462, 31439, 18516, 23005, 11618, 15595, 3696, 8185, 63375, 58886, 54429,
+			50452, 45483, 40994, 37561, 33584, 31687, 27214, 22741, 18780, 15843, 11370, 7921, 3960,
+		],
+		xg = 64 * 1024,
+		oc = class extends _g.EventEmitter {
+			constructor() {
+				;(super(...arguments),
+					(this.inbuf = new zt.SmartBuffer({ size: xg })),
+					(this.escaped = !1),
+					(this.isMultiPacket = !1))
+			}
+			dataIn(e) {
+				this.frameBuffer && ((e = Buffer.concat([this.frameBuffer, e])), (this.frameBuffer = void 0))
+				let n = 0
+				for (; n < e.length;) {
+					let r = e.indexOf(ci, n)
+					if (r === -1) break
+					let s = e.indexOf(ec, r + 1)
+					if (s === -1 || s - r < 4) {
+						this.frameBuffer = e.subarray(r)
+						break
+					}
+					this.inbuf.clear()
+					let i = r + 1
+					for (this.escaped = !1; i < s;) {
+						let o = e[i]
+						if (this.escaped) (this.inbuf.writeUInt8(o ^ lr), (this.escaped = !1), i++)
+						else if (o === Rn) ((this.escaped = !0), i++)
+						else {
+							let a = i + 1
+							for (; a < s;) {
+								let c = e[a]
+								if (c === Rn || c === ec) break
+								a++
+							}
+							;(this.inbuf.writeBuffer(e.subarray(i, a)), (i = a))
+						}
+					}
+					;((this.escaped = !1), this.inbuf.moveTo(0), this.handleFrame(this.inbuf), (n = s + 1))
+				}
+			}
+			isEmberStreamPacket(e) {
+				if (e.length < 3) return !1
+				if (e[0] === 96) {
+					let n = e[1]
+					if (n < 128) return e[2] === 102
+					{
+						let r = n & 127
+						if (e.length >= 2 + r) return e[2 + r] === 102
+					}
+				}
+				return !1
+			}
+			handleFrame(e) {
+				if (!this.validateFrame(e.toBuffer()))
+					throw new Error((0, Ja.format)('dropping frame of length %d with invalid CRC', e.length))
+				let n = e.readUInt8(),
+					r = e.readUInt8()
+				if (n != ui || r != li)
+					throw new Error(
+						(0, Ja.format)('dropping frame of length %d (not an ember frame; slot=%d, msg=%d)', e.length, n, r),
+					)
+				let s = e.readUInt8()
+				if (s === Ud) (qt('received keepalive request'), this.emit('keepaliveReq'))
+				else if (s === jd) (qt('received keepalive response'), this.emit('keepaliveResp'))
+				else if (s === Md) {
+					let i = e.readBuffer(),
+						o = zt.SmartBuffer.fromBuffer(i)
+					this.handleEmberFrame(o)
+				} else throw new Error((0, Ja.format)('dropping frame of length %d with unknown command %d', e.length, s))
+			}
+			handleEmberFrame(e) {
+				let n = e.readUInt8(),
+					r = e.readUInt8(),
+					s = e.readUInt8(),
+					i = e.readUInt8()
+				;(n !== fi && qt('Warning: Unknown ember frame version %d', n),
+					s !== ic && qt('Warning: Received frame with DTD %d, expected %d', s, ic),
+					i < 2
+						? (qt('Warning: Frame missing Glow DTD version'), e.skip(i))
+						: (e.skip(1),
+							e.skip(1),
+							(i -= 2),
+							i > 0 && (e.skip(i), qt('Warning: App bytes with unknown meaning left over'))))
+				let o = e.readBuffer()
+				if (((o = o.slice(0, o.length - 2)), (r & nc) === nc))
+					(r & gg) === 0 && (this.isEmberStreamPacket(o) ? this.handleEmberStreamPacket(o) : this.handleEmberPacket(o))
+				else if ((r & rc) === rc)
+					(qt('multi ember packet start'),
+						(this.multiPacketBuffer = new zt.SmartBuffer()),
+						(this.isMultiPacket = !0),
+						this.multiPacketBuffer.writeBuffer(o))
+				else if (
+					this.isMultiPacket &&
+					this.multiPacketBuffer &&
+					(this.multiPacketBuffer.writeBuffer(o), (r & sc) === sc)
+				) {
+					qt('multi ember packet end')
+					let a = this.multiPacketBuffer.toBuffer()
+					;(a[0] === 96 && a[2] === 102 ? this.handleEmberStreamPacket(a) : this.handleEmberPacket(a),
+						this.resetMultiPacketBuffer())
+				}
+			}
+			handleEmberPacket(e) {
+				try {
+					let n = (0, bg.berDecode)(e)
+					e[0] === 96 && n.value && this.emit('emberPacket', e)
+				} catch (n) {
+					console.error('Error decoding packet:', n)
+				}
+			}
+			handleEmberStreamPacket(e) {
+				try {
+					this.emit('emberStreamPacket', e)
+				} catch (n) {
+					;(console.error('Error decoding stream packet:', n), this.resetMultiPacketBuffer())
+				}
+			}
+			resetMultiPacketBuffer() {
+				;((this.multiPacketBuffer = void 0), (this.isMultiPacket = !1))
+			}
+			encodeBER(e) {
+				let n = [],
+					r = new zt.SmartBuffer()
+				for (let s = 0; s < e.length; s++) {
+					let i = e.readUInt8(s)
+					;(i < tc ? r.writeUInt8(i) : (r.writeUInt8(Rn), r.writeUInt8(i ^ lr)),
+						r.length >= 1024 &&
+							s < e.length - 1 &&
+							(n.length === 0
+								? n.push(this._makeBERFrame(rc, r.toBuffer()))
+								: n.push(this._makeBERFrame(yg, r.toBuffer())),
+							r.clear()))
+				}
+				return (
+					n.length == 0 ? n.push(this._makeBERFrame(nc, r.toBuffer())) : n.push(this._makeBERFrame(sc, r.toBuffer())),
+					n
+				)
+			}
+			keepAliveRequest() {
+				let e = new zt.SmartBuffer()
+				return (
+					e.writeUInt8(ci),
+					e.writeUInt8(ui),
+					e.writeUInt8(li),
+					e.writeUInt8(Ud),
+					e.writeUInt8(fi),
+					this._finalizeBuffer(e)
+				)
+			}
+			keepAliveResponse() {
+				let e = new zt.SmartBuffer()
+				return (
+					e.writeUInt8(ci),
+					e.writeUInt8(ui),
+					e.writeUInt8(li),
+					e.writeUInt8(jd),
+					e.writeUInt8(fi),
+					this._finalizeBuffer(e)
+				)
+			}
+			validateFrame(e) {
+				return this._calculateCRC(e) == 61624
+			}
+			_makeBERFrame(e, n) {
+				let r = new zt.SmartBuffer()
+				return (
+					r.writeUInt8(ci),
+					r.writeUInt8(ui),
+					r.writeUInt8(li),
+					r.writeUInt8(Md),
+					r.writeUInt8(fi),
+					r.writeUInt8(e),
+					r.writeUInt8(ic),
+					r.writeUInt8(2),
+					r.writeUInt8(Sg),
+					r.writeUInt8(Tg),
+					r.writeBuffer(n),
+					this._finalizeBuffer(r)
+				)
+			}
+			_finalizeBuffer(e) {
+				let n = ~this._calculateCRCCE(e.toBuffer().slice(1, e.length)) & 65535,
+					r = n >> 8,
+					s = n & 255
+				return (
+					s < tc ? e.writeUInt8(s) : (e.writeUInt8(Rn), e.writeUInt8(s ^ lr)),
+					r < tc ? e.writeUInt8(r) : (e.writeUInt8(Rn), e.writeUInt8(r ^ lr)),
+					e.writeUInt8(ec),
+					e.toBuffer()
+				)
+			}
+			_calculateCRC(e) {
+				let n = 65535
+				for (let r = 0; r < e.length; r++) {
+					let s = e.readUInt8(r)
+					n = ((n >> 8) ^ $d[(n ^ s) & 255]) & 65535
+				}
+				return n
+			}
+			_calculateCRCCE(e) {
+				let n = 65535
+				for (let r = 0; r < e.length; r++) {
+					let s = e.readUInt8(r)
+					;(s == Rn && (s = lr ^ e.readUInt8(++r)), (n = ((n >> 8) ^ $d[(n ^ s) & 255]) & 65535))
+				}
+				return n
+			}
+		}
+	ac.default = oc
+})
+var cc = p((di) => {
+	'use strict'
+	Object.defineProperty(di, '__esModule', { value: !0 })
+	di.S101Codec = void 0
+	var Ig = (v(), x(I)),
+		vg = Ig.__importDefault(Vd())
+	di.S101Codec = vg.default
+})
+var fr = p((ge) => {
+	'use strict'
+	Object.defineProperty(ge, '__esModule', { value: !0 })
+	ge.isEmptyNode =
+		ge.normalizeError =
+		ge.updateProps =
+		ge.insertCommand =
+		ge.toQualifiedEmberNode =
+		ge.getPath =
+		ge.assertQualifiedEmberNode =
+			void 0
+	var Gd = Ie(),
+		uc = Rt()
+	function wg(t) {
+		return 'path' in t ? t : Xd(t)
+	}
+	ge.assertQualifiedEmberNode = wg
+	function lc(t) {
+		function e(r) {
+			return 'path' in r
+		}
+		function n(r) {
+			return 'number' in r
+		}
+		return e(t) ? t.path : n(t) ? (t.parent ? lc(t.parent) + '.' + t.number : t.number + '') : ''
+	}
+	ge.getPath = lc
+	function Xd(t) {
+		let e = lc(t)
+		if (t.contents.type === Gd.ElementType.Command) throw new Error('Cannot convert a command to a qualified node')
+		return new uc.QualifiedElementImpl(e, t.contents, t.children)
+	}
+	ge.toQualifiedEmberNode = Xd
+	function Ng(t, e) {
+		return new uc.QualifiedElementImpl(t.path, t.contents, [new uc.NumberedTreeNodeImpl(0, e)])
+	}
+	ge.insertCommand = Ng
+	function Cg(t, e, n) {
+		n || (n = Object.keys(e))
+		for (let r of n) e[r] !== void 0 && e[r] !== t[r] && (t[r] = e[r])
+	}
+	ge.updateProps = Cg
+	function Og(t) {
+		return t instanceof Error ? t : new Error(typeof t == 'string' ? t : t?.toString())
+	}
+	ge.normalizeError = Og
+	function Rg(t) {
+		return !((r) => r.contents.type === Gd.ElementType.Node)(t) || t.children
+			? !1
+			: ![
+					t.contents.description,
+					t.contents.identifier,
+					t.contents.isOnline,
+					t.contents.isRoot,
+					t.contents.schemaIdentifiers,
+					t.contents.templateReference,
+				].some((r) => r != null)
+	}
+	ge.isEmptyNode = Rg
+})
+var hc = p((dc) => {
+	'use strict'
+	Object.defineProperty(dc, '__esModule', { value: !0 })
+	var kg = jt(),
+		Bg = cc(),
+		Wd = pc(),
+		dr = pi(),
+		hi = fr(),
+		fc = class extends kg.EventEmitter {
+			constructor(e) {
+				;(super(),
+					(this.keepaliveInterval = 10),
+					(this.keepaliveMaxResponseTime = 500),
+					(this.codec = new Bg.S101Codec()),
+					(this.socket = e),
+					(this.keepaliveIntervalTimer = void 0),
+					(this.keepaliveResponseWindowTimer = null),
+					(this.status = this.isConnected() ? dr.ConnectionStatus.Connected : dr.ConnectionStatus.Disconnected),
+					this.codec.on('keepaliveReq', () => {
+						this.sendKeepaliveResponse()
+					}),
+					this.codec.on('keepaliveResp', () => {
+						clearInterval(this.keepaliveResponseWindowTimer)
+					}),
+					this.codec.on('emberPacket', (n) => {
+						try {
+							let r = (0, Wd.berDecode)(n)
+							r != null && this.emit('emberTree', r)
+						} catch (r) {
+							this.emit('error', (0, hi.normalizeError)(r))
+						}
+					}),
+					this.codec.on('emberStreamPacket', (n) => {
+						try {
+							let r = (0, Wd.berDecode)(n)
+							r != null && this.emit('emberStreamTree', r)
+						} catch (r) {
+							this.emit('error', (0, hi.normalizeError)(r))
+						}
+					}),
+					this._initSocket())
+			}
+			_initSocket() {
+				this.socket != null &&
+					(this.socket.on('data', (e) => {
+						try {
+							this.codec.dataIn(e)
+						} catch (n) {
+							this.emit('error', (0, hi.normalizeError)(n))
+						}
+					}),
+					this.socket.on('close', () => {
+						;(this.emit('disconnected'),
+							(this.status = dr.ConnectionStatus.Connected),
+							this.socket?.removeAllListeners(),
+							(this.socket = void 0))
+					}),
+					this.socket.on('error', (e) => {
+						this.emit('error', e)
+					}))
+			}
+			async disconnect(e = 2) {
+				return !this.isConnected() || this.socket === void 0
+					? Promise.resolve()
+					: new Promise((n) => {
+							if (
+								(this.keepaliveIntervalTimer != null &&
+									(clearInterval(this.keepaliveIntervalTimer), (this.keepaliveIntervalTimer = void 0)),
+								this.socket)
+							) {
+								let r = !1,
+									s = () => {
+										r || ((r = !0), i !== void 0 && (clearTimeout(i), (i = void 0)), n())
+									},
+									i
+								;(e != null && !isNaN(e) && e > 0 && (i = setTimeout(s, 100 * e)), this.socket.end(s))
+							}
+							this.status = dr.ConnectionStatus.Disconnected
+						})
+			}
+			handleClose() {
+				;((this.socket = void 0),
+					this.keepaliveIntervalTimer && clearInterval(this.keepaliveIntervalTimer),
+					(this.status = dr.ConnectionStatus.Disconnected),
+					this.emit('disconnected'))
+			}
+			isConnected() {
+				return this.socket !== void 0 && !!this.socket
+			}
+			sendBER(e) {
+				if (this.isConnected() && this.socket)
+					try {
+						let n = this.codec.encodeBER(e)
+						for (let r = 0; r < n.length; r++) this.socket.write(n[r])
+						return !0
+					} catch {
+						return (this.handleClose(), !1)
+					}
+				else return !1
+			}
+			sendKeepaliveRequest() {
+				if (this.isConnected() && this.socket)
+					try {
+						;(this.socket.write(this.codec.keepAliveRequest()),
+							(this.keepaliveResponseWindowTimer = setTimeout(() => {
+								this.handleClose()
+							}, this.keepaliveMaxResponseTime)))
+					} catch {
+						this.handleClose()
+					}
+			}
+			sendKeepaliveResponse() {
+				if (this.isConnected() && this.socket)
+					try {
+						this.socket.write(this.codec.keepAliveResponse())
+					} catch {
+						this.handleClose()
+					}
+			}
+			startKeepAlive() {
+				this.keepaliveIntervalTimer = setInterval(() => {
+					try {
+						this.sendKeepaliveRequest()
+					} catch (e) {
+						this.emit('error', (0, hi.normalizeError)(e))
+					}
+				}, 1e3 * this.keepaliveInterval)
+			}
+		}
+	dc.default = fc
+})
+var zd = p((Ec) => {
+	'use strict'
+	Object.defineProperty(Ec, '__esModule', { value: !0 })
+	var _c = (v(), x(I)),
+		qg = _c.__importDefault(B('net')),
+		Dg = _c.__importDefault(hc()),
+		Qt = pi(),
+		Pg = fr(),
+		Ag = _c.__importDefault(Wr()),
+		Fg = (0, Ag.default)('emberplus-connection:S101Client'),
+		Lg = 9e3,
+		Mg = 60,
+		Ug = 5e3,
+		mc = class extends Dg.default {
+			constructor(e, n = Lg, r) {
+				;(super(),
+					(this.autoConnect = !1),
+					(this._autoReconnect = !0),
+					(this._autoReconnectDelay = Ug),
+					(this._connectionAttemptTimer = void 0),
+					(this._reconnectAttempt = 0),
+					(this._reconnectAttempts = Mg),
+					(this._lastConnectionAttempt = 0),
+					(this.address = e),
+					(this.port = n),
+					(this.autoConnect = !!r),
+					(this._shouldBeConnected = this.autoConnect),
+					this.autoConnect && this.connect().catch(() => null))
+			}
+			async connect(e = 5) {
+				return new Promise((n) => {
+					if (this.status !== Qt.ConnectionStatus.Disconnected) {
+						n()
+						return
+					}
+					if (!this._lastConnectionAttempt || Date.now() - this._lastConnectionAttempt >= this._autoReconnectDelay) {
+						;(this.socket &&
+							this.socket.connecting &&
+							(this.socket.destroy(), this.socket.removeAllListeners(), delete this.socket),
+							this.socket ||
+								((this.socket = new qg.default.Socket()),
+								this.socket.on('close', (i) => this._onClose(i)),
+								this.socket.on('connect', () => this._onConnect()),
+								this.socket.on('data', (i) => {
+									Fg('Data from Ember connection received:', {
+										address: this.socket?.remoteAddress,
+										port: this.socket?.remotePort,
+										dataLength: i.length,
+										data: i.toString('hex'),
+									})
+									try {
+										this.codec.dataIn(i)
+									} catch (o) {
+										this.emit('error', (0, Pg.normalizeError)(o))
+									}
+								}),
+								this.socket.on('error', (i) => this._onError(i))),
+							this.emit('connecting'),
+							(this.status = Qt.ConnectionStatus.Disconnected))
+						let r = () => {
+								this.socket && (this.socket.destroy(), this.socket.removeAllListeners(), delete this.socket)
+								let i = new Error(`Could not connect to ${this.address}:${this.port} after a timeout of ${e} seconds`)
+								;(n(i), this._connectionAttemptTimer || this.connect().catch(() => null))
+							},
+							s = setTimeout(() => r(), e * 1e3)
+						;(this.socket.connect(this.port, this.address),
+							this.socket.once('connect', () => {
+								;(clearInterval(s), n())
+							}),
+							(this._shouldBeConnected = !0),
+							(this._lastConnectionAttempt = Date.now()))
+					}
+					this._connectionAttemptTimer ||
+						(this._connectionAttemptTimer = setInterval(
+							() => this._autoReconnectionAttempt(),
+							this._autoReconnectDelay,
+						))
+				})
+			}
+			async disconnect(e) {
+				return ((this._shouldBeConnected = !1), super.disconnect(e))
+			}
+			handleClose() {
+				;(this.keepaliveIntervalTimer && clearInterval(this.keepaliveIntervalTimer), this.socket?.destroy())
+			}
+			_autoReconnectionAttempt() {
+				if (this._autoReconnect && this._reconnectAttempts > 0) {
+					if (this._reconnectAttempt >= this._reconnectAttempts) {
+						;(this._clearConnectionAttemptTimer(), (this.status = Qt.ConnectionStatus.Disconnected))
+						return
+					}
+					this.status !== Qt.ConnectionStatus.Connected && (this._reconnectAttempt++, this.connect().catch(() => null))
+				}
+			}
+			_clearConnectionAttemptTimer() {
+				;((this._reconnectAttempt = 0),
+					this._connectionAttemptTimer && clearInterval(this._connectionAttemptTimer),
+					delete this._connectionAttemptTimer)
+			}
+			_onConnect() {
+				;(this._clearConnectionAttemptTimer(),
+					this.startKeepAlive(),
+					(this.status = Qt.ConnectionStatus.Connected),
+					this.emit('connected'))
+			}
+			_onError(e) {
+				e.message.match(/ECONNREFUSED/) || this.emit('error', e)
+			}
+			_onClose(e) {
+				;(this.status !== Qt.ConnectionStatus.Disconnected && this.emit('disconnected'),
+					(this.status = Qt.ConnectionStatus.Disconnected),
+					this._shouldBeConnected === !0 && (this.emit('connecting'), this.connect().catch(() => null)))
+			}
+		}
+	Ec.default = mc
+})
+var bc = p((mi) => {
+	'use strict'
+	Object.defineProperty(mi, '__esModule', { value: !0 })
+	mi.S101Client = void 0
+	var jg = (v(), x(I)),
+		$g = jg.__importDefault(zd())
+	mi.S101Client = $g.default
+})
+var Hd = p((_i) => {
+	'use strict'
+	Object.defineProperty(_i, '__esModule', { value: !0 })
+	_i.StreamManager = void 0
+	var Vg = (v(), x(I)),
+		Gg = jt(),
+		Qd = st(),
+		Xg = Vg.__importDefault(Wr()),
+		Xe = (0, Xg.default)('emberplus-connection:StreamManager'),
+		gc = class extends Gg.EventEmitter {
+			constructor() {
+				;(super(), (this.registeredStreams = new Map()), (this.streamsByIdentifier = new Map()))
+			}
+			registerParameter(e, n) {
+				if (!e.streamIdentifier) {
+					Xe('Warning: Attempted to register parameter without streamIdentifier')
+					return
+				}
+				if (this.registeredStreams.has(n)) {
+					Xe('Stream already registered:', { path: n, identifier: e.streamIdentifier })
+					return
+				}
+				let r = { parameter: e, path: n, streamIdentifier: e.streamIdentifier, offset: e.streamDescriptor?.offset || 0 }
+				;(this.registeredStreams.set(n, r),
+					this.streamsByIdentifier.has(e.streamIdentifier) ||
+						(this.streamsByIdentifier.set(e.streamIdentifier, new Set()),
+						Xe('Registered new stream identifier and adding set:', e.streamIdentifier)),
+					this.streamsByIdentifier.get(e.streamIdentifier)?.add(n),
+					Xe('Registered new stream:', {
+						path: n,
+						identifier: e.streamIdentifier,
+						totalRegistered: this.registeredStreams.size,
+					}))
+			}
+			unregisterParameter(e) {
+				let n = this.registeredStreams.get(e)
+				if (n?.streamIdentifier) {
+					this.registeredStreams.delete(e)
+					let r = this.streamsByIdentifier.get(n.streamIdentifier)
+					;(r && (r.delete(e), r.size === 0 && this.streamsByIdentifier.delete(n.streamIdentifier)),
+						Xe('Unregistered stream:', { path: e, identifier: n.parameter.identifier }))
+				}
+			}
+			getStreamInfoByPath(e) {
+				return this.registeredStreams.get(e)
+			}
+			hasStream(e) {
+				return this.registeredStreams.has(e)
+			}
+			updateStreamValues(e) {
+				Object.values(e).forEach((n) => {
+					let r = this.streamsByIdentifier.get(n.identifier)
+					if (!r) {
+						Xe('Received update for unregistered stream:', n.identifier)
+						return
+					}
+					r.forEach((s) => {
+						let i = this.registeredStreams.get(s)
+						if (!(!i || !n.value)) {
+							if (n.value.type === Qd.ParameterType.Integer) this.updateStreamValue(s, n.value.value)
+							else if (n.value.type === Qd.ParameterType.Octets && Buffer.isBuffer(n.value.value)) {
+								let o = n.value.value
+								if (o.length >= i.offset + 4) {
+									let c = new DataView(o.buffer, o.byteOffset, o.length).getFloat32(i.offset, !0)
+									this.updateStreamValue(s, c)
+								}
+							}
+						}
+					})
+				})
+			}
+			updateStreamValue(e, n) {
+				if (e) {
+					let r = this.registeredStreams.get(e)
+					r && ((r.parameter.value = n), this.emit('streamUpdate', e, n))
+				}
+			}
+			getAllRegisteredPaths() {
+				return Array.from(this.registeredStreams.keys())
+			}
+			printStreamState() {
+				;(Xe(`
+Current Stream State:`),
+					Xe('Registered Streams:'),
+					this.registeredStreams.forEach((e, n) => {
+						;(Xe(`  Path: ${n}`),
+							Xe(`    Identifier: ${e.parameter.identifier}`),
+							Xe(`    StreamId: ${e.parameter.streamIdentifier}`),
+							Xe(`    Current Value: ${e.parameter.value}`))
+					}))
+			}
+		}
+	_i.StreamManager = gc
+})
+var pi = p((lt) => {
+	'use strict'
+	Object.defineProperty(lt, '__esModule', { value: !0 })
+	lt.EmberClient = lt.ConnectionStatus = lt.ExpectResponse = void 0
+	var Wg = Ut(),
+		We = Ie(),
+		Ei = Qn(),
+		hr = Hn(),
+		zg = jt(),
+		Qg = bc(),
+		we = fr(),
+		Hg = ur(),
+		bi = Rt(),
+		Zg = Hd(),
+		Me
+	;(function (t) {
+		;((t.None = 'none'), (t.Any = 'any'), (t.HasChildren = 'has-children'))
+	})((Me = lt.ExpectResponse || (lt.ExpectResponse = {})))
+	var Zd
+	;(function (t) {
+		;((t[(t.Error = 0)] = 'Error'),
+			(t[(t.Disconnected = 1)] = 'Disconnected'),
+			(t[(t.Connecting = 2)] = 'Connecting'),
+			(t[(t.Connected = 3)] = 'Connected'))
+	})((Zd = lt.ConnectionStatus || (lt.ConnectionStatus = {})))
+	var yc = class extends zg.EventEmitter {
+		constructor(e, n = 9e3, r = 3e3, s = !1, i = 1e3) {
+			;(super(),
+				(this.tree = []),
+				(this._requests = new Map()),
+				(this._lastInvocation = 0),
+				(this._subscriptions = []),
+				(this._timeout = 3e3),
+				(this._resendTimeout = 1e3),
+				(this._resends = !1),
+				(this.host = e),
+				(this.port = n),
+				(this._timeout = r),
+				(this._resendTimeout = i),
+				(this._resends = s),
+				(this._streamManager = new Zg.StreamManager()),
+				this._streamManager.on('streamUpdate', (a, c) => {
+					this.emit('streamUpdate', a, c)
+				}))
+			let o = (a, c) => {
+				for (; c;) {
+					let u = c
+					;((c = a % c), (a = u))
+				}
+				return a
+			}
+			;((this._timer = setInterval(() => this._resendTimer(), o(this._timeout, this._resendTimeout))),
+				(this._client = new Qg.S101Client(this.host, this.port)),
+				this._client.on('emberTree', (a) => {
+					this._handleIncoming(a)
+				}),
+				this._client.on('emberStreamTree', (a) => {
+					let c = a.value
+					this._streamManager.updateStreamValues(c)
+				}),
+				this._client.on('error', (a) => this.emit('error', a)),
+				this._client.on('connected', () => this.emit('connected')),
+				this._client.on('disconnected', () => {
+					;(this._requests.forEach((a) => {
+						;(a.reject(new Error('Socket was disconnected')), this._requests.delete(a.reqId))
+					}),
+						this.emit('disconnected'))
+				}))
+		}
+		async connect(e, n) {
+			return (
+				e && (this.host = e),
+				n && (this.port = n),
+				this.host
+					? ((this._client.address = this.host), (this._client.port = this.port), this._client.connect())
+					: Promise.reject('No host specified')
+			)
+		}
+		async disconnect() {
+			return this._client.disconnect()
+		}
+		discard() {
+			;(this.disconnect().catch(() => null),
+				this._client.removeAllListeners(),
+				delete this._client,
+				this._requests.forEach((e) => {
+					;(e.reject(new Error('Socket was disconnected')), this._requests.delete(e.reqId))
+				}),
+				clearInterval(this._timer))
+		}
+		get connected() {
+			return this._client.status === Zd.Connected
+		}
+		async getDirectory(e, n, r) {
+			if (!e) throw new Error('No node specified')
+			let s = new Ei.GetDirectoryImpl(n)
+			return 'number' in e || 'path' in e
+				? (r && this._subscriptions.push({ path: (0, we.getPath)(e), cb: r }), this._sendCommand(e, s, Me.HasChildren))
+				: (r && this._subscriptions.push({ path: void 0, cb: r }),
+					this._sendRequest(new bi.NumberedTreeNodeImpl(0, s), Me.Any))
+		}
+		async subscribe(e, n) {
+			if (!e) throw new Error('No node specified')
+			let r = new Ei.SubscribeImpl()
+			if (Array.isArray(e))
+				return (
+					n && this._subscriptions.push({ path: void 0, cb: n }),
+					this._sendRequest(new bi.NumberedTreeNodeImpl(0, r), Me.Any)
+				)
+			if (e.contents.type === We.ElementType.Parameter) {
+				let s = e.contents
+				s.streamIdentifier !== void 0 && this._streamManager.registerParameter(s, (0, we.getPath)(e))
+			}
+			return (n && this._subscriptions.push({ path: (0, we.getPath)(e), cb: n }), this._sendCommand(e, r, Me.None))
+		}
+		async unsubscribe(e) {
+			if (!e) throw new Error('No node specified')
+			let n = new Ei.UnsubscribeImpl(),
+				r = Array.isArray(e) ? '' : (0, we.getPath)(e)
+			for (let s in this._subscriptions) this._subscriptions[s].path === r && this._subscriptions.splice(Number(s), 1)
+			return (
+				!Array.isArray(e) &&
+					e.contents.type === We.ElementType.Parameter &&
+					e.contents.streamIdentifier !== void 0 &&
+					this._streamManager.unregisterParameter(r),
+				Array.isArray(e)
+					? this._sendRequest(new bi.NumberedTreeNodeImpl(0, n), Me.Any)
+					: this._sendCommand(e, n, Me.None)
+			)
+		}
+		async invoke(e, ...n) {
+			if (!e) throw new Error('No node specified')
+			let r = {
+				type: We.ElementType.Command,
+				number: Ei.CommandType.Invoke,
+				invocation: { id: ++this._lastInvocation, args: n },
+			}
+			return this._sendCommand(e, r, Me.Any)
+		}
+		async setValue(e, n, r = !0) {
+			if (!e) throw new Error('No node specified')
+			let s = (0, we.assertQualifiedEmberNode)(e)
+			return ((s.contents.value = n), this._sendRequest(s, r ? Me.Any : Me.None))
+		}
+		async matrixConnect(e, n, r) {
+			return this._matrixMutation(e, n, r, hr.ConnectionOperation.Connect)
+		}
+		async matrixDisconnect(e, n, r) {
+			return this._matrixMutation(e, n, r, hr.ConnectionOperation.Disconnect)
+		}
+		async matrixSetConnection(e, n, r) {
+			return this._matrixMutation(e, n, r, hr.ConnectionOperation.Absolute)
+		}
+		async expand(e) {
+			if (!e) throw new Error('No node specified')
+			if (!('number' in e)) {
+				await (
+					await this.getDirectory(e)
+				).response
+				for (let i of Object.values(this.tree)) await this.expand(i)
+				return
+			}
+			let n = [e],
+				r = (i) =>
+					i.contents.type === We.ElementType.Node
+						? i.contents.isOnline !== !1
+						: i.contents.type !== We.ElementType.Parameter && i.contents.type !== We.ElementType.Function,
+				s
+			for (; (s = n.shift());)
+				if (s.children) n.push(...Object.values(s.children).filter(r))
+				else {
+					let i = await this.getDirectory(s)
+					if (!i.response) continue
+					let o = await i.response
+					o.children && Object.values(o.children).forEach((a) => r(a) && n.push(a))
+				}
+		}
+		async getElementByPath(e, n, r = '.') {
+			let s = (f, d) =>
+					Object.values(f || {}).find(
+						(m) => m.number === Number(d) || m.contents.identifier === d || m.contents.description === d,
+					),
+				i = (f, d) => f.children && s(f.children, d),
+				o = [],
+				a = e.split(r),
+				c = a.shift()
+			if (!c) throw new Error('Expected at least one segment in the path')
+			let u = s(this.tree, c)
+			for (u?.number !== void 0 && o.push(u.number); a.length;) {
+				let f = a.shift()
+				if (f === void 0 || !u) break
+				let d = i(u, f)
+				if ((d || ((u = await (await this.getDirectory(u)).response), (d = i(u, f))), (u = d), !u))
+					throw new Error(`Could not find node ${f} on given path ${o.join()}`)
+				u?.number !== void 0 && o.push(u.number)
+			}
+			return (
+				u?.contents.type === We.ElementType.Parameter && (await (await this.getDirectory(u)).response),
+				n && o && this._subscriptions.push({ path: o.join('.'), cb: n }),
+				u
+			)
+		}
+		getInternalNodePath(e) {
+			if ('path' in e && typeof e.path == 'string') return e.path
+			if ('number' in e) {
+				let n = [],
+					r = e
+				for (; r;) (n.unshift(r.number), r.parent && 'number' in r.parent ? (r = r.parent) : (r = void 0))
+				return n.join('.')
+			}
+		}
+		async _matrixMutation(e, n, r, s) {
+			if (!e) throw new Error('No matrix specified')
+			let i = (0, we.assertQualifiedEmberNode)(e),
+				o = { operation: s, target: n, sources: r }
+			return ((i.contents.connections = [o]), this._sendRequest(i, Me.Any))
+		}
+		async _sendCommand(e, n, r) {
+			let s = (0, we.assertQualifiedEmberNode)(e),
+				i = (0, we.insertCommand)(s, n)
+			return this._sendRequest(i, r)
+		}
+		async _sendRequest(e, n) {
+			let r = Math.random().toString(24).substr(-4),
+				s = { reqId: r, sentOk: !1 },
+				i = (0, Hg.berEncode)([e], Wg.RootType.Elements)
+			if (n !== Me.None) {
+				let a = new Promise((c, u) => {
+					let f = {
+						reqId: r,
+						node: e,
+						nodeResponse: n,
+						resolve: c,
+						reject: u,
+						message: i,
+						firstSent: Date.now(),
+						lastSent: Date.now(),
+					}
+					;(this._requests.set(r, f),
+						(s.cancel = () => {
+							;(u(new Error('Request cancelled')), this._requests.delete(r))
+						}))
+				})
+				s.response = a
+			}
+			let o = this._client.sendBER(i)
+			return (
+				!o &&
+					s.cancel &&
+					(this._requests.get(r)?.reject(new Error('Request was not sent correctly')), this._requests.delete(r)),
+				{ ...s, sentOk: o }
+			)
+		}
+		_handleIncoming(e) {
+			let n = e.value,
+				r = this._applyRootToTree(n)
+			for (let s of r) {
+				let i = this._subscriptions.find((o) => o.path === s.path)
+				i && s.node && i.cb(s.node)
+			}
+			for (let s of r) {
+				let i = Array.from(this._requests.values()).filter(
+					(o) => (!('path' in o.node) && !s.path) || ('path' in o.node && o.node.path === s.path),
+				)
+				for (let o of i) {
+					if (
+						o.nodeResponse === Me.HasChildren &&
+						!s.node.children &&
+						s.node.contents.type !== We.ElementType.Parameter
+					) {
+						if (!s.emptyNode) continue
+					}
+					;(o.cb && o.cb(s.node), o.resolve && (o.resolve(s.node), this._requests.delete(o.reqId)))
+				}
+			}
+			e.errors?.forEach((s) => this.emit('warn', s))
+		}
+		_applyRootToTree(e) {
+			let n = []
+			if ('id' in e)
+				this._requests.forEach((r) => {
+					r.node.contents.type === We.ElementType.Function &&
+						r.node.children &&
+						r.node.children[0] &&
+						'invocation' in r.node.children[0].contents &&
+						r.node.children[0].contents.invocation?.id &&
+						r.node.children[0].contents.invocation?.id === e.id &&
+						(r.resolve(e), this._requests.delete(r.reqId))
+				})
+			else
+				for (let r of Object.values(e))
+					if (!('identifier' in r))
+						if ('path' in r) {
+							let s = r.path.split('.'),
+								i = this.tree[Number(s.shift())],
+								o = !1
+							if (!i)
+								if (s.length) {
+									n.push({ path: r.path, node: r })
+									continue
+								} else {
+									let a = Number(r.path)
+									;((this.tree[a] = new bi.NumberedTreeNodeImpl(a, r.contents, r.children)),
+										n.push({ path: void 0, node: this.tree[a] }))
+									continue
+								}
+							for (let a of s) {
+								if ((i.children || (i.children = {}), !i.children[Number(a)])) {
+									;((i.children[Number(a)] = { ...r, number: Number(a), parent: i }),
+										n.push({ path: r.path.split('.').slice(0, -1).join('.'), node: i }),
+										(o = !0))
+									break
+								}
+								i = i.children[Number(a)]
+							}
+							if (o) continue
+							n.push(...this._updateTree(r, i))
+						} else
+							r.children
+								? this.tree[r.number]
+									? n.push(...this._updateTree(r, this.tree[r.number]))
+									: ((this.tree[r.number] = r), n.push({ path: void 0, node: r }))
+								: (0, we.isEmptyNode)(r)
+									? n.push({ path: r.number + '', node: r, emptyNode: !0 })
+									: ((this.tree[r.number] = r), n.push({ path: void 0, node: r }))
+			return n
+		}
+		_updateTree(e, n) {
+			let r = []
+			if (e.contents.type === n.contents.type)
+				switch ((r.push({ path: (0, we.getPath)(n), node: n, emptyNode: (0, we.isEmptyNode)(e) }), n.contents.type)) {
+					case We.ElementType.Node:
+						this._updateEmberNode(e.contents, n.contents)
+						break
+					case We.ElementType.Parameter:
+						this._updateParameter(e.contents, n.contents)
+						break
+					case We.ElementType.Matrix:
+						this._updateMatrix(e.contents, n.contents)
+						break
+				}
+			if (e.children && n.children)
+				for (let s of Object.values(e.children)) {
+					let i = s.number,
+						o = n.children[i]
+					r.push(...this._updateTree(s, o))
+				}
+			else if (e.children) {
+				;(r.push({ path: (0, we.getPath)(n), node: n }), (n.children = e.children))
+				for (let s of Object.values(e.children)) s.parent = n
+			}
+			return r
+		}
+		_updateEmberNode(e, n) {
+			;(0, we.updateProps)(n, e, ['isOnline'])
+		}
+		_updateParameter(e, n) {
+			;(0, we.updateProps)(n, e, ['value', 'isOnline', 'access'])
+		}
+		_updateMatrix(e, n) {
+			if (
+				((0, we.updateProps)(n, e, ['targets', 'targetCount', 'sources', 'sourceCount', 'connections']), e.connections)
+			)
+				if (n.connections) {
+					for (let r of Object.values(e.connections))
+						if (
+							!r.disposition ||
+							!(r.disposition === hr.ConnectionDisposition.Locked || r.disposition === hr.ConnectionDisposition.Pending)
+						) {
+							let s = !1
+							for (let i in n.connections)
+								n.connections[i].target === r.target && ((s = !0), (n.connections[i].sources = r.sources))
+							s || (n.connections[r.target] = { target: r.target, sources: r.sources })
+						}
+				} else n.connections = e.connections
+		}
+		_resendTimer() {
+			this.connected &&
+				this._requests.forEach((e) => {
+					let n = Date.now() - e.lastSent,
+						r = Date.now() - e.firstSent
+					;(this._resends &&
+						n >= this._resendTimeout &&
+						(this._client.sendBER(e.message)
+							? (e.lastSent = Date.now())
+							: e.reject(new Error('Request was not sent correctly'))),
+						r >= this._timeout && (e.reject(new Error('Request timed out')), this._requests.delete(e.reqId)))
+				})
+		}
+	}
+	lt.EmberClient = yc
+})
+var Kd = p((gi) => {
+	'use strict'
+	Object.defineProperty(gi, '__esModule', { value: !0 })
+	gi.EmberLib = void 0
+	var Kg = { DecodeBuffer: null }
+	gi.EmberLib = Kg
+})
+var Yd = p((yi) => {
+	'use strict'
+	Object.defineProperty(yi, '__esModule', { value: !0 })
+	yi.S101Server = void 0
+	var Yg = (v(), x(I)),
+		Jg = jt(),
+		ey = B('net'),
+		ty = Yg.__importDefault(hc()),
+		Tc = class extends Jg.EventEmitter {
+			constructor(e, n) {
+				;(super(), (this.port = e), (this.address = n), (this.server = null), (this.status = 'disconnected'))
+			}
+			addClient(e) {
+				let n = new ty.default(e)
+				this.emit('connection', n)
+			}
+			async listen() {
+				return new Promise((e, n) => {
+					if (this.status !== 'disconnected') return n(new Error('Already listening'))
+					;((this.server = (0, ey.createServer)((r) => {
+						this.addClient(r)
+					})
+						.on('error', (r) => {
+							if ((this.emit('error', r), this.status === 'disconnected')) return n(r)
+						})
+						.on('listening', () => {
+							;(this.emit('listening'), (this.status = 'listening'), e(void 0))
+						})),
+						this.server.listen(this.port, this.address))
+				})
+			}
+			discard() {
+				this.server?.close()
+			}
+		}
+	yi.S101Server = Tc
+})
+var Jd = p((xi) => {
+	'use strict'
+	Object.defineProperty(xi, '__esModule', { value: !0 })
+	xi.EmberServer = void 0
+	var ny = jt(),
+		ry = Yd(),
+		ye = ri(),
+		kn = Ut(),
+		Ti = fr(),
+		Bn = ur(),
+		pr = Qn(),
+		Si = Hn(),
+		sy = Ra(),
+		Sc = class extends ny.EventEmitter {
+			constructor(e, n) {
+				;(super(),
+					(this.tree = {}),
+					(this._clients = new Set()),
+					(this._subscriptions = {}),
+					(this.address = n),
+					(this.port = e),
+					(this._server = new ry.S101Server(e, n)),
+					this._server.on('connection', (r) => {
+						;(this._clients.add(r),
+							r.on('emberTree', (s) => this._handleIncoming(s, r)),
+							r.on('error', (s) => {
+								this.emit('clientError', r, s)
+							}),
+							r.on('disconnected', () => {
+								;(this._clearSubscription(r), this._clients.delete(r))
+							}))
+					}))
+			}
+			async init(e) {
+				let n = (r, s) => {
+					if (((s.parent = r), s.children)) for (let i of Object.values(s.children)) n(s, i)
+				}
+				for (let r of Object.values(e)) if (r.children) for (let s of Object.values(r.children)) n(r, s)
+				return ((this.tree = e), this._server.listen())
+			}
+			discard() {
+				;(this._clients.forEach((e) => {
+					e.removeAllListeners()
+				}),
+					this._clients.clear(),
+					this._server.server?.close())
+			}
+			update(e, n) {
+				if (e.contents.type === ye.ElementType.Matrix) {
+					let o = e,
+						a = n
+					if (a.connections) for (let c of Object.values(a.connections)) this.updateMatrixConnection(o, c)
+				}
+				for (let [o, a] of Object.entries(n)) e.contents[o] = a
+				let r = (0, Ti.toQualifiedEmberNode)(e),
+					s = (0, Bn.berEncode)([r], kn.RootType.Elements),
+					i = r.path
+				if (r.contents.type !== ye.ElementType.Node && !('targets' in n || 'sources' in n)) {
+					let o = i.lastIndexOf('.')
+					o > -1 ? (i = i.slice(0, o)) : (i = '')
+				}
+				for (let [o, a] of Object.entries(this._subscriptions))
+					i === o &&
+						a.forEach((c) => {
+							c.sendBER(s)
+						})
+			}
+			updateMatrixConnection(e, n) {
+				e.contents.connections || (e.contents.connections = {})
+				let r = e.contents.connections[n.target]
+				switch (
+					(r ||
+						((e.contents.connections[n.target] = new Si.ConnectionImpl(n.target, [])),
+						(r = e.contents.connections[n.target])),
+					r.sources || (r.sources = []),
+					n.operation)
+				) {
+					case Si.ConnectionOperation.Connect:
+						for (let o of n.sources || []) r.sources.find((a) => a === o) || r.sources.push(o)
+						break
+					case Si.ConnectionOperation.Disconnect:
+						for (let o of n.sources || []) r.sources = r.sources.filter((a) => a !== o)
+						break
+					case Si.ConnectionOperation.Absolute:
+					default:
+						r.sources = n.sources
+						break
+				}
+				let s = (0, Ti.toQualifiedEmberNode)(e)
+				s.contents = new ye.MatrixImpl(s.contents.identifier, void 0, void 0, { [r.target]: r })
+				let i = (0, Bn.berEncode)([s], kn.RootType.Elements)
+				for (let [o, a] of Object.entries(this._subscriptions))
+					s.path === o &&
+						a.forEach((c) => {
+							c.sendBER(i)
+						})
+			}
+			_handleIncoming(e, n) {
+				for (let r of Object.values(e.value))
+					r.contents.type === ye.ElementType.Command
+						? this._handleCommand('', r, n).catch((s) => this.emit('error', s))
+						: 'path' in r
+							? this._handleNode(r.path || '', r, n)
+							: 'number' in r && this._handleNode(r.number + '' || '', r, n)
+			}
+			_handleNode(e, n, r) {
+				let s = Object.values(n.children || {})
+				if (s[0] && s[0].contents.type === ye.ElementType.Command) {
+					this._handleCommand(e, s[0], r).catch((i) => this.emit('error', i))
+					return
+				} else
+					n.contents.type === ye.ElementType.Matrix &&
+						'connections' in n.contents &&
+						this._handleMatrix(e, n).catch((i) => this.emit('error', i))
+				if (!n.children)
+					n.contents.type === ye.ElementType.Parameter &&
+						this._handleSetValue(e, n, r).catch((i) => this.emit('error', i))
+				else for (let i of s) this._handleNode(e + '.' + i.number, i, r)
+			}
+			async _handleMatrix(e, n) {
+				if (this.onMatrixOperation) {
+					let r = this.getElementByPath(e)
+					return !r || r.contents.type !== ye.ElementType.Matrix || !n.contents.connections
+						? void 0
+						: this.onMatrixOperation(r, n.contents.connections)
+				}
+			}
+			async _handleSetValue(e, n, r) {
+				let s = this.getElementByPath(e)
+				if (!s || s.contents.type !== ye.ElementType.Parameter || n.contents.value === void 0) return
+				let i = !1
+				if ((this.onSetValue && (i = await this.onSetValue(s, n.contents.value)), !i)) {
+					let o = (0, Ti.toQualifiedEmberNode)(s),
+						a = (0, Bn.berEncode)([o], kn.RootType.Elements)
+					r.sendBER(a)
+				}
+			}
+			async _handleCommand(e, n, r) {
+				let s = e ? this.getElementByPath(e) : this.tree
+				if (s) {
+					if (n.contents.number === pr.CommandType.Subscribe) this._subscribe(e, r)
+					else if (n.contents.number === pr.CommandType.Unsubscribe) this._unsubscribe(e, r)
+					else if (n.contents.number === pr.CommandType.GetDirectory)
+						(this._subscribe(e, r), this._handleGetDirectory(s, n.contents.dirFieldMask || pr.FieldFlags.Default, r))
+					else if (n.contents.number === pr.CommandType.Invoke) {
+						let i
+						this.onInvocation
+							? (i = await this.onInvocation(s, n))
+							: (i = new sy.InvocationResultImpl(n.contents.invocation?.id || -1, !1))
+						let o = (0, Bn.berEncode)(i, kn.RootType.InvocationResult)
+						r.sendBER(o)
+					}
+				}
+			}
+			getElementByPath(e, n = '.') {
+				let r = (u, f) =>
+						Object.values(u || {}).find(
+							(d) => d.number === Number(f) || d.contents.identifier === f || d.contents.description === f,
+						),
+					s = (u, f) => u.children && r(u.children, f),
+					i = [],
+					o = e.split(n),
+					a = o.shift(),
+					c = r(this.tree, a)
+				for (c?.number && i.push(c?.number); o.length;) {
+					let u = o.shift()
+					if (!u || !c) break
+					let f = s(c, u)
+					if (!f || ((c = f), !c)) return
+					c?.number && i.push(c?.number)
+				}
+				return c
+			}
+			_subscribe(e, n) {
+				this._subscriptions[e] = [...(this._subscriptions[e] || []), n]
+			}
+			_unsubscribe(e, n) {
+				this._subscriptions[e] &&
+					this._subscriptions[e].forEach((r, s) => {
+						r === n && this._subscriptions[e].splice(s, 1)
+					})
+			}
+			_clearSubscription(e) {
+				for (let n of Object.keys(this._subscriptions)) this._unsubscribe(n, e)
+			}
+			_handleGetDirectory(e, n, r) {
+				if (e === this.tree) {
+					let s = { ...this.tree }
+					for (let [o, a] of Object.entries(this.tree)) s[o] = new ye.NumberedTreeNodeImpl(a.number, a.contents)
+					let i = (0, Bn.berEncode)(s, kn.RootType.Elements)
+					r.sendBER(i)
+				} else {
+					let s = (0, Ti.toQualifiedEmberNode)(e)
+					if (((s.children = {}), 'children' in e && e.children))
+						for (let [o, a] of Object.entries(e.children))
+							a.contents.type === ye.ElementType.Matrix
+								? (s.children[o] = new ye.NumberedTreeNodeImpl(
+										a.number,
+										new ye.MatrixImpl(
+											a.contents.identifier,
+											void 0,
+											void 0,
+											void 0,
+											a.contents.description,
+											a.contents.matrixType,
+											a.contents.addressingMode,
+											a.contents.targetCount,
+											a.contents.sourceCount,
+											a.contents.maximumTotalConnects,
+											a.contents.maximumConnectsPerTarget,
+											a.contents.parametersLocation,
+											a.contents.gainParameterNumber,
+											a.contents.labels,
+											a.contents.schemaIdentifiers,
+											a.contents.templateReference,
+										),
+									))
+								: (s.children[o] = new ye.NumberedTreeNodeImpl(a.number, a.contents))
+					else
+						s.contents.type === ye.ElementType.Node &&
+							!('children' in e && e.children) &&
+							((s.contents = new ye.EmberNodeImpl()), (s.children = void 0))
+					let i = (0, Bn.berEncode)([s], kn.RootType.Elements)
+					r.sendBER(i)
+				}
+			}
+		}
+	xi.EmberServer = Sc
+})
+var eh = p((Ii) => {
+	'use strict'
+	Object.defineProperty(Ii, '__esModule', { value: !0 })
+	Ii.RootType = void 0
+	var iy = Ut()
+	Object.defineProperty(Ii, 'RootType', {
+		enumerable: !0,
+		get: function () {
+			return iy.RootType
+		},
+	})
+})
+var pc = p((H) => {
+	'use strict'
+	Object.defineProperty(H, '__esModule', { value: !0 })
+	H.Model =
+		H.Types =
+		H.berDecode =
+		H.berEncode =
+		H.S101Client =
+		H.S101Codec =
+		H.EmberServer =
+		H.EmberLib =
+		H.Decoder =
+		H.EmberClient =
+			void 0
+	var th = (v(), x(I)),
+		oy = pi()
+	Object.defineProperty(H, 'EmberClient', {
+		enumerable: !0,
+		get: function () {
+			return oy.EmberClient
+		},
+	})
+	var nh = Kd()
+	Object.defineProperty(H, 'EmberLib', {
+		enumerable: !0,
+		get: function () {
+			return nh.EmberLib
+		},
+	})
+	var ay = Jd()
+	Object.defineProperty(H, 'EmberServer', {
+		enumerable: !0,
+		get: function () {
+			return ay.EmberServer
+		},
+	})
+	var cy = cc()
+	Object.defineProperty(H, 'S101Codec', {
+		enumerable: !0,
+		get: function () {
+			return cy.S101Codec
+		},
+	})
+	var uy = bc()
+	Object.defineProperty(H, 'S101Client', {
+		enumerable: !0,
+		get: function () {
+			return uy.S101Client
+		},
+	})
+	var rh = ur()
+	Object.defineProperty(H, 'berEncode', {
+		enumerable: !0,
+		get: function () {
+			return rh.berEncode
+		},
+	})
+	Object.defineProperty(H, 'berDecode', {
+		enumerable: !0,
+		get: function () {
+			return rh.berDecode
+		},
+	})
+	var ly = th.__importStar(eh())
+	H.Types = ly
+	var fy = th.__importStar(ri())
+	H.Model = fy
+	var dy = nh.EmberLib.DecodeBuffer
+	H.Decoder = dy
+})
+var oh = p((Lx, ih) => {
+	var { EmberClient: hy, Model: py } = pc(),
+		sh = (t) => {
+			let e = t?.contents || t
+			return `${e?.identifier || ''} ${e?.description || ''}`
+				.toLowerCase()
+				.replace(/[^a-z0-9]+/g, ' ')
+				.trim()
+		},
+		my = (t) => {
+			let e = sh(t)
+			return e.includes('gpi mute')
+				? null
+				: e.includes('signal presence') && e.includes('timeout')
+					? 'sig_pres_timeout'
+					: e.includes('signal presence') && e.includes('threshold')
+						? 'sig_pres_threshold'
+						: (e.includes('high pass') || e.includes('hpf')) && (e.includes('frequ') || e.includes('corner'))
+							? 'hpf_freq'
+							: e.includes('high pass') || e.includes('hpf')
+								? 'hpf_enable'
+								: e.includes('phantom')
+									? 'phantom_power'
+									: e.includes('preamp gain') || e.includes('mic gain')
+										? 'preamp_gain'
+										: e.includes('full scale') || e.includes('lineup') || e.includes('fsd')
+											? 'full_scale_level'
+											: e.includes('line mic') || e.includes('input level') || e.includes('signal level')
+												? 'line_mic'
+												: e.includes('mute')
+													? 'mute'
+													: null
+		},
+		_y = (t) => {
+			let e = sh(t).match(/(?:^| )(?:input|channel|ch) 0?([1-8])(?: |$)/)
+			return e ? Number(e[1]) - 1 : null
+		},
+		Ey = ['+15 dBu', '+18 dBu', '+20 dBu', '+22 dBu', '+24 dBu'],
+		by = { line_mic: (t) => (Number(t) === 1 ? 'Line' : 'Mic'), full_scale_level: (t) => Ey[Number(t)] ?? t },
+		gy = {
+			line_mic: 'mode',
+			phantom_power: 'phantom_power',
+			preamp_gain: 'preamp_gain',
+			full_scale_level: 'full_scale_level',
+			hpf_enable: 'hpf_enabled',
+			hpf_freq: 'hpf_frequency',
+			sig_pres_timeout: 'signal_presence_timeout',
+			sig_pres_threshold: 'signal_presence_threshold',
+			mute: 'mute',
+		},
+		xc = class {
+			constructor(e) {
+				;((this.instance = e),
+					(this.client = null),
+					(this.ready = !1),
+					(this.inputParameters = Array.from({ length: 8 }, () => ({}))))
+			}
+			async connect(e, n = 9e3) {
+				if ((await this.disconnect(), !e)) return
+				let r = new hy(e, n, 1e4, !0, 1e3)
+				;((this.client = r),
+					r.on('error', (s) => this.instance.log('error', `Ember+ error: ${s.message || s}`)),
+					r.on('warn', (s) => this.instance.log('warn', `Ember+ warning: ${s.message || s}`)),
+					r.on('disconnected', () => {
+						this.client === r && (this.ready = !1)
+					}))
+				try {
+					if ((await r.connect(), this.client !== r)) return
+					try {
+						await r.expand(r.tree)
+					} catch (i) {
+						this.instance.log('warn', `Ember+ tree expansion warning: ${i.message || i}`)
+					}
+					if (this.client !== r) return
+					let s = this.discoverParameters(r.tree)
+					if (s === 0) throw new Error('No Ember+ control parameters were discovered')
+					if ((await this.subscribeParameters(r), this.client !== r)) return
+					;((this.ready = !0), this.instance.log('info', `Ember+ controls ready on ${e}:${n} (${s} parameters)`))
+				} catch (s) {
+					this.client === r &&
+						((this.ready = !1), this.instance.log('error', `Failed to initialise Ember+ controls: ${s.message || s}`))
+				}
+			}
+			async disconnect() {
+				this.ready = !1
+				let e = this.client
+				;((this.client = null), e && (e.removeAllListeners(), e.discard()))
+			}
+			discoverParameters(e) {
+				this.inputParameters = Array.from({ length: 8 }, () => ({}))
+				let n = (r, s = null) => {
+					if (!r || typeof r != 'object') return
+					if (!r.contents) {
+						for (let o of Object.values(r)) n(o, s)
+						return
+					}
+					let i = _y(r) ?? s
+					if (r.contents.type === py.ElementType.Parameter) {
+						let o = my(r)
+						o && i !== null && (this.inputParameters[i][o] = r)
+					}
+					for (let o of Object.values(r.children || {})) n(o, i)
+				}
+				return (n(e), this.inputParameters.reduce((r, s) => r + Object.keys(s).length, 0))
+			}
+			async subscribeParameters(e) {
+				let n = [],
+					r = async (s, i) => {
+						i(s)
+						let o = await e.getDirectory(s, void 0, i)
+						o.response && n.push(o.response)
+					}
+				for (let s = 0; s < this.inputParameters.length; s++)
+					for (let [i, o] of Object.entries(this.inputParameters[s]))
+						await r(o, (a) => this.updateInputState(s, i, a.contents?.value))
+				await Promise.all(n)
+			}
+			updateInputState(e, n, r) {
+				if (r === void 0) return
+				this.instance.inputState[e] = { ...this.instance.inputState[e], [n]: r }
+				let s = gy[n]
+				if (s) {
+					let i = by[n]
+					this.instance.setVariableValues({ [`input${e + 1}_${s}`]: i ? i(r) : r })
+				}
+				;(n === 'mute' &&
+					(this.instance.setVariableValues(this.instance.muteVariableValues(e)),
+					this.instance.checkFeedbacks('MuteState')),
+					this.instance.checkFeedbacks('ParameterState'))
+			}
+			async setInputParameter(e, n, r) {
+				let s = this.inputParameters[e]?.[n]
+				await this.setParameter(s, r, `'${n}' for input ${e + 1}`)
+			}
+			async setParameter(e, n, r) {
+				if (!this.ready || !this.client) throw new Error('Ember+ controls are not ready')
+				if (!e) throw new Error(`Ember+ parameter ${r} was not found`)
+				let s = await this.client.setValue(e, n, !0)
+				s.response && (await s.response)
+			}
+		}
+	ih.exports = { EmberControl: xc }
+})
+var ky = p((Mx, vc) => {
+	var { InstanceBase: yy, Regex: ah, InstanceStatus: vi } = (Wi(), x(Xi)),
+		Ty = mo(),
+		Sy = Tl(),
+		xy = wl(),
+		Iy = Ol(),
+		vy = kl(),
+		wy = Pl(),
+		{ EmberControl: Ny } = oh(),
+		{ isAsserted: ch, isMuted: Cy, isPresent: Oy } = Eo(),
+		Ry = 8081,
+		Ic = class extends yy {
+			constructor(e) {
+				;(super(e), (this.ember = new Ny(this)))
+			}
+			async init(e) {
+				;((this.config = e),
+					(this.inputState = Array.from({ length: 8 }, () => ({}))),
+					(this.statusLeds = void 0),
+					(this.powerInputs = {}),
+					(this.meters = Array.from({ length: 8 }, () => {})),
+					this.updateActions(),
+					this.updateFeedbacks(),
+					this.updateVariableDefinitions(),
+					this.updatePresets(),
+					this.initWebSocket(),
+					this.initEmber())
+			}
+			async destroy() {
+				;(this.closeWebSockets(), await this.ember.disconnect(), this.log('debug', 'destroy'))
+			}
+			async configUpdated(e) {
+				;((this.config = e),
+					(this.inputState = Array.from({ length: 8 }, () => ({}))),
+					(this.statusLeds = void 0),
+					(this.powerInputs = {}),
+					(this.meters = Array.from({ length: 8 }, () => {})),
+					this.initWebSocket(),
+					this.initEmber())
+			}
+			getConfigFields() {
+				return [
+					{
+						type: 'textinput',
+						id: 'host',
+						label: 'Device IP',
+						width: 8,
+						regex: ah.IP,
+						tooltip: 'The IP address of the AVN-M8R.',
+					},
+					{
+						type: 'textinput',
+						id: 'ember_port',
+						label: 'Ember+ Port',
+						width: 4,
+						default: '9000',
+						regex: ah.PORT,
+						tooltip: 'The TCP port used by the AVN-M8R Ember+ provider.',
+					},
+				]
+			}
+			async initEmber() {
+				this.config.host && (await this.ember.connect(this.config.host, Number(this.config.ember_port) || 9e3))
+			}
+			initWebSocket() {
+				if (!this.config.host) {
+					this.updateStatus(vi.BadConfig, 'Target IP is not defined')
+					return
+				}
+				;(this.closeWebSockets(),
+					this.updateStatus(vi.Connecting),
+					(this.ws = this.openWebSocket('audio', (e) => this.handleAudioMessage(e), !0)),
+					(this.devinfoWs = this.openWebSocket('devinfo', (e) => this.handleDevInfoMessage(e), !1)))
+			}
+			closeWebSockets() {
+				for (let e of ['ws', 'devinfoWs']) this[e] && (this[e].close(1e3), (this[e] = null))
+			}
+			openWebSocket(e, n, r) {
+				let s = `ws://${this.config.host}:${Ry}`,
+					i = new Ty(s, e)
+				return (
+					i.on('open', () => {
+						;(r && this.updateStatus(vi.Ok), this.log('debug', `Connected to ${s} (${e})`))
+					}),
+					i.on('close', (o) => {
+						;(r && this.updateStatus(vi.Disconnected, `Connection closed with code ${o}`),
+							this.log('debug', `${e} connection closed with code ${o}`))
+					}),
+					i.on('message', (o) => {
+						let a
+						try {
+							a = JSON.parse(o.toString())
+						} catch (c) {
+							this.log('warn', `Ignoring invalid ${e} WebSocket JSON: ${c.message}`)
+							return
+						}
+						n(a)
+					}),
+					i.on('error', (o) => this.log('error', `${e} WebSocket error: ${o.message}`)),
+					i
+				)
+			}
+			handleAudioMessage(e) {
+				let n = e.audio || e,
+					r = {},
+					s = (i, o) => Object.prototype.hasOwnProperty.call(i, o)
+				if (
+					(s(n, 'statusLeds') &&
+						((this.statusLeds = ch(n.statusLeds)),
+						(r.status_leds_enabled = this.statusLeds ? 1 : 0),
+						this.checkFeedbacks('StatusLeds')),
+					Array.isArray(n.meter))
+				) {
+					let i = !1
+					for (let o = 0; o < Math.min(n.meter.length, 8); o++) {
+						if (!s(n.meter[o], 'segments')) continue
+						let a = Number(n.meter[o].segments)
+						!Number.isFinite(a) ||
+							a === this.meters[o] ||
+							((this.meters[o] = a), (r[`input${o + 1}_meter`] = a), (i = !0))
+					}
+					i && this.checkFeedbacks('MeterLevel')
+				}
+				if (Array.isArray(n.inputs)) {
+					let i = !1
+					for (let o of n.inputs) {
+						if (!o || typeof o != 'object') continue
+						let a = Number(o.idx)
+						if (
+							!(!Number.isInteger(a) || a < 0 || a > 7) &&
+							(s(o, 'lbl') && (r[`input${a + 1}_dante_label`] = o.lbl),
+							s(o, 'fnm') && (r[`input${a + 1}_friendly_name`] = o.fnm),
+							s(o, 'gpi_m'))
+						) {
+							let c = ch(o.gpi_m)
+							;((this.inputState[a] = { ...this.inputState[a], gpi_mute: c }),
+								(r[`input${a + 1}_gpi_mute`] = c),
+								Object.assign(r, this.muteVariableValues(a)),
+								(i = !0))
+						}
+					}
+					i && this.checkFeedbacks('MuteState')
+				}
+				Object.keys(r).length > 0 && this.setVariableValues(r)
+			}
+			handleDevInfoMessage(e) {
+				let n = e.devinfo || e,
+					r = {},
+					s = (o, a) => Object.prototype.hasOwnProperty.call(o, a)
+				if ((s(n, 'uptime') && (r.device_uptime = String(n.uptime).replace(/\s+/g, ' ').trim()), s(n, 'ctemp'))) {
+					let o = String(n.ctemp).trim(),
+						a = Number(o)
+					o !== '' && Number.isFinite(a)
+						? (r.device_temperature = a)
+						: this.log('debug', `Ignoring unreadable ctemp value: ${JSON.stringify(n.ctemp)}`)
+				}
+				let i = !1
+				for (let [o, a, c] of [
+					['ac1', 1, 'primary_poe_present'],
+					['ac2', 2, 'secondary_poe_present'],
+				])
+					s(n, o) && ((this.powerInputs[a] = Oy(n[o])), (r[c] = String(n[o]).trim()), (i = !0))
+				;(Object.keys(r).length > 0 && this.setVariableValues(r), i && this.checkFeedbacks('PowerInput'))
+			}
+			muteVariableValues(e) {
+				return { [`input${e + 1}_mute_active`]: Cy(this.inputState?.[e]) }
+			}
+			updateActions() {
+				xy(this)
+			}
+			updateFeedbacks() {
+				Iy(this)
+			}
+			updateVariableDefinitions() {
+				vy(this)
+			}
+			updatePresets() {
+				wy(this)
+			}
+		}
+	vc.exports = Ic
+	vc.exports.UpgradeScripts = Sy
+})
+export default ky()
 /*! Bundled license information:
 
 long/dist/long.js:
