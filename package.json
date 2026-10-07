@@ -9,7 +9,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "git+https://github.com/bitfocus/companion-module-sonifex-avn-m8r.git"
 	},
 	"engines": {
 		"node": "^22.20",
