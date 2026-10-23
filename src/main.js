@@ -9,17 +9,28 @@ const { EmberControl } = require('./ember')
 const { isAsserted, isMuted, parsePowerPresence } = require('./util')
 
 const WS_PORT = 8081
-const WS_MSG_TIMEOUT = 10000
+const WS_MSG_TIMEOUT = 60000
 const WS_CONNECT_TIMEOUT = 5000
 const EMBER_PORT = 9000
 const DEVINFO_CGI_TIMEOUT = 5000
 const DEVINFO_POLL_INTERVAL = 30000
 const RECONNECT_DELAY = 5000
 
+// Each transport reconnects independently. 'audio' is the primary one and drives the instance status.
+const TRANSPORT_LABELS = {
+	audio: 'Metering WebSocket',
+	devinfo: 'Device info WebSocket',
+	ember: 'Ember+',
+}
+
+const isDown = (transport) => transport.state === 'failed' || transport.state === 'lost'
+
 class SonifexM8RInstance extends InstanceBase {
 	constructor(internal) {
 		super(internal)
 		this.ember = new EmberControl(this)
+		this.reconnectTimers = {}
+		this.resetTransports()
 	}
 
 	resetState() {
@@ -43,7 +54,7 @@ class SonifexM8RInstance extends InstanceBase {
 
 	async destroy() {
 		this.destroyed = true
-		this.clearReconnectTimer()
+		this.clearReconnectTimers()
 		this.stopDevInfoPolling()
 		this.closeWebSockets()
 		await this.ember.disconnect()
@@ -71,59 +82,127 @@ class SonifexM8RInstance extends InstanceBase {
 		]
 	}
 
+	// Full (re)connect of every transport. Only used by init and configUpdated; failures retry per transport.
 	connect() {
 		if (this.destroyed) return
-		this.clearReconnectTimer()
+		this.clearReconnectTimers()
 		this.closeWebSockets()
+		this.stopDevInfoPolling()
+		this.resetTransports()
+		this.lastStatus = undefined
 
 		const host = this.config.host
 		if (!host) {
-			this.stopDevInfoPolling()
 			void this.ember.disconnect()
-			this.updateStatus(InstanceStatus.BadConfig, 'Target IP is not defined')
+			this.setStatus(InstanceStatus.BadConfig, 'Target IP is not defined')
 			return
 		}
 
-		this.updateStatus(InstanceStatus.Connecting, `Connecting to ${host}`)
-		this.audioWs = this.openWebSocket(host, 'audioWs', 'audio', (message) => this.handleAudioMessage(message))
-		this.devinfoWs = this.openWebSocket(host, 'devinfoWs', 'devinfo', (message) => this.handleDevInfoMessage(message))
+		this.updateConnectionStatus()
+		for (const name of Object.keys(TRANSPORT_LABELS)) this.connectTransport(name)
 		this.startDevInfoPolling()
-		void this.initEmber(host)
 	}
 
-	scheduleReconnect(reason) {
-		if (this.destroyed || this.reconnectTimer || !this.config.host) return
+	resetTransports() {
+		this.transports = Object.fromEntries(Object.keys(TRANSPORT_LABELS).map((name) => [name, { state: 'connecting' }]))
+		this.devInfoPollFailed = false
+	}
 
-		this.updateStatus(InstanceStatus.Connecting, `${reason} - reconnecting`)
-		this.log('info', `${reason}, reconnecting in ${RECONNECT_DELAY / 1000}s...`)
+	// Rebuilds a single transport, leaving the others untouched.
+	connectTransport(name) {
+		const host = this.config.host
+		if (this.destroyed || !host) return
 
-		this.reconnectTimer = setTimeout(() => {
-			this.reconnectTimer = undefined
-			this.connect()
+		switch (name) {
+			case 'audio':
+				this.closeWebSocket('audioWs')
+				this.audioWs = this.openWebSocket(host, 'audioWs', 'audio', (message) => this.handleAudioMessage(message))
+				break
+			case 'devinfo':
+				this.closeWebSocket('devinfoWs')
+				this.devinfoWs = this.openWebSocket(host, 'devinfoWs', 'devinfo', (message) =>
+					this.handleDevInfoMessage(message),
+				)
+				break
+			case 'ember':
+				void this.ember.connect(host, EMBER_PORT)
+				break
+		}
+	}
+
+	// Marks a transport as connected, logging the recovery if it had been down.
+	transportUp(name) {
+		const transport = this.transports[name]
+		const wasDown = isDown(transport)
+		this.transports[name] = { state: 'ok' }
+
+		if (wasDown) {
+			this.log('info', `${TRANSPORT_LABELS[name]} reconnected`)
+			// The devinfo feed only sends changes, so refresh everything it may have missed.
+			if (name === 'devinfo') void this.pollDevInfo()
+		}
+		this.updateConnectionStatus()
+	}
+
+	// Marks a transport as down ('failed' never connected, 'lost' dropped after connecting) and retries only it.
+	// The first failure is logged, repeats go to debug until the transport recovers.
+	scheduleReconnect(name, reason, state = 'failed') {
+		if (this.destroyed || !this.config.host || this.reconnectTimers[name]) return
+
+		const repeat = isDown(this.transports[name])
+		this.transports[name] = { state, message: `${TRANSPORT_LABELS[name]}: ${reason}` }
+		this.log(
+			repeat ? 'debug' : 'warn',
+			`${TRANSPORT_LABELS[name]}: ${reason}, retrying every ${RECONNECT_DELAY / 1000}s`,
+		)
+		this.updateConnectionStatus()
+
+		this.reconnectTimers[name] = setTimeout(() => {
+			delete this.reconnectTimers[name]
+			this.connectTransport(name)
 		}, RECONNECT_DELAY)
 	}
 
-	clearReconnectTimer() {
-		if (this.reconnectTimer) {
-			clearTimeout(this.reconnectTimer)
-			this.reconnectTimer = undefined
-		}
+	clearReconnectTimers() {
+		for (const timer of Object.values(this.reconnectTimers)) clearTimeout(timer)
+		this.reconnectTimers = {}
 	}
 
-	async initEmber(host) {
-		if (!host) return
-		await this.ember.connect(host, EMBER_PORT)
+	// The metering socket decides failure vs. connected, the secondary transports can only downgrade Ok to a warning.
+	updateConnectionStatus() {
+		const host = this.config.host
+		const { audio } = this.transports
+
+		if (audio.state === 'connecting') return this.setStatus(InstanceStatus.Connecting, `Connecting to ${host}`)
+		if (audio.state === 'lost') return this.setStatus(InstanceStatus.Disconnected, audio.message)
+		if (audio.state === 'failed') return this.setStatus(InstanceStatus.ConnectionFailure, audio.message)
+
+		const down = ['ember', 'devinfo'].filter((name) => isDown(this.transports[name]))
+		if (down.length > 0) {
+			const labels = down.map((name) => TRANSPORT_LABELS[name]).join(' and ')
+			return this.setStatus(InstanceStatus.UnknownWarning, `${labels} unavailable`)
+		}
+
+		this.setStatus(InstanceStatus.Ok, `Connected to ${host}`)
+	}
+
+	setStatus(status, message) {
+		if (this.lastStatus?.status === status && this.lastStatus.message === message) return
+		this.lastStatus = { status, message }
+		this.updateStatus(status, message)
+	}
+
+	closeWebSocket(key) {
+		const ws = this[key]
+		if (!ws) return
+
+		// Cleared first so the close handler sees itself superseded and skips reconnecting.
+		this[key] = null
+		ws.terminate()
 	}
 
 	closeWebSockets() {
-		for (const key of ['audioWs', 'devinfoWs']) {
-			const ws = this[key]
-			if (!ws) continue
-
-			// Cleared first so the close handler sees itself superseded and skips reconnecting.
-			this[key] = null
-			ws.terminate()
-		}
+		for (const key of ['audioWs', 'devinfoWs']) this.closeWebSocket(key)
 	}
 
 	openWebSocket(host, key, protocol, onMessage) {
@@ -132,6 +211,9 @@ class SonifexM8RInstance extends InstanceBase {
 		const ws = new WebSocket(url, protocol)
 
 		let receiveTimer
+		let opened = false
+		// Most recent error, reported as the reconnect reason when the socket closes.
+		let failure
 
 		// Audio meters stream continuously, devinfo only sends changes.
 		const resetReceiveTimer = () => {
@@ -141,34 +223,36 @@ class SonifexM8RInstance extends InstanceBase {
 			receiveTimer = setTimeout(() => {
 				if (this.destroyed || this[key] !== ws) return
 
-				this.log('warn', 'Timer expired, WS connection may have expired.')
+				failure = `no data received for ${WS_MSG_TIMEOUT / 1000}s`
 				ws.terminate()
 			}, WS_MSG_TIMEOUT)
 		}
 
 		const connectTimer = setTimeout(() => {
 			if (ws.readyState !== WebSocket.CONNECTING) return
-			this.log('warn', `${protocol} connection to ${host} timed out`)
+			failure = 'connection timed out'
 			ws.terminate()
 		}, WS_CONNECT_TIMEOUT)
 
 		ws.on('open', () => {
 			clearTimeout(connectTimer)
 			if (this.destroyed || this[key] !== ws) return
+			opened = true
 			resetReceiveTimer()
-			if (primary) this.updateStatus(InstanceStatus.Ok, `Connected to ${host}`)
 			this.log('info', `Connected to ${url} (${protocol})`)
+			this.transportUp(protocol)
 		})
 
 		ws.on('close', (code) => {
 			clearTimeout(connectTimer)
 			clearTimeout(receiveTimer)
-			this.log('info', `${protocol} connection to ${host} closed with code ${code}`)
+			this.log('debug', `${protocol} connection to ${host} closed with code ${code}`)
 			if (this[key] !== ws) return
 
 			this[key] = null
-			// Retry connection on close
-			this.scheduleReconnect(`${protocol} connection to ${host} closed with code ${code}`)
+			const detail = failure ?? `closed with code ${code}`
+			if (opened) this.scheduleReconnect(protocol, `connection lost (${detail})`, 'lost')
+			else this.scheduleReconnect(protocol, `cannot connect to ${url} (${detail})`, 'failed')
 		})
 
 		ws.on('message', (data) => {
@@ -188,7 +272,8 @@ class SonifexM8RInstance extends InstanceBase {
 		})
 
 		ws.on('error', (error) => {
-			this.log('error', `${protocol} WebSocket error on ${host}: ${error.code ?? 'unknown'}: ${error.message}`)
+			failure = error.message || error.code || 'unknown error'
+			this.log('debug', `${protocol} WebSocket error on ${host}: ${error.code ?? 'unknown'}: ${error.message}`)
 		})
 		return ws
 	}
@@ -285,17 +370,28 @@ class SonifexM8RInstance extends InstanceBase {
 			})
 			if (isStale()) return
 			if (!response.ok) {
-				this.log('info', `devInfo.cgi returned HTTP ${response.status}`)
+				this.devInfoPollFailure(`HTTP ${response.status}`)
 				return
 			}
 
 			const message = await response.json()
-			if (!isStale()) this.handleDevInfoMessage(message)
+			if (isStale()) return
+			if (this.devInfoPollFailed) {
+				this.devInfoPollFailed = false
+				this.log('info', 'devInfo.cgi poll recovered')
+			}
+			this.handleDevInfoMessage(message)
 		} catch (error) {
-			if (!isStale()) this.log('error', `devInfo.cgi poll failed: ${error.message}`)
+			if (!isStale()) this.devInfoPollFailure(error.message)
 		} finally {
 			if (this.devInfoAbortController === controller) this.devInfoAbortController = undefined
 		}
+	}
+
+	// Logs the first poll failure, then repeats at debug until a poll succeeds.
+	devInfoPollFailure(reason) {
+		this.log(this.devInfoPollFailed ? 'debug' : 'warn', `devInfo.cgi poll failed: ${reason}`)
+		this.devInfoPollFailed = true
 	}
 
 	// The devinfo ws feed sends only the fields that changed since the device last evaluated them.
