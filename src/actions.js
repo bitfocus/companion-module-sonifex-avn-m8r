@@ -154,7 +154,6 @@ module.exports = function (self) {
 					type: 'dropdown',
 					label: 'Gain Step',
 					default: 1,
-					isVisibleExpression: `$(options:operation) === 'increase' || $(options:operation) === 'decrease'`,
 					choices: [1, 2, 4, 5, 10].map((factor) => ({ id: factor, label: `${factor * 3} dB` })),
 					tooltip: 'Select the gain change applied per adjustment.',
 				},
@@ -162,7 +161,7 @@ module.exports = function (self) {
 			callback: async (event) => {
 				const input = Number(event.options.input)
 				const steps = Math.max(1, Math.round(Number(event.options.step) || 1))
-				switch (event.options.operation || 'set') {
+				switch (event.options.operation) {
 					case 'increase':
 						await adjustPreampGain(self, input, steps * PREAMP_GAIN_STEP)
 						break

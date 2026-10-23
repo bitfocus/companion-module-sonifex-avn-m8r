@@ -9,7 +9,9 @@ const { EmberControl } = require('./ember')
 const { isAsserted, isMuted, parsePowerPresence } = require('./util')
 
 const WS_PORT = 8081
-const WS_MSG_TIMEOUT = 60000
+const WS_PING_INTERVAL = 5000
+// The M8R answers pings ~1-2 s late, so allow one late pong before treating the socket as dead.
+const WS_PONG_TIMEOUT = 10000
 const WS_CONNECT_TIMEOUT = 5000
 const EMBER_PORT = 9000
 const DEVINFO_CGI_TIMEOUT = 5000
@@ -63,8 +65,15 @@ class SonifexM8RInstance extends InstanceBase {
 	}
 
 	async configUpdated(config) {
+		const hostChanged = config.host !== this.config?.host
 		this.config = config
 		this.resetState()
+
+		// Values from the previous device would otherwise linger until the new one reports them.
+		if (hostChanged) {
+			this.setVariableValues(Object.fromEntries(this.variableIds.map((id) => [id, undefined])))
+			this.checkAllFeedbacks()
+		}
 
 		this.connect()
 	}
@@ -206,26 +215,24 @@ class SonifexM8RInstance extends InstanceBase {
 	}
 
 	openWebSocket(host, key, protocol, onMessage) {
-		const primary = key === 'audioWs'
 		const url = `ws://${host}:${WS_PORT}`
 		const ws = new WebSocket(url, protocol)
 
-		let receiveTimer
+		let heartbeatTimer
+		let lastSeen
 		let opened = false
 		// Most recent error, reported as the reconnect reason when the socket closes.
 		let failure
 
-		// Audio meters stream continuously, devinfo only sends changes.
-		const resetReceiveTimer = () => {
-			if (!primary) return
-			clearTimeout(receiveTimer)
-
-			receiveTimer = setTimeout(() => {
-				if (this.destroyed || this[key] !== ws) return
-
-				failure = `no data received for ${WS_MSG_TIMEOUT / 1000}s`
+		// Neither feed is guaranteed to send data (no meter frames with no inputs connected), so check liveness with pings.
+		const heartbeat = () => {
+			if (this.destroyed || this[key] !== ws) return
+			if (Date.now() - lastSeen > WS_PONG_TIMEOUT) {
+				failure = `no response to ping for ${WS_PONG_TIMEOUT / 1000}s`
 				ws.terminate()
-			}, WS_MSG_TIMEOUT)
+				return
+			}
+			ws.ping()
 		}
 
 		const connectTimer = setTimeout(() => {
@@ -238,14 +245,19 @@ class SonifexM8RInstance extends InstanceBase {
 			clearTimeout(connectTimer)
 			if (this.destroyed || this[key] !== ws) return
 			opened = true
-			resetReceiveTimer()
+			lastSeen = Date.now()
+			heartbeatTimer = setInterval(heartbeat, WS_PING_INTERVAL)
 			this.log('info', `Connected to ${url} (${protocol})`)
 			this.transportUp(protocol)
 		})
 
+		ws.on('pong', () => {
+			lastSeen = Date.now()
+		})
+
 		ws.on('close', (code) => {
 			clearTimeout(connectTimer)
-			clearTimeout(receiveTimer)
+			clearInterval(heartbeatTimer)
 			this.log('debug', `${protocol} connection to ${host} closed with code ${code}`)
 			if (this[key] !== ws) return
 
@@ -257,8 +269,7 @@ class SonifexM8RInstance extends InstanceBase {
 
 		ws.on('message', (data) => {
 			if (this.destroyed || this[key] !== ws) return
-			// Message received, reset timer
-			resetReceiveTimer()
+			lastSeen = Date.now()
 			let message
 
 			try {
@@ -451,7 +462,7 @@ class SonifexM8RInstance extends InstanceBase {
 	}
 
 	updateVariableDefinitions() {
-		UpdateVariableDefinitions(this)
+		this.variableIds = UpdateVariableDefinitions(this)
 	}
 
 	updatePresets() {

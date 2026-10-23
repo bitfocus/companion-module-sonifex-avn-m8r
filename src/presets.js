@@ -93,7 +93,7 @@ module.exports = function (self) {
 			],
 		}
 
-		presets[`meter_${input}`] = {
+		const meterGauge = {
 			type: 'layered',
 			name: `Input ${input} meter gauge`,
 			keywords: ['meter', 'gauge', 'level'],
@@ -138,6 +138,27 @@ module.exports = function (self) {
 			steps: [{ down: [], up: [] }],
 			feedbacks: [],
 		}
+
+		// Text fallback for hosts that can't render layered presets.
+		const meterText = lamp(
+			`Input ${input} meter`,
+			baseStyle(lines(label, `$(${VAR}:input${input}_meter)`)),
+			[
+				{
+					feedbackId: 'MeterLevel',
+					options: { input: index, comparison: '>', threshold: 0 },
+					style: { bgcolor: GREEN, color: WHITE },
+				},
+				{
+					feedbackId: 'MeterLevel',
+					options: { input: index, comparison: '=', threshold: 21 },
+					style: { bgcolor: RED, color: WHITE },
+				},
+			],
+			['meter', 'level'],
+		)
+
+		presets[`meter_${input}`] = { type: 'alternatives', variants: [meterGauge, meterText] }
 
 		presets[`signal_${input}`] = lamp(
 			`Input ${input} signal present`,

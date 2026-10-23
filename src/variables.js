@@ -25,4 +25,5 @@ module.exports = function (self) {
 	}
 
 	self.setVariableDefinitions(definitions)
+	return Object.keys(definitions)
 }
