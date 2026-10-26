@@ -1,6 +1,6 @@
 {
 	"name": "companion-module-sonifex-avn-m8r",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"main": "src/main.js",
 	"scripts": {
 		"format": "prettier -w .",
