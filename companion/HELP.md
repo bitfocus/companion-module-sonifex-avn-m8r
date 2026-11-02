@@ -15,9 +15,11 @@ Input settings (Mic/Line mode, phantom power, preamp gain, full-scale level, hig
 
 Select Input 1 to Input 8 for each input action.
 
+In expression mode, options take the values their labels show: inputs `1` to `8`, full-scale levels `15`, `18`, `20`, `22` or `24`, input mode `mic`, `line` or `toggle`, and the other state options `on`, `off` or `toggle`.
+
 | Action                         | Available settings                                                    |
 | ------------------------------ | --------------------------------------------------------------------- |
-| Set Input Mode                 | Mic or Line                                                           |
+| Set Input Mode                 | Mic, Line or Toggle                                                   |
 | Set Phantom Power              | Off, On or Toggle                                                     |
 | Set Preamp Gain                | 16 to 76 dB in 3 dB steps                                             |
 | Adjust Preamp Gain             | Increase or decrease by 3, 6, 12, 15 or 30 dB, limited to 16 to 76 dB |
@@ -33,7 +35,7 @@ Select Input 1 to Input 8 for each input action.
 
 ### Feedbacks
 
-- **Ember+ Parameter** compares a selected input setting against a value. Use **Learn** to copy the current value. Boolean settings use `0` or `1`, input mode uses `0` for Mic and `1` for Line, full-scale level uses `0` to `4` for +15, +18, +20, +22 and +24 dBu respectively.
+- **Ember+ Parameter** compares a selected input setting against a value. Use **Learn** to copy the current value. Boolean settings use `0` or `1`, input mode uses `0` for Mic and `1` for Line, full-scale level uses its level in dBu (`18`, `+18` or `+18 dBu`). The text the input's variable shows also matches, for example `Line`, and **Learn** fills in that text.
 - **Input Mute** offers _Software only_, _GPI only_, or _Software or GPI_, with a choice of Muted or Unmuted.
 - **Input Meter Level** compares the input level with `<`, `=` or `>` against a level in dBFS.
 - **PoE Input** reports whether the Primary or Secondary PoE input is present or absent.
@@ -41,7 +43,7 @@ Select Input 1 to Input 8 for each input action.
 
 ### Metering
 
-Input levels are reported as a segment count from **0 to 21**, rather than a continuous dBFS measurement. Zero means below -52 dBFS, segment 21 represents the top band starting at -0.1 dBFS. Only the levels listed in **Input Meter Level** can be distinguished. Its `=` comparison matches a meter band, rather than an exact measured dBFS value.
+Input levels are reported as a segment count from **0 to 21**, rather than a continuous dBFS measurement. Zero means below -52 dBFS, segment 21 represents the top band starting at -0.1 dBFS. Only the levels listed in **Input Meter Level** can be distinguished. Its `=` comparison matches a meter band, rather than an exact measured dBFS value. In expression mode, enter the level in dBFS (e.g. `-18`). A level between two listed levels is rounded down, so `-20` behaves like -21 dBFS, and anything below -52 dBFS counts as silence.
 
 For a custom gauge, use `input1_meter` (or the corresponding input variable) with a minimum of **0** and a maximum of **21**.
 
@@ -71,7 +73,7 @@ Device variables are `status_leds_enabled` (`0` or `1`), `device_uptime`, `devic
 
 ### Presets
 
-- **Inputs:** software mute toggle, phantom power toggle and a two-step Mic/Line button for each input.
+- **Inputs:** software mute toggle, phantom power toggle and Mic/Line toggle for each input.
 - **Metering:** meter gauges, signal-present indicators and clip indicators for each input. Signal-present indicators light above the zero meter band, clip indicators light at segment 21. These indicators use meter data, independently of the signal-presence timeout and threshold settings.
 - **Device:** status LED toggle, primary and secondary PoE failure indicators, core temperature and uptime.
 

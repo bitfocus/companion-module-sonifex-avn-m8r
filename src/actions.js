@@ -1,38 +1,37 @@
 const WebSocket = require('ws')
+const { isAsserted, inputOption, toInputIndex, FULL_SCALE_DBU, fullScaleLabel } = require('./util')
 
-const inputChoices = [
-	{ id: 0, label: 'Input 1' },
-	{ id: 1, label: 'Input 2' },
-	{ id: 2, label: 'Input 3' },
-	{ id: 3, label: 'Input 4' },
-	{ id: 4, label: 'Input 5' },
-	{ id: 5, label: 'Input 6' },
-	{ id: 6, label: 'Input 7' },
-	{ id: 7, label: 'Input 8' },
-]
+const STATE_EXPRESSION = "'on', 'off' or 'toggle'"
 
-const onOffChoices = [
-	{ id: 0, label: 'Off' },
-	{ id: 1, label: 'On' },
-	{ id: 2, label: 'Toggle' },
-]
+const stateOption = (label, onLabel = 'On', offLabel = 'Off', defaultState = 'off') => ({
+	id: 'state',
+	type: 'dropdown',
+	label,
+	default: defaultState,
+	choices: [
+		{ id: 'off', label: offLabel },
+		{ id: 'on', label: onLabel },
+		{ id: 'toggle', label: 'Toggle' },
+	],
+	expressionDescription: STATE_EXPRESSION,
+})
 
 const PREAMP_GAIN_DB_MIN = 16
 const PREAMP_GAIN_DB_MAX = 76
 const PREAMP_GAIN_STEP = 3
+const PREAMP_GAINS = Array.from(
+	{ length: (PREAMP_GAIN_DB_MAX - PREAMP_GAIN_DB_MIN) / PREAMP_GAIN_STEP + 1 },
+	(_, index) => PREAMP_GAIN_DB_MIN + index * PREAMP_GAIN_STEP,
+)
 
-const inputOption = () => ({
-	id: 'input',
-	type: 'dropdown',
-	label: 'Input',
-	default: 0,
-	choices: inputChoices,
-})
+// Ember+ line_mic values.
+const INPUT_MODES = { mic: 0, line: 1 }
 
-const setInputParameter = async (self, input, key, value) => {
+const setInputParameter = async (self, input, key, value, signal) => {
 	try {
-		await self.ember.setInputParameter(Number(input), key, value)
+		await self.ember.setInputParameter(input, key, value, signal)
 	} catch (error) {
+		if (signal?.aborted) return
 		self.log('error', `Action failed: ${error.message}`)
 	}
 }
@@ -48,19 +47,27 @@ const setStatusLeds = (self, value) => {
 	})
 }
 
+// Resolves 'on', 'off' or 'toggle' against the current device state. Returns a boolean, or null if it can't.
 const resolveBinaryState = (self, requestedState, currentState, settingName) => {
-	const state = Number(requestedState)
-	if (state !== 2) return state
+	if (requestedState === 'on') return true
+	if (requestedState === 'off') return false
+	if (requestedState !== 'toggle') {
+		self.log(
+			'error',
+			`Cannot set ${settingName}: unknown state ${JSON.stringify(requestedState)}, expected ${STATE_EXPRESSION}`,
+		)
+		return null
+	}
 
 	if (currentState === undefined || currentState === null) {
 		self.log('error', `Cannot toggle ${settingName}: current device state has not been received`)
 		return null
 	}
 
-	return currentState === true || Number(currentState) === 1 ? 0 : 1
+	return !isAsserted(currentState)
 }
 
-const adjustPreampGain = async (self, input, adjustment) => {
+const adjustPreampGain = async (self, input, adjustment, signal) => {
 	const currentGain = Number(self.inputState?.[input]?.preamp_gain)
 	if (!Number.isFinite(currentGain)) {
 		self.log('error', 'Cannot adjust preamp gain: current Ember+ value has not been received')
@@ -68,7 +75,7 @@ const adjustPreampGain = async (self, input, adjustment) => {
 	}
 
 	const newGain = Math.min(PREAMP_GAIN_DB_MAX, Math.max(PREAMP_GAIN_DB_MIN, currentGain + adjustment))
-	if (newGain !== currentGain) await setInputParameter(self, input, 'preamp_gain', newGain)
+	if (newGain !== currentGain) await setInputParameter(self, input, 'preamp_gain', newGain, signal)
 }
 
 module.exports = function (self) {
@@ -81,38 +88,42 @@ module.exports = function (self) {
 					id: 'mode',
 					type: 'dropdown',
 					label: 'Mode',
-					default: 0,
+					default: 'mic',
 					choices: [
-						{ id: 0, label: 'Mic' },
-						{ id: 1, label: 'Line' },
+						{ id: 'mic', label: 'Mic' },
+						{ id: 'line', label: 'Line' },
+						{ id: 'toggle', label: 'Toggle' },
 					],
+					expressionDescription: "'mic', 'line' or 'toggle'",
 				},
 			],
-			callback: async (event) => {
-				await setInputParameter(self, event.options.input, 'line_mic', Number(event.options.mode))
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
+				let mode = INPUT_MODES[event.options.mode]
+				if (event.options.mode === 'toggle') {
+					const line = resolveBinaryState(self, 'toggle', self.inputState?.[input]?.line_mic, 'input mode')
+					if (line === null) return
+					mode = line ? INPUT_MODES.line : INPUT_MODES.mic
+				}
+				if (mode === undefined) {
+					self.log('error', `Cannot set input mode: unknown mode ${JSON.stringify(event.options.mode)}`)
+					return
+				}
+				await setInputParameter(self, input, 'line_mic', mode, context.signal)
 			},
 		},
 		phantom_power: {
 			name: 'Set Phantom Power',
-			options: [
-				inputOption(),
-				{
-					id: 'state',
-					type: 'dropdown',
-					label: 'Phantom Power',
-					default: 0,
-					choices: onOffChoices,
-				},
-			],
-			callback: async (event) => {
-				const input = Number(event.options.input)
+			options: [inputOption(), stateOption('Phantom Power')],
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
 				const state = resolveBinaryState(
 					self,
 					event.options.state,
 					self.inputState?.[input]?.phantom_power,
 					'phantom power',
 				)
-				if (state !== null) await setInputParameter(self, input, 'phantom_power', state === 1)
+				if (state !== null) await setInputParameter(self, input, 'phantom_power', state, context.signal)
 			},
 		},
 		set_preamp_gain: {
@@ -123,16 +134,19 @@ module.exports = function (self) {
 					id: 'gain',
 					type: 'dropdown',
 					label: 'Gain',
-					default: 16,
-					choices: Array.from({ length: 21 }, (_, index) => {
-						const gain = 16 + index * 3
-						return { id: gain, label: `${gain} dB` }
-					}),
+					default: PREAMP_GAIN_DB_MIN,
+					choices: PREAMP_GAINS.map((gain) => ({ id: gain, label: `${gain} dB` })),
+					expressionDescription: `Gain in dB: ${PREAMP_GAIN_DB_MIN} to ${PREAMP_GAIN_DB_MAX} in steps of ${PREAMP_GAIN_STEP}`,
 				},
 			],
-			callback: async (event) => {
-				const input = Number(event.options.input)
-				await setInputParameter(self, input, 'preamp_gain', Number(event.options.gain))
+			callback: async (event, context) => {
+				const gain = Number(event.options.gain)
+				if (!PREAMP_GAINS.includes(gain)) {
+					self.log('error', `Cannot set preamp gain: unsupported gain ${JSON.stringify(event.options.gain)}`)
+					return
+				}
+				const input = toInputIndex(event.options.input)
+				await setInputParameter(self, input, 'preamp_gain', gain, context.signal)
 			},
 		},
 		adjust_preamp_gain: {
@@ -158,16 +172,18 @@ module.exports = function (self) {
 					tooltip: 'Select the gain change applied per adjustment.',
 				},
 			],
-			callback: async (event) => {
-				const input = Number(event.options.input)
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
 				const steps = Math.max(1, Math.round(Number(event.options.step) || 1))
 				switch (event.options.operation) {
 					case 'increase':
-						await adjustPreampGain(self, input, steps * PREAMP_GAIN_STEP)
+						await adjustPreampGain(self, input, steps * PREAMP_GAIN_STEP, context.signal)
 						break
 					case 'decrease':
-						await adjustPreampGain(self, input, -steps * PREAMP_GAIN_STEP)
+						await adjustPreampGain(self, input, -steps * PREAMP_GAIN_STEP, context.signal)
 						break
+					default:
+						self.log('error', `Cannot adjust preamp gain: unknown operation ${JSON.stringify(event.options.operation)}`)
 				}
 			},
 		},
@@ -179,41 +195,33 @@ module.exports = function (self) {
 					id: 'level',
 					type: 'dropdown',
 					label: 'Full Scale Level',
-					default: 0,
-					choices: [
-						{ id: 0, label: '+15 dBu' },
-						{ id: 1, label: '+18 dBu' },
-						{ id: 2, label: '+20 dBu' },
-						{ id: 3, label: '+22 dBu' },
-						{ id: 4, label: '+24 dBu' },
-					],
+					default: FULL_SCALE_DBU[0],
+					choices: FULL_SCALE_DBU.map((dbu) => ({ id: dbu, label: fullScaleLabel(dbu) })),
+					expressionDescription: `Level in dBu: ${FULL_SCALE_DBU.join(', ')}`,
 				},
 			],
-			callback: async (event) => {
-				await setInputParameter(self, event.options.input, 'full_scale_level', Number(event.options.level))
+			callback: async (event, context) => {
+				const level = FULL_SCALE_DBU.indexOf(Number(event.options.level))
+				if (level === -1) {
+					self.log('error', `Cannot set full scale level: unsupported level ${JSON.stringify(event.options.level)}`)
+					return
+				}
+				const input = toInputIndex(event.options.input)
+				await setInputParameter(self, input, 'full_scale_level', level, context.signal)
 			},
 		},
 		hpf_enable: {
 			name: 'Set High-Pass Filter State',
-			options: [
-				inputOption(),
-				{
-					id: 'state',
-					type: 'dropdown',
-					label: 'High-Pass Filter',
-					default: 0,
-					choices: onOffChoices,
-				},
-			],
-			callback: async (event) => {
-				const input = Number(event.options.input)
+			options: [inputOption(), stateOption('High-Pass Filter')],
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
 				const state = resolveBinaryState(
 					self,
 					event.options.state,
 					self.inputState?.[input]?.hpf_enable,
 					'high-pass filter',
 				)
-				if (state !== null) await setInputParameter(self, input, 'hpf_enable', state === 1)
+				if (state !== null) await setInputParameter(self, input, 'hpf_enable', state, context.signal)
 			},
 		},
 		hpf_freq: {
@@ -230,8 +238,9 @@ module.exports = function (self) {
 					step: 5,
 				},
 			],
-			callback: async (event) => {
-				await setInputParameter(self, event.options.input, 'hpf_freq', Number(event.options.frequency))
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
+				await setInputParameter(self, input, 'hpf_freq', Number(event.options.frequency), context.signal)
 			},
 		},
 		sig_pres_timeout: {
@@ -247,8 +256,9 @@ module.exports = function (self) {
 					max: 300,
 				},
 			],
-			callback: async (event) => {
-				await setInputParameter(self, event.options.input, 'sig_pres_timeout', Number(event.options.timeout))
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
+				await setInputParameter(self, input, 'sig_pres_timeout', Number(event.options.timeout), context.signal)
 			},
 		},
 		sig_pres_threshold: {
@@ -264,50 +274,26 @@ module.exports = function (self) {
 					max: 0,
 				},
 			],
-			callback: async (event) => {
-				await setInputParameter(self, event.options.input, 'sig_pres_threshold', Number(event.options.threshold))
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
+				await setInputParameter(self, input, 'sig_pres_threshold', Number(event.options.threshold), context.signal)
 			},
 		},
 		mute: {
 			name: 'Set Input Mute',
-			options: [
-				inputOption(),
-				{
-					id: 'state',
-					type: 'dropdown',
-					label: 'Mute',
-					default: 0,
-					choices: [
-						{ id: 0, label: 'Unmuted' },
-						{ id: 1, label: 'Muted' },
-						{ id: 2, label: 'Toggle' },
-					],
-				},
-			],
-			callback: async (event) => {
-				const input = Number(event.options.input)
+			options: [inputOption(), stateOption('Mute', 'Muted', 'Unmuted')],
+			callback: async (event, context) => {
+				const input = toInputIndex(event.options.input)
 				const state = resolveBinaryState(self, event.options.state, self.inputState?.[input]?.mute, 'input mute')
-				if (state !== null) await setInputParameter(self, input, 'mute', state === 1)
+				if (state !== null) await setInputParameter(self, input, 'mute', state, context.signal)
 			},
 		},
 		status_leds: {
 			name: 'Set Status LEDs',
-			options: [
-				{
-					id: 'state',
-					type: 'dropdown',
-					label: 'Status LEDs',
-					default: 1,
-					choices: [
-						{ id: 0, label: 'Disabled' },
-						{ id: 1, label: 'Enabled' },
-						{ id: 2, label: 'Toggle' },
-					],
-				},
-			],
+			options: [stateOption('Status LEDs', 'Enabled', 'Disabled', 'on')],
 			callback: async (event) => {
 				const state = resolveBinaryState(self, event.options.state, self.statusLeds, 'status LEDs')
-				if (state !== null) setStatusLeds(self, state)
+				if (state !== null) setStatusLeds(self, state ? 1 : 0)
 			},
 		},
 	})

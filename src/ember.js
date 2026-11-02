@@ -1,4 +1,5 @@
 const { EmberClient, Model } = require('emberplus-connection')
+const { FULL_SCALE_DBU, fullScaleLabel } = require('./util')
 
 // Lowercased identifier and description of a node, with punctuation collapsed to single spaces.
 const text = (node) => {
@@ -34,13 +35,31 @@ const inputIndex = (node) => {
 	return match ? Number(match[1]) - 1 : null
 }
 
-const fullScaleLabels = ['+15 dBu', '+18 dBu', '+20 dBu', '+22 dBu', '+24 dBu']
-
 const variableFormatters = {
 	// 1 is Line, anything else is Mic.
 	line_mic: (value) => (Number(value) === 1 ? 'Line' : 'Mic'),
 	// Enum index to dBu label, falling back to the raw value if out of range.
-	full_scale_level: (value) => fullScaleLabels[Number(value)] ?? value,
+	full_scale_level: (value) => {
+		const dbu = FULL_SCALE_DBU[Number(value)]
+		return dbu === undefined ? value : fullScaleLabel(dbu)
+	},
+}
+
+// A parameter value as its variable shows it.
+const formatParameter = (key, value) => {
+	const format = variableFormatters[key]
+	return format ? format(value) : value
+}
+
+// Settles with the promise, or rejects with the abort reason as soon as the signal aborts.
+const abortable = (promise, signal) => {
+	if (!signal) return promise
+	signal.throwIfAborted()
+	return new Promise((resolve, reject) => {
+		const onAbort = () => reject(signal.reason)
+		signal.addEventListener('abort', onAbort, { once: true })
+		promise.then(resolve, reject).finally(() => signal.removeEventListener('abort', onAbort))
+	})
 }
 
 const variableNames = {
@@ -189,9 +208,8 @@ class EmberControl {
 
 		const variable = variableNames[key]
 		if (variable) {
-			const format = variableFormatters[key]
 			this.instance.setVariableValues({
-				[`input${input + 1}_${variable}`]: format ? format(value) : value,
+				[`input${input + 1}_${variable}`]: formatParameter(key, value),
 			})
 		}
 
@@ -205,19 +223,20 @@ class EmberControl {
 	}
 
 	// Sets a parameter by input index and internal key.
-	async setInputParameter(input, key, value) {
+	async setInputParameter(input, key, value, signal) {
 		const node = this.inputParameters[input]?.[key]
-		await this.setParameter(node, value, `'${key}' for input ${input + 1}`)
+		await this.setParameter(node, value, `'${key}' for input ${input + 1}`, signal)
 	}
 
-	// Writes a value to a node and waits for the device to confirm it. Throws if Ember+ isn't ready or the node is missing.
-	async setParameter(node, value, name) {
+	// Writes a value to a node and waits for the device to confirm it, unless the signal aborts first.
+	async setParameter(node, value, name, signal) {
 		if (!this.ready || !this.client) throw new Error('Ember+ controls are not ready')
 		if (!node) throw new Error(`Ember+ parameter ${name} was not found`)
+		signal?.throwIfAborted()
 
 		const request = await this.client.setValue(node, value, true)
-		if (request.response) await request.response
+		if (request.response) await abortable(request.response, signal)
 	}
 }
 
-module.exports = { EmberControl }
+module.exports = { EmberControl, formatParameter }

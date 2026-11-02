@@ -1,22 +1,12 @@
-const { isAsserted, isMuted } = require('./util')
-
-const inputChoices = [
-	{ id: 0, label: 'Input 1' },
-	{ id: 1, label: 'Input 2' },
-	{ id: 2, label: 'Input 3' },
-	{ id: 3, label: 'Input 4' },
-	{ id: 4, label: 'Input 5' },
-	{ id: 5, label: 'Input 6' },
-	{ id: 6, label: 'Input 7' },
-	{ id: 7, label: 'Input 8' },
-]
+const { isAsserted, isMuted, inputOption, toInputIndex, FULL_SCALE_DBU } = require('./util')
+const { formatParameter } = require('./ember')
 
 // AVN-M8R Ember+ input parameters
 const parameterChoices = [
 	{ id: 'line_mic', label: 'Signal Level (0 = Mic, 1 = Line)' },
 	{ id: 'phantom_power', label: 'Phantom Power' },
 	{ id: 'preamp_gain', label: 'Preamp Gain' },
-	{ id: 'full_scale_level', label: 'Full Scale Level' },
+	{ id: 'full_scale_level', label: 'Full Scale Level (dBu)' },
 	{ id: 'hpf_enable', label: 'High-Pass Filter' },
 	{ id: 'hpf_freq', label: 'High-Pass Filter Frequency' },
 	{ id: 'sig_pres_timeout', label: 'Signal-Presence Timeout' },
@@ -25,6 +15,20 @@ const parameterChoices = [
 ]
 
 const comparable = (value) => String(typeof value === 'boolean' ? Number(value) : (value ?? ''))
+
+// Values a parameter matches: raw Ember+ value, variable text and, for full scale level, the dBu number.
+const matchCandidates = (parameter, value) => {
+	const candidates = [value, formatParameter(parameter, value)]
+	if (parameter === 'full_scale_level') candidates.push(FULL_SCALE_DBU[Number(value)])
+	return candidates.filter((candidate) => candidate !== undefined)
+}
+
+// Case-insensitive text match, or numeric match so '+18' equals 18.
+const matches = (candidate, expected) => {
+	const text = comparable(candidate).toLowerCase()
+	if (text === expected) return true
+	return expected !== '' && text !== '' && Number.isFinite(Number(expected)) && Number(text) === Number(expected)
+}
 
 // Lower dBFS bound of each meter segment.
 const METER_SEGMENT_DBFS = [
@@ -52,10 +56,21 @@ const METER_SEGMENT_DBFS = [
 	-0.1,
 ]
 
-const meterChoices = METER_SEGMENT_DBFS.map((dbfs, segments) => ({
-	id: segments,
-	label: segments === 0 ? 'Silence (below -52 dBFS)' : `${dbfs} dBFS`,
-}))
+// Choice id for the silence band; any level below the lowest band would do.
+const METER_SILENCE_DBFS = -60
+
+const meterChoices = METER_SEGMENT_DBFS.map((dbfs, segments) =>
+	segments === 0 ? { id: METER_SILENCE_DBFS, label: 'Silence (below -52 dBFS)' } : { id: dbfs, label: `${dbfs} dBFS` },
+)
+
+// Meter segment whose band contains a dBFS level, 0 for anything below the lowest band.
+const dbfsToSegment = (dbfs) => {
+	let segment = 0
+	for (let index = 1; index < METER_SEGMENT_DBFS.length; index++) {
+		if (dbfs >= METER_SEGMENT_DBFS[index]) segment = index
+	}
+	return segment
+}
 
 module.exports = function (self) {
 	self.setFeedbackDefinitions({
@@ -68,34 +83,37 @@ module.exports = function (self) {
 				color: 0x000000,
 			},
 			options: [
-				{
-					id: 'input',
-					type: 'dropdown',
-					label: 'Input',
-					default: 0,
-					choices: inputChoices,
-				},
+				inputOption(),
+
 				{
 					id: 'parameter',
 					type: 'dropdown',
 					label: 'Parameter',
 					default: 'line_mic',
 					choices: parameterChoices,
+					expressionDescription: `Parameter id: ${parameterChoices.map(({ id }) => `'${id}'`).join(', ')}`,
 				},
 				{
 					id: 'value',
 					type: 'textinput',
 					label: 'Value',
 					default: '1',
+					tooltip: 'The raw Ember+ value, or the text the matching variable shows (e.g. Line, +18 dBu).',
+					expressionDescription: "The value to compare, e.g. 1 or '+18 dBu'",
 				},
 			],
 			callback: (feedback) => {
-				const value = self.inputState?.[Number(feedback.options.input)]?.[feedback.options.parameter]
-				return value !== undefined && comparable(value) === comparable(feedback.options.value)
+				const parameter = feedback.options.parameter
+				const value = self.inputState?.[toInputIndex(feedback.options.input)]?.[parameter]
+				if (value === undefined) return false
+
+				const expected = comparable(feedback.options.value).trim().toLowerCase()
+				return matchCandidates(parameter, value).some((candidate) => matches(candidate, expected))
 			},
 			learn: (feedback) => {
-				const value = self.inputState?.[Number(feedback.options.input)]?.[feedback.options.parameter]
-				return value === undefined ? undefined : { value: comparable(value) }
+				const parameter = feedback.options.parameter
+				const value = self.inputState?.[toInputIndex(feedback.options.input)]?.[parameter]
+				return value === undefined ? undefined : { value: comparable(formatParameter(parameter, value)) }
 			},
 		},
 		MuteState: {
@@ -107,13 +125,8 @@ module.exports = function (self) {
 				color: 0xffffff,
 			},
 			options: [
-				{
-					id: 'input',
-					type: 'dropdown',
-					label: 'Input',
-					default: 0,
-					choices: inputChoices,
-				},
+				inputOption(),
+
 				{
 					id: 'source',
 					type: 'dropdown',
@@ -124,6 +137,7 @@ module.exports = function (self) {
 						{ id: 'software', label: 'Software only' },
 						{ id: 'gpi', label: 'GPI only' },
 					],
+					expressionDescription: "'any', 'software' or 'gpi'",
 				},
 				{
 					id: 'state',
@@ -134,11 +148,13 @@ module.exports = function (self) {
 						{ id: 1, label: 'Muted' },
 						{ id: 0, label: 'Unmuted' },
 					],
+					expressionDescription: '1 for Muted, 0 for Unmuted',
 				},
 			],
 			callback: (feedback) => {
-				const state = self.inputState?.[Number(feedback.options.input)]
+				const state = self.inputState?.[toInputIndex(feedback.options.input)]
 				const source = feedback.options.source
+				if (!['any', 'software', 'gpi'].includes(source)) return false
 
 				const value =
 					source === 'software' ? state?.mute : source === 'gpi' ? state?.gpi_mute : (state?.mute ?? state?.gpi_mute)
@@ -157,13 +173,8 @@ module.exports = function (self) {
 				color: 0x000000,
 			},
 			options: [
-				{
-					id: 'input',
-					type: 'dropdown',
-					label: 'Input',
-					default: 0,
-					choices: inputChoices,
-				},
+				inputOption(),
+
 				{
 					id: 'comparison',
 					type: 'dropdown',
@@ -174,23 +185,28 @@ module.exports = function (self) {
 						{ id: '=', label: '=' },
 						{ id: '>', label: '>' },
 					],
+					expressionDescription: "'<', '=' or '>'",
 				},
 				{
 					id: 'threshold',
 					type: 'dropdown',
 					label: 'Level (dBFS)',
-					default: 0,
+					default: METER_SILENCE_DBFS,
 					choices: meterChoices,
+					expressionDescription: 'Level in dBFS. e.g. -18.',
 				},
 			],
 			callback: (feedback) => {
-				const segments = self.meters?.[Number(feedback.options.input)]
+				const segments = self.meters?.[toInputIndex(feedback.options.input)]
 				if (segments === undefined) return false
 
-				const threshold = Number(feedback.options.threshold)
+				const level = Number(feedback.options.threshold)
+				if (!Number.isFinite(level)) return false
+				const threshold = dbfsToSegment(level)
 				if (feedback.options.comparison === '<') return segments < threshold
 				if (feedback.options.comparison === '=') return segments === threshold
-				return segments > threshold
+				if (feedback.options.comparison === '>') return segments > threshold
+				return false
 			},
 		},
 		PowerInput: {
@@ -211,6 +227,7 @@ module.exports = function (self) {
 						{ id: 1, label: 'Primary' },
 						{ id: 2, label: 'Secondary' },
 					],
+					expressionDescription: '1 for Primary, 2 for Secondary',
 				},
 				{
 					id: 'state',
@@ -221,6 +238,7 @@ module.exports = function (self) {
 						{ id: 0, label: 'Not present' },
 						{ id: 1, label: 'Present' },
 					],
+					expressionDescription: '1 for Present, 0 for Not present',
 				},
 			],
 			callback: (feedback) => {
@@ -231,7 +249,7 @@ module.exports = function (self) {
 		},
 		StatusLeds: {
 			name: 'Status LEDs',
-			description: 'Active when the WebSocket-reported status LED setting matches the selected state.',
+			description: 'Active when the status LED setting matches the selected state.',
 			type: 'boolean',
 			defaultStyle: {
 				bgcolor: 0x00ff00,
@@ -247,6 +265,7 @@ module.exports = function (self) {
 						{ id: 0, label: 'Disabled' },
 						{ id: 1, label: 'Enabled' },
 					],
+					expressionDescription: '1 for Enabled, 0 for Disabled',
 				},
 			],
 			callback: (feedback) => {

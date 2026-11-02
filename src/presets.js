@@ -36,23 +36,22 @@ module.exports = function (self) {
 	const presets = {}
 
 	for (const input of INPUTS) {
-		const index = input - 1
 		const label = `IN ${input}`
 
 		presets[`mute_${input}`] = pressButton(
 			`Input ${input} mute toggle`,
 			baseStyle(lines(label, `$(${VAR}:input${input}_mute_active)`)),
-			[{ actionId: 'mute', options: { input: index, state: 2 } }],
+			[{ actionId: 'mute', options: { input, state: 'toggle' } }],
 			[
 				{
 					feedbackId: 'MuteState',
-					options: { input: index, source: 'any', state: 1 },
+					options: { input, source: 'any', state: 1 },
 					style: { bgcolor: RED, color: WHITE },
 					headline: 'Red while muted by either source',
 				},
 				{
 					feedbackId: 'MuteState',
-					options: { input: index, source: 'gpi', state: 1 },
+					options: { input, source: 'gpi', state: 1 },
 					style: { bgcolor: AMBER, color: BLACK },
 					headline: 'Amber when the GPI is holding the mute.',
 				},
@@ -63,35 +62,31 @@ module.exports = function (self) {
 		presets[`phantom_${input}`] = pressButton(
 			`Input ${input} phantom power toggle`,
 			baseStyle(lines(label, '48V')),
-			[{ actionId: 'phantom_power', options: { input: index, state: 2 } }],
+			[{ actionId: 'phantom_power', options: { input, state: 'toggle' } }],
 			[
 				{
 					feedbackId: 'ParameterState',
-					options: { input: index, parameter: 'phantom_power', value: '1' },
+					options: { input, parameter: 'phantom_power', value: '1' },
 					style: { bgcolor: RED, color: WHITE },
 				},
 			],
 			['phantom', '48v'],
 		)
 
-		presets[`mode_${input}`] = {
-			type: 'simple',
-			name: `Input ${input} mic/line mode`,
-			keywords: ['mic', 'line'],
-			style: baseStyle(lines(label, `$(${VAR}:input${input}_mode)`)),
-			steps: [
-				{ name: 'Set Line', down: [{ actionId: 'line_mic', options: { input: index, mode: 1 } }], up: [] },
-				{ name: 'Set Mic', down: [{ actionId: 'line_mic', options: { input: index, mode: 0 } }], up: [] },
-			],
-			feedbacks: [
+		presets[`mode_${input}`] = pressButton(
+			`Input ${input} mic/line mode toggle`,
+			baseStyle(lines(label, `$(${VAR}:input${input}_mode)`)),
+			[{ actionId: 'line_mic', options: { input, mode: 'toggle' } }],
+			[
 				{
 					feedbackId: 'ParameterState',
-					options: { input: index, parameter: 'line_mic', value: '1' },
+					options: { input, parameter: 'line_mic', value: '1' },
 					style: { bgcolor: BLUE, color: WHITE },
 					headline: 'Blue in line mode',
 				},
 			],
-		}
+			['mic', 'line'],
+		)
 
 		const meterGauge = {
 			type: 'layered',
@@ -146,12 +141,12 @@ module.exports = function (self) {
 			[
 				{
 					feedbackId: 'MeterLevel',
-					options: { input: index, comparison: '>', threshold: 0 },
+					options: { input, comparison: '>', threshold: -60 },
 					style: { bgcolor: GREEN, color: WHITE },
 				},
 				{
 					feedbackId: 'MeterLevel',
-					options: { input: index, comparison: '=', threshold: 21 },
+					options: { input, comparison: '=', threshold: -0.1 },
 					style: { bgcolor: RED, color: WHITE },
 				},
 			],
@@ -166,7 +161,7 @@ module.exports = function (self) {
 			[
 				{
 					feedbackId: 'MeterLevel',
-					options: { input: index, comparison: '>', threshold: 0 },
+					options: { input, comparison: '>', threshold: -60 },
 					style: { bgcolor: GREEN, color: WHITE },
 				},
 			],
@@ -179,7 +174,7 @@ module.exports = function (self) {
 			[
 				{
 					feedbackId: 'MeterLevel',
-					options: { input: index, comparison: '=', threshold: 21 },
+					options: { input, comparison: '=', threshold: -0.1 },
 					style: { bgcolor: RED, color: WHITE },
 				},
 			],
@@ -190,7 +185,7 @@ module.exports = function (self) {
 	presets.status_leds = pressButton(
 		'Status LEDs toggle',
 		baseStyle(lines('STATUS', 'LEDS')),
-		[{ actionId: 'status_leds', options: { state: 2 } }],
+		[{ actionId: 'status_leds', options: { state: 'toggle' } }],
 		[{ feedbackId: 'StatusLeds', options: { state: 1 }, style: { bgcolor: GREEN, color: WHITE } }],
 		['leds'],
 	)

@@ -12,7 +12,7 @@
 		"url": "git+https://github.com/bitfocus/companion-module-sonifex-avn-m8r.git"
 	},
 	"engines": {
-		"node": "^22.20",
+		"node": "^26",
 		"yarn": "^4"
 	},
 	"dependencies": {

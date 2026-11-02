@@ -7,4 +7,28 @@ const parsePowerPresence = (value) => {
 	return undefined
 }
 
-module.exports = { isAsserted, isMuted, parsePowerPresence }
+const INPUT_COUNT = 8
+const inputChoices = Array.from({ length: INPUT_COUNT }, (_, index) => ({ id: index + 1, label: `Input ${index + 1}` }))
+const inputOption = () => ({
+	id: 'input',
+	type: 'dropdown',
+	label: 'Input',
+	default: 1,
+	choices: inputChoices,
+	expressionDescription: `Input number, 1 to ${INPUT_COUNT}`,
+})
+
+// Input option value (1-8) to zero-based index.
+const toInputIndex = (value) => Number(value) - 1
+const FULL_SCALE_DBU = [15, 18, 20, 22, 24]
+const fullScaleLabel = (dbu) => `+${dbu} dBu`
+
+module.exports = {
+	isAsserted,
+	isMuted,
+	parsePowerPresence,
+	inputOption,
+	toInputIndex,
+	FULL_SCALE_DBU,
+	fullScaleLabel,
+}
